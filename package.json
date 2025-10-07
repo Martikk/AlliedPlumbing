@@ -3,6 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": { "node": ">=18.17 <=22" },
+  "packageManager": "npm@10",
   "scripts": {
     "dev": "vite",
     "start": "vite",
@@ -38,6 +40,7 @@
     "prettier": "^3.6.2",
     "tailwindcss": "^3.4.13",
     "typescript": "~5.9.3",
-    "vite": "^5.4.10"
+    "vite": "^5.4.10",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }

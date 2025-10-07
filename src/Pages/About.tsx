@@ -1,4 +1,4 @@
-function About() {
+export default function About() {
   return (
     <section className="prose max-w-none">
       <h1>About Allied</h1>

@@ -1,5 +1,5 @@
 import React from "react";
-import { EmergencyBar } from "./EmergencyBar";
+import EmergencyBar from "./EmergencyBar";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   // высота бара ~32px → безопаснее дать 40px
