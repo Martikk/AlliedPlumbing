@@ -8,6 +8,7 @@ import AboutCompany from '@/components/AboutCompany';
 import ServicesShowcase from '@/components/ServicesShowcase';
 import ProjectsBanner from '@/components/ProjectsBanner';
 import TeamSection from '@/components/TeamSection';
+import ClientTestimonials from "../components/ClientTestimonials";
 
 export default function Home() {
   return (
@@ -54,6 +55,7 @@ export default function Home() {
   <ServicesShowcase />
 <ProjectsBanner />
 <TeamSection />
+<ClientTestimonials />
 </div>
 
       </section>
