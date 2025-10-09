@@ -37,7 +37,7 @@ export default function Hero({ slides, intervalMs = 5500 }: Props) {
   <div className="relative flex items-center justify-center">
     {/* Allied Plumbing — слева, крупнее */}
     <span className="absolute left-4 md:left-6 font-extrabold text-base md:text-lg">
-      Allied Plumbing
+      Allied Plumbing, Heating & Air Conditioning
     </span>
 
     {/* остальной текст по центру */}
