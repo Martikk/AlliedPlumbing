@@ -15,3 +15,19 @@ a:focus-visible, button:focus-visible {
 .prose :where(a):not(:where(.not-prose *)) {
   text-decoration: underline;
 }
+
+
+/* === Fancy badge animations === */
+@keyframes floaty {
+  0%,100% { transform: translateY(0) }
+  50%     { transform: translateY(-4px) }
+}
+@keyframes pulseRing {
+  0%   { transform: scale(1);   opacity: .35 }
+  70%  { transform: scale(1.6); opacity: 0   }
+  100% { transform: scale(1.6); opacity: 0   }
+}
+/* accessibility: у кого reduced motion — без бесконечных анимаций */
+@media (prefers-reduced-motion: reduce) {
+  .animate-floaty, .animate-ring { animation: none !important; }
+}

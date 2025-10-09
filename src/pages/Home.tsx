@@ -4,6 +4,9 @@ import ProjectCards from '../components/ProjectCards';
 import Hero from '@/components/Hero';
 import FeatureRibbon from '@/components/FeatureRibbon';
 import { PHONE } from '@/config'; // EMAIL_QUOTE убрал — не используется
+import AboutCompany from '@/components/AboutCompany';
+import ServicesShowcase from '@/components/ServicesShowcase';
+import ProjectsBanner from '@/components/ProjectsBanner';
 
 export default function Home() {
   return (
@@ -38,15 +41,19 @@ export default function Home() {
 
       {/* контентная часть — внутри контейнера */}
       <section className="max-w-6xl mx-auto px-4 flex flex-col gap-12">
-        <div>
-          <h2 className="text-2xl font-bold mb-4">Our Services</h2>
-          <ServiceCards />
-        </div>
 
-        <div>
-          <h2 className="text-2xl font-bold mb-3">Featured Projects</h2>
-          <ProjectCards />
-        </div>
+{/* NEW: About company section */}
+<AboutCompany />
+
+
+
+<div className="space-y-10">
+  {/* …Hero + FeatureRibbon… */}
+
+  <ServicesShowcase />
+<ProjectsBanner />
+
+</div>
       </section>
     </div>
   );
