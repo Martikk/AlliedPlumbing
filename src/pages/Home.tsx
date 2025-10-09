@@ -7,6 +7,7 @@ import { PHONE } from '@/config'; // EMAIL_QUOTE убрал — не испол�
 import AboutCompany from '@/components/AboutCompany';
 import ServicesShowcase from '@/components/ServicesShowcase';
 import ProjectsBanner from '@/components/ProjectsBanner';
+import TeamSection from '@/components/TeamSection';
 
 export default function Home() {
   return (
@@ -52,8 +53,9 @@ export default function Home() {
 
   <ServicesShowcase />
 <ProjectsBanner />
-
+<TeamSection />
 </div>
+
       </section>
     </div>
   );
