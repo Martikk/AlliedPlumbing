@@ -8,7 +8,7 @@ const testimonials = [
     role: "Homeowner, GreenVista Eco Homes",
     text: "Working with Allied Plumbing was an exceptional experience. Their professionalism, timely delivery, and attention to detail truly set them apart. I couldn’t be happier with the final result!",
     rating: 4,
-    image: "/team/john.jpg",
+    image: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1717289363/DreamDate/Mohan_bfss7q.jpg",
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const testimonials = [
     role: "Project Manager, Arcadia Rise",
     text: "Dependable and detail-oriented. The Allied team was fantastic to work with from start to finish.",
     rating: 5,
-    image: "/team/michael.jpg",
+    image: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1717289347/DreamDate/unnamed_1_dm93bq.png",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const testimonials = [
     role: "Developer, Metrolink Tower",
     text: "They handled everything efficiently, and the communication was always clear. Highly recommended!",
     rating: 5,
-    image: "/team/ethan.jpg",
+    image: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1717289347/DreamDate/unnamed_xvfdz9.png",
   },
 ];
 

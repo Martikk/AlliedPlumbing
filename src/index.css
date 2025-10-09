@@ -31,3 +31,9 @@ a:focus-visible, button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .animate-floaty, .animate-ring { animation: none !important; }
 }
+
+
+/* tilted card mask */
+.clip-tilt {
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+}

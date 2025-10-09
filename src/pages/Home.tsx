@@ -9,6 +9,11 @@ import ServicesShowcase from '@/components/ServicesShowcase';
 import ProjectsBanner from '@/components/ProjectsBanner';
 import TeamSection from '@/components/TeamSection';
 import ClientTestimonials from "../components/ClientTestimonials";
+import BlogTeasers from "@/components/BlogTeasers";
+import LogoMarquee from "../components/LogoMarquee";
+import CallToAction from "@/components/CallToAction";
+import ContactLead from "@/components/ContactLead";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -56,6 +61,11 @@ export default function Home() {
 <ProjectsBanner />
 <TeamSection />
 <ClientTestimonials />
+<BlogTeasers />
+<LogoMarquee />
+<CallToAction />
+<ContactLead />
+<Footer />
 </div>
 
       </section>
