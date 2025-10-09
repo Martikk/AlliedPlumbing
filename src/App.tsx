@@ -3,7 +3,7 @@ import { Suspense, lazy } from 'react';
 import ScrollToTop from './components/ScrollToTop';
 import SkipLink from './components/SkipLink';
 import EmergencyBar from './components/EmergencyBar';
-import MainHeader from './components/MainHeader';
+import HeaderBar from '@/components/HeaderBar';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -30,7 +30,7 @@ export default function App() {
       <SkipLink />
       <EmergencyBar />
       <div className="min-h-screen text-neutral-800">
-        <MainHeader />
+        <HeaderBar />
         <main id="main" className="max-w-6xl mx-auto px-4 py-8">
           <ScrollToTop />
           <Suspense fallback={<div className="py-20 text-center">Loading…</div>}>

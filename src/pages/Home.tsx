@@ -1,8 +1,9 @@
-// src/pages/Home.tsx
 import Head from '../components/Head';
 import ServiceCards from '../components/ServiceCards';
 import ProjectCards from '../components/ProjectCards';
-import { PHONE, EMAIL_QUOTE } from '../config'; // ← РЕКОМЕНДУЮ: сделать src/config.ts
+import Hero from '@/components/Hero';
+import FeatureRibbon from '@/components/FeatureRibbon';
+import { PHONE, EMAIL_QUOTE } from '@/config';
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
           '@context': 'https://schema.org',
           '@type': 'HVACBusiness',
           name: 'Allied Plumbing, Heating & Air Conditioning Ltd.',
-          telephone: '604-731-1000',
+          telephone: PHONE,
           address: {
             '@type': 'PostalAddress',
             streetAddress: '4085 2nd Ave',
@@ -29,33 +30,10 @@ export default function Home() {
         }}
       />
 
-      <div className="bg-neutral-50 rounded-2xl p-8">
-        <h1 className="text-3xl md:text-5xl font-extrabold">Keeping BC Running.</h1>
-        <p className="mt-3 text-lg">
-          Plumbing, heating, and HVAC experts for schools, strata, commercial, and residential. 24/7 emergency service.
-        </p>
-        <div className="mt-6 flex gap-3">
-          <a
-            href={`tel:${PHONE}`}
-            className="px-4 py-3 rounded-xl bg-red-600 text-white"
-            aria-label={`Call ${PHONE} for 24/7 service`}
-          >
-            Book 24/7 Service
-          </a>
-          <a
-            href={`mailto:${EMAIL_QUOTE}`}
-            className="px-4 py-3 rounded-xl border border-neutral-300"
-            aria-label={`Email ${EMAIL_QUOTE} to request a quote`}
-          >
-            Request a Quote
-          </a>
-        </div>
-        <ul className="mt-6 grid md:grid-cols-3 gap-4 text-sm">
-          <li className="p-4 bg-white rounded-xl border">25+ years delivering boiler plants, HVAC upgrades, and service across BC.</li>
-          <li className="p-4 bg-white rounded-xl border">Prime Contractor with school-safe crews and annual CRCs.</li>
-          <li className="p-4 bg-white rounded-xl border">Preventive maintenance with daily DDC monitoring.</li>
-        </ul>
-      </div>
+      <Hero slides={['/hero/1.jpg', '/hero/2.jpg', '/hero/3.jpg', '/hero/4.jpg']} />
+
+      {/* ЛЕНТОЧКА: слегка наезжает на hero */}
+      <FeatureRibbon className="-mt-8 md:-mt-12" />
 
       <div>
         <h2 className="text-2xl font-bold mb-4">Our Services</h2>
