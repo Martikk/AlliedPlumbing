@@ -4,8 +4,7 @@
 :root { --bar-h: 40px; } /* если поменяешь высоту EmergencyBar — обнови тут */
 
 /* фикс под фиксированный emergency-bar */
-:root { --bar-h: 40px; } /* если поменяешь высоту — обнови тут */
-body { padding-top: var(--bar-h); }
+body { background-color: white; }
 
 /* проработка ссылок/фокуса */
 a:focus-visible, button:focus-visible {

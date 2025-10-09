@@ -28,10 +28,6 @@ export default function App() {
   return (
     <BrowserRouter /* basename="/allied" */>
       <SkipLink />
-      <EmergencyBar />
-      <div className="min-h-screen text-neutral-800">
-        <HeaderBar />
-        <main id="main" className="max-w-6xl mx-auto px-4 py-8">
           <ScrollToTop />
           <Suspense fallback={<div className="py-20 text-center">Loading…</div>}>
             <Routes>
@@ -55,9 +51,7 @@ export default function App() {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
-        </main>
         {/* footer — как у тебя */}
-      </div>
     </BrowserRouter>
   );
 }

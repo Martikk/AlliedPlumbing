@@ -3,11 +3,12 @@ import ServiceCards from '../components/ServiceCards';
 import ProjectCards from '../components/ProjectCards';
 import Hero from '@/components/Hero';
 import FeatureRibbon from '@/components/FeatureRibbon';
-import { PHONE, EMAIL_QUOTE } from '@/config';
+import { PHONE } from '@/config'; // EMAIL_QUOTE убрал — не используется
 
 export default function Home() {
   return (
-    <section className="space-y-10">
+    <div className="bg-white overflow-x-hidden">
+      {/* всё что тянется на full-width — оставляем вне контейнера */}
       <Head
         title="Allied Plumbing — Keeping BC Running"
         description="Plumbing, heating, and HVAC experts for schools, strata, commercial, and residential across BC. 24/7 emergency service."
@@ -32,18 +33,21 @@ export default function Home() {
 
       <Hero slides={['/hero/1.jpg', '/hero/2.jpg', '/hero/3.jpg', '/hero/4.jpg']} />
 
-      {/* ЛЕНТОЧКА: слегка наезжает на hero */}
-      <FeatureRibbon className="-mt-8 md:-mt-12" />
+      {/* ленточка слегка наезжает на hero */}
+      <FeatureRibbon className="-mt-8 md:-mt-32" />
 
-      <div>
-        <h2 className="text-2xl font-bold mb-4">Our Services</h2>
-        <ServiceCards />
-      </div>
+      {/* контентная часть — внутри контейнера */}
+      <section className="max-w-6xl mx-auto px-4 flex flex-col gap-12">
+        <div>
+          <h2 className="text-2xl font-bold mb-4">Our Services</h2>
+          <ServiceCards />
+        </div>
 
-      <div>
-        <h2 className="text-2xl font-bold mb-3">Featured Projects</h2>
-        <ProjectCards />
-      </div>
-    </section>
+        <div>
+          <h2 className="text-2xl font-bold mb-3">Featured Projects</h2>
+          <ProjectCards />
+        </div>
+      </section>
+    </div>
   );
 }
