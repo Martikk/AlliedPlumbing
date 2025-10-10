@@ -1,6 +1,4 @@
 import Head from '../components/Head';
-import ServiceCards from '../components/ServiceCards';
-import ProjectCards from '../components/ProjectCards';
 import Hero from '@/components/Hero';
 import FeatureRibbon from '@/components/FeatureRibbon';
 import { PHONE } from '@/config'; // EMAIL_QUOTE убрал — не используется
@@ -41,7 +39,10 @@ export default function Home() {
         }}
       />
 
-      <Hero slides={['/hero/1.jpg', '/hero/2.jpg', '/hero/3.jpg', '/hero/4.jpg']} />
+      <Hero slides={['https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074307/Allied/Gemini_Generated_Image_9on55p9on55p9on5_ga0mso.png', 
+      'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065876/Allied/3_gk4dl8.png', 
+        'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065875/Allied/1_tc9jiy.png', 
+        'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068156/Allied/14_urnogx.png']} />
 
       {/* ленточка слегка наезжает на hero */}
       <FeatureRibbon className="-mt-8 md:-mt-32" />
