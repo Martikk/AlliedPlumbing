@@ -12,28 +12,28 @@ const TABS: { key: TabKey; label: string }[] = [
 ];
 
 const CONTENT: Record<TabKey, string[]> = {
-materials: [
-  'Type L copper & Sch. 40 steel (ProPress/Victaulic), BC code–compliant',
-  'Stainless & black steel for boiler plants / mechanical rooms',
-  'High-efficiency IBC/Rheem boilers, heat pumps & VRF for coastal climate',
-  'Outdoor-rated insulation, UV/salt-air resistant finishes & weatherproof enclosures',
-],
-technology: [
-  'BIM/AutoCAD coordination with consultants — clash-free routing',
-  'DDC integration (Delta/Trane/Reliable), trending & remote commissioning',
-  'Digital pressure/flow tests, thermal imaging & ultrasonic leak detection',
-  'Cloud O&M, permits/as-builts, photo logs & turnover packages',
-],
-approved: [
-  'COR & WorkSafeBC compliant; $5M liability + WCB in good standing',
-  'Background-checked, school-approved crews (SD39 / SD40 / SD43)',
-  'Certified: fall protection, confined spaces, WHMIS',
-  '12-month workmanship warranty + ongoing service support',
-],
+  materials: [
+    'Type L copper & Sch. 40 steel (ProPress/Victaulic), BC code–compliant',
+    'Stainless & black steel for boiler plants / mechanical rooms',
+    'High-efficiency IBC/Rheem boilers, heat pumps & VRF for coastal climate',
+    'Outdoor-rated insulation, UV/salt-air resistant finishes & weatherproof enclosures',
+  ],
+  technology: [
+    'BIM/AutoCAD coordination with consultants — clash-free routing',
+    'DDC integration (Delta/Trane/Reliable), trending & remote commissioning',
+    'Digital pressure/flow tests, thermal imaging & ultrasonic leak detection',
+    'Cloud O&M, permits/as-builts, photo logs & turnover packages',
+  ],
+  approved: [
+    'COR & WorkSafeBC compliant; $5M liability + WCB in good standing',
+    'Background-checked, school-approved crews (SD39 / SD40 / SD43)',
+    'Certified: fall protection, confined spaces, WHMIS',
+    '12-month workmanship warranty + ongoing service support',
+  ],
 };
 
-// маленький компонент для плавного подсчёта
-function CountUp({ to, duration = 20200 }: { to: number; duration?: number }) {
+// Плавный счётчик
+function CountUp({ to, duration = 2000 }: { to: number; duration?: number }) {
   const [val, setVal] = useState(0);
   useEffect(() => {
     let raf = 0;
@@ -65,8 +65,9 @@ export default function AboutCompany() {
         </h2>
       </div>
 
-      {/* Левая колонка: табы + список */}
+      {/* Контент: табы слева + видео справа */}
       <div className="flex flex-col lg:flex-row gap-8 md:gap-12 items-start">
+        {/* Левая колонка */}
         <div className="flex-1 w-full">
           {/* Табы */}
           <div className="flex flex-wrap gap-2 md:gap-3 mb-5">
@@ -86,11 +87,10 @@ export default function AboutCompany() {
             })}
           </div>
 
-          {/* Список с иконками */}
+          {/* Список */}
           <ul className="space-y-3 md:space-y-4">
             {CONTENT[tab].map((item, idx) => (
               <li key={idx} className="flex items-start gap-3">
-                {/* маркер-иконка */}
                 <svg
                   className="mt-1 h-5 w-5 shrink-0 text-neutral-900"
                   viewBox="0 0 20 20"
@@ -105,86 +105,71 @@ export default function AboutCompany() {
           </ul>
         </div>
 
-{/* Правая колонка: фигура-видео с автоплеем */}
-<div className="flex-1 w-full flex justify-center lg:justify-end">
-  <div className="relative">
-    <div
-      className="relative overflow-hidden rounded-2xl shadow-xl"
-      style={{ clipPath: 'polygon(12% 0%, 100% 0%, 88% 100%, 0% 100%)' }}
-    >
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        // Если видео в public: помести в public/about/hero.mp4 и используй строку ниже
-        // src="/about/hero.mp4"
-        // Если CDN (Cloudinary), оставь полную ссылку:
-        src="https://res.cloudinary.com/dzytbkc5l/video/upload/v1760069369/Allied/Allied_Plumbing_Video_Script_Generation_qz6an9.mp4"
-        poster="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/10_kubptf.png"  // опционально: кадр-заставка (клади в public/about/)
-        className="block h-[300px] w-[420px] md:h-[360px] md:w-[520px] object-cover"
-      />
-
-      {/* play-кнопка больше не нужна, но если хочешь оставить декоративно — скрой для клик/аудио */}
-      {/* <button
-        className="pointer-events-none absolute inset-0 m-auto h-12 w-12 md:h-14 md:w-14 grid place-items-center rounded-full bg-white/60 text-neutral-900 shadow"
-        aria-hidden
-        tabIndex={-1}
-      >
-        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden>
-          <path d="M8 5v14l11-7L8 5Z" />
-        </svg>
-      </button> */}
-    </div>
-  </div>
-</div>
+        {/* Правая колонка: видео с автоплеем (без чёрных полос) */}
+        <div className="flex-1 w-full flex justify-center lg:justify-end">
+          <div className="relative overflow-hidden rounded-2xl shadow-xl"
+               style={{ clipPath: 'polygon(12% 0%, 100% 0%, 88% 100%, 0% 100%)' }}>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              // Если положишь файл в public/about/hero.mp4 — используй: src="/about/hero.mp4"
+              src="https://res.cloudinary.com/dzytbkc5l/video/upload/v1760069369/Allied/Allied_Plumbing_Video_Script_Generation_qz6an9.mp4"
+              poster="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/10_kubptf.png"
+              className="block h-[300px] w-[420px] md:h-[360px] md:w-[520px] object-cover object-center"
+            />
+          </div>
+        </div>
       </div>
 
-      {/* Риббоны-бейджи под линией */}
+      {/* Бейджи-лента */}
       <div className="mt-10 md:mt-14">
         <QualityBadges />
       </div>
 
-      {/* нижний «стат-баннер» с анимациями */}
+      {/* Стат-баннер с анимациями */}
       <motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1, ease: 'easeOut' }} // чуть плавнее вход
-  viewport={{ once: true }}
-  className="mt-10 md:mt-14 rounded-2xl bg-[rgb(240_249_255_/_0.8)] border border-[rgb(240_249_255_/_0.8)] p-6 md:p-10 shadow-sm"
->
-  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-    {[
-      { n: 8000, suffix: '+', label: 'Projects completed' },
-      { n: 5000, suffix: '+', label: 'Global customers' },
-      { n: 12,   suffix: '',  label: 'Years of experience' },
-      { n: 92,   suffix: '',  label: 'Team engineers' },
-    ].map((stat, idx) => (
-      <motion.div
-        key={idx}
-        initial={{ scale: 0.9, opacity: 0, y: 10 }}
-        whileInView={{ scale: 1, opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: 'easeOut' }}
         viewport={{ once: true }}
-        transition={{ delay: idx * 0.15, duration: 0.6, ease: 'easeOut' }}
-        animate={{ y: [0, -6, 0] }} // чуть больше амплитуда
-        transition={{
-          y: { duration: 10, repeat: Infinity, ease: 'easeInOut', delay: idx * 1.2 }
-        }}
-        whileHover={{ scale: 1.04, boxShadow: '0 10px 30px -10px rgba(2,6,23,.25)' }}
-        whileTap={{ scale: 0.98 }}
-        className="space-y-1 rounded-xl px-2 py-1"
+        className="mt-10 md:mt-14 rounded-2xl bg-[rgb(240_249_255_/_0.8)] border border-[rgb(240_249_255_/_0.8)] p-6 md:p-10 shadow-sm"
       >
-        <div className="text-3xl md:text-4xl font-extrabold text-neutral-900">
-          <CountUp to={stat.n} />
-          {stat.suffix}
-        </div>
-        <div className="text-sm md:text-base text-neutral-600">
-          {stat.label}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          {[
+            { n: 8000, suffix: '+', label: 'Projects completed' },
+            { n: 5000, suffix: '+', label: 'Global customers' },
+            { n: 12,   suffix: '',  label: 'Years of experience' },
+            { n: 92,   suffix: '',  label: 'Team engineers' },
+          ].map((stat, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ scale: 0.9, opacity: 0, y: 10 }}
+              whileInView={{ scale: 1, opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              animate={{ y: [0, -6, 0] }}
+              transition={{
+                delay: idx * 0.15,
+                duration: 0.6,
+                ease: 'easeOut',
+                y: { duration: 10, repeat: Infinity, ease: 'easeInOut', delay: idx * 1.2 },
+              }}
+              whileHover={{ scale: 1.04, boxShadow: '0 10px 30px -10px rgba(2,6,23,.25)' }}
+              whileTap={{ scale: 0.98 }}
+              className="space-y-1 rounded-xl px-2 py-1"
+            >
+              <div className="text-3xl md:text-4xl font-extrabold text-neutral-900">
+                <CountUp to={stat.n} />
+                {stat.suffix}
+              </div>
+              <div className="text-sm md:text-base text-neutral-600">
+                {stat.label}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
-    ))}
-  </div>
-</motion.div>
     </section>
   );
 }
