@@ -2,8 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import ScrollToTop from './components/ScrollToTop';
 import SkipLink from './components/SkipLink';
-import EmergencyBar from './components/EmergencyBar';
-import HeaderBar from '@/components/HeaderBar';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -14,7 +12,6 @@ const HVACPage = lazy(() => import('./pages/HVACPage'));
 const BoilersPage = lazy(() => import('./pages/BoilersPage'));
 const MaintenancePage = lazy(() => import('./pages/MaintenancePage'));
 const EmergencyPage = lazy(() => import('./pages/EmergencyPage'));
-const ProjectsIndex = lazy(() => import('./pages/ProjectsIndex'));
 const Garibaldi = lazy(() => import('./pages/Garibaldi'));
 const Ridgeview = lazy(() => import('./pages/Ridgeview'));
 const Leigh = lazy(() => import('./pages/Leigh'));
@@ -40,7 +37,6 @@ export default function App() {
               <Route path="/services/boilers" element={<BoilersPage />} />
               <Route path="/services/maintenance" element={<MaintenancePage />} />
               <Route path="/services/emergency" element={<EmergencyPage />} />
-              <Route path="/projects" element={<ProjectsIndex />} />
               <Route path="/projects/garibaldi" element={<Garibaldi />} />
               <Route path="/projects/ridgeview" element={<Ridgeview />} />
               <Route path="/projects/leigh" element={<Leigh />} />
