@@ -1,4 +1,4 @@
-import CTA from '@/components/CTA';
+
 
 export default function MaintenancePage() {
   return (
@@ -9,7 +9,7 @@ export default function MaintenancePage() {
         <li>Quarterly: Full inspections, combustion checks, pump/VFD checks, backflow tests, reporting.</li>
         <li>Annual: Boiler cleaning, water treatment review, glycol tests, DDC trend analysis, capital planning report.</li>
       </ul>
-      <CTA />
+
     </section>
   );
 }

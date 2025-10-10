@@ -1,4 +1,4 @@
-import CTA from '@/components/CTA';
+
 
 export default function Leigh() {
   const title = 'Garibaldi Highlands Elementary (SD48)';
@@ -17,7 +17,7 @@ export default function Leigh() {
       <ul>{scope.map((s, i) => <li key={i}>{s}</li>)}</ul>
       <h2>Outcome</h2>
       <p>Improved efficiency, reliability, and comfort. Delivered on schedule with coordinated trades.</p>
-      <CTA />
+
     </section>
   );
 }

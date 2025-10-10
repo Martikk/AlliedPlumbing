@@ -9,9 +9,7 @@ const Services = lazy(() => import('./pages/Services'));
 const ResidentialPlumbing = lazy(() => import('./pages/ResidentialPlumbing'));
 const CommercialPlumbing = lazy(() => import('./pages/CommercialPlumbing'));
 const HVACPage = lazy(() => import('./pages/HVACPage'));
-const BoilersPage = lazy(() => import('./pages/BoilersPage'));
 const MaintenancePage = lazy(() => import('./pages/MaintenancePage'));
-const EmergencyPage = lazy(() => import('./pages/EmergencyPage'));
 const Garibaldi = lazy(() => import('./pages/Garibaldi'));
 const Ridgeview = lazy(() => import('./pages/Ridgeview'));
 const Leigh = lazy(() => import('./pages/Leigh'));
@@ -34,9 +32,7 @@ export default function App() {
               <Route path="/services/residential-plumbing" element={<ResidentialPlumbing />} />
               <Route path="/services/commercial-plumbing" element={<CommercialPlumbing />} />
               <Route path="/services/hvac" element={<HVACPage />} />
-              <Route path="/services/boilers" element={<BoilersPage />} />
               <Route path="/services/maintenance" element={<MaintenancePage />} />
-              <Route path="/services/emergency" element={<EmergencyPage />} />
               <Route path="/projects/garibaldi" element={<Garibaldi />} />
               <Route path="/projects/ridgeview" element={<Ridgeview />} />
               <Route path="/projects/leigh" element={<Leigh />} />
