@@ -15,7 +15,7 @@ const ITEMS: Item[] = [
     blurb:
       'Monthly, quarterly, annual programs with trend reviews, DDC checks and reporting.',
     href: '/services/maintenance',
-    img: '/hero/1.jpg',
+    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760069670/Allied/maintance_grwetv.png',
   },
   {
     n: '02',
@@ -23,7 +23,7 @@ const ITEMS: Item[] = [
     blurb:
       'Repairs, fixture replacements, rough-ins, repipes, tank & tankless water heaters.',
     href: '/services/residential-plumbing',
-    img: '/hero/2.jpg',
+    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068156/Allied/14_urnogx.png',
   },
   {
     n: '03',
@@ -31,7 +31,7 @@ const ITEMS: Item[] = [
     blurb:
       'Backflows, PRVs, booster pumps, DHW plants, tenant improvements, strata & schools.',
     href: '/services/commercial-plumbing',
-    img: '/hero/3.jpg',
+    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065875/Allied/1_tc9jiy.png',
   },
   {
     n: '04',
@@ -39,7 +39,7 @@ const ITEMS: Item[] = [
     blurb:
       'RTU, MUA, AHU, unit ventilators, heat pumps, VRF — with DDC integration.',
     href: '/services/hvac',
-    img: '/hero/4.jpg',
+    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065875/Allied/5_jovqeo.png',
   },
   {
     n: '05',
@@ -47,7 +47,7 @@ const ITEMS: Item[] = [
     blurb:
       'Condensing boilers, burners, VFD pumps, HX, tanks, safety and controls.',
     href: '/services/boilers',
-    img: '/assets/Logo.png', // поменяй на подходящее фото, если нужно
+    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/10_kubptf.png', // поменяй на подходящее фото, если нужно
   },
   {
     n: '06',
@@ -55,7 +55,7 @@ const ITEMS: Item[] = [
     blurb:
       'Fast response for leaks, no-heat/DHW outages, gas issues and RTU/MUA failures.',
     href: '/services/emergency',
-    img: '/hero/2.jpg',
+    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760070439/Allied/247_bs1xho.png',
   },
 ];
 

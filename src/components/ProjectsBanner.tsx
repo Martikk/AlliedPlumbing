@@ -9,9 +9,10 @@ export default function ProjectsBanner({ autoMs = 6000, projects }: Props) {
   const items = useMemo<Project[]>(
     () =>
       projects ?? [
-        { title: 'The Arcadia Rise', image: '/public/projects/1.jpg', href: '/projects/ridgevie' },
-        { title: 'Metrolink Business Tower', image: '/public/projects/2.jpg', href: '/projects/ridgeview' },
-        { title: 'GreenVista Eco Homes', image: '/public/projects/3.jpg', href: '/projects/leigh' },
+        { title: 'The Arcadia Rise', image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065876/Allied/3_gk4dl8.png', href: '/projects/ridgevie' },
+        { title: 'Metrolink Business Tower', image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760071289/Allied/123_clbeb3.png', href: '/projects/ridgeview' },
+        { title: 'GreenVista Eco Homes', image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760071233/Allied/2025-10-09_21.40.08_wxp8bk.jpg', href: '/projects/leigh' },
+        { title: 'GreenVista Eco Homes', image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760071564/Allied/2025-10-09_21.39.57_tne1oo.jpg', href: '/projects/leigh' },
       ],
     [projects]
   );

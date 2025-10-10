@@ -13,7 +13,7 @@ export default function CallToAction() {
       >
         {/* background image */}
         <img
-          src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1715994394/image4_s0levq.jpg"
+          src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760072887/Allied/Allied_1_n00b0m.png"
           alt="Construction site"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
@@ -26,16 +26,16 @@ export default function CallToAction() {
         {/* content */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center text-white py-20 px-6">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-6">
-            Ready to build your dream?
+            We build, we maintain, we care.
             <br />
-            Schedule your consultation today!
+Let’s discuss your next project.
           </h2>
 
           <Link
             to="/contact"
             className="inline-flex items-center border border-white/80 text-white font-semibold rounded-md px-6 py-2 hover:bg-white hover:text-neutral-900 transition"
           >
-            Get Estimated Rate <span aria-hidden className="ml-2">↗</span>
+            Get a Quote <span aria-hidden className="ml-2">↗</span>
           </Link>
         </div>
       </motion.div>

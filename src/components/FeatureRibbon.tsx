@@ -9,25 +9,25 @@ export default function FeatureRibbon({ className = "" }: Props) {
   const items = [
     {
       title: "Smart methods",
-      text: "Techniques that reduce cost, time, and enhance project quality.",
-      src: "/public/features/1.jpg",
+      text: "Efficient, engineered solutions that save time and cost while ensuring flawless results.From value-driven plumbing layouts to HVAC system optimization, every project starts with planning that minimizes downtime and maximizes performance.",
+      src: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068455/Allied/Screenshot_2025-10-09_at_8.53.56_PM_hjz9a5.png",
     },
     {
       title: "Experienced team",
       text:
-        "Led by seasoned professionals committed to precision and safety.",
-      src: "/public/features/2.jpg",
+        "Led by certified trades and project managers who value precision, safety, and accountability.Our crews bring years of on-site expertise — from mechanical retrofits to new builds — delivering craftsmanship that stands the test of time.",
+      src: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/10_kubptf.png",
     },
     {
       title: "Modern equipment",
-      text: "From automated tools to heavy-duty machinery.",
-      src: "/public/features/3.jpg",
+      text: "Advanced tools and technology for accuracy, speed, and safety.From hydraulic crimping and pipe fusion to DDC commissioning and crane lifts, we invest in equipment that keeps every project running efficiently and safely.",
+      src: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/11_r4dgo3.png",
     },
     {
       title: "Proven delivery",
       text:
-        "Reliability and transparency from bid to handover.",
-      src: "/public/features/4.jpg",
+        "Trusted performance from first bid to final handover.We stand for clear communication, reliable scheduling, and transparent execution — ensuring every client receives exactly what was promised, on time and on budget.",
+      src: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068156/Allied/14_urnogx.png",
     },
   ];
 

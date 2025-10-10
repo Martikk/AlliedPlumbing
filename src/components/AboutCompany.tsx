@@ -1,5 +1,6 @@
 // src/components/AboutCompany.tsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import QualityBadges from '@/components/QualityBadges';
 
 type TabKey = 'materials' | 'technology' | 'approved';
@@ -11,25 +12,43 @@ const TABS: { key: TabKey; label: string }[] = [
 ];
 
 const CONTENT: Record<TabKey, string[]> = {
-  materials: [
-    'Premium grade cement & concrete',
-    'Reinforced steel & rebar',
-    'Eco-friendly bricks & blocks',
-    'Weather-resistant finishes',
-  ],
-  technology: [
-    'BIM coordination & clash detection',
-    'DDC integration & trending',
-    'Infrared & ultrasonic diagnostics',
-    'Cloud documentation (as-built/O&M)',
-  ],
-  approved: [
-    'Prime Contractor, school-safe crews',
-    'Full COR/WorkSafe compliance',
-    '5M liability, WCB in good standing',
-    '12-month workmanship warranty',
-  ],
+materials: [
+  'Type L copper & Sch. 40 steel (ProPress/Victaulic), BC code–compliant',
+  'Stainless & black steel for boiler plants / mechanical rooms',
+  'High-efficiency IBC/Rheem boilers, heat pumps & VRF for coastal climate',
+  'Outdoor-rated insulation, UV/salt-air resistant finishes & weatherproof enclosures',
+],
+technology: [
+  'BIM/AutoCAD coordination with consultants — clash-free routing',
+  'DDC integration (Delta/Trane/Reliable), trending & remote commissioning',
+  'Digital pressure/flow tests, thermal imaging & ultrasonic leak detection',
+  'Cloud O&M, permits/as-builts, photo logs & turnover packages',
+],
+approved: [
+  'COR & WorkSafeBC compliant; $5M liability + WCB in good standing',
+  'Background-checked, school-approved crews (SD39 / SD40 / SD43)',
+  'Certified: fall protection, confined spaces, WHMIS',
+  '12-month workmanship warranty + ongoing service support',
+],
 };
+
+// маленький компонент для плавного подсчёта
+function CountUp({ to, duration = 20200 }: { to: number; duration?: number }) {
+  const [val, setVal] = useState(0);
+  useEffect(() => {
+    let raf = 0;
+    const start = performance.now();
+    const tick = (t: number) => {
+      const p = Math.min(1, (t - start) / duration);
+      const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+      setVal(Math.round(to * eased));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [to, duration]);
+  return <>{val.toLocaleString()}</>;
+}
 
 export default function AboutCompany() {
   const [tab, setTab] = useState<TabKey>('materials');
@@ -42,7 +61,7 @@ export default function AboutCompany() {
           About our company
         </span>
         <h2 className="mt-3 text-3xl md:text-5xl font-extrabold text-neutral-900 leading-tight">
-          Building with trust,<br className="hidden md:block"/> driven by experience
+          Building with trust,<br className="hidden md:block" /> driven by experience
         </h2>
       </div>
 
@@ -72,8 +91,13 @@ export default function AboutCompany() {
             {CONTENT[tab].map((item, idx) => (
               <li key={idx} className="flex items-start gap-3">
                 {/* маркер-иконка */}
-                <svg className="mt-1 h-5 w-5 shrink-0 text-neutral-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-                  <path d="M7.5 13.5 3.8 9.8l1.4-1.4 2.3 2.3 6.3-6.3 1.4 1.4-7.7 7.7Z"/>
+                <svg
+                  className="mt-1 h-5 w-5 shrink-0 text-neutral-900"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden
+                >
+                  <path d="M7.5 13.5 3.8 9.8l1.4-1.4 2.3 2.3 6.3-6.3 1.4 1.4-7.7 7.7Z" />
                 </svg>
                 <span className="text-neutral-700">{item}</span>
               </li>
@@ -81,56 +105,86 @@ export default function AboutCompany() {
           </ul>
         </div>
 
-        {/* Правая колонка: фигура-картинка c play */}
-        <div className="flex-1 w-full flex justify-center lg:justify-end">
-          <div className="relative">
-            {/* «скошенная» маска — достигаем скруглением + псевдоромб рамкой */}
-            <div className="relative overflow-hidden rounded-2xl shadow-xl"
-                 style={{ clipPath: 'polygon(12% 0%, 100% 0%, 88% 100%, 0% 100%)' }}>
-              <img
-                src="/about/hero.jpg"   /* положи картинку в public/about/hero.jpg */
-                alt=""
-                className="block h-[300px] w-[420px] md:h-[360px] md:w-[520px] object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-              {/* кнопка play */}
-              <button
-                className="absolute inset-0 m-auto h-12 w-12 md:h-14 md:w-14 grid place-items-center rounded-full bg-white/90 text-neutral-900 shadow"
-                aria-label="Play video"
-              >
-                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden>
-                  <path d="M8 5v14l11-7L8 5Z" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+{/* Правая колонка: фигура-видео с автоплеем */}
+<div className="flex-1 w-full flex justify-center lg:justify-end">
+  <div className="relative">
+    <div
+      className="relative overflow-hidden rounded-2xl shadow-xl"
+      style={{ clipPath: 'polygon(12% 0%, 100% 0%, 88% 100%, 0% 100%)' }}
+    >
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        // Если видео в public: помести в public/about/hero.mp4 и используй строку ниже
+        // src="/about/hero.mp4"
+        // Если CDN (Cloudinary), оставь полную ссылку:
+        src="https://res.cloudinary.com/dzytbkc5l/video/upload/v1760069369/Allied/Allied_Plumbing_Video_Script_Generation_qz6an9.mp4"
+        poster="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/10_kubptf.png"  // опционально: кадр-заставка (клади в public/about/)
+        className="block h-[300px] w-[420px] md:h-[360px] md:w-[520px] object-cover"
+      />
 
-      {/* Риббоны-бейджи под линией — как на рефе */}
-<div className="mt-10 md:mt-14">
-  <QualityBadges />
-</div>
-
-      {/* нижний «стат-баннер» (опционально) */}
-      <div className="mt-10 md:mt-14 rounded-2xl bg-gradient-to-r from-neutral-100 to-neutral-200 p-6 md:p-10 border">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <Stat n="8k+"  label="Projects completed" />
-          <Stat n="5k+"  label="Global customers" />
-          <Stat n="12"   label="Years of experience" />
-          <Stat n="92"   label="Team engineers" />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Stat({ n, label }: { n: string; label: string }) {
-  return (
-    <div className="space-y-1">
-      <div className="text-3xl md:text-4xl font-extrabold text-neutral-900">{n}</div>
-      <div className="text-sm md:text-base text-neutral-600">{label}</div>
+      {/* play-кнопка больше не нужна, но если хочешь оставить декоративно — скрой для клик/аудио */}
+      {/* <button
+        className="pointer-events-none absolute inset-0 m-auto h-12 w-12 md:h-14 md:w-14 grid place-items-center rounded-full bg-white/60 text-neutral-900 shadow"
+        aria-hidden
+        tabIndex={-1}
+      >
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden>
+          <path d="M8 5v14l11-7L8 5Z" />
+        </svg>
+      </button> */}
     </div>
+  </div>
+</div>
+      </div>
+
+      {/* Риббоны-бейджи под линией */}
+      <div className="mt-10 md:mt-14">
+        <QualityBadges />
+      </div>
+
+      {/* нижний «стат-баннер» с анимациями */}
+      <motion.div
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1, ease: 'easeOut' }} // чуть плавнее вход
+  viewport={{ once: true }}
+  className="mt-10 md:mt-14 rounded-2xl bg-[rgb(240_249_255_/_0.8)] border border-[rgb(240_249_255_/_0.8)] p-6 md:p-10 shadow-sm"
+>
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    {[
+      { n: 8000, suffix: '+', label: 'Projects completed' },
+      { n: 5000, suffix: '+', label: 'Global customers' },
+      { n: 12,   suffix: '',  label: 'Years of experience' },
+      { n: 92,   suffix: '',  label: 'Team engineers' },
+    ].map((stat, idx) => (
+      <motion.div
+        key={idx}
+        initial={{ scale: 0.9, opacity: 0, y: 10 }}
+        whileInView={{ scale: 1, opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: idx * 0.15, duration: 0.6, ease: 'easeOut' }}
+        animate={{ y: [0, -6, 0] }} // чуть больше амплитуда
+        transition={{
+          y: { duration: 10, repeat: Infinity, ease: 'easeInOut', delay: idx * 1.2 }
+        }}
+        whileHover={{ scale: 1.04, boxShadow: '0 10px 30px -10px rgba(2,6,23,.25)' }}
+        whileTap={{ scale: 0.98 }}
+        className="space-y-1 rounded-xl px-2 py-1"
+      >
+        <div className="text-3xl md:text-4xl font-extrabold text-neutral-900">
+          <CountUp to={stat.n} />
+          {stat.suffix}
+        </div>
+        <div className="text-sm md:text-base text-neutral-600">
+          {stat.label}
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</motion.div>
+    </section>
   );
 }

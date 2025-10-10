@@ -13,25 +13,25 @@ type Member = {
 
 const team: Member[] = [
   {
-    name: 'Ethan Miller',
-    role: 'Chief Structural Engineer',
+    name: 'Nick Fedele',
+    role: 'Accounts Manager',
     image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760038738/Allied/IMG_1095_ptva4x.jpg',
-    linkedin: '#',
-    email: '#',
+    linkedin: 'https://www.linkedin.com/in/martishyn/',
+    email: 'nickf@allied-plumbing.ca',
   },
   {
-    name: 'Isabell Garcia',
-    role: 'Senior Project Manager',
-    image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760038738/Allied/IMG_1095_ptva4x.jpg',
-    linkedin: '#',
-    email: '#',
+    name: 'Alex Martishyn',
+    role: 'Project Manager',
+    image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760073539/Allied/09738F7C-ACFD-44A8-A508-56BC9B644BF2_y4vmko.jpg',
+    linkedin: 'https://www.linkedin.com/in/martishyn/',
+    email: 'alex@allied-plumbing.ca',
   },
   {
-    name: 'Liam Chen',
-    role: 'Lead Site Supervisor',
-    image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760038738/Allied/IMG_1095_ptva4x.jpg',
-    linkedin: '#',
-    email: '#',
+    name: 'Liam Dillon',
+    role: 'RSE, PMP, HVAC/R Manager',
+    image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074155/Allied/photo_2025-10-09_22.29.02_oc6yyh.jpg',
+    linkedin: 'https://www.linkedin.com/in/martishyn/',
+    email: 'l.dillon@allied-plumbing.ca',
   },
 ];
 

@@ -57,7 +57,7 @@ export default function ContactLead() {
             // Если кладёшь файл в /public, используй: url('/contact-bg.jpg')
             style={{
               backgroundImage:
-                "url('https://res.cloudinary.com/dzytbkc5l/image/upload/v1715994394/image4_s0levq.jpg')",
+                "url('https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/10_kubptf.png')",
             }}
           >
             <div className="absolute inset-0 bg-neutral-900/35" />

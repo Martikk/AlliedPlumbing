@@ -32,30 +32,29 @@ export default function Hero({ slides, intervalMs = 5500 }: Props) {
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
       </div>
 
-      {/* RED STRIP */}
-<div className="absolute top-0 left-0 w-full bg-red-600 text-white text-center text-sm font-semibold py-1.5 z-30">
-  <div className="relative flex items-center justify-center">
-    {/* Allied Plumbing — слева, крупнее */}
-    <span className="absolute left-4 md:left-6 font-extrabold text-base md:text-lg">
+{/* RED STRIP */}
+<div className="absolute top-0 left-0 w-full bg-red-600 text-white text-sm font-semibold py-1.5 z-30">
+  <div className="flex items-center justify-between px-3">
+    {/* Allied Plumbing — слева */}
+    <span className="font-extrabold text-base md:text-lg whitespace-nowrap">
       Allied Plumbing, Heating & Air Conditioning
     </span>
 
-    {/* остальной текст по центру */}
-    <div>
-      24/7 Emergency:{' '}
+    {/* Телефон — справа */}
+    <div className="text-right">
+      24/7 Emergency Services Line:{' '}
       <a
         href="tel:604-731-1000"
         className="underline hover:text-neutral-100"
       >
         604-731-1000
       </a>
-      {' '}— calls us
     </div>
   </div>
 </div>
 
       {/* NAV + CTA over hero (sticks right under the red strip) */}
-      <div className="absolute left-0 w-full z-20" style={{ top: 40 }}>
+      <div className="absolute left-0 w-full z-20 py-3" style={{ top: 40 }}>
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6">
           <nav className="mx-auto flex gap-2 md:gap-4 bg-white/90 backdrop-blur rounded-full px-3 py-1.5 shadow">
             <NavLink to="/" end className={({ isActive, isPending }) => navClasses(isActive, isPending)}>
@@ -89,7 +88,7 @@ export default function Hero({ slides, intervalMs = 5500 }: Props) {
       <div className="absolute inset-0 flex items-center">
         <div className="max-w-7xl px-4 md:px-6">
           <h1 className="text-white font-extrabold leading-tight text-4xl md:text-6xl lg:text-7xl mb-6 drop-shadow">
-            Building Your Vision<br />with Strength &amp; Precision
+            We Build. We Maintain. <br />We Care.
           </h1>
           <Link
             to="/projects"
