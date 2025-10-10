@@ -55,7 +55,7 @@ const ITEMS: Item[] = [
     blurb:
       'Fast response for leaks, no-heat/DHW outages, gas issues and RTU/MUA failures.',
     href: '/services/emergency',
-    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760070439/Allied/247_bs1xho.png',
+    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760077645/Allied/Screenshot_2025-10-09_at_11.27.02_PM_nnu7cg.png',
   },
 ];
 

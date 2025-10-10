@@ -22,13 +22,31 @@ export default function Footer() {
 
           {/* соцсети */}
           <div className="flex items-center gap-3">
-            <a aria-label="Facebook" href="#" className="grid h-9 w-9 place-items-center rounded-full bg-white shadow-sm ring-1 ring-black/5 hover:shadow-md">
+            <a
+              aria-label="Facebook"
+              href="https://www.linkedin.com/company/allied-plumbing-bc/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="grid h-9 w-9 place-items-center rounded-full bg-white shadow-sm ring-1 ring-black/5 hover:shadow-md"
+            >
               <FaFacebookF className="text-neutral-700 text-sm" />
             </a>
-            <a aria-label="Instagram" href="#" className="grid h-9 w-9 place-items-center rounded-full bg-white shadow-sm ring-1 ring-black/5 hover:shadow-md">
+            <a
+              aria-label="Instagram"
+              href="https://www.linkedin.com/company/allied-plumbing-bc/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="grid h-9 w-9 place-items-center rounded-full bg-white shadow-sm ring-1 ring-black/5 hover:shadow-md"
+            >
               <FaInstagram className="text-neutral-700 text-sm" />
             </a>
-            <a aria-label="Twitter" href="#" className="grid h-9 w-9 place-items-center rounded-full bg-white shadow-sm ring-1 ring-black/5 hover:shadow-md">
+            <a
+              aria-label="Twitter"
+              href="https://www.linkedin.com/company/allied-plumbing-bc/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="grid h-9 w-9 place-items-center rounded-full bg-white shadow-sm ring-1 ring-black/5 hover:shadow-md"
+            >
               <FaTwitter className="text-neutral-700 text-sm" />
             </a>
           </div>

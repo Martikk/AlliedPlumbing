@@ -29,7 +29,7 @@ const team: Member[] = [
   {
     name: 'Liam Dillon',
     role: 'RSE, PMP, HVAC/R Manager',
-    image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074155/Allied/photo_2025-10-09_22.29.02_oc6yyh.jpg',
+    image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760077510/Allied/Screenshot_2025-10-09_at_11.24.44_PM_vxwyr2.png',
     linkedin: 'https://www.linkedin.com/in/martishyn/',
     email: 'l.dillon@allied-plumbing.ca',
   },
