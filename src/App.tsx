@@ -3,6 +3,7 @@ import { Suspense, lazy } from 'react';
 import ScrollToTop from './components/ScrollToTop';
 import SkipLink from './components/SkipLink';
 import GetQuote from './pages/GetQuote';
+import Projects from './pages/Projects';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -42,7 +43,7 @@ export default function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/quote" element={<GetQuote />} />
-
+          <Route path="/projects" element={<Projects />} />
           {/* 👇 алиасы, чтобы /GetQuote и /getquote тоже работали */}
           <Route path="/GetQuote" element={<Navigate to="/quote" replace />} />
           <Route path="/getquote" element={<Navigate to="/quote" replace />} />

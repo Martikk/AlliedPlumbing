@@ -32,7 +32,7 @@ Let’s discuss your next project.
           </h2>
 
           <Link
-            to="/contact"
+            to="/quote"
             className="inline-flex items-center border border-white/80 text-white font-semibold rounded-md px-6 py-2 hover:bg-white hover:text-neutral-900 transition"
           >
             Get a Quote <span aria-hidden className="ml-2">↗</span>
