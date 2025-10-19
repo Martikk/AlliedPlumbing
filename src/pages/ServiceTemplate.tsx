@@ -1,6 +1,16 @@
-// src/pages/ServiceTemplate.tsx
 import { Link } from "react-router-dom";
 import Head from "@/components/Head";
+
+type Highlight = { label: string; value: string };
+type Props = {
+  title: string;
+  subtitle: string;
+  description: string;
+  heroImg: string;
+  highlights: Highlight[];
+  bullets: string[];
+  children?: React.ReactNode;   // ← добавили
+};
 
 export default function ServiceTemplate({
   title,
@@ -9,14 +19,8 @@ export default function ServiceTemplate({
   heroImg,
   highlights,
   bullets,
-}: {
-  title: string;
-  subtitle: string;
-  description: string;
-  heroImg: string;
-  highlights: { label: string; value: string }[];
-  bullets: string[];
-}) {
+  children,                      // ← добавили
+}: Props) {
   return (
     <main className="bg-white text-neutral-900">
       <Head title={`${title} — Allied Plumbing`} description={description} />
@@ -123,6 +127,7 @@ export default function ServiceTemplate({
           </div>
         </div>
       </section>
+      {children ? <section className="max-w-6xl mx-auto px-4 md:px-6 pb-12">{children}</section> : null}
     </main>
   );
-}
+  }
