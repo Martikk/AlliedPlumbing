@@ -89,7 +89,7 @@ export default function Hero({ slides, intervalMs = 5500 }: Props) {
           </nav>
 
           <Link
-            to="/contact"
+            to="/quote"
             className="ml-3 inline-flex items-center rounded-lg bg-white text-neutral-900 px-5 py-3 font-semibold shadow hover:bg-neutral-200"
           >
             Get a quote <span aria-hidden className="ml-2">↗</span>

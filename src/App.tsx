@@ -1,7 +1,8 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import ScrollToTop from './components/ScrollToTop';
 import SkipLink from './components/SkipLink';
+import GetQuote from './pages/GetQuote';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -21,29 +22,35 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 
 export default function App() {
   return (
-    <BrowserRouter /* basename="/allied" */>
+    <BrowserRouter>
       <SkipLink />
-          <ScrollToTop />
-          <Suspense fallback={<div className="py-20 text-center">Loading…</div>}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/services/residential-plumbing" element={<ResidentialPlumbing />} />
-              <Route path="/services/commercial-plumbing" element={<CommercialPlumbing />} />
-              <Route path="/services/hvac" element={<HVACPage />} />
-              <Route path="/services/maintenance" element={<MaintenancePage />} />
-              <Route path="/projects/garibaldi" element={<Garibaldi />} />
-              <Route path="/projects/ridgeview" element={<Ridgeview />} />
-              <Route path="/projects/leigh" element={<Leigh />} />
-              <Route path="/projects/haro" element={<Haro />} />
-              <Route path="/rfp" element={<RFP />} />
-              <Route path="/careers" element={<Careers />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        {/* footer — как у тебя */}
+      <ScrollToTop />
+      <Suspense fallback={<div className="py-20 text-center">Loading…</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/residential-plumbing" element={<ResidentialPlumbing />} />
+          <Route path="/services/commercial-plumbing" element={<CommercialPlumbing />} />
+          <Route path="/services/hvac" element={<HVACPage />} />
+          <Route path="/services/maintenance" element={<MaintenancePage />} />
+          <Route path="/projects/garibaldi" element={<Garibaldi />} />
+          <Route path="/projects/ridgeview" element={<Ridgeview />} />
+          <Route path="/projects/leigh" element={<Leigh />} />
+          <Route path="/projects/haro" element={<Haro />} />
+          <Route path="/rfp" element={<RFP />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/quote" element={<GetQuote />} />
+
+          {/* 👇 алиасы, чтобы /GetQuote и /getquote тоже работали */}
+          <Route path="/GetQuote" element={<Navigate to="/quote" replace />} />
+          <Route path="/getquote" element={<Navigate to="/quote" replace />} />
+
+          {/* 404 */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }
