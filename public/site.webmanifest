@@ -1,0 +1,22 @@
+{
+  "name": "Allied Plumbing, Heating & Air Conditioning",
+  "short_name": "Allied Plumbing",
+  "description": "24/7 plumbing, heating & HVAC experts serving BC — built for uptime, tuned for comfort.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760859054/faviconallied_qilnwp.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760859054/faviconallied_qilnwp.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
