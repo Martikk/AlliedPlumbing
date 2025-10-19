@@ -41,7 +41,7 @@ export default function ClientTestimonials() {
             Hear From Our Clients
           </h2>
           <a
-            href="#"
+            href="clients"
             className="bg-blue-600 text-white text-sm font-semibold px-6 py-2.5 rounded-md hover:bg-blue-700 transition"
           >
             View All →

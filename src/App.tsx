@@ -21,6 +21,8 @@ const Careers = lazy(() => import('./pages/Careers'));
 const Contact = lazy(() => import('./pages/Contact'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const Team = lazy(() => import("./pages/Team"));
+const Clients = lazy(() => import('./pages/Clients'));
+const Blog = lazy(() => import('./pages/Blog'));
 
 export default function App() {
   return (
@@ -48,7 +50,9 @@ export default function App() {
           {/* 👇 алиасы, чтобы /GetQuote и /getquote тоже работали */}
           <Route path="/GetQuote" element={<Navigate to="/quote" replace />} />
           <Route path="/getquote" element={<Navigate to="/quote" replace />} />
+          <Route path="/clients" element={<Clients />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/blog" element={<Blog />} />
           {/* 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
