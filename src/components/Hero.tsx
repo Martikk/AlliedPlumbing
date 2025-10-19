@@ -10,7 +10,7 @@ export default function Hero({ slides, intervalMs = 5500 }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const id = setInterval(() => setI((v) => (v + 1) % slides.length), intervalMs);
+    const id = setInterval(() => setI(v => (v + 1) % slides.length), intervalMs);
     return () => clearInterval(id);
   }, [slides.length, intervalMs]);
 
@@ -39,17 +39,15 @@ export default function Hero({ slides, intervalMs = 5500 }: Props) {
             mx-auto max-w-7xl
             px-3 md:px-6
             pt-[env(safe-area-inset-top)]
-            flex flex-col gap-1            /* мобильный стек */
+            flex flex-col gap-1
             md:flex-row md:items-center md:justify-between md:gap-4
             py-2 md:py-1.5
           "
         >
-          {/* Заголовок слева */}
           <span className="font-extrabold text-sm md:text-base">
             Allied Plumbing, Heating &amp; Air Conditioning
           </span>
 
-          {/* Телефон — бейдж */}
           <a
             href="tel:604-731-1000"
             className="
@@ -66,9 +64,8 @@ export default function Hero({ slides, intervalMs = 5500 }: Props) {
         </div>
       </div>
 
-      {/* Spacer под fixed-плашкой, чтобы контент не наезжал */}
-      {/* На мобиле плашка выше (2 строки), поэтому ~80–88px; на десктопе ниже. Подгони при желании. */}
-      <div className="h-[110px] sm:h-[120px] md:h-[56px]" />
+      {/* Небольшой спейсер, чтобы фон-изображение не перекрывалось фикс-баром при загрузке */}
+      <div className="h-[4px] md:h-0" />
 
       {/* ---------- DESKTOP NAV (pill) ---------- */}
       <div className="absolute left-0 w-full z-40 hidden md:block" style={{ top: 56 }}>
@@ -101,12 +98,12 @@ export default function Hero({ slides, intervalMs = 5500 }: Props) {
       </div>
 
       {/* ---------- MOBILE TOP CONTROLS (Menu + Quote) ---------- */}
-      <div className="md:hidden absolute left-0 w-full z-40" style={{ top: 80 }}>
+      <div className="md:hidden absolute left-0 w-full z-40" style={{ top: 96 }}>
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
           <button
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((v) => !v)}
+            onClick={() => setMenuOpen(v => !v)}
             className="inline-flex items-center rounded-full bg-white/90 backdrop-blur px-3 py-2 shadow active:scale-95"
           >
             <MenuIcon open={menuOpen} />
@@ -165,7 +162,13 @@ export default function Hero({ slides, intervalMs = 5500 }: Props) {
       </div>
 
       {/* ---------- HEADLINE + CTA ---------- */}
-      <div className="absolute inset-0 flex items-center">
+      <div
+        className="
+          absolute inset-0 z-10
+          flex items-start md:items-center
+          pt-[calc(176px+env(safe-area-inset-top))] md:pt-0
+        "
+      >
         <div className="max-w-7xl px-4 md:px-6">
           <h1 className="text-white font-extrabold leading-tight text-4xl md:text-6xl lg:text-7xl mb-6 drop-shadow">
             We Build. We Maintain. <br />
