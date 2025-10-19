@@ -8,10 +8,6 @@ import Projects from './pages/Projects';
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
-const ResidentialPlumbing = lazy(() => import('./pages/ResidentialPlumbing'));
-const CommercialPlumbing = lazy(() => import('./pages/CommercialPlumbing'));
-const HVACPage = lazy(() => import('./pages/HVACPage'));
-const MaintenancePage = lazy(() => import('./pages/MaintenancePage'));
 const Garibaldi = lazy(() => import('./pages/Garibaldi'));
 const Ridgeview = lazy(() => import('./pages/Ridgeview'));
 const Leigh = lazy(() => import('./pages/Leigh'));
@@ -23,6 +19,12 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 const Team = lazy(() => import("./pages/Team"));
 const Clients = lazy(() => import('./pages/Clients'));
 const Blog = lazy(() => import('./pages/Blog'));
+const ServiceMaintenance = lazy(() => import("./pages/ServiceMaintenance"));
+const ServiceResidential = lazy(() => import("./pages/ServiceResidential"));
+const ServiceCommercial = lazy(() => import("./pages/ServiceCommercial"));
+const ServiceHVAC = lazy(() => import("./pages/ServiceHVAC"));
+const ServiceBoilers = lazy(() => import("./pages/ServiceBoilers"));
+const ServiceEmergency = lazy(() => import("./pages/ServiceEmergency"));
 
 export default function App() {
   return (
@@ -34,10 +36,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/services/residential-plumbing" element={<ResidentialPlumbing />} />
-          <Route path="/services/commercial-plumbing" element={<CommercialPlumbing />} />
-          <Route path="/services/hvac" element={<HVACPage />} />
-          <Route path="/services/maintenance" element={<MaintenancePage />} />
+
           <Route path="/projects/garibaldi" element={<Garibaldi />} />
           <Route path="/projects/ridgeview" element={<Ridgeview />} />
           <Route path="/projects/leigh" element={<Leigh />} />
@@ -55,6 +54,13 @@ export default function App() {
           <Route path="/blog" element={<Blog />} />
           {/* 404 */}
           <Route path="*" element={<NotFound />} />
+
+          <Route path="/services/maintenance" element={<ServiceMaintenance />} />
+<Route path="/services/residential-plumbing" element={<ServiceResidential />} />
+<Route path="/services/commercial-plumbing" element={<ServiceCommercial />} />
+<Route path="/services/hvac" element={<ServiceHVAC />} />
+<Route path="/services/boilers" element={<ServiceBoilers />} />
+<Route path="/services/emergency" element={<ServiceEmergency />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
