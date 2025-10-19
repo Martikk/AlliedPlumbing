@@ -79,7 +79,7 @@ export default function TeamPage() {
             </div>
 
             <Link
-              to="/contact"
+              to="/quote"
               className="inline-flex items-center gap-2 rounded-lg bg-neutral-900 text-white px-5 py-3 font-semibold shadow hover:brightness-110"
             >
               Get a quote <span aria-hidden>↗</span>
@@ -190,7 +190,7 @@ export default function TeamPage() {
             </div>
             <div className="mt-4 md:mt-0 flex gap-3">
               <Link
-                to="/contact"
+                to="/quote"
                 className="inline-flex items-center rounded-lg bg-[#5776c6] text-white px-5 py-3 font-semibold hover:brightness-110 shadow"
               >
                 Get a quote <span aria-hidden className="ml-2">↗</span>
