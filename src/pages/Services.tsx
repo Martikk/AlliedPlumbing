@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Head from "@/components/Head";
+import LogoMarquee from "@/components/LogoMarquee";
 
 export default function Services() {
   return (
@@ -113,25 +114,20 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ===== TRUST STRIP / LOGOS ===== */}
-      <section className="max-w-6xl mx-auto px-4 md:px-6 pb-10 md:pb-14">
-        <div className="rounded-2xl border border-neutral-200 bg-[rgb(240_249_255_/_0.8)] p-5 md:p-7">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <Stat n="8k+" label="Projects completed" />
-            <Stat n="5k+" label="Customers served" />
-            <Stat n="12" label="Years experience" />
-            <Stat n="92" label="Team engineers" />
-          </div>
-        </div>
-        <div className="mt-6 grid grid-cols-3 md:grid-cols-6 gap-6 items-center opacity-80">
-          <Logo src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074745/Allied/Rinnai_Logo_Red_uqwftm.png" />
-          <Logo src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/png-clipart-daikin-air-conditioning-heating-system-service-others-blue-text_novbee.png" />
-          <Logo src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/images_br94nf.png" />
-          <Logo src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/IBC-Logo-for-Gallery_hsklz0.webp" />
-          <Logo src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074745/Allied/Rinnai_Logo_Red_uqwftm.png" />
-          <Logo src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/IBC-Logo-for-Gallery_hsklz0.webp" />
-        </div>
-      </section>
+{/* ===== TRUST STRIP / LOGOS ===== */}
+<section className="max-w-6xl mx-auto px-4 md:px-6 pb-10 md:pb-14">
+  <div className="rounded-2xl border border-neutral-200 bg-[rgb(240_249_255_/_0.8)] p-5 md:p-7">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <Stat n="8k+" label="Projects completed" />
+      <Stat n="5k+" label="Customers served" />
+      <Stat n="12" label="Years experience" />
+      <Stat n="92" label="Team engineers" />
+    </div>
+  </div>
+
+  {/* вместо статической сетки логотипов */}
+  <LogoMarquee className="mt-6" height={56} speedSec={22} grayscale />
+</section>
 
       {/* ===== MINI FAQ ===== */}
       <section className="max-w-6xl mx-auto px-4 md:px-6 pb-12 md:pb-16">
