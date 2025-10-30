@@ -1,21 +1,41 @@
-import { writeFileSync } from 'node:fs';
+import { writeFileSync } from "fs";
+import { SitemapStream, streamToPromise } from "sitemap";
 
-const origin = 'https://allied-plumbing.ca';
-const paths = [
-  '/', '/about', '/services',
-  '/services/residential-plumbing', '/services/commercial-plumbing',
-  '/services/hvac', '/services/boilers', '/services/maintenance', '/services/emergency',
-  '/projects', '/projects/garibaldi', '/projects/ridgeview', '/projects/leigh', '/projects/haro',
-  '/rfp', '/careers', '/contact'
+const domain = "https://alliedplumbing.ca";
+
+const pages = [
+  "/", 
+  "/about",
+  "/services",
+  "/services/residential-plumbing",
+  "/services/commercial-plumbing",
+  "/services/hvac",
+  "/services/boiler-plants-controls",
+  "/services/maintenance-programs",
+  "/services/emergency-service",
+  "/projects",
+  "/careers",
+  "/blog",
+  "/contact",
+  "/GetQuote"
 ];
 
-const lastmod = new Date().toISOString().slice(0,10);
-const items = paths.map(p => `  <url><loc>${origin}${p}</loc><lastmod>${lastmod}</lastmod></url>`).join('\n');
+async function generateSitemap() {
+  const sitemapStream = new SitemapStream({ hostname: domain });
 
-const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-${items}
-</urlset>
-`;
-writeFileSync('public/sitemap.xml', xml);
-console.log('sitemap.xml generated');
+  pages.forEach((url) => {
+    sitemapStream.write({
+      url,
+      changefreq: "monthly",
+      priority: url === "/" ? 1.0 : 0.8,
+      lastmod: new Date().toISOString(),
+    });
+  });
+
+  sitemapStream.end();
+  const data = await streamToPromise(sitemapStream);
+  writeFileSync("public/sitemap.xml", data.toString());
+  console.log("✅ sitemap.xml generated successfully");
+}
+
+generateSitemap().catch(console.error);
