@@ -7,7 +7,7 @@ export default function Contact() {
     <div className="bg-white text-neutral-900">
 
       {/* ===== HERO ===== */}
-      <section className="relative overflow-hidden">
+      <section className="page-photo-hero relative overflow-hidden">
         <img
           src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png"
           alt=""
@@ -22,7 +22,7 @@ export default function Contact() {
             We’re here to help — 24/7
           </h1>
           <p className="mt-2 max-w-2xl text-white/90">
-            Emergency dispatch, same-day quotes, and a real person on the line.
+            Contact us for service enquiries, project scopes and mechanical maintenance.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -213,7 +213,7 @@ export default function Contact() {
 const FAQ = [
   {
     q: "Do you service schools and strata?",
-    a: "Yes — our crews are background-checked and school-approved (SD39/40/43). We work with strata councils and commercial sites across BC.",
+    a: "Yes. Our documented experience includes mechanical upgrades for school districts and residential buildings. Contact us to discuss your site requirements.",
   },
   {
     q: "Can you integrate with existing DDC?",
@@ -225,6 +225,6 @@ const FAQ = [
   },
   {
     q: "How fast can you respond?",
-    a: "Emergency calls are dispatched immediately 24/7. Non-urgent quotes typically same-day during business hours.",
+    a: "Call for urgent assistance. Response timing depends on your location, the issue and technician availability.",
   },
 ];

@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Lance Clarke",
+    "role": "President & Owner",
+    "bio": "Leads Allied’s corporate strategy, operations and client relationships, with hands-on experience in plumbing, heating and gas fitting.",
+    "credentials": [
+      "Gasfitter Class A"
+    ],
+    "focus": "Corporate leadership and mechanical operations",
+    "image": null
+  },
+  {
+    "name": "Liam Dillon",
+    "role": "Projects Division Manager",
+    "bio": "Leads project planning, estimating and delivery, with experience in HVAC/R service, VRF installations and commercial mechanical systems.",
+    "credentials": [
+      "HVAC/R Red Seal endorsement",
+      "Gasfitter Class B"
+    ],
+    "focus": "HVAC/R and project delivery",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760077510/Allied/Screenshot_2025-10-09_at_11.24.44_PM_vxwyr2.png"
+  },
+  {
+    "name": "Kyle Ellis",
+    "role": "Plumbing Division Manager",
+    "bio": "Oversees plumbing installations, service and upgrades, including boiler plants, domestic hot water systems, permits and subcontractor coordination.",
+    "credentials": [
+      "Red Seal Plumber",
+      "Gasfitter Class B"
+    ],
+    "focus": "Plumbing service and installations",
+    "image": null
+  },
+  {
+    "name": "Allan McDonald",
+    "role": "Project Foreman",
+    "bio": "Supervises daily site activities, field teams and subcontractors, coordinating resources and inspections to meet project requirements.",
+    "credentials": [
+      "Red Seal Plumber",
+      "Gasfitter Class B"
+    ],
+    "focus": "Site supervision and trade coordination",
+    "image": null
+  },
+  {
+    "name": "Alex Martishyn",
+    "role": "Project Manager",
+    "bio": "Manages project schedules, procurement, submittals and closeout documentation for HVAC/R and plumbing work, coordinating field teams, contractors and project stakeholders.",
+    "credentials": [],
+    "focus": "Project coordination and documentation",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760073539/Allied/09738F7C-ACFD-44A8-A508-56BC9B644BF2_y4vmko.jpg"
+  },
+  {
+    "name": "Nick Fedele",
+    "role": "Accounts Manager",
+    "bio": "Supports accounts and client enquiries.",
+    "credentials": [],
+    "focus": "Accounts and client support",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760038738/Allied/IMG_1095_ptva4x.jpg"
+  }
+]

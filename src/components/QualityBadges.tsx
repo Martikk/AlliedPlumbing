@@ -71,7 +71,7 @@ function SkewBadge({ title, delay = 0 }: BadgeProps) {
 export default function QualityBadges() {
   const items = [
     'Quality control system',
-    '100% Satisfaction guarantee',
+    'Project coordination',
     'Highly professional team',
     'Accurate testing processes',
   ];

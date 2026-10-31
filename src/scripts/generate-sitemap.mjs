@@ -29,6 +29,9 @@ sitemap.end();
 writeFileSync('dist/sitemap.xml', (await streamToPromise(sitemap)).toString());
 // Netlify-compatible aliases; no SPA catch-all so unknown paths keep an HTTP 404.
 const aliases = {
+  '/blog/foundations': '/blog/planning-school-hvac-upgrades',
+  '/blog/materials-2025': '/blog/boiler-plant-upgrade-ridgeview',
+  '/blog/tech-changing-game': '/blog/haro-heating-hot-water-upgrade',
   '/GetQuote': '/quote', '/getquote': '/quote',
   '/services/boiler-plants-controls': '/services/boilers',
   '/services/maintenance-programs': '/services/maintenance',

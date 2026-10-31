@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { QUOTE_FILE_UPLOADS_ENABLED } from "../config";
 import { sendEnquiry } from "../lib/forms";
 import { trackEvent } from "../lib/analytics";
 
@@ -92,7 +93,7 @@ export default function GetQuote() {
   return (
     <div className="bg-white">
       {/* Hero-врезка/хлебные */}
-      <section className="relative overflow-hidden">
+      <section className="page-photo-hero relative overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1920&auto=format&fit=crop"
@@ -231,7 +232,7 @@ export default function GetQuote() {
               </Field>
 
               {/* Медиа */}
-              <div>
+              {QUOTE_FILE_UPLOADS_ENABLED ? <div>
                 <label className="block text-sm font-medium text-neutral-800">
                   Photos / video (optional)
                 </label>
@@ -281,7 +282,7 @@ export default function GetQuote() {
                     </label>
                   )}
                 </div>
-              </div>
+              </div> : <p className="text-sm text-neutral-700">For photos or drawings, email <a className="underline" href="mailto:quote@allied-plumbing.ca">quote@allied-plumbing.ca</a>.</p>}
 
               {/* Contact consent */}
               <div className="flex flex-col gap-3">
@@ -346,7 +347,7 @@ function FormHeader() {
           Tell us what you need
         </h2>
         <p className="text-neutral-600 mt-1">
-          Same-day estimates for most jobs. Emergency dispatch available 24/7.
+          Tell us about your site and the work you need. For urgent assistance, please call.
         </p>
       </div>
       <img
@@ -427,16 +428,16 @@ function TrustCard() {
       <h3 className="font-semibold text-neutral-900">Why Allied</h3>
       <ul className="mt-3 space-y-2 text-sm text-neutral-700">
         <li className="flex items-start gap-2">
-          <Check /> COR & WorkSafeBC compliant
+          <Check /> Site-specific safety planning
         </li>
         <li className="flex items-start gap-2">
-          <Check /> School-approved crews (SD39/40/43)
+          <Check /> School mechanical project experience
         </li>
         <li className="flex items-start gap-2">
-          <Check /> 12-month workmanship warranty
+          <Check /> Project-specific warranty terms
         </li>
         <li className="flex items-start gap-2">
-          <Check /> IBC / Rheem / VRF specialists
+          <Check /> Boiler, plumbing and HVAC/R experience
         </li>
       </ul>
       <div className="mt-4 grid grid-cols-3 gap-3">

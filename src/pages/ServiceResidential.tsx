@@ -9,14 +9,11 @@ export default function ServiceResidential() {
       subtitle="02 / Plumbing"
       description="Repairs, fixture replacements, repipes, and tankless installations — all delivered with craftsmanship, precision, and respect for your home."
       heroImg="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068156/Allied/14_urnogx.png"
-      highlights={[
-        { label: "Homes Served", value: "5k+" },
-        { label: "Avg. Rating", value: "4.9★" },
-      ]}
+      highlights={[]}
       bullets={[
         "Repairs & rough-ins — done right the first time",
         "Tankless installations with high-efficiency systems",
-        "PEX and copper repipes with guaranteed pressure balance",
+        "PEX and copper repiping",
       ]}
     >
       <ExtraContent />
@@ -42,7 +39,7 @@ function ExtraContent() {
 
           <ul className="space-y-3 text-neutral-700">
             {[
-              "Leak-free guarantee on all fixture installs",
+              "Fixture installation and testing",
               "Smart home ready (tankless + sensors)",
               "Clean job sites — zero drywall dust policy",
             ].map((item) => (

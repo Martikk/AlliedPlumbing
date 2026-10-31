@@ -156,7 +156,7 @@ export default function PreventiveMaintenanceCTA() {
 
               <p id="pm-cta-desc" className="mt-2 text-neutral-600">
                 Lock in uptime, lower energy costs, and extend equipment life with a tailored PM
-                program. School-approved crews, DDC checks, and clean reporting.
+                program. School project experience, DDC checks, and clean reporting.
               </p>
 
               {/* bullets */}

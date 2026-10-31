@@ -10,7 +10,7 @@ export default function Hero({ slides, intervalMs = 5500 }: Props) {
       {slides.map((src, index) => <img key={src} src={responsiveImage(src, 1600)} srcSet={`${responsiveImage(src, 640)} 640w, ${responsiveImage(src, 1024)} 1024w, ${responsiveImage(src, 1600)} 1600w`} sizes="100vw" alt="" width={1600} height={1000} loading={index === 0 ? 'eager' : 'lazy'} fetchPriority={index === 0 ? 'high' : 'low'} className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 motion-reduce:transition-none ${index === carousel.index ? 'opacity-100' : 'opacity-0'}`} />)}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/25" />
     </div>
-    <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-16 pb-32 md:pt-24 md:pb-48">
+    <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-36 pb-36 md:pt-44 md:pb-48 min-h-[78vh] flex flex-col justify-center">
       <h1 className="max-w-4xl text-white font-extrabold leading-tight text-4xl md:text-6xl lg:text-7xl">Plumbing, Heating &amp; HVAC<br className="hidden md:block" /> in British Columbia</h1>
       <p className="mt-6 max-w-xl text-lg text-white leading-relaxed">Installation, repairs and preventive maintenance for residential and commercial properties.</p>
       <p className="mt-3 text-white/90">We Build. We Maintain. We Care.</p>

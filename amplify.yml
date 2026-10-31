@@ -4,7 +4,6 @@ frontend:
     preBuild:
       commands:
         - npm ci
-        - node src/scripts/generate-sitemap.mjs
     build:
       commands:
         - npm run build

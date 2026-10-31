@@ -24,7 +24,7 @@ export default function ServiceTemplate({
     <div className="bg-white text-neutral-900">
 
       {/* ==== HERO ==== */}
-      <section className="relative overflow-hidden">
+      <section className="page-photo-hero relative overflow-hidden">
         <img
           src={heroImg}
           alt=""
@@ -83,6 +83,8 @@ export default function ServiceTemplate({
         </div>
       </section>
 
+      {children}
+
       {/* ==== CTA ==== */}
       <section className="max-w-6xl mx-auto px-4 md:px-6 pb-16 md:pb-24">
         <div className="relative overflow-hidden rounded-2xl bg-neutral-900 text-white p-6 md:p-10">
@@ -92,7 +94,7 @@ export default function ServiceTemplate({
           />
           <h3 className="text-2xl md:text-4xl font-extrabold">Need help today?</h3>
           <p className="mt-2 text-white/80 max-w-prose">
-            Book a same-day visit or request a quote — our dispatch is 24/7.
+            Request a service visit or discuss a project with our team. For urgent assistance, call.
           </p>
           <div className="mt-5 flex flex-wrap items-center gap-3">
             <Link

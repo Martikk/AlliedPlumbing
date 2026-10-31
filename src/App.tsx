@@ -6,14 +6,13 @@ import ScrollToTop from './components/ScrollToTop';
 import SkipLink from './components/SkipLink';
 
 const Home = lazy(() => import('./pages/Home'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
 const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
 
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
 const Projects = lazy(() => import('./pages/Projects'));
-const Garibaldi = lazy(() => import('./pages/Garibaldi'));
-const Ridgeview = lazy(() => import('./pages/Ridgeview'));
-const Leigh = lazy(() => import('./pages/Leigh'));
-const Haro = lazy(() => import('./pages/Haro'));
 
 const RFP = lazy(() => import('./pages/RFP'));
 const Careers = lazy(() => import('./pages/Careers'));
@@ -21,7 +20,6 @@ const Contact = lazy(() => import('./pages/Contact'));
 const GetQuote = lazy(() => import('./pages/GetQuote'));
 const Team = lazy(() => import('./pages/Team'));
 const Clients = lazy(() => import('./pages/Clients'));
-const Blog = lazy(() => import('./pages/Blog'));
 
 const ServiceMaintenance = lazy(() => import("./pages/ServiceMaintenance"));
 const ServiceResidential = lazy(() => import("./pages/ServiceResidential"));
@@ -55,15 +53,16 @@ export default function App() {
 
           {/* Projects hub + cases */}
           <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/garibaldi" element={<Garibaldi />} />
-          <Route path="/projects/ridgeview" element={<Ridgeview />} />
-          <Route path="/projects/leigh" element={<Leigh />} />
-          <Route path="/projects/haro" element={<Haro />} />
+          <Route path="/projects/:slug" element={<ProjectDetail />} />
 
+          <Route path="/blog/foundations" element={<Navigate to="/blog/planning-school-hvac-upgrades" replace />} />
+          <Route path="/blog/materials-2025" element={<Navigate to="/blog/boiler-plant-upgrade-ridgeview" replace />} />
+          <Route path="/blog/tech-changing-game" element={<Navigate to="/blog/haro-heating-hot-water-upgrade" replace />} />
           {/* Company */}
           <Route path="/careers" element={<Careers />} />
           <Route path="/team" element={<Team />} />
           <Route path="/clients" element={<Clients />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/rfp" element={<RFP />} />
 

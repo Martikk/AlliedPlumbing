@@ -6,7 +6,7 @@ export default function Services() {
     <div className="bg-white text-neutral-900">
 
       {/* ===== HERO ===== */}
-      <section className="relative overflow-hidden">
+      <section className="page-photo-hero relative overflow-hidden">
         <img
           src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065875/Allied/1_tc9jiy.png"
           alt=""
@@ -52,7 +52,7 @@ export default function Services() {
             Full-stack mechanical, from taps to rooftops
           </h2>
           <p className="mt-2 text-neutral-600 max-w-prose">
-            Certified technicians, school-approved crews, DDC-ready controls and proactive programs that keep sites running.
+            Certified technicians, school project experience, DDC-ready controls and proactive programs that keep sites running.
           </p>
         </div>
 
@@ -106,15 +106,11 @@ export default function Services() {
 <section className="max-w-6xl mx-auto px-4 md:px-6 pb-10 md:pb-14">
   <div className="rounded-2xl border border-neutral-200 bg-[rgb(240_249_255_/_0.8)] p-5 md:p-7">
     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-      <Stat n="8k+" label="Projects completed" />
-      <Stat n="5k+" label="Customers served" />
-      <Stat n="12" label="Years experience" />
-      <Stat n="92" label="Team engineers" />
     </div>
   </div>
 
   {/* вместо статической сетки логотипов */}
-  <LogoMarquee className="mt-6" height={56} speedSec={22} grayscale />
+  <LogoMarquee />
 </section>
 
       {/* ===== MINI FAQ ===== */}
@@ -149,7 +145,7 @@ export default function Services() {
           />
           <h3 className="text-2xl md:text-4xl font-extrabold">Need help today?</h3>
           <p className="mt-2 text-white/80 max-w-prose">
-            Book a same-day assessment or call dispatch — we’ll move fast and keep you updated.
+            Request an assessment or call our team to discuss availability.
           </p>
           <div className="mt-5 flex flex-wrap items-center gap-3">
             <Link
@@ -214,19 +210,6 @@ function ServiceCard({
   );
 }
 
-function Stat({ n, label }: { n: string; label: string }) {
-  return (
-    <div className="space-y-1">
-      <div className="text-3xl md:text-4xl font-extrabold text-neutral-900">{n}</div>
-      <div className="text-sm md:text-base text-neutral-600">{label}</div>
-    </div>
-  );
-}
-
-function Logo({ src }: { src: string }) {
-  return <img src={src} alt="" className="h-8 w-auto object-contain mx-auto" />;
-}
-
 function Check() {
   return (
     <svg viewBox="0 0 20 20" className="h-5 w-5 text-neutral-900" fill="currentColor" aria-hidden>
@@ -247,6 +230,6 @@ const FAQ = [
   },
   {
     q: "Do you offer strata and school programs?",
-    a: "Absolutely. Background-checked, school-approved crews; structured PM with reporting for councils and districts.",
+    a: "Absolutely. Background-checked, school project experience; structured PM with reporting for councils and districts.",
   },
 ];

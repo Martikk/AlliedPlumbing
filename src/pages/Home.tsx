@@ -5,10 +5,10 @@ import AboutCompany from '@/components/AboutCompany';
 import ServicesShowcase from '@/components/ServicesShowcase';
 import ProjectsBanner from '@/components/ProjectsBanner';
 import TeamSection from '@/components/TeamSection';
-import ClientTestimonials from "../components/ClientTestimonials";
-import BlogTeasers from "@/components/BlogTeasers";
 import LogoMarquee from "../components/LogoMarquee";
 import CallToAction from "@/components/CallToAction";
+import ClientTestimonials from '../components/ClientTestimonials';
+import BlogTeasers from '../components/BlogTeasers';
 import ContactLead from "@/components/ContactLead";
 
 export default function Home() {

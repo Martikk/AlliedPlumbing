@@ -40,36 +40,32 @@
     "description": "Explore Allied Plumbing mechanical projects, including plumbing, heating and HVAC installations and upgrades."
   },
   "/projects/garibaldi": {
-    "title": "Garibaldi Project — Allied Plumbing",
-    "description": "Read about Allied Plumbing’s mechanical work at Garibaldi, including heating and ventilation upgrades."
+    "title": "Garibaldi Highlands Elementary School — Allied Plumbing",
+    "description": "Boiler plant and ventilation upgrades across an operating school."
   },
   "/projects/ridgeview": {
-    "title": "Ridgeview Project — Allied Plumbing",
-    "description": "Read about Allied Plumbing’s heating and mechanical work at Ridgeview."
+    "title": "Ridgeview Elementary School — Allied Plumbing",
+    "description": "Classroom ventilation conversion and a six-boiler heating plant upgrade."
   },
   "/projects/leigh": {
-    "title": "Leigh Project — Allied Plumbing",
-    "description": "Read about Allied Plumbing’s heating and mechanical work at Leigh."
+    "title": "Leigh Elementary School — Allied Plumbing",
+    "description": "Unit ventilator replacement, rooftop air handling and hydronic upgrades."
   },
   "/projects/haro": {
-    "title": "Haro Street Project — Allied Plumbing",
-    "description": "Read about Allied Plumbing’s domestic hot water work at Haro Street."
+    "title": "1755 Haro Street — Allied Plumbing",
+    "description": "A Viessmann condensing plant serving an apartment building’s heating and domestic hot water."
   },
   "/team": {
     "title": "Our Team — Allied Plumbing",
     "description": "Meet the people behind Allied Plumbing, Heating & Air Conditioning."
   },
   "/clients": {
-    "title": "Clients & Testimonials — Allied Plumbing",
-    "description": "Learn about the clients and buildings served by Allied Plumbing."
+    "title": "Project Clients — Allied Plumbing",
+    "description": "Explore school district and residential building projects delivered by Allied Plumbing."
   },
   "/careers": {
     "title": "Careers — Allied Plumbing",
     "description": "Explore plumbing, heating and HVAC career opportunities with Allied Plumbing in British Columbia."
-  },
-  "/blog": {
-    "title": "Plumbing & HVAC Articles — Allied Plumbing",
-    "description": "Browse Allied Plumbing articles and updates about mechanical systems, maintenance and projects."
   },
   "/rfp": {
     "title": "Mechanical Project & RFP Enquiries — Allied Plumbing",
@@ -86,5 +82,61 @@
   "/privacy": {
     "title": "Privacy Notice — Allied Plumbing",
     "description": "How contact and quote forms on this website collect and process the information you choose to submit."
+  },
+  "/projects/herbert-spencer": {
+    "title": "Herbert Spencer Elementary School — Allied Plumbing",
+    "description": "Condensing boiler installation, hydronic pumping and digital controls."
+  },
+  "/projects/howe-sound": {
+    "title": "Howe Sound Secondary School — Allied Plumbing",
+    "description": "Boiler plant replacement with heat exchange and hydronic equipment."
+  },
+  "/projects/miller-park": {
+    "title": "Miller Park Community School — Allied Plumbing",
+    "description": "Classroom ventilation and a four-boiler heating plant upgrade."
+  },
+  "/blog": {
+    "title": "Plumbing, Heating & HVAC Articles — Allied Plumbing",
+    "description": "Project insights on school HVAC upgrades, boiler plants and apartment heating systems from Allied Plumbing."
+  },
+  "/blog/planning-school-hvac-upgrades": {
+    "title": "Planning a School HVAC Upgrade Around the School Day — Allied Plumbing",
+    "description": "How scope, trade coordination and afternoon or weekend work came together at Leigh Elementary."
+  },
+  "/blog/boiler-plant-upgrade-ridgeview": {
+    "title": "What Goes Into a School Boiler Plant Upgrade? — Allied Plumbing",
+    "description": "A closer look at Ridgeview Elementary’s six IBC boilers, classroom conversion and hydronic piping."
+  },
+  "/blog/haro-heating-hot-water-upgrade": {
+    "title": "Upgrading Heating and Hot Water in an Existing Apartment Building — Allied Plumbing",
+    "description": "Inside the scope of the Viessmann CA3 condensing plant project at 1755 Haro Street."
+  },
+  "/projects/icbc": {
+    "title": "ICBC Boiler Plant Modernization — Allied Plumbing",
+    "description": "Modernizing an existing heating plant with Viessmann condensing boilers and building automation integration."
+  },
+  "/projects/crosstown": {
+    "title": "Crosstown Elementary Mechanical Upgrade — Phase 1 — Allied Plumbing",
+    "description": "Mechanical plant and hydronic upgrades coordinated with building, electrical and fire protection work."
+  },
+  "/projects/glenayre": {
+    "title": "École Glenayre Elementary DDC & Boiler Plant Upgrade — Allied Plumbing",
+    "description": "Boiler plant, hydronic and digital controls modernization in an existing elementary school."
+  },
+  "/projects/collingwood": {
+    "title": "Collingwood School Parent Wing AC Upgrade — Allied Plumbing",
+    "description": "Chiller and hydronic cooling upgrades integrated with existing school systems."
+  },
+  "/projects/capilano-birch": {
+    "title": "Capilano University Birch Building Chiller Replacement — Allied Plumbing",
+    "description": "Chiller replacement with electrical shutdown planning, startup and commissioning coordination."
+  },
+  "/projects/herbert-spencer-ashp": {
+    "title": "Herbert Spencer Elementary ASHP Upgrade — Phase 1 — Allied Plumbing",
+    "description": "First-phase air-source heat pump upgrade with equipment procurement and engineering submissions."
+  },
+  "/projects/hillcrest": {
+    "title": "Hillcrest Middle HVAC Upgrade — Phase 2 — Allied Plumbing",
+    "description": "HVAC upgrade involving Trane rooftop equipment and technical closeout coordination."
   }
 }

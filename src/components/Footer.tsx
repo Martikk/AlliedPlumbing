@@ -15,7 +15,6 @@ export default function Footer() {
           <Link to="/projects" className="hover:underline">Projects</Link>
           <Link to="/contact" className="hover:underline">Contact</Link>
           <Link to="/privacy" className="hover:underline">Privacy</Link>
-          <a href="https://www.linkedin.com/company/allied-plumbing-bc/" target="_blank" rel="noreferrer" className="hover:underline">LinkedIn</a>
         </nav>
       </div>
       <p className="mt-8 border-t border-neutral-200 pt-4 text-sm">© {new Date().getFullYear()} Allied Plumbing. All rights reserved.</p>

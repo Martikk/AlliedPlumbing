@@ -24,16 +24,16 @@ export default function ContactLead() {
       trackEvent('form_error', { form_name: 'contact', error_type: 'network_or_server' });
     } finally { setSending(false); }
   }
-  return <section className="py-12 md:py-20">
-    <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-8 rounded-2xl bg-neutral-900 p-6 md:p-10">
-      <div className="text-white">
+  return <section className="contact-photo-section py-12 md:py-20">
+    <div className="contact-photo-layout mx-auto max-w-6xl grid md:grid-cols-2 gap-8 p-6 md:p-10">
+      <div className="contact-photo-copy text-white">
         <h2 className="text-3xl md:text-4xl font-extrabold">Tell us how we can help</h2>
         <p className="mt-4 max-w-md leading-relaxed">Send your plumbing, heating or HVAC enquiry. For urgent assistance, call our team.</p>
         <a href="tel:+16047311000" className="inline-block mt-6 text-xl font-bold underline underline-offset-4">604-731-1000</a>
       </div>
       <form onSubmit={submit} aria-busy={sending} onFocusCapture={() => {
         if (!started.current) { trackEvent('form_start', { form_name: 'contact' }); started.current = true; }
-      }} className="rounded-xl bg-white p-5 md:p-6 text-neutral-900">
+      }} className="contact-glass-form rounded-2xl p-5 md:p-6 text-neutral-900">
         <div role="status" aria-live="polite">{ok && <p className="rounded-lg bg-green-50 p-4 text-green-900">Thank you. Your message has been received.</p>}</div>
         {!ok && <>
           <fieldset disabled={sending} className="space-y-4">
@@ -44,7 +44,7 @@ export default function ContactLead() {
             <label className="flex items-start gap-3 text-sm leading-relaxed"><input type="checkbox" name="consent" value="yes" required className="mt-1 h-4 w-4 accent-red-700" /><span>I agree to be contacted about this enquiry. See the <Link to="/privacy" target="_blank" className="underline underline-offset-2">privacy notice (opens in a new tab)</Link>.</span></label>
           </fieldset>
           <div role="alert" className="mt-3 text-sm text-red-800">{error}</div>
-          <button type="submit" disabled={sending} className="mt-4 min-h-12 rounded-lg bg-red-700 px-5 py-3 font-semibold text-white hover:bg-red-800 disabled:opacity-60">{sending ? 'Sending…' : 'Send message'}</button>
+          <button type="submit" disabled={sending} className="mt-4 min-h-12 rounded-lg bg-[#3866c3] px-5 py-3 font-semibold text-white hover:bg-[#2d54a5] disabled:opacity-60">{sending ? 'Sending…' : 'Send message'}</button>
         </>}
       </form>
     </div>

@@ -78,7 +78,7 @@ export default function Careers() {
     <div className="bg-white text-neutral-900">
 
       {/* ========== HERO ========== */}
-      <section className="relative overflow-hidden">
+      <section className="page-photo-hero relative overflow-hidden">
         <img
           src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png"
           className="absolute inset-0 h-[44vh] md:h-[56vh] w-full object-cover"
@@ -136,7 +136,7 @@ export default function Careers() {
           />
           <Perk
             title="Modern tools & safety"
-            body="New service vans, calibrated meters, tablets for work orders. COR & WorkSafeBC compliant."
+            body="New service vans, calibrated meters, tablets for work orders. Site-specific safety planning."
             icon={<ShieldIcon />}
           />
         </div>
@@ -229,8 +229,8 @@ export default function Careers() {
                 know. Tool talks, lunch-and-learns, and real responsibility as you grow.
               </p>
               <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-neutral-800">
-                <li className="flex items-center gap-2"><Dot /> COR & WorkSafeBC compliant</li>
-                <li className="flex items-center gap-2"><Dot /> School-approved crews</li>
+                <li className="flex items-center gap-2"><Dot /> Site-specific safety planning</li>
+                <li className="flex items-center gap-2"><Dot /> School project experience</li>
                 <li className="flex items-center gap-2"><Dot /> New vans & calibrated meters</li>
                 <li className="flex items-center gap-2"><Dot /> Tablets & DDC exposure</li>
               </ul>
