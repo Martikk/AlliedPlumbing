@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import TeamSection from '../components/TeamSection';
 
 export default function About() {
-  return <div className="max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-16">
-    <div className="grid lg:grid-cols-[1.1fr_.9fr] gap-10 items-center"><div>
+  return <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-10">
+    <div className="grid lg:grid-cols-[1.1fr_.9fr] gap-10 items-start"><div>
     <h1 className="text-4xl md:text-5xl font-extrabold">About Allied Plumbing</h1>
     <p className="mt-6 max-w-3xl text-xl leading-relaxed text-neutral-700">Based in Burnaby, Allied Plumbing, Heating &amp; Air Conditioning provides mechanical contracting, plumbing, HVAC/R and gas fitting services for residential, commercial and institutional buildings.</p>
     </div><img src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,w_1000/v1760068156/Allied/14_urnogx.png" alt="" width={1000} height={800} className="clip-tilt rounded-2xl h-72 md:h-96 w-full object-cover" /></div>

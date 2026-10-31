@@ -4,7 +4,7 @@ const links = [['/', 'Home'], ['/about', 'About'], ['/services', 'Services'], ['
 
 export default function SiteNav() {
   const { pathname } = useLocation();
-  return <Navigation key={pathname} overlay={pathname === '/' || ['/services', '/quote', '/contact', '/careers'].some(route => pathname === route || pathname.startsWith(route + '/'))} />;
+  return <Navigation key={pathname} overlay={pathname === '/' || pathname === '/projects' || ['/services', '/quote', '/contact', '/careers'].some(route => pathname === route || pathname.startsWith(route + '/'))} />;
 }
 function Navigation({overlay}:{overlay:boolean}) {
   const [open,setOpen]=useState(false);

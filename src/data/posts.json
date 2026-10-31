@@ -138,5 +138,131 @@
     "date": "2026-10-31",
     "author": "Allied Plumbing",
     "readingMinutes": 3
+  },
+  {
+    "slug": "integrating-commercial-boiler-controls",
+    "title": "Connecting a New Boiler Plant to an Existing Building",
+    "category": "Boiler plants",
+    "project": "icbc",
+    "excerpt": "What the ICBC project scope shows about hydronic interfaces, controls responsibilities and occupied-building planning.",
+    "intro": "Changing a boiler plant is rarely a stand-alone equipment swap. The replacement plant must connect to a building that already has heating distribution, controls, electrical services and operating requirements. Allied’s ICBC Boiler Plant Modernization scope brings these interfaces together within an existing Vancouver facility. Final completion has not been confirmed in the supplied project summary, so this article describes the planned scope and coordination rather than reporting a finished installation.",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png",
+    "sections": [
+      {
+        "heading": "Begin with the existing system",
+        "paragraphs": [
+          "A project brief should describe what the building needs from the heating system and what equipment will remain in service. At ICBC, the scope includes replacement condensing boilers, hydronic piping, circulation equipment, gas distribution, venting and condensate management. Those services need to be considered as a connected system rather than separate purchases.",
+          "The supplied project information identifies compatibility between proposed boiler operating temperatures and existing heating coils as an engineering coordination point. Building owners can help by providing available drawings, equipment information and known operational concerns. The design team determines the final requirements; a general project article cannot establish settings for a particular building."
+        ]
+      },
+      {
+        "heading": "Make controls responsibilities explicit",
+        "paragraphs": [
+          "Boiler controls and building automation have related but different responsibilities. The ICBC scope includes coordination between the boiler package and the existing building automation infrastructure. The team needs to establish which party provides each interface, how information is exchanged and what will be checked during startup.",
+          "For owners, the useful question is not simply whether the new equipment has controls. Ask how the controls scope is documented, who coordinates it and what information the building operator will receive. Confirming these responsibilities early helps the team plan submissions, wiring, integration and verification in a sensible sequence."
+        ]
+      },
+      {
+        "heading": "Plan access and shutdowns together",
+        "paragraphs": [
+          "Mechanical replacement also involves equipment access, lifting arrangements, electrical work and seismic supports. Allied’s project management scope includes technical submissions, procurement, installation sequencing and coordination with supporting specialists. Access requirements should be discussed alongside the proposed shutdown windows.",
+          "An occupied building needs a project-specific plan for disruptive work. Identify who approves access, how affected occupants will be informed and which activities depend on equipment delivery or engineering acceptance. These are planning questions to resolve with the project team, not promises of uninterrupted service."
+        ]
+      },
+      {
+        "heading": "Include turnover in the original scope",
+        "paragraphs": [
+          "Before construction begins, agree how startup, controls checks, outstanding items and operating information will be recorded. Completion should be based on the project’s actual acceptance and closeout requirements. A target date alone does not confirm that work has finished.",
+          "If you are preparing a boiler plant enquiry, include the building location, existing plant details, available drawings, access constraints and the reason for considering replacement. This gives the team a practical basis for reviewing your site and defining the next steps."
+        ]
+      }
+    ],
+    "date": "2026-10-31",
+    "author": "Allied Plumbing",
+    "readingMinutes": 3
+  },
+  {
+    "slug": "coordinating-school-mechanical-room-upgrades",
+    "title": "Why Mechanical Room Readiness Matters in a School Upgrade",
+    "category": "School projects",
+    "project": "crosstown",
+    "excerpt": "Lessons in planning equipment, room construction and supporting trades from the Crosstown Phase 1 scope.",
+    "intro": "A mechanical room upgrade involves more than finding space for new equipment. The room’s walls, doors, services, supports and maintenance access all affect how the installation can proceed. Crosstown Elementary’s Phase 1 mechanical upgrade provides a useful example of a scope that connects mechanical work with several construction disciplines. The supplied summary does not confirm final completion; the discussion here concerns coordination requirements and planning considerations.",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071289/Allied/123_clbeb3.png",
+    "sections": [
+      {
+        "heading": "Treat the room as part of the system",
+        "paragraphs": [
+          "The Crosstown scope includes mechanical plant improvements, pump and piping upgrades and coordination of the Level 4 mechanical room. Equipment layout must be considered alongside the surrounding building infrastructure. A layout that fits equipment into a room also needs to account for the work required to install and maintain it.",
+          "During planning, bring equipment access and service clearances into the same discussion as wall assemblies, doors and electrical layouts. These interfaces are best reviewed using project drawings and approved submissions. Final dimensions and arrangements belong to the design and construction team, rather than a generic checklist."
+        ]
+      },
+      {
+        "heading": "Connect procurement with site readiness",
+        "paragraphs": [
+          "Equipment availability and room readiness are separate schedule dependencies. A pump delivery does not mean installation can begin if supporting construction or services are still being coordinated. Conversely, a prepared room may not move the project forward if the required equipment has not arrived.",
+          "Allied’s coordination scope includes long-lead procurement, equipment submissions, RFIs and construction sequencing. A useful programme makes those dependencies visible. Owners can ask which activities are ready, which approvals remain outstanding and how the installation sequence will change if delivery information changes."
+        ]
+      },
+      {
+        "heading": "Coordinate the surrounding trades",
+        "paragraphs": [
+          "The project includes interfaces with electrical distribution, structural and seismic supports, fire protection, architectural work and roofing. Each discipline contributes information needed by the others. Coordination is therefore an ongoing exchange of drawings, responsibilities and site conditions rather than a single meeting at the start.",
+          "For a school facility team, the key is to establish clear contacts and decision paths. Access restrictions, disruptive work and inspection requirements should be raised with the contractor and consultants early enough to be included in planning. Project-specific safety and approval requirements still govern the work."
+        ]
+      },
+      {
+        "heading": "Prepare for installation and turnover",
+        "paragraphs": [
+          "Room readiness should be assessed against the tasks about to take place. Agree what must be complete before equipment placement, connections, testing or inspections. This helps distinguish physical progress from readiness for the next trade. Documentation should follow the same sequence.",
+          "When requesting a similar upgrade, provide the room location, drawings if available, known access limitations and the systems involved. Include school calendar restrictions and any proposed work windows. Those details help the team develop a coordinated scope and identify questions that require a site review or engineering input."
+        ]
+      }
+    ],
+    "date": "2026-10-31",
+    "author": "Allied Plumbing",
+    "readingMinutes": 3
+  },
+  {
+    "slug": "integrating-school-hydronic-cooling",
+    "title": "Planning a Chiller Upgrade in an Existing School",
+    "category": "Cooling systems",
+    "project": "collingwood",
+    "excerpt": "How the Collingwood Parent Wing scope connects chilled water, cooling coils, controls and school access.",
+    "intro": "A new chiller needs to work with the building around it. Piping, cooling coils, controls, electrical services and structural supports all form part of the installation discussion. The Collingwood School Parent Wing AC Upgrade scope illustrates these connections in an existing school. This article describes the supplied scope and planning considerations; planned milestones are not treated as evidence of final completion.",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760072887/Allied/Allied_1_n00b0m.png",
+    "sections": [
+      {
+        "heading": "Look beyond the chiller itself",
+        "paragraphs": [
+          "The Collingwood scope combines a new chiller with chilled-water piping and two hydronic cooling coils connected to existing unit ventilators. This requires the replacement equipment and retained systems to be considered together. The choice of one component can affect what information another specialist needs.",
+          "For building owners, an initial enquiry should identify the areas served, existing equipment and any drawings or maintenance information available. Describe the operational issue or upgrade objective without assuming a particular technical solution. Equipment capacity, hydraulic compatibility and final selection need to be reviewed against the approved design."
+        ]
+      },
+      {
+        "heading": "Bring controls into the conversation early",
+        "paragraphs": [
+          "The supplied scope includes chiller controls, building automation interfaces and startup coordination. Flow arrangements and control requirements need discussion between the manufacturer, consultants, controls contractor and mechanical team. The final approved sequence should guide implementation and verification.",
+          "Ask who is responsible for coordinating these interfaces and what documents will describe them. Clear responsibilities help the team understand which information is needed before installation and which checks belong to startup or later testing. General descriptions of controls strategies should never replace the project’s engineering requirements."
+        ]
+      },
+      {
+        "heading": "Account for the existing school",
+        "paragraphs": [
+          "Access during summer school was a coordination consideration in the supplied summary, including work windows after normal teaching activities. Equipment placement and supporting work need to be considered alongside the people using the building and the areas that can be made available.",
+          "Structural supports, electrical connections and equipment access can also affect the sequence. Agree how the team will review these interfaces and communicate schedule changes. The available work windows should inform the programme, while the project team confirms the safety, access and approval arrangements needed for each activity."
+        ]
+      },
+      {
+        "heading": "Plan startup and balancing as distinct steps",
+        "paragraphs": [
+          "Mechanical installation, electrical readiness, controls coordination, startup and testing and balancing are linked activities. A project programme should identify how they depend on one another. Installing the equipment does not by itself establish that all operational checks have been completed.",
+          "For turnover, discuss the operating information, startup records and outstanding-item process the building team will receive. If you are planning a school cooling upgrade, provide the location, areas served, existing equipment and calendar constraints. These details support a more useful scope discussion and help identify the specialist input needed next."
+        ]
+      }
+    ],
+    "date": "2026-10-31",
+    "author": "Allied Plumbing",
+    "readingMinutes": 3
   }
 ]

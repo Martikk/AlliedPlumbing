@@ -1,3 +1,4 @@
+import { useState } from 'react';
 const logos=[
   {name:'Rinnai',src:'v1760074745/Allied/Rinnai_Logo_Red_uqwftm.png'},
   {name:'Daikin',src:'v1760075323/Allied/download_y9tiqd.png'},
@@ -5,5 +6,9 @@ const logos=[
   {name:'IBC',src:'v1760074743/Allied/IBC-Logo-for-Gallery_hsklz0.webp'},
 ];
 export default function LogoMarquee() {
-  return <section aria-label="Equipment brands" className="py-8 md:py-12"><p className="text-center text-sm font-semibold text-slate-600 mb-7">Equipment we work with</p><div className="grid grid-cols-2 md:grid-cols-4 items-center gap-x-10 gap-y-8">{logos.map(logo=><div key={logo.name} className="h-16 flex items-center justify-center"><img src={`https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,w_360/${logo.src}`} alt={logo.name} loading="lazy" className="max-w-[160px] max-h-14 w-auto h-auto object-contain grayscale opacity-80" /></div>)}</div></section>;
+  const [paused,setPaused]=useState(false);
+  return <section aria-label="Equipment brands" className="py-8 md:py-12">
+    <div className="flex flex-wrap justify-between items-center gap-4 mb-6"><p className="text-sm font-semibold text-slate-600">Equipment we work with</p><button type="button" className="brand-pause rounded-lg border border-neutral-300 px-4 min-h-11 text-sm font-semibold" aria-pressed={paused} onClick={()=>setPaused(value=>!value)}>{paused?'Resume':'Pause'} logo animation</button></div>
+    <div className="brand-window"><div className="brand-track" data-paused={paused}>{[false,true,true].map((duplicate,index)=><div className="brand-group" aria-hidden={duplicate || undefined} key={index}>{logos.map(logo=><div key={logo.name} className="brand-logo"><img src={`https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,w_360/${logo.src}`} alt={duplicate?'':logo.name} loading="lazy" /></div>)}</div>)}</div></div>
+  </section>;
 }

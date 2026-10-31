@@ -1,6 +1,7 @@
 // src/pages/Careers.tsx
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import CareerApplication from "../components/CareerApplication";
 
 type Opening = {
   id: string;
@@ -105,7 +106,7 @@ export default function Careers() {
               View openings <span aria-hidden>↘</span>
             </a>
             <Link
-              to="/GetQuote"
+              to="/projects"
               className="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-white/10 text-white px-5 py-3 font-semibold backdrop-blur hover:bg-white/20"
             >
               About our work
@@ -126,20 +127,24 @@ export default function Careers() {
         <div className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-3">
           <Perk
             title="Competitive pay & benefits"
-            body="Extended health, RRSP matching options, paid training days and steady hours year-round."
+            body="Discuss compensation, benefits, working hours and any on-call responsibilities for the specific role during the hiring process."
             icon={<BadgeIcon />}
           />
           <Perk
             title="Apprenticeship support"
-            body="We sponsor ITA apprentices, cover schooling days, and pair you with mentors on live projects."
+            body="Tell us your apprenticeship level and training goals. We can discuss the supervision, site experience and development relevant to a suitable role."
             icon={<HatIcon />}
           />
           <Perk
             title="Modern tools & safety"
-            body="New service vans, calibrated meters, tablets for work orders. Site-specific safety planning."
+            body="Work planning starts with site requirements, safe access and the tools needed for the task. Ask about the equipment and systems used by your team."
             icon={<ShieldIcon />}
           />
+          <Perk title="Varied mechanical work" body="Our project portfolio spans classroom ventilation, central boiler plants, hydronic cooling and existing-building upgrades. Discuss which work matches your experience." icon={<BadgeIcon />} />
+          <Perk title="Clear coordination" body="Mechanical work involves field teams, project managers, consultants and supporting trades. Communication about access, drawings and sequencing is part of the job." icon={<HatIcon />} />
+          <Perk title="A practical hiring conversation" body="Share your trade qualifications, experience, availability and preferred type of work. Role requirements, location and employment terms are discussed before an offer." icon={<ShieldIcon />} />
         </div>
+        <p className="mt-6 max-w-3xl text-sm leading-relaxed text-neutral-600">Benefits, training arrangements, equipment and schedules depend on the role and agreed employment terms. Ask the hiring team for the current details.</p>
       </section>
 
       {/* ========== OPENINGS FILTERS ========== */}
@@ -161,7 +166,7 @@ export default function Careers() {
               <select
                 id="team"
                 value={team}
-                onChange={(e) => setTeam(e.target.value as any)}
+                onChange={(e) => setTeam(e.target.value as Opening["team"] | "All")}
                 className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 shadow-sm outline-none focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900"
               >
                 <option>All</option>
@@ -201,7 +206,7 @@ export default function Careers() {
                     </ul>
                   </div>
                   <a
-                    href={`#apply?job=${encodeURIComponent(o.title)}`}
+                    href={`?job=${encodeURIComponent(o.title)}#apply`}
                     className="inline-flex items-center justify-center rounded-lg bg-neutral-900 text-white px-5 py-2.5 font-semibold hover:brightness-110"
                   >
                     Apply now <span aria-hidden className="ml-2">↗</span>
@@ -239,94 +244,7 @@ export default function Careers() {
         </div>
       </section>
 
-      {/* ========== APPLY FORM (lightweight) ========== */}
-      <section id="apply" className="max-w-6xl mx-auto px-4 md:px-6 pb-16 md:pb-24">
-        <div className="relative overflow-hidden rounded-2xl bg-neutral-900 text-white p-6 md:p-10">
-          <div
-            className="absolute -top-10 -right-10 h-56 w-56 rounded-full blur-3xl opacity-30"
-            style={{ background: "radial-gradient(closest-side,#60a5fa 30%,transparent)" }}
-          />
-          <h3 className="text-2xl md:text-4xl font-extrabold">Apply in 2 minutes</h3>
-          <p className="mt-2 text-white/80 max-w-prose">
-            No cover letter needed. Upload your resume (PDF) and tell us how to reach you.
-          </p>
-
-          <form
-            method="POST"
-            encType="multipart/form-data"
-            action="https://formspree.io/f/xgegeydj" /* ← замени на свой Forms endpoint */
-            className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4"
-          >
-            <label className="block">
-              <span className="sr-only">Full name</span>
-              <input
-                name="name"
-                autoComplete="name"
-                required
-                placeholder="Full name"
-                className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 outline-none placeholder-white/70 focus:ring-2 focus:ring-white/60"
-              />
-            </label>
-            <label className="block">
-              <span className="sr-only">Email</span>
-              <input
-                name="email"
-                autoComplete="email"
-                type="email"
-                required
-                placeholder="Email"
-                className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 outline-none placeholder-white/70 focus:ring-2 focus:ring-white/60"
-              />
-            </label>
-            <label className="block">
-              <span className="sr-only">Phone</span>
-              <input
-                name="phone"
-                type="tel"
-                autoComplete="tel"
-                placeholder="Phone"
-                className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 outline-none placeholder-white/70 focus:ring-2 focus:ring-white/60"
-              />
-            </label>
-
-            <label className="block md:col-span-2">
-              <span className="sr-only">Role (optional)</span>
-              <input
-                name="role"
-                placeholder="Role you’re applying for (optional)"
-                className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 outline-none placeholder-white/70 focus:ring-2 focus:ring-white/60"
-              />
-            </label>
-
-            <label className="block">
-              <span className="sr-only">Resume</span>
-              <input
-                name="resume"
-                type="file"
-                accept="application/pdf"
-                required
-                className="block w-full text-sm file:mr-3 file:rounded-md file:border-0 file:bg-white file:px-3 file:py-2 file:font-semibold file:text-neutral-900 file:cursor-pointer"
-              />
-            </label>
-
-            <div className="md:col-span-3">
-              <button
-                type="submit"
-                className="inline-flex items-center rounded-lg bg-white px-5 py-3 font-semibold text-neutral-900 hover:bg-neutral-200"
-              >
-                Submit application <span aria-hidden className="ml-2">↗</span>
-              </button>
-              <p className="text-xs text-white/70 mt-2">
-                Or email your resume to{" "}
-                <a href="mailto:careers@allied-plumbing.ca" className="underline">
-                  careers@allied-plumbing.ca
-                </a>
-                .
-              </p>
-            </div>
-          </form>
-        </div>
-      </section>
+      <CareerApplication />
     </div>
   );
 }

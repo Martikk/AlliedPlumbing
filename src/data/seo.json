@@ -138,5 +138,17 @@
   "/projects/hillcrest": {
     "title": "Hillcrest Middle HVAC Upgrade — Phase 2 — Allied Plumbing",
     "description": "HVAC upgrade involving Trane rooftop equipment and technical closeout coordination."
+  },
+  "/blog/integrating-commercial-boiler-controls": {
+    "title": "Connecting a New Boiler Plant to an Existing Building — Allied Plumbing",
+    "description": "What the ICBC project scope shows about hydronic interfaces, controls responsibilities and occupied-building planning."
+  },
+  "/blog/coordinating-school-mechanical-room-upgrades": {
+    "title": "Why Mechanical Room Readiness Matters in a School Upgrade — Allied Plumbing",
+    "description": "Lessons in planning equipment, room construction and supporting trades from the Crosstown Phase 1 scope."
+  },
+  "/blog/integrating-school-hydronic-cooling": {
+    "title": "Planning a Chiller Upgrade in an Existing School — Allied Plumbing",
+    "description": "How the Collingwood Parent Wing scope connects chilled water, cooling coils, controls and school access."
   }
 }

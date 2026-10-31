@@ -12,7 +12,7 @@ export default function Projects() {
     setParams(next, {replace:true});
   }
   return <div>
-    <section className="bg-neutral-900 text-white"><div className="max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-20">
+    <section className="page-photo-hero relative overflow-hidden bg-neutral-900 text-white"><img src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,w_1600/v1760072887/Allied/Allied_1_n00b0m.png" alt="" className="absolute inset-0 w-full h-full object-cover" /><div className="absolute inset-0 bg-black/60" /><div className="relative max-w-6xl mx-auto px-4 md:px-6 pb-12">
       <h1 className="text-4xl md:text-5xl font-extrabold">Mechanical projects across BC</h1>
       <p className="mt-4 max-w-2xl text-lg leading-relaxed">School ventilation upgrades, boiler plant replacements and residential heating systems. Explore the scope and coordination behind our work.</p>
     </div></section>

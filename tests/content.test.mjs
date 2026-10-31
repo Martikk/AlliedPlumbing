@@ -24,7 +24,7 @@ test('corrects the school identity and the Haro boiler system from the supplied 
 });
 test('published articles have complete content and indexed routes', () => {
   const posts = JSON.parse(readFileSync('src/data/posts.json','utf8'));
-  assert.equal(posts.length, 3);
+  assert.equal(posts.length, 6);
   assert.ok(seo['/blog']);
   for (const post of posts) {
     assert.ok(seo['/blog/'+post.slug]);
