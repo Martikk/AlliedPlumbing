@@ -1,7 +1,6 @@
 // src/pages/Careers.tsx
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import Head from "@/components/Head";
 
 type Opening = {
   id: string;
@@ -74,32 +73,14 @@ export default function Careers() {
     });
   }, [q, team]);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Allied Plumbing, Heating & Air Conditioning Ltd.",
-    hiringOrganization: "Allied Plumbing",
-    sameAs: "https://allied-plumbing.ca",
-    jobLocation: {
-      "@type": "Place",
-      name: "Greater Vancouver",
-      address: { "@type": "PostalAddress", addressRegion: "BC", addressCountry: "CA" },
-    },
-  };
 
   return (
-    <main className="bg-white text-neutral-900">
-      <Head
-        title="Careers — Join Allied"
-        description="Build BC with us. Competitive pay, apprenticeship support, safe sites and modern tools. See open roles at Allied Plumbing, Heating & Air Conditioning."
-        jsonLd={jsonLd as any}
-        canonical="https://allied-plumbing.ca/careers"
-      />
+    <div className="bg-white text-neutral-900">
 
       {/* ========== HERO ========== */}
       <section className="relative overflow-hidden">
         <img
-          src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065876/Allied/3_gk4dl8.png"
+          src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png"
           className="absolute inset-0 h-[44vh] md:h-[56vh] w-full object-cover"
           alt=""
         />
@@ -237,7 +218,7 @@ export default function Careers() {
         <div className="rounded-2xl overflow-hidden border border-neutral-200">
           <div className="grid md:grid-cols-2">
             <img
-              src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/10_kubptf.png"
+              src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068155/Allied/10_kubptf.png"
               alt=""
               className="h-64 md:h-full w-full object-cover"
             />
@@ -272,6 +253,7 @@ export default function Careers() {
 
           <form
             method="POST"
+            encType="multipart/form-data"
             action="https://formspree.io/f/xgegeydj" /* ← замени на свой Forms endpoint */
             className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4"
           >
@@ -279,6 +261,7 @@ export default function Careers() {
               <span className="sr-only">Full name</span>
               <input
                 name="name"
+                autoComplete="name"
                 required
                 placeholder="Full name"
                 className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 outline-none placeholder-white/70 focus:ring-2 focus:ring-white/60"
@@ -288,6 +271,7 @@ export default function Careers() {
               <span className="sr-only">Email</span>
               <input
                 name="email"
+                autoComplete="email"
                 type="email"
                 required
                 placeholder="Email"
@@ -298,6 +282,8 @@ export default function Careers() {
               <span className="sr-only">Phone</span>
               <input
                 name="phone"
+                type="tel"
+                autoComplete="tel"
                 placeholder="Phone"
                 className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 outline-none placeholder-white/70 focus:ring-2 focus:ring-white/60"
               />
@@ -341,7 +327,7 @@ export default function Careers() {
           </form>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

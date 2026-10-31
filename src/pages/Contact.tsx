@@ -1,31 +1,15 @@
 import { Link } from "react-router-dom";
-import Head from "@/components/Head";
 import ContactLead from "@/components/ContactLead"; // твой готовый стеклянный блок с формой
 import { PHONE } from "@/config";
 
 export default function Contact() {
   return (
-    <main className="bg-white text-neutral-900">
-      <Head
-        title="Contact Allied — Plumbing, Heating & Air Conditioning"
-        description="Reach Allied Plumbing for 24/7 emergency service, quotes, and general inquiries. Call, email, or send a message."
-        canonical="https://allied-plumbing.ca/contact"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "ContactPage",
-          name: "Allied Plumbing — Contact",
-          mainEntity: {
-            "@type": "HVACBusiness",
-            name: "Allied Plumbing, Heating & Air Conditioning Ltd.",
-            telephone: PHONE,
-          },
-        }}
-      />
+    <div className="bg-white text-neutral-900">
 
       {/* ===== HERO ===== */}
       <section className="relative overflow-hidden">
         <img
-          src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065876/Allied/3_gk4dl8.png"
+          src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png"
           alt=""
           className="absolute inset-0 h-[40vh] md:h-[48vh] w-full object-cover"
         />
@@ -221,7 +205,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

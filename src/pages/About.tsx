@@ -21,12 +21,12 @@ function CountUp({ to, duration = 1600 }: { to: number; duration?: number }) {
 
 export default function About() {
   return (
-    <main className="bg-white text-neutral-900">
+    <div className="bg-white text-neutral-900">
       {/* ====== HERO ====== */}
       <section className="relative overflow-hidden">
         {/* background image */}
         <img
-          src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065875/Allied/1_tc9jiy.png"
+          src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065875/Allied/1_tc9jiy.png"
           alt=""
           className="absolute inset-0 h-[54vh] md:h-[64vh] w-full object-cover"
         />
@@ -104,7 +104,7 @@ export default function About() {
               style={{ clipPath: "polygon(12% 0%,100% 0%,88% 100%,0% 100%)" }}
             >
               <img
-                src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068156/Allied/14_urnogx.png"
+                src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068156/Allied/14_urnogx.png"
                 alt=""
                 className="block h-[300px] w-full md:h-[380px] object-cover"
                 loading="lazy"
@@ -147,17 +147,17 @@ export default function About() {
             {
               t: "Design & Build",
               p: "Code-compliant, energy-efficient mechanical systems tailored to your site.",
-              img: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065876/Allied/3_gk4dl8.png",
+              img: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png",
             },
             {
               t: "Maintenance",
               p: "Preventive programs with trend reviews, DDC checks, and reporting.",
-              img: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760069670/Allied/maintance_grwetv.png",
+              img: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760069670/Allied/maintance_grwetv.png",
             },
             {
               t: "24/7 Emergency",
               p: "Fast response for leaks, outages, and critical equipment failures.",
-              img: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760070439/Allied/247_bs1xho.png",
+              img: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760070439/Allied/247_bs1xho.png",
             },
           ].map((c) => (
             <article
@@ -201,12 +201,12 @@ export default function About() {
             </div>
             <div className="grid grid-cols-3 gap-6">
               {[
-                "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/IBC-Logo-for-Gallery_hsklz0.webp",
-                "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074745/Allied/Rinnai_Logo_Red_uqwftm.png",
-                "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/png-clipart-daikin-air-conditioning-heating-system-service-others-blue-text_novbee.png",
-                "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/images_br94nf.png",
-                "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/10_kubptf.png",
-                "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068156/Allied/14_urnogx.png",
+                "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074743/Allied/IBC-Logo-for-Gallery_hsklz0.webp",
+                "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074745/Allied/Rinnai_Logo_Red_uqwftm.png",
+                "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074743/Allied/png-clipart-daikin-air-conditioning-heating-system-service-others-blue-text_novbee.png",
+                "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074743/Allied/images_br94nf.png",
+                "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068155/Allied/10_kubptf.png",
+                "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068156/Allied/14_urnogx.png",
               ].map((src, i) => (
                 <div key={i} className="aspect-[4/3] rounded-xl bg-white ring-1 ring-neutral-200 grid place-items-center p-3">
                   <img src={src} alt="" className="max-h-full max-w-full object-contain grayscale opacity-80" />
@@ -240,17 +240,17 @@ export default function About() {
             {
               name: "Nick Fedele",
               role: "Accounts Manager",
-              img: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760038738/Allied/IMG_1095_ptva4x.jpg",
+              img: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760038738/Allied/IMG_1095_ptva4x.jpg",
             },
             {
               name: "Alex Martishyn",
               role: "Project Manager",
-              img: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760073539/Allied/09738F7C-ACFD-44A8-A508-56BC9B644BF2_y4vmko.jpg",
+              img: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760073539/Allied/09738F7C-ACFD-44A8-A508-56BC9B644BF2_y4vmko.jpg",
             },
             {
               name: "Site Leadership",
               role: "Foremen & Coordinators",
-              img: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074289/Allied/345345_ylvyhu.png",
+              img: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074289/Allied/345345_ylvyhu.png",
             },
           ].map((p) => (
             <article key={p.name} className="group rounded-2xl overflow-hidden bg-white ring-1 ring-black/5 shadow-sm">
@@ -289,7 +289,7 @@ export default function About() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

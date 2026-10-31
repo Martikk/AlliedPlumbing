@@ -1,0 +1,90 @@
+{
+  "/": {
+    "title": "Plumbing, Heating & HVAC in British Columbia — Allied Plumbing",
+    "description": "Plumbing, heating and HVAC installation, repairs and preventive maintenance for residential and commercial properties across British Columbia."
+  },
+  "/about": {
+    "title": "About Allied Plumbing — British Columbia",
+    "description": "Meet Allied Plumbing, Heating & Air Conditioning and learn about our approach to mechanical installation, service and maintenance."
+  },
+  "/services": {
+    "title": "Plumbing, Heating & HVAC Services — Allied Plumbing",
+    "description": "Explore residential and commercial plumbing, HVAC, boilers, preventive maintenance and emergency services from Allied Plumbing."
+  },
+  "/services/maintenance": {
+    "title": "Preventive Maintenance Programs — Allied Plumbing",
+    "description": "Planned plumbing, heating and HVAC maintenance with inspections, equipment checks and reporting for your building."
+  },
+  "/services/residential-plumbing": {
+    "title": "Residential Plumbing Services — Allied Plumbing",
+    "description": "Plumbing repairs, fixture replacement, repiping and water heater services for residential properties."
+  },
+  "/services/commercial-plumbing": {
+    "title": "Commercial Plumbing Services — Allied Plumbing",
+    "description": "Plumbing service for commercial properties, strata and schools, including hot water systems, pumps and backflow equipment."
+  },
+  "/services/hvac": {
+    "title": "Air Conditioning & HVAC Services — Allied Plumbing",
+    "description": "HVAC installation, maintenance and repairs for heating, cooling and ventilation systems in British Columbia."
+  },
+  "/services/boilers": {
+    "title": "Heating & Boiler Services — Allied Plumbing",
+    "description": "Boiler plant installation, repairs and maintenance, including pumps, controls and hot water equipment."
+  },
+  "/services/emergency": {
+    "title": "Emergency Plumbing & HVAC — Allied Plumbing",
+    "description": "Call Allied Plumbing for urgent plumbing, heating and HVAC service. For urgent assistance, call 604-731-1000."
+  },
+  "/projects": {
+    "title": "Mechanical Projects — Allied Plumbing",
+    "description": "Explore Allied Plumbing mechanical projects, including plumbing, heating and HVAC installations and upgrades."
+  },
+  "/projects/garibaldi": {
+    "title": "Garibaldi Project — Allied Plumbing",
+    "description": "Read about Allied Plumbing’s mechanical work at Garibaldi, including heating and ventilation upgrades."
+  },
+  "/projects/ridgeview": {
+    "title": "Ridgeview Project — Allied Plumbing",
+    "description": "Read about Allied Plumbing’s heating and mechanical work at Ridgeview."
+  },
+  "/projects/leigh": {
+    "title": "Leigh Project — Allied Plumbing",
+    "description": "Read about Allied Plumbing’s heating and mechanical work at Leigh."
+  },
+  "/projects/haro": {
+    "title": "Haro Street Project — Allied Plumbing",
+    "description": "Read about Allied Plumbing’s domestic hot water work at Haro Street."
+  },
+  "/team": {
+    "title": "Our Team — Allied Plumbing",
+    "description": "Meet the people behind Allied Plumbing, Heating & Air Conditioning."
+  },
+  "/clients": {
+    "title": "Clients & Testimonials — Allied Plumbing",
+    "description": "Learn about the clients and buildings served by Allied Plumbing."
+  },
+  "/careers": {
+    "title": "Careers — Allied Plumbing",
+    "description": "Explore plumbing, heating and HVAC career opportunities with Allied Plumbing in British Columbia."
+  },
+  "/blog": {
+    "title": "Plumbing & HVAC Articles — Allied Plumbing",
+    "description": "Browse Allied Plumbing articles and updates about mechanical systems, maintenance and projects."
+  },
+  "/rfp": {
+    "title": "Mechanical Project & RFP Enquiries — Allied Plumbing",
+    "description": "Contact Allied Plumbing about mechanical project requirements, coordination and tender enquiries."
+  },
+  "/contact": {
+    "title": "Contact Allied Plumbing — British Columbia",
+    "description": "Contact Allied Plumbing for plumbing, heating and HVAC enquiries. Call 604-731-1000 or send a message."
+  },
+  "/quote": {
+    "title": "Request a Quote — Allied Plumbing",
+    "description": "Request a quote for plumbing, heating, HVAC or maintenance work. Tell us about your property and service needs."
+  },
+  "/privacy": {
+    "title": "Privacy Notice — Allied Plumbing",
+    "description": "How contact and quote forms on this website collect and process the information you choose to submit."
+  }
+}

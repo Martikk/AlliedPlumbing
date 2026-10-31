@@ -7,7 +7,7 @@ export default function ServiceBoiler() {
       title="Boiler Plants & Controls"
       subtitle="05 / Heating Systems"
       description="Design, installation, and optimization of condensing boiler plants — integrating pumps, HX, tanks, and smart controls to maximize performance and efficiency."
-      heroImg="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/10_kubptf.png"
+      heroImg="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068155/Allied/10_kubptf.png"
       highlights={[
         { label: "Plants Installed", value: "400+" },
         { label: "Efficiency Range", value: "92–97%" },

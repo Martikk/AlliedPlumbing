@@ -7,7 +7,7 @@ export default function ServiceCommercial() {
       title="Commercial & Institutional Plumbing"
       subtitle="03 / Plumbing"
       description="Backflows, PRVs, booster pumps, DHW plants, tenant improvements and school/strata programs — engineered for uptime and safety."
-      heroImg="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065875/Allied/1_tc9jiy.png"
+      heroImg="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065875/Allied/1_tc9jiy.png"
       highlights={[
         { label: "Sites Served", value: "1.6k+" },
         { label: "SLA On-Time", value: "98%" },

@@ -15,21 +15,21 @@ const team: Member[] = [
   {
     name: 'Nick Fedele',
     role: 'Accounts Manager',
-    image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760038738/Allied/IMG_1095_ptva4x.jpg',
+    image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760038738/Allied/IMG_1095_ptva4x.jpg',
     linkedin: 'https://www.linkedin.com/in/martishyn/',
     email: 'nickf@allied-plumbing.ca',
   },
   {
     name: 'Alex Martishyn',
     role: 'Project Manager',
-    image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760073539/Allied/09738F7C-ACFD-44A8-A508-56BC9B644BF2_y4vmko.jpg',
+    image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760073539/Allied/09738F7C-ACFD-44A8-A508-56BC9B644BF2_y4vmko.jpg',
     linkedin: 'https://www.linkedin.com/in/martishyn/',
     email: 'alex@allied-plumbing.ca',
   },
   {
     name: 'Liam Dillon',
     role: 'RSE, PMP, HVAC/R Manager',
-    image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760077510/Allied/Screenshot_2025-10-09_at_11.24.44_PM_vxwyr2.png',
+    image: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760077510/Allied/Screenshot_2025-10-09_at_11.24.44_PM_vxwyr2.png',
     linkedin: 'https://www.linkedin.com/in/martishyn/',
     email: 'l.dillon@allied-plumbing.ca',
   },
@@ -79,17 +79,17 @@ export default function TeamSection() {
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300" />
 
               {/* bottom content */}
-              <div className="absolute bottom-0 left-0 w-full p-5 z-10 text-white">
+              <div className="absolute bottom-0 left-0 w-full p-5 z-10 text-white bg-gradient-to-t from-black/90 to-black/40">
                 <h3 className="text-lg font-semibold">{member.name}</h3>
                 <p className="text-sm opacity-90">{member.role}</p>
-                <div className="flex gap-3 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="flex gap-3 mt-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100 transition-opacity">
                   {member.linkedin && (
-                    <a href={member.linkedin} target="_blank" rel="noreferrer">
+                    <a aria-label={`${member.name} on LinkedIn`} href={member.linkedin} target="_blank" rel="noreferrer">
                       <FaLinkedinIn className="text-white/90 hover:text-white text-lg" />
                     </a>
                   )}
                   {member.email && (
-                    <a href={`mailto:${member.email}`}>
+                    <a aria-label={`Email ${member.name}`} href={`mailto:${member.email}`}>
                       <FaEnvelope className="text-white/90 hover:text-white text-lg" />
                     </a>
                   )}

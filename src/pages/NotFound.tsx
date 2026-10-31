@@ -5,7 +5,7 @@ export default function NotFound() {
   const { pathname } = useLocation();
 
   return (
-    <main className="relative min-h-[88vh] bg-white text-neutral-900 overflow-hidden">
+    <div className="relative min-h-[88vh] bg-white text-neutral-900 overflow-hidden">
       {/* soft background */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-50 to-white" />
@@ -104,7 +104,7 @@ export default function NotFound() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Head from "@/components/Head";
 
 type Highlight = { label: string; value: string };
 type Props = {
@@ -22,8 +21,7 @@ export default function ServiceTemplate({
   children,                      // ← добавили
 }: Props) {
   return (
-    <main className="bg-white text-neutral-900">
-      <Head title={`${title} — Allied Plumbing`} description={description} />
+    <div className="bg-white text-neutral-900">
 
       {/* ==== HERO ==== */}
       <section className="relative overflow-hidden">
@@ -85,21 +83,6 @@ export default function ServiceTemplate({
         </div>
       </section>
 
-      {/* ==== GALLERY ==== */}
-      <section className="max-w-6xl mx-auto px-4 md:px-6 pb-12 md:pb-16">
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {[1, 2, 3].map((i) => (
-            <img
-              key={i}
-              src={`https://res.cloudinary.com/dzytbkc5l/image/upload/v17600${6800 + i}/Allied/sample_${i}.jpg`}
-              alt=""
-              className="rounded-2xl object-cover w-full h-56 md:h-64"
-              loading="lazy"
-            />
-          ))}
-        </div>
-      </section>
-
       {/* ==== CTA ==== */}
       <section className="max-w-6xl mx-auto px-4 md:px-6 pb-16 md:pb-24">
         <div className="relative overflow-hidden rounded-2xl bg-neutral-900 text-white p-6 md:p-10">
@@ -128,6 +111,6 @@ export default function ServiceTemplate({
         </div>
       </section>
       {children ? <section className="max-w-6xl mx-auto px-4 md:px-6 pb-12">{children}</section> : null}
-    </main>
+    </div>
   );
   }

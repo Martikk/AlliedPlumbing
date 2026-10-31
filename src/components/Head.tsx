@@ -1,84 +1,37 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import pages from '../data/seo.json';
 
-type Props = {
-  title?: string;
-  description?: string;
-  canonical?: string;
-  jsonLd?: object;
-};
-
-export default function Head({ title, description, canonical, jsonLd }: Props) {
+const origin = 'https://www.alliedplumbing.ca';
+export default function Head() {
+  const { pathname } = useLocation();
+  const path = pathname.replace(/\/+$/, '') || '/';
+  const metadata = pages[path as keyof typeof pages];
+  const title = metadata?.title ?? 'Page Not Found — Allied Plumbing';
+  const description = metadata?.description ?? 'This page could not be found. Explore Allied Plumbing services or contact our team.';
   useEffect(() => {
-    if (title) document.title = title;
-
-    const setMeta = (attr: string, content: string, isProperty = false) => {
-      const selector = isProperty ? `meta[property="${attr}"]` : `meta[name="${attr}"]`;
-      let el = document.querySelector<HTMLMetaElement>(selector);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute(isProperty ? "property" : "name", attr);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
+    document.title = title;
+    const setMeta = (name: string, value: string, property = false) => {
+      const attribute = property ? 'property' : 'name';
+      let element = document.querySelector<HTMLMetaElement>(`meta[${attribute}="${name}"]`);
+      if (!element) { element = document.createElement('meta'); element.setAttribute(attribute, name); document.head.append(element); }
+      element.content = value;
     };
-
-    // === Base Meta ===
-    if (description) setMeta("description", description);
-    if (canonical) {
-      let link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-      if (!link) {
-        link = document.createElement("link");
-        link.setAttribute("rel", "canonical");
-        document.head.appendChild(link);
-      }
-      link.setAttribute("href", canonical);
+    setMeta('description', description);
+    setMeta('robots', metadata ? 'index,follow' : 'noindex,follow');
+    setMeta('og:title', title, true);
+    setMeta('og:description', description, true);
+    setMeta('twitter:title', title);
+    setMeta('twitter:description', description);
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (metadata) {
+      if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.append(canonical); }
+      canonical.href = origin + path;
+      setMeta('og:url', origin + path, true);
+    } else {
+      canonical?.remove();
+      document.querySelector('meta[property="og:url"]')?.remove();
     }
-
-    // === Favicons ===
-    const favicons = [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-      { rel: "manifest", href: "/site.webmanifest" },
-    ];
-    favicons.forEach(({ rel, type, href }) => {
-      if (!document.querySelector(`link[href="${href}"]`)) {
-        const link = document.createElement("link");
-        link.rel = rel;
-        if (type) link.type = type;
-        link.href = href;
-        document.head.appendChild(link);
-      }
-    });
-
-    // === Open Graph ===
-    const ogImage =
-      "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068156/Allied/14_urnogx.png";
-    setMeta("og:type", "website", true);
-    if (title) setMeta("og:title", title, true);
-    if (description) setMeta("og:description", description, true);
-    if (canonical) setMeta("og:url", canonical, true);
-    setMeta("og:image", ogImage, true);
-    setMeta("og:site_name", "Allied Plumbing, Heating & Air Conditioning", true);
-
-    // === Twitter ===
-    setMeta("twitter:card", "summary_large_image");
-    if (title) setMeta("twitter:title", title);
-    if (description) setMeta("twitter:description", description);
-    setMeta("twitter:image", ogImage);
-
-    // === JSON-LD structured data ===
-    let script: HTMLScriptElement | null = null;
-    if (jsonLd) {
-      script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.text = JSON.stringify(jsonLd);
-      document.head.appendChild(script);
-    }
-
-    return () => {
-      if (script) document.head.removeChild(script);
-    };
-  }, [title, description, canonical, jsonLd]);
-
+  }, [title, description, path, metadata]);
   return null;
 }

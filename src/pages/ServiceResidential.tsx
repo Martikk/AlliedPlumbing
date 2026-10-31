@@ -8,7 +8,7 @@ export default function ServiceResidential() {
       title="Residential Plumbing"
       subtitle="02 / Plumbing"
       description="Repairs, fixture replacements, repipes, and tankless installations — all delivered with craftsmanship, precision, and respect for your home."
-      heroImg="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068156/Allied/14_urnogx.png"
+      heroImg="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068156/Allied/14_urnogx.png"
       highlights={[
         { label: "Homes Served", value: "5k+" },
         { label: "Avg. Rating", value: "4.9★" },
@@ -63,21 +63,21 @@ function ExtraContent() {
         {/* Right side – animated image collage */}
         <div className="relative grid grid-cols-2 gap-4">
           <motion.img
-            src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/IBC-Logo-for-Gallery_hsklz0.webp"
+            src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074743/Allied/IBC-Logo-for-Gallery_hsklz0.webp"
             alt="High-efficiency systems"
             className="rounded-2xl object-cover h-56 md:h-64 shadow-lg"
             whileHover={{ scale: 1.03 }}
             transition={{ type: "spring", stiffness: 200, damping: 20 }}
           />
           <motion.img
-            src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074745/Allied/Rinnai_Logo_Red_uqwftm.png"
+            src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074745/Allied/Rinnai_Logo_Red_uqwftm.png"
             alt="Tankless water heater install"
             className="rounded-2xl object-cover h-56 md:h-64 shadow-lg"
             whileHover={{ scale: 1.03 }}
             transition={{ type: "spring", stiffness: 200, damping: 20 }}
           />
           <motion.img
-            src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074307/Allied/Gemini_Generated_Image_9on55p9on55p9on5_ga0mso.png"
+            src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074307/Allied/Gemini_Generated_Image_9on55p9on55p9on5_ga0mso.png"
             alt="Repiping system detail"
             className="col-span-2 rounded-2xl object-cover h-60 md:h-72 shadow-xl"
             whileHover={{ scale: 1.02 }}

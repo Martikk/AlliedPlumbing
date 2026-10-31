@@ -86,13 +86,12 @@ export default function PreventiveMaintenanceCTA() {
     // focus the dialog container
     setTimeout(() => dialogRef.current?.focus(), 0);
     return () => window.removeEventListener("keydown", onKey);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
   function suppressAndClose() {
     try {
       localStorage.setItem(STORAGE_KEY, daysFromNow(SUPPRESS_DAYS));
-    } catch {}
+    } catch { /* Storage may be unavailable; dismissal still closes the dialog. */ }
     onClose();
   }
   function onClose() {

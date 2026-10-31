@@ -1,26 +1,14 @@
 import { Link } from "react-router-dom";
-import Head from "@/components/Head";
 import LogoMarquee from "@/components/LogoMarquee";
 
 export default function Services() {
   return (
-    <main className="bg-white text-neutral-900">
-      <Head
-        title="Services — Allied Plumbing, Heating & Air Conditioning"
-        description="Residential & commercial plumbing, HVAC, boiler plants & controls, preventive maintenance, and 24/7 emergency service across BC."
-        canonical="https://allied-plumbing.ca/services"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: "Allied Plumbing Services",
-          areaServed: "British Columbia",
-        }}
-      />
+    <div className="bg-white text-neutral-900">
 
       {/* ===== HERO ===== */}
       <section className="relative overflow-hidden">
         <img
-          src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065875/Allied/1_tc9jiy.png"
+          src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065875/Allied/1_tc9jiy.png"
           alt=""
           className="absolute inset-0 h-[42vh] md:h-[54vh] w-full object-cover"
         />
@@ -74,42 +62,42 @@ export default function Services() {
             title="Residential Plumbing"
             blurb="Repairs, fixture replacements, repipes, tank & tankless water heaters — neat work, clean handover."
             bullets={["Repairs & rough-ins", "Tankless installs", "Repipes / PEX / copper"]}
-            img="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068156/Allied/14_urnogx.png"
+            img="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068156/Allied/14_urnogx.png"
           />
           <ServiceCard
             to="/services/commercial-plumbing"
             title="Commercial & Institutional Plumbing"
             blurb="Backflows, PRVs, booster pumps, DHW plants, tenant improvements, strata & schools."
             bullets={["Backflow testing", "Booster & PRV", "DHW plants"]}
-            img="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065875/Allied/1_tc9jiy.png"
+            img="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065875/Allied/1_tc9jiy.png"
           />
           <ServiceCard
             to="/services/hvac"
             title="HVAC (RTU, MUA, AHU, Heat Pumps, VRF)"
             blurb="Design-build and service for packaged units and VRF — with DDC integration and trending."
             bullets={["RTU / MUA / AHU", "VRF & heat pumps", "DDC integration"]}
-            img="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065876/Allied/3_gk4dl8.png"
+            img="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png"
           />
           <ServiceCard
             to="/services/boilers"
             title="Boiler Plants & Controls"
             blurb="Condensing boilers, burners, VFD pumps, HX, tanks, safety and controls — tuned for efficiency."
             bullets={["IBC / Rheem specialists", "VFD pumps & HX", "Safety & combustion checks"]}
-            img="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/10_kubptf.png"
+            img="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068155/Allied/10_kubptf.png"
           />
           <ServiceCard
             to="/services/maintenance"
             title="Preventive Maintenance Programs"
             blurb="Monthly, quarterly, annual programs with checklists, reporting and capex planning."
             bullets={["Bespoke PM checklists", "Trend reviews", "Capex forecasting"]}
-            img="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074307/Allied/Gemini_Generated_Image_9on55p9on55p9on5_ga0mso.png"
+            img="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074307/Allied/Gemini_Generated_Image_9on55p9on55p9on5_ga0mso.png"
           />
           <ServiceCard
             to="/services/emergency"
             title="24/7 Emergency Service"
             blurb="On-call dispatch for leaks, no-heat/DHW outages, gas issues and critical alarms."
             bullets={["Real person 24/7", "Rapid triage", "School-safe crews"]}
-            img="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760070439/Allied/247_bs1xho.png"
+            img="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760070439/Allied/247_bs1xho.png"
           />
         </div>
       </section>
@@ -179,7 +167,7 @@ export default function Services() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

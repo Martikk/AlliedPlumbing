@@ -2,6 +2,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { sendEnquiry } from "../lib/forms";
+import { trackEvent } from "../lib/analytics";
 
 type FileItem = { file: File; preview?: string };
 
@@ -24,7 +26,11 @@ const URGENCY = [
 export default function GetQuote() {
   const [files, setFiles] = useState<FileItem[]>([]);
   const [submitting, setSubmitting] = useState(false);
-  const [done, setDone] = useState<null | { ticket: string }>(null);
+  const [done, setDone] = useState(false);
+  const [error, setError] = useState("");
+  const started = useRef(false);
+  const previews = useRef(new Set<string>());
+  const statusRef = useRef<HTMLDivElement>(null);
 
   // простая маска для телефона
   const [phone, setPhone] = useState("");
@@ -33,10 +39,9 @@ export default function GetQuote() {
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
-    return () => {
-      files.forEach((f) => f.preview && URL.revokeObjectURL(f.preview));
-    };
-  }, [files]);
+    const urls = previews.current;
+    return () => urls.forEach(url => URL.revokeObjectURL(url));
+  }, []);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -45,49 +50,47 @@ export default function GetQuote() {
       form.reportValidity();
       return;
     }
-    setSubmitting(true);
-
+    if (submitting) return;
+    setSubmitting(true); setError(""); setDone(false);
     try {
-      const fd = new FormData(form);
-      // Прикладываем файлы
-      files.forEach(({ file }) => fd.append("attachments", file));
-
-      // TODO: замени на свой эндпоинт Lambda / Formspree / API Gateway
-      const res = await fetch("/api/quote", {
-        method: "POST",
-        body: fd,
-      });
-
-      // для статики можно временно фолбэкнуть:
-      if (!res.ok) {
-        // имитация успешной заявки
-        await new Promise((r) => setTimeout(r, 1000));
-      }
-
-      setDone({ ticket: "#" + Math.floor(100000 + Math.random() * 900000) });
-      setFiles([]);
-      form.reset();
-      setPhone("");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } catch {
-      alert("Could not send. Please try again or call 604-731-1000.");
+      const data = new FormData(form);
+      data.set("_subject", "Allied Plumbing — Quote request");
+      files.forEach(({ file }) => data.append("attachments", file));
+      await sendEnquiry(data);
+      trackEvent("generate_lead", { form_name: "quote" });
+      setDone(true);
+      previews.current.forEach(url => URL.revokeObjectURL(url));
+      previews.current.clear();
+      setFiles([]); form.reset(); setPhone("");
+    } catch (failure) {
+      setError(failure instanceof Error && failure.name !== "TimeoutError" ? failure.message : "Your request could not be sent. Check your connection and try again, or call 604-731-1000.");
+      trackEvent("form_error", { form_name: "quote", error_type: "network_or_server" });
     } finally {
       setSubmitting(false);
+      requestAnimationFrame(() => statusRef.current?.focus());
     }
   }
 
   function onPickFiles(e: React.ChangeEvent<HTMLInputElement>) {
     const picked = Array.from(e.target.files ?? []);
-    const newItems = picked.slice(0, 6).map((file) => ({
-      file,
-      preview: file.type.startsWith("image/") ? URL.createObjectURL(file) : undefined,
-    }));
-    setFiles((prev) => [...prev, ...newItems].slice(0, 6));
+    const allowed = new Set(["image/jpeg", "image/png", "video/mp4", "video/quicktime"]);
+    if (picked.some(file => !allowed.has(file.type) || file.size > 10 * 1024 * 1024) || picked.length + files.length > 6) {
+      setError("Choose up to 6 JPG, PNG, MP4 or MOV files, no larger than 10 MB each.");
+      e.target.value = "";
+      return;
+    }
+    setError("");
+    const next = picked.map(file => {
+      const preview = file.type.startsWith("image/") ? URL.createObjectURL(file) : undefined;
+      if (preview) previews.current.add(preview);
+      return { file, preview };
+    });
+    setFiles(previous => [...previous, ...next]);
     e.target.value = "";
   }
 
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       {/* Hero-врезка/хлебные */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -113,15 +116,10 @@ export default function GetQuote() {
       {/* Контент */}
       <section className="max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-14">
         {/* Успешная отправка */}
-        {done && (
-          <div className="mb-6 rounded-xl border border-green-200 bg-green-50 p-4 text-green-800">
-            <div className="font-semibold">Thanks! Your request was submitted.</div>
-            <div className="text-sm mt-1">
-              Our coordinator will contact you shortly. Your ticket:{" "}
-              <span className="font-mono font-bold">{done.ticket}</span>.
-            </div>
-          </div>
-        )}
+        <div ref={statusRef} tabIndex={-1} role="status" aria-live="polite" className="scroll-mt-6">
+          {done && <p className="mb-6 rounded-xl bg-green-50 p-4 text-green-900">Thank you. Your quote request has been received.</p>}
+          {error && <p className="mb-6 rounded-xl bg-red-50 p-4 text-red-900">{error}</p>}
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Форма */}
@@ -133,13 +131,18 @@ export default function GetQuote() {
           >
             <FormHeader />
 
-            <form ref={formRef} onSubmit={onSubmit} className="mt-4 space-y-5">
+            <form hidden={done} ref={formRef} onSubmit={onSubmit} aria-busy={submitting} onFocusCapture={() => {
+              if (!started.current) { trackEvent("form_start", { form_name: "quote" }); started.current = true; }
+            }} className="mt-4 space-y-5">
+              <fieldset disabled={submitting} className="space-y-5">
               {/* Имя / Телефон */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Field label="Name" htmlFor="name">
                   <input
                     id="name"
                     name="name"
+                    autoComplete="name"
+                    maxLength={120}
                     required
                     placeholder="Full name / Company"
                     className="input"
@@ -149,6 +152,8 @@ export default function GetQuote() {
                   <input
                     id="phone"
                     name="phone"
+                    type="tel"
+                    autoComplete="tel"
                     inputMode="tel"
                     placeholder="(604) 555-1212"
                     value={maskedPhone}
@@ -164,6 +169,9 @@ export default function GetQuote() {
                 <input
                   id="email"
                   name="email"
+                  autoComplete="email"
+                  spellCheck={false}
+                  maxLength={254}
                   type="email"
                   placeholder="you@company.com"
                   required
@@ -176,6 +184,8 @@ export default function GetQuote() {
                 <input
                   id="address"
                   name="address"
+                  autoComplete="street-address"
+                  maxLength={300}
                   placeholder="Address or nearest intersection"
                   required
                   className="input"
@@ -212,6 +222,7 @@ export default function GetQuote() {
                 <textarea
                   id="message"
                   name="message"
+                  maxLength={5000}
                   rows={5}
                   placeholder="Describe the issue (age of equipment, symptoms, access hours)…"
                   className="input resize-y"
@@ -224,7 +235,7 @@ export default function GetQuote() {
                 <label className="block text-sm font-medium text-neutral-800">
                   Photos / video (optional)
                 </label>
-                <p className="text-neutral-500 text-sm">Up to 6 files — JPG, PNG, MP4, MOV.</p>
+                <p className="text-neutral-500 text-sm">Up to 6 files — JPG, PNG, MP4, MOV. Maximum 10 MB per file.</p>
 
                 <div className="mt-3 grid grid-cols-3 sm:grid-cols-4 gap-3">
                   {files.map((item, idx) => (
@@ -243,9 +254,12 @@ export default function GetQuote() {
                       <button
                         type="button"
                         onClick={() =>
-                          setFiles((prev) => prev.filter((_, i) => i !== idx))
+                          {
+                          if (item.preview) { URL.revokeObjectURL(item.preview); previews.current.delete(item.preview); }
+                          setFiles(prev => prev.filter((_, i) => i !== idx));
                         }
-                        className="absolute -top-2 -right-2 h-6 w-6 rounded-full bg-neutral-900 text-white text-xs shadow hidden group-hover:grid place-items-center"
+                        }
+                        className="absolute -top-2 -right-2 h-6 w-6 rounded-full bg-neutral-900 text-white text-xs shadow grid place-items-center"
                         aria-label="Remove file"
                       >
                         ×
@@ -254,13 +268,14 @@ export default function GetQuote() {
                   ))}
 
                   {files.length < 6 && (
-                    <label className="h-24 w-full cursor-pointer rounded-lg ring-1 ring-dashed ring-neutral-300 grid place-items-center text-sm text-neutral-600 hover:bg-neutral-50">
+                    <label className="h-24 w-full cursor-pointer rounded-lg focus-within:outline focus-within:outline-2 focus-within:outline-red-700 ring-1 ring-dashed ring-neutral-300 grid place-items-center text-sm text-neutral-600 hover:bg-neutral-50">
                       <input
                         type="file"
-                        accept="image/*,video/*"
+                        accept="image/jpeg,image/png,video/mp4,video/quicktime"
                         multiple
                         onChange={onPickFiles}
-                        className="hidden"
+                        className="sr-only"
+                        aria-label="Upload photos or video"
                       />
                       Upload
                     </label>
@@ -268,23 +283,22 @@ export default function GetQuote() {
                 </div>
               </div>
 
-              {/* Согласие / reCAPTCHA (заглушка) */}
+              {/* Contact consent */}
               <div className="flex flex-col gap-3">
                 <label className="inline-flex items-start gap-2">
-                  <input type="checkbox" required className="mt-1 accent-neutral-900" />
+                  <input type="checkbox" name="consent" value="yes" required className="mt-1 accent-neutral-900" />
                   <span className="text-sm text-neutral-700">
                     I agree to be contacted about this request and accept the{" "}
-                    <Link to="/privacy" className="underline">
-                      Privacy Policy
+                    <Link to="/privacy" target="_blank" className="underline">
+                      Privacy Notice (opens in a new tab)
                     </Link>
                     .
                   </span>
                 </label>
-                <div className="h-12 w-[300px] max-w-full rounded border border-neutral-300 bg-neutral-100/70 text-neutral-500 grid place-items-center text-xs">
-                  reCAPTCHA placeholder
-                </div>
+
               </div>
 
+              </fieldset>
               {/* CTA */}
               <div className="pt-2">
                 <button
@@ -315,7 +329,7 @@ export default function GetQuote() {
           </aside>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 
@@ -336,7 +350,7 @@ function FormHeader() {
         </p>
       </div>
       <img
-        src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/IBC-Logo-for-Gallery_hsklz0.webp"
+        src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074743/Allied/IBC-Logo-for-Gallery_hsklz0.webp"
         alt=""
         className="h-10 w-auto opacity-80 hidden sm:block"
       />
@@ -354,10 +368,10 @@ function Field({
   children: React.ReactNode;
 }) {
   return (
-    <label htmlFor={htmlFor} className="block">
-      <span className="block text-sm font-medium text-neutral-800">{label}</span>
+    <div className="block">
+      <label htmlFor={htmlFor} className="block text-sm font-medium text-neutral-800">{label}</label>
       <div className="mt-1">{children}</div>
-    </label>
+    </div>
   );
 }
 
@@ -383,6 +397,7 @@ function QuickChips({ name, options }: { name: string; options: string[] }) {
           return (
             <button
               type="button"
+              aria-pressed={active}
               key={opt}
               onClick={() =>
                 setSelected((prev) =>
@@ -426,17 +441,17 @@ function TrustCard() {
       </ul>
       <div className="mt-4 grid grid-cols-3 gap-3">
         <img
-          src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074745/Allied/Rinnai_Logo_Red_uqwftm.png"
+          src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074745/Allied/Rinnai_Logo_Red_uqwftm.png"
           alt=""
           className="h-6 object-contain opacity-70"
         />
         <img
-          src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/png-clipart-daikin-air-conditioning-heating-system-service-others-blue-text_novbee.png"
+          src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074743/Allied/png-clipart-daikin-air-conditioning-heating-system-service-others-blue-text_novbee.png"
           alt=""
           className="h-6 object-contain opacity-70"
         />
         <img
-          src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/IBC-Logo-for-Gallery_hsklz0.webp"
+          src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074743/Allied/IBC-Logo-for-Gallery_hsklz0.webp"
           alt=""
           className="h-6 object-contain opacity-70"
         />

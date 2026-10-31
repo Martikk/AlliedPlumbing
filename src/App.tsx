@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
+import SiteLayout from './components/SiteLayout';
+import Privacy from './pages/Privacy';
 import ScrollToTop from './components/ScrollToTop';
 import SkipLink from './components/SkipLink';
 
@@ -35,6 +37,7 @@ export default function App() {
     <BrowserRouter>
       <SkipLink />
       <ScrollToTop />
+      <SiteLayout>
       <Suspense fallback={<div className="py-20 text-center">Loading…</div>}>
         <Routes>
           {/* Core */}
@@ -75,10 +78,13 @@ export default function App() {
           <Route path="/services/maintenance-programs" element={<Navigate to="/services/maintenance" replace />} />
           <Route path="/services/emergency-service" element={<Navigate to="/services/emergency" replace />} />
 
+          <Route path="/privacy" element={<Privacy />} />
+
           {/* 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
+      </SiteLayout>
     </BrowserRouter>
   );
 }

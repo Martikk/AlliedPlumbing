@@ -20,10 +20,10 @@ const DATA: Project[] = [
     category: "Institutional",
     year: 2024,
     cover:
-      "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/garibaldi.webp",
+      "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074743/Allied/garibaldi.webp",
     images: [
-      "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065876/Allied/3_gk4dl8.png",
-      "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068156/Allied/14_urnogx.png",
+      "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png",
+      "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068156/Allied/14_urnogx.png",
     ],
     blurb:
       "VRF + DDC integration, unit ventilators, demand control and heat recovery upgrades.",
@@ -35,7 +35,7 @@ const DATA: Project[] = [
     category: "Institutional",
     year: 2023,
     cover:
-      "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/ridgeview.webp",
+      "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074743/Allied/ridgeview.webp",
     blurb:
       "IBC condensing boilers, primary-secondary with VFD pumps, DHW mixing and safeties.",
   },
@@ -46,7 +46,7 @@ const DATA: Project[] = [
     category: "Institutional",
     year: 2023,
     cover:
-      "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/leigh.webp",
+      "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074743/Allied/leigh.webp",
     blurb:
       "Burner replacement, controls optimization, balancing and commissioning package.",
   },
@@ -57,7 +57,7 @@ const DATA: Project[] = [
     category: "Residential",
     year: 2024,
     cover:
-      "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/haro.webp",
+      "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074743/Allied/haro.webp",
     blurb:
       "High-efficiency tank/tankless manifold, recirc with smart timers, backflow and PRV.",
   },
@@ -105,7 +105,7 @@ export default function Projects() {
   }, [q, cat, sort]);
 
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900" />
@@ -287,7 +287,7 @@ export default function Projects() {
           onClose={() => setOpenId(null)}
         />
       )}
-    </main>
+    </div>
   );
 }
 

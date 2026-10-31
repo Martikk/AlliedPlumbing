@@ -13,7 +13,7 @@ export default function CallToAction() {
       >
         {/* background image */}
         <img
-          src="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760072887/Allied/Allied_1_n00b0m.png"
+          src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760072887/Allied/Allied_1_n00b0m.png"
           alt="Construction site"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"

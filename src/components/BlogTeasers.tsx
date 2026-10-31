@@ -15,21 +15,21 @@ const posts: Post[] = [
     date: "10 May, 2025",
     title: "Building Strong Foundations, Why It Matters",
     href: "/blog/foundations",
-    image: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760071289/Allied/123_clbeb3.png",
+    image: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071289/Allied/123_clbeb3.png",
   },
   {
     id: "p2",
     date: "10 May, 2025",
     title: "Top 5 Modern Construction Materials in 2025",
     href: "/blog/materials-2025",
-    image: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760072887/Allied/Allied_1_n00b0m.png",
+    image: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760072887/Allied/Allied_1_n00b0m.png",
   },
   {
     id: "p3",
     date: "10 May, 2025",
     title: "Technology That’s Changing the Game",
     href: "/blog/tech-changing-game",
-    image: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760069670/Allied/maintance_grwetv.png",
+    image: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760069670/Allied/maintance_grwetv.png",
   },
 ];
 

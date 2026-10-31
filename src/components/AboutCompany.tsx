@@ -110,13 +110,13 @@ export default function AboutCompany() {
           <div className="relative overflow-hidden rounded-2xl shadow-xl"
                style={{ clipPath: 'polygon(12% 0%, 100% 0%, 88% 100%, 0% 100%)' }}>
             <video
-              autoPlay
+              controls
+              preload="none"
               muted
-              loop
               playsInline
               // Если положишь файл в public/about/hero.mp4 — используй: src="/about/hero.mp4"
               src="https://res.cloudinary.com/dzytbkc5l/video/upload/v1760069369/Allied/Allied_Plumbing_Video_Script_Generation_qz6an9.mp4"
-              poster="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/10_kubptf.png"
+              poster="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068155/Allied/10_kubptf.png"
               className="block h-[300px] w-[420px] md:h-[360px] md:w-[520px] object-cover object-center"
             />
           </div>

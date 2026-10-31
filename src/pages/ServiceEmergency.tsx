@@ -7,7 +7,7 @@ export default function ServiceEmergency() {
       title="24/7 Emergency Service"
       subtitle="06 / Rapid Response"
       description="On-call dispatch for leaks, no-heat or DHW outages, gas issues, and critical alarms — real people, real time, ready to move when you call."
-      heroImg="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760070439/Allied/247_bs1xho.png"
+      heroImg="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760070439/Allied/247_bs1xho.png"
       highlights={[
         { label: "Average Dispatch", value: "<30 min" },
         { label: "Response Coverage", value: "24/7 / 365" },

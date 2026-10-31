@@ -1,7 +1,6 @@
 // src/pages/Clients.tsx
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import Head from "@/components/Head";
 import { Link } from "react-router-dom";
 
 /* -------------------- Demo data (замени реальным API при желании) -------------------- */
@@ -84,12 +83,7 @@ export default function Clients() {
   }, [q, sector, sort]);
 
   return (
-    <main className="bg-white text-neutral-900">
-      <Head
-        title="Allied Plumbing — Client Testimonials"
-        description="Read what residential, commercial, and institutional clients say about Allied Plumbing, Heating & Air Conditioning."
-        canonical="https://allied-plumbing.ca/clients"
-      />
+    <div className="bg-white text-neutral-900">
 
       {/* Hero */}
       <section className="relative overflow-hidden">
@@ -235,6 +229,6 @@ export default function Clients() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

@@ -11,8 +11,8 @@ type Member = {
 };
 
 const TEAM: Member[] = [
-  { name: "Nick Fedele", role: "Accounts Manager", photo: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760038738/Allied/IMG_1095_ptva4x.jpg", tags: ["Client-first", "Billing"] },
-  { name: "Alex Martishyn", role: "Project Manager", photo: "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760073539/Allied/09738F7C-ACFD-44A8-A508-56BC9B644BF2_y4vmko.jpg", tags: ["PM", "Scheduling"] },
+  { name: "Nick Fedele", role: "Accounts Manager", photo: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760038738/Allied/IMG_1095_ptva4x.jpg", tags: ["Client-first", "Billing"] },
+  { name: "Alex Martishyn", role: "Project Manager", photo: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760073539/Allied/09738F7C-ACFD-44A8-A508-56BC9B644BF2_y4vmko.jpg", tags: ["PM", "Scheduling"] },
   // Добавляй людей дальше:
   // { name: "Jane Doe", role: "Project Engineer", photo: "/team/jane.jpg", tags: ["BIM", "QA/QC"] },
   // { name: "John Smith", role: "Field Lead", tags: ["COR", "Safety"] },
@@ -48,7 +48,7 @@ export default function TeamPage() {
   });
 
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       {/* HERO / HEADER */}
       <section className="relative overflow-hidden">
         {/* мягкие блики */}
@@ -205,6 +205,6 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

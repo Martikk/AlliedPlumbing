@@ -1,7 +1,6 @@
 // src/pages/Blog.tsx
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import Head from "@/components/Head";
 
 type Post = {
   id: string;
@@ -92,12 +91,7 @@ export default function Blog() {
   const paged = filtered.slice((page - 1) * PER, page * PER);
 
   return (
-    <main className="bg-white text-neutral-900">
-      <Head
-        title="Allied Blog — Updates & Articles"
-        description="Latest insights, guides and news from Allied Plumbing, Heating & Air Conditioning."
-        canonical="https://allied-plumbing.ca/blog"
-      />
+    <div className="bg-white text-neutral-900">
 
       {/* Hero */}
       <section className="relative overflow-hidden">
@@ -253,7 +247,7 @@ export default function Blog() {
           </form>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

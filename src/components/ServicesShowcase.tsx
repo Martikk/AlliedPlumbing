@@ -15,7 +15,7 @@ const ITEMS: Item[] = [
     blurb:
       'Monthly, quarterly, annual programs with trend reviews, DDC checks and reporting.',
     href: '/services/maintenance',
-    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760069670/Allied/maintance_grwetv.png',
+    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760069670/Allied/maintance_grwetv.png',
   },
   {
     n: '02',
@@ -23,7 +23,7 @@ const ITEMS: Item[] = [
     blurb:
       'Repairs, fixture replacements, rough-ins, repipes, tank & tankless water heaters.',
     href: '/services/residential-plumbing',
-    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068156/Allied/14_urnogx.png',
+    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068156/Allied/14_urnogx.png',
   },
   {
     n: '03',
@@ -31,7 +31,7 @@ const ITEMS: Item[] = [
     blurb:
       'Backflows, PRVs, booster pumps, DHW plants, tenant improvements, strata & schools.',
     href: '/services/commercial-plumbing',
-    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065875/Allied/1_tc9jiy.png',
+    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065875/Allied/1_tc9jiy.png',
   },
   {
     n: '04',
@@ -39,7 +39,7 @@ const ITEMS: Item[] = [
     blurb:
       'RTU, MUA, AHU, unit ventilators, heat pumps, VRF — with DDC integration.',
     href: '/services/hvac',
-    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065875/Allied/5_jovqeo.png',
+    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065875/Allied/5_jovqeo.png',
   },
   {
     n: '05',
@@ -47,7 +47,7 @@ const ITEMS: Item[] = [
     blurb:
       'Condensing boilers, burners, VFD pumps, HX, tanks, safety and controls.',
     href: '/services/boilers',
-    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/10_kubptf.png', // поменяй на подходящее фото, если нужно
+    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068155/Allied/10_kubptf.png', // поменяй на подходящее фото, если нужно
   },
   {
     n: '06',
@@ -55,7 +55,7 @@ const ITEMS: Item[] = [
     blurb:
       'Fast response for leaks, no-heat/DHW outages, gas issues and RTU/MUA failures.',
     href: '/services/emergency',
-    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760077645/Allied/Screenshot_2025-10-09_at_11.27.02_PM_nnu7cg.png',
+    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760077645/Allied/Screenshot_2025-10-09_at_11.27.02_PM_nnu7cg.png',
   },
 ];
 
@@ -93,6 +93,7 @@ export default function ServicesShowcase() {
               {/* изображение */}
               <Link
                 to={it.href}
+                  aria-label={`View ${it.title} services`}
                 className={`group block rounded-2xl overflow-hidden bg-neutral-200 shadow-sm ring-1 ring-black/5 hover:shadow-lg transition ${
                   imgLeft ? '' : 'lg:order-2'
                 }`}

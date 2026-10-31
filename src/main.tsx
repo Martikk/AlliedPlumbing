@@ -14,3 +14,5 @@ createRoot(el).render(
     <App />
   </StrictMode>
 );
+// Load measurement code after the initial application module, without any remote analytics script.
+void import('./lib/vitals').then(({ observeVitals }) => observeVitals());

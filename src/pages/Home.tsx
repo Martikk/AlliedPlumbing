@@ -1,8 +1,6 @@
 // src/pages/Home.tsx
-import Head from '../components/Head';
 import Hero from '@/components/Hero';
 import FeatureRibbon from '@/components/FeatureRibbon';
-import { PHONE } from '@/config';
 import AboutCompany from '@/components/AboutCompany';
 import ServicesShowcase from '@/components/ServicesShowcase';
 import ProjectsBanner from '@/components/ProjectsBanner';
@@ -12,39 +10,16 @@ import BlogTeasers from "@/components/BlogTeasers";
 import LogoMarquee from "../components/LogoMarquee";
 import CallToAction from "@/components/CallToAction";
 import ContactLead from "@/components/ContactLead";
-import Footer from "@/components/Footer";
-import PreventiveMaintenanceCTA from "@/components/PreventiveMaintenanceCTA"; // ← поп-ап
 
 export default function Home() {
   return (
     <div className="bg-white overflow-x-hidden">
-      <Head
-        title="Allied Plumbing — Keeping BC Running"
-        description="Plumbing, heating, and HVAC experts for schools, strata, commercial, and residential across BC. 24/7 emergency service."
-        canonical="https://allied-plumbing.ca/"
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'HVACBusiness',
-          name: 'Allied Plumbing, Heating & Air Conditioning Ltd.',
-          telephone: PHONE,
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: '4085 2nd Ave',
-            addressLocality: 'Burnaby',
-            addressRegion: 'BC',
-            postalCode: 'V5C 3X1',
-            addressCountry: 'CA',
-          },
-          areaServed: 'British Columbia',
-          url: 'https://allied-plumbing.ca',
-        }}
-      />
 
       <Hero slides={[
-        'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074307/Allied/Gemini_Generated_Image_9on55p9on55p9on5_ga0mso.png',
-        'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065876/Allied/3_gk4dl8.png',
-        'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065875/Allied/1_tc9jiy.png',
-        'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068156/Allied/14_urnogx.png'
+        'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074307/Allied/Gemini_Generated_Image_9on55p9on55p9on5_ga0mso.png',
+        'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png',
+        'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065875/Allied/1_tc9jiy.png',
+        'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068156/Allied/14_urnogx.png'
       ]} />
 
       <FeatureRibbon className="-mt-8 md:-mt-32" />
@@ -61,12 +36,12 @@ export default function Home() {
           <LogoMarquee />
           <CallToAction />
           <ContactLead />
-          <Footer />
+
         </div>
       </section>
 
       {/* Поп-ап CTA — Renders поверх всего, помним про suppression в localStorage */}
-      <PreventiveMaintenanceCTA />
+
     </div>
   );
 }

@@ -37,3 +37,32 @@ a:focus-visible, button:focus-visible {
 .clip-tilt {
   clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
 }
+/* Shared interaction and form foundations. */
+html { scroll-padding-top: 1rem; }
+body { margin: 0; }
+#main:focus { outline: none; }
+#main { scroll-margin-top: 1rem; }
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 3px solid #b91c1c;
+  outline-offset: 3px;
+}
+:where(button, a, input, select, textarea) { touch-action: manipulation; }
+:where(input, textarea, select) { font-size: 1rem; }
+:where(h1, h2) { text-wrap: balance; }
+.input {
+  width: 100%; border: 1px solid #a3a3a3; border-radius: .5rem;
+  background: white; color: #171717; padding: .75rem;
+}
+.btn-secondary, .btn-tertiary {
+  border: 1px solid #a3a3a3; border-radius: .5rem; padding: .75rem 1rem;
+  color: #171717; background: white; font-weight: 600;
+}
+.btn-secondary:hover, .btn-tertiary:hover { background: #f5f5f5; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
