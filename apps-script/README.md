@@ -1,6 +1,6 @@
 # Allied enquiry backend — deployment package
 
-Status: backend version 4 deployed on 2026-11-01; **frontend not activated**. `src/lib/enquiry-config.json` is empty, so all production forms remain on Formspree.
+Status: backend version 4 deployed on 2026-11-01; **frontend activation authorized by the owner**. `src/lib/enquiry-config.json` points to the deployed endpoint. Production verification follows deployment.
 
 ## Fixed routing and file policy
 
@@ -30,7 +30,7 @@ Prepared Google project: https://script.google.com/home/projects/1F1iTfQ5foQPXxR
 
 Endpoint: https://script.google.com/macros/s/AKfycbzY-CmGdtjp9EWttkl0-4q_vrWWFLwEQFWOyFejKxZ4RX9KDaONZyQzSYVjRaicAAApLQ/exec
 
-Quote fixture without attachments was accepted: 9f397ea1-7a84-4cc6-86ea-a1d5d8f5c217. Contact accepted: d69c4f19-a39e-4418-a564-0689b0496c25. Careers accepted: 7f59be33-0223-44d0-8a75-245743cd1a86. All three fixtures were clearly labelled TEST ONLY and contained no applicant data. The user confirmed delivery of all three fixture emails to their business inboxes. Anonymous visitor access and PDF upload remain unverified. Browser file chooser automation timed out; do not treat that as a successful upload. Keep frontend config empty until these checks and Privacy changes are complete.
+Quote fixture without attachments was accepted: 9f397ea1-7a84-4cc6-86ea-a1d5d8f5c217. Contact accepted: d69c4f19-a39e-4418-a564-0689b0496c25. Careers accepted: 7f59be33-0223-44d0-8a75-245743cd1a86. All three fixtures were clearly labelled TEST ONLY and contained no applicant data. The user confirmed delivery of all three fixture emails to their business inboxes. Anonymous visitor access and PDF upload remain unverified. Browser file chooser automation timed out; do not treat that as a successful upload. The owner explicitly requested production activation on 2026-11-01; PDF inbox receipt and anonymous visitor access remain verification follow-ups. Privacy text switches to Google processing with this config.
 
 ## Operational recovery
 
