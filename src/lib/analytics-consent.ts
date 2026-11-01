@@ -1,4 +1,4 @@
-const measurementID = import.meta.env.VITE_GA_MEASUREMENT_ID ?? '';
+const measurementID = import.meta.env.VITE_GA_MEASUREMENT_ID ?? 'G-ZKZXJGTS54';
 const enabled = /^G-[A-Z0-9]+$/.test(measurementID);
 const storageKey = 'allied:analytics-consent:v1';
 let allowed = false;
