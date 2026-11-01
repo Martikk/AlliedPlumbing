@@ -1,3 +1,4 @@
+import EmbeddedEnquiry, { APPS_SCRIPT_URL } from './EmbeddedEnquiry';
 import { useFeedbackMotion } from '../hooks/useFeedbackMotion';
 import { FORMSPREE_ENDPOINT } from '../config';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
@@ -55,7 +56,7 @@ export default function CareerApplication() {
       <div className="mb-8 max-w-2xl"><h2 className="text-2xl font-bold">What happens after you apply?</h2><p className="mt-3 text-white/85 leading-relaxed">Share your experience, qualifications, availability and the kind of work you’re interested in. Your application details are sent for review. If there is a suitable opportunity, the hiring team can contact you to discuss the role and next steps.</p></div>
       <h2 className="text-2xl md:text-4xl font-extrabold">Introduce yourself</h2>
       <p className="mt-3 max-w-2xl text-white/85 leading-relaxed">Tell us about your trade, experience and the role you’re interested in. No cover letter needed. Include a link to your resume, or email your PDF separately.</p>
-      <form method="post" action={FORMSPREE_ENDPOINT} ref={formRef} aria-busy={sending} onSubmit={submit} aria-label="Careers application" className="mt-7 grid md:grid-cols-2 gap-5">
+      {APPS_SCRIPT_URL ? <EmbeddedEnquiry type="careers" role={role} /> : <form method="post" action={FORMSPREE_ENDPOINT} ref={formRef} aria-busy={sending} onSubmit={submit} aria-label="Careers application" className="mt-7 grid md:grid-cols-2 gap-5">
         <label>Full name<input ref={name} name="name" autoComplete="name" required maxLength={150} className="input mt-2 !bg-white !text-neutral-900" /></label>
         <label>Email<input name="email" type="email" autoComplete="email" required maxLength={254} className="input mt-2 !bg-white !text-neutral-900" /></label>
         <label>Phone (optional)<input name="phone" type="tel" autoComplete="tel" maxLength={40} className="input mt-2 !bg-white !text-neutral-900" /></label>
@@ -64,7 +65,7 @@ export default function CareerApplication() {
         <label className="md:col-span-2">Experience and availability<textarea name="message" required maxLength={5000} rows={4} className="input mt-2 !bg-white !text-neutral-900" /></label>
         <label className="md:col-span-2 flex items-start gap-3 text-sm leading-relaxed"><input type="checkbox" name="consent" value="yes" required className="mt-1 h-5 w-5 shrink-0" /><span>I agree to be contacted about this application. See our <a href="/privacy/" target="_blank" rel="noopener noreferrer" className="underline">privacy notice (opens in a new tab)</a>.</span></label>
         <div className="md:col-span-2"><button type="submit" disabled={sending} className="rounded-lg bg-white px-5 py-3 font-semibold text-neutral-900 disabled:opacity-60">{sending ? 'Sending…' : 'Submit application'}</button><div ref={resultRef} tabIndex={-1} role="status" className="mt-4 text-white leading-relaxed"><p>{status}</p>{error && <p role="alert" className="mt-3 rounded-lg bg-white p-4 text-red-800">{error}</p>}</div><p className="mt-3 text-sm text-white/80">You can also send your application and resume to <a href="mailto:careers@allied-plumbing.ca" className="underline">careers@allied-plumbing.ca</a>.</p></div>
-      </form>
+      </form>}
     </div>
   </section>;
 }

@@ -1,3 +1,4 @@
+import EmbeddedEnquiry, { APPS_SCRIPT_URL } from './EmbeddedEnquiry';
 import { useFeedbackMotion } from '../hooks/useFeedbackMotion';
 import { FORMSPREE_ENDPOINT } from '../config';
 import { useRef, useState } from 'react';
@@ -40,7 +41,7 @@ export default function ContactLead() {
         <p className="mt-4 max-w-md leading-relaxed">Send your plumbing, heating or HVAC enquiry. For urgent assistance, call our team.</p>
         <a href="tel:+16047311000" className="inline-block mt-6 text-xl font-bold underline underline-offset-4">604-731-1000</a>
       </div>
-      <form method="post" action={FORMSPREE_ENDPOINT} ref={formRef} onSubmit={submit} aria-busy={sending} onFocusCapture={() => {
+      {APPS_SCRIPT_URL ? <EmbeddedEnquiry type="contact" /> : <form method="post" action={FORMSPREE_ENDPOINT} ref={formRef} onSubmit={submit} aria-busy={sending} onFocusCapture={() => {
         if (!started.current) { trackEvent('form_start', { form_name: 'contact' }); started.current = true; }
       }} className="contact-glass-form rounded-2xl p-5 md:p-6 text-neutral-900">
         <div ref={resultRef} tabIndex={-1} role="status" aria-live="polite">{ok && <p className="rounded-lg bg-green-50 p-4 text-green-900">Thank you. Your message has been received.</p>}{error && <p role="alert" className="mt-3 text-sm text-red-800">{error}</p>}</div>
@@ -54,7 +55,7 @@ export default function ContactLead() {
           </fieldset>
           <button type="submit" disabled={sending} className="mt-4 min-h-12 rounded-lg bg-[#3866c3] px-5 py-3 font-semibold text-white hover:bg-[#2d54a5] disabled:opacity-60">{sending ? 'Sending…' : 'Send message'}</button>
         </>}
-      </form>
+      </form>}
     </div>
   </section>;
 }

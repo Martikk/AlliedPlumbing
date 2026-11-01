@@ -1,3 +1,4 @@
+import EmbeddedEnquiry, { APPS_SCRIPT_URL } from '../components/EmbeddedEnquiry';
 import { FORMSPREE_ENDPOINT } from '../config';
 // src/pages/GetQuote.tsx
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -140,7 +141,7 @@ export default function GetQuote() {
           >
             <FormHeader />
 
-            <form method="post" action={FORMSPREE_ENDPOINT} hidden={done} ref={formRef} onSubmit={onSubmit} aria-busy={submitting} onFocusCapture={() => {
+            {APPS_SCRIPT_URL ? <EmbeddedEnquiry type="quote" /> : <form method="post" action={FORMSPREE_ENDPOINT} hidden={done} ref={formRef} onSubmit={onSubmit} aria-busy={submitting} onFocusCapture={() => {
               if (!started.current) { trackEvent("form_start", { form_name: "quote" }); started.current = true; }
             }} className="mt-4 space-y-5">
               <fieldset disabled={submitting} className="space-y-5">
@@ -325,7 +326,7 @@ export default function GetQuote() {
                   .
                 </p>
               </div>
-            </form>
+            </form>}
           </div>
 
           {/* Sticky доверие/контакты */}
