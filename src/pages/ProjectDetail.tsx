@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams } from '../lib/navigation';
 import projects from '../data/projects.json';
 import posts from '../data/posts.json';
 import NotFound from './NotFound';
@@ -7,7 +7,7 @@ export default function ProjectDetail() {
   const project=projects.find(item=>item.id===slug);
   if(!project)return <NotFound />;
   const related=posts.find(post=>post.project===project.id);
-  return <article className="max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-14">
+  return <article className="max-w-6xl mx-auto px-4 md:px-6 py-7 md:py-10">
     <nav aria-label="Breadcrumb"><Link to="/projects" className="text-sm font-semibold text-[#315cb4] underline underline-offset-4">All projects</Link></nav>
     <div className="mt-6 grid lg:grid-cols-[1fr_.9fr] gap-9 items-center">
       <div><span className="section-kicker">{project.category}</span><h1 className="mt-4 text-4xl md:text-5xl font-extrabold leading-tight">{project.title}</h1><p className="mt-5 text-lg text-slate-700 leading-relaxed">{project.summary}</p><dl className="mt-7 flex flex-wrap gap-x-8 gap-y-4"><div><dt className="text-sm text-slate-600">Client</dt><dd className="mt-1 font-semibold">{project.client}</dd></div><div><dt className="text-sm text-slate-600">Location</dt><dd className="mt-1 font-semibold">{project.location}</dd></div>{project.status && <div><dt className="text-sm text-slate-600">Status</dt><dd className="mt-1 font-semibold">{project.status}</dd></div>}{project.year && <div><dt className="text-sm text-slate-600">Completed</dt><dd className="mt-1 font-semibold">{project.year}</dd></div>}</dl></div>

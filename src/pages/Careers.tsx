@@ -1,6 +1,6 @@
 // src/pages/Careers.tsx
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "../lib/navigation";
 import CareerApplication from "../components/CareerApplication";
 
 type Opening = {

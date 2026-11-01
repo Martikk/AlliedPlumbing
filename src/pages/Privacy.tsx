@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/navigation';
 
 export default function Privacy() {
   return <section className="mx-auto max-w-3xl px-4 md:px-6 py-12 text-neutral-800 leading-relaxed">
@@ -6,7 +6,7 @@ export default function Privacy() {
     <p className="mt-6">When you use our contact, quote or careers form, you provide the name, email address, phone number and message you enter. A quote request also includes the service needs and site address you enter. A careers enquiry may also include the role, experience, availability and resume link you enter. If you email photos, drawings or a resume separately, those files are included in your correspondence. These details are submitted to help Allied Plumbing respond to your enquiry or application.</p>
     <h2 className="mt-8 mb-3 text-2xl font-bold">Form processing</h2>
     <p>Contact, quote and careers submissions are processed through Formspree. Review <a className="underline" href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noreferrer">Formspree’s privacy policy</a> for information about that service. Submissions are stored in the form’s Formspree archive and emailed to the configured Allied website recipient. Avoid including payment details, passwords or other sensitive information in your message.</p>
-    <h2 className="mt-8 mb-3 text-2xl font-bold">Website services</h2>
+    <h2 className="mt-8 mb-3 text-2xl font-bold">Form drafts</h2><p>Text you enter may be saved in this browser tab for up to four hours so you can return to an unfinished form. Files and consent checkboxes are not saved. The draft is cleared after a successful submission. Closing the tab normally clears its session storage; avoid entering confidential information on a shared device.</p><h2 className="mt-8 mb-3 text-2xl font-bold">Optional analytics</h2><p>If enabled for this website, Google Analytics loads only after you allow it using the analytics preferences. It measures page visits and events such as a successful enquiry or a phone-link click. Form contents, resume links and URL query parameters are not sent by our event code. You can keep analytics off or change your choice using Analytics preferences.</p><h2 className="mt-8 mb-3 text-2xl font-bold">Website services</h2>
     <p>Images and media may load from Cloudinary and Unsplash. Some pages embed Google Maps. Loading these resources sends a request from your browser to the relevant provider.</p>
     <h2 className="mt-8 mb-3 text-2xl font-bold">Questions about your information</h2>
     <p>For questions about a submission, or to ask about access, correction or deletion, contact Allied Plumbing at <a href="mailto:info@allied-plumbing.ca" className="underline">info@allied-plumbing.ca</a> or <a href="tel:+16047311000" className="underline">604-731-1000</a>.</p>

@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/navigation';
 import projects from '../data/projects.json';
 export default function ProjectsBanner() {
   const rail=useRef<HTMLDivElement>(null);

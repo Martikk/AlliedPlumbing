@@ -1,0 +1,277 @@
+[
+  {
+    "source": "/about",
+    "target": "https://www.alliedplumbing.ca/about/",
+    "status": "301"
+  },
+  {
+    "source": "/services",
+    "target": "https://www.alliedplumbing.ca/services/",
+    "status": "301"
+  },
+  {
+    "source": "/services/maintenance",
+    "target": "https://www.alliedplumbing.ca/services/maintenance/",
+    "status": "301"
+  },
+  {
+    "source": "/services/residential-plumbing",
+    "target": "https://www.alliedplumbing.ca/services/residential-plumbing/",
+    "status": "301"
+  },
+  {
+    "source": "/services/commercial-plumbing",
+    "target": "https://www.alliedplumbing.ca/services/commercial-plumbing/",
+    "status": "301"
+  },
+  {
+    "source": "/services/hvac",
+    "target": "https://www.alliedplumbing.ca/services/hvac/",
+    "status": "301"
+  },
+  {
+    "source": "/services/boilers",
+    "target": "https://www.alliedplumbing.ca/services/boilers/",
+    "status": "301"
+  },
+  {
+    "source": "/services/emergency",
+    "target": "https://www.alliedplumbing.ca/services/emergency/",
+    "status": "301"
+  },
+  {
+    "source": "/projects",
+    "target": "https://www.alliedplumbing.ca/projects/",
+    "status": "301"
+  },
+  {
+    "source": "/projects/garibaldi",
+    "target": "https://www.alliedplumbing.ca/projects/garibaldi/",
+    "status": "301"
+  },
+  {
+    "source": "/projects/ridgeview",
+    "target": "https://www.alliedplumbing.ca/projects/ridgeview/",
+    "status": "301"
+  },
+  {
+    "source": "/projects/leigh",
+    "target": "https://www.alliedplumbing.ca/projects/leigh/",
+    "status": "301"
+  },
+  {
+    "source": "/projects/haro",
+    "target": "https://www.alliedplumbing.ca/projects/haro/",
+    "status": "301"
+  },
+  {
+    "source": "/team",
+    "target": "https://www.alliedplumbing.ca/team/",
+    "status": "301"
+  },
+  {
+    "source": "/clients",
+    "target": "https://www.alliedplumbing.ca/clients/",
+    "status": "301"
+  },
+  {
+    "source": "/careers",
+    "target": "https://www.alliedplumbing.ca/careers/",
+    "status": "301"
+  },
+  {
+    "source": "/rfp",
+    "target": "https://www.alliedplumbing.ca/rfp/",
+    "status": "301"
+  },
+  {
+    "source": "/contact",
+    "target": "https://www.alliedplumbing.ca/contact/",
+    "status": "301"
+  },
+  {
+    "source": "/quote",
+    "target": "https://www.alliedplumbing.ca/quote/",
+    "status": "301"
+  },
+  {
+    "source": "/privacy",
+    "target": "https://www.alliedplumbing.ca/privacy/",
+    "status": "301"
+  },
+  {
+    "source": "/projects/herbert-spencer",
+    "target": "https://www.alliedplumbing.ca/projects/herbert-spencer/",
+    "status": "301"
+  },
+  {
+    "source": "/projects/howe-sound",
+    "target": "https://www.alliedplumbing.ca/projects/howe-sound/",
+    "status": "301"
+  },
+  {
+    "source": "/projects/miller-park",
+    "target": "https://www.alliedplumbing.ca/projects/miller-park/",
+    "status": "301"
+  },
+  {
+    "source": "/blog",
+    "target": "https://www.alliedplumbing.ca/blog/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/planning-school-hvac-upgrades",
+    "target": "https://www.alliedplumbing.ca/blog/planning-school-hvac-upgrades/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/boiler-plant-upgrade-ridgeview",
+    "target": "https://www.alliedplumbing.ca/blog/boiler-plant-upgrade-ridgeview/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/haro-heating-hot-water-upgrade",
+    "target": "https://www.alliedplumbing.ca/blog/haro-heating-hot-water-upgrade/",
+    "status": "301"
+  },
+  {
+    "source": "/projects/icbc",
+    "target": "https://www.alliedplumbing.ca/projects/icbc/",
+    "status": "301"
+  },
+  {
+    "source": "/projects/crosstown",
+    "target": "https://www.alliedplumbing.ca/projects/crosstown/",
+    "status": "301"
+  },
+  {
+    "source": "/projects/glenayre",
+    "target": "https://www.alliedplumbing.ca/projects/glenayre/",
+    "status": "301"
+  },
+  {
+    "source": "/projects/collingwood",
+    "target": "https://www.alliedplumbing.ca/projects/collingwood/",
+    "status": "301"
+  },
+  {
+    "source": "/projects/capilano-birch",
+    "target": "https://www.alliedplumbing.ca/projects/capilano-birch/",
+    "status": "301"
+  },
+  {
+    "source": "/projects/herbert-spencer-ashp",
+    "target": "https://www.alliedplumbing.ca/projects/herbert-spencer-ashp/",
+    "status": "301"
+  },
+  {
+    "source": "/projects/hillcrest",
+    "target": "https://www.alliedplumbing.ca/projects/hillcrest/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/integrating-commercial-boiler-controls",
+    "target": "https://www.alliedplumbing.ca/blog/integrating-commercial-boiler-controls/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/coordinating-school-mechanical-room-upgrades",
+    "target": "https://www.alliedplumbing.ca/blog/coordinating-school-mechanical-room-upgrades/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/integrating-school-hydronic-cooling",
+    "target": "https://www.alliedplumbing.ca/blog/integrating-school-hydronic-cooling/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/foundations",
+    "target": "https://www.alliedplumbing.ca/blog/planning-school-hvac-upgrades/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/foundations/",
+    "target": "https://www.alliedplumbing.ca/blog/planning-school-hvac-upgrades/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/materials-2025",
+    "target": "https://www.alliedplumbing.ca/blog/boiler-plant-upgrade-ridgeview/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/materials-2025/",
+    "target": "https://www.alliedplumbing.ca/blog/boiler-plant-upgrade-ridgeview/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/tech-changing-game",
+    "target": "https://www.alliedplumbing.ca/blog/haro-heating-hot-water-upgrade/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/tech-changing-game/",
+    "target": "https://www.alliedplumbing.ca/blog/haro-heating-hot-water-upgrade/",
+    "status": "301"
+  },
+  {
+    "source": "/GetQuote",
+    "target": "https://www.alliedplumbing.ca/quote/",
+    "status": "301"
+  },
+  {
+    "source": "/GetQuote/",
+    "target": "https://www.alliedplumbing.ca/quote/",
+    "status": "301"
+  },
+  {
+    "source": "/getquote",
+    "target": "https://www.alliedplumbing.ca/quote/",
+    "status": "301"
+  },
+  {
+    "source": "/getquote/",
+    "target": "https://www.alliedplumbing.ca/quote/",
+    "status": "301"
+  },
+  {
+    "source": "/services/boiler-plants-controls",
+    "target": "https://www.alliedplumbing.ca/services/boilers/",
+    "status": "301"
+  },
+  {
+    "source": "/services/boiler-plants-controls/",
+    "target": "https://www.alliedplumbing.ca/services/boilers/",
+    "status": "301"
+  },
+  {
+    "source": "/services/maintenance-programs",
+    "target": "https://www.alliedplumbing.ca/services/maintenance/",
+    "status": "301"
+  },
+  {
+    "source": "/services/maintenance-programs/",
+    "target": "https://www.alliedplumbing.ca/services/maintenance/",
+    "status": "301"
+  },
+  {
+    "source": "/services/emergency-service",
+    "target": "https://www.alliedplumbing.ca/services/emergency/",
+    "status": "301"
+  },
+  {
+    "source": "/services/emergency-service/",
+    "target": "https://www.alliedplumbing.ca/services/emergency/",
+    "status": "301"
+  },
+  {
+    "source": "https://alliedplumbing.ca",
+    "target": "https://www.alliedplumbing.ca",
+    "status": "301"
+  },
+  {
+    "source": "/<*>",
+    "target": "/404.html",
+    "status": "404"
+  }
+]

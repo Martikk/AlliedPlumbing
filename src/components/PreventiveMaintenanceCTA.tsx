@@ -1,6 +1,6 @@
 // src/components/PreventiveMaintenanceCTA.tsx
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "../lib/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const STORAGE_KEY = "pm_cta_dismissed_until";

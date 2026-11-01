@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/navigation';
 import posts from '../data/posts.json';
 export default function BlogTeasers({ all = false, category = 'All', query = '' }: { all?: boolean; category?: string; query?: string }) {
   const visible = all ? posts.filter(post => (category === 'All' || post.category === category) && `${post.title} ${post.excerpt}`.toLowerCase().includes(query.toLowerCase())) : posts.slice(0,3);

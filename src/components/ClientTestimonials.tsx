@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/navigation';
 import projects from '../data/projects.json';
 export default function ClientTestimonials() {
   return <section className="rounded-3xl bg-blue-50 p-6 md:p-10 lg:p-12"><div className="grid lg:grid-cols-[.65fr_1.35fr] gap-9">

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/navigation';
 import team from '../data/team.json';
 export default function TeamSection() {
   const featured=['Nick Fedele','Alex Martishyn','Liam Dillon'].map(name=>team.find(member=>member.name===name)!);

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/navigation';
 import TeamSection from '../components/TeamSection';
 
 export default function About() {

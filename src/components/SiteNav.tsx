@@ -1,9 +1,10 @@
 import { useRef, useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from '../lib/navigation';
 const links = [['/', 'Home'], ['/about', 'About'], ['/services', 'Services'], ['/projects', 'Projects'], ['/careers', 'Careers'], ['/contact', 'Contact us']] as const;
 
 export default function SiteNav() {
-  const { pathname } = useLocation();
+  const { pathname: rawPath } = useLocation();
+  const pathname = rawPath.replace(/\/+$/, '') || '/';
   return <Navigation key={pathname} overlay={pathname === '/' || pathname === '/projects' || ['/services', '/quote', '/contact', '/careers'].some(route => pathname === route || pathname.startsWith(route + '/'))} />;
 }
 function Navigation({overlay}:{overlay:boolean}) {

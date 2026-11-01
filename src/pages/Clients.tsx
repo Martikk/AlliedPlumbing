@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/navigation';
 import ClientTestimonials from '../components/ClientTestimonials';
 import projects from '../data/projects.json';
 

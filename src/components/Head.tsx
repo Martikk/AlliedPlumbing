@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import pages from '../data/seo.json';
 
-const origin = 'https://www.alliedplumbing.ca';
+import { canonicalURL } from '../lib/site-url';
 export default function Head() {
   const { pathname } = useLocation();
   const path = pathname.replace(/\/+$/, '') || '/';
@@ -26,8 +26,8 @@ export default function Head() {
     let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (metadata) {
       if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.append(canonical); }
-      canonical.href = origin + path;
-      setMeta('og:url', origin + path, true);
+      canonical.href = canonicalURL(path);
+      setMeta('og:url', canonicalURL(path), true);
     } else {
       canonical?.remove();
       document.querySelector('meta[property="og:url"]')?.remove();

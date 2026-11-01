@@ -39,7 +39,13 @@
     ],
     "date": "2026-10-31",
     "author": "Allied Plumbing",
-    "readingMinutes": 3
+    "readingMinutes": 3,
+    "relatedService": "hvac",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    }
   },
   {
     "slug": "boiler-plant-upgrade-ridgeview",
@@ -88,7 +94,13 @@
     ],
     "date": "2026-10-31",
     "author": "Allied Plumbing",
-    "readingMinutes": 3
+    "readingMinutes": 3,
+    "relatedService": "boilers",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    }
   },
   {
     "slug": "haro-heating-hot-water-upgrade",
@@ -137,12 +149,18 @@
     ],
     "date": "2026-10-31",
     "author": "Allied Plumbing",
-    "readingMinutes": 3
+    "readingMinutes": 3,
+    "relatedService": "commercial-plumbing",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    }
   },
   {
     "slug": "integrating-commercial-boiler-controls",
     "title": "Connecting a New Boiler Plant to an Existing Building",
-    "category": "Boiler plants",
+    "category": "Heating & boilers",
     "project": "icbc",
     "excerpt": "What the ICBC project scope shows about hydronic interfaces, controls responsibilities and occupied-building planning.",
     "intro": "Changing a boiler plant is rarely a stand-alone equipment swap. The replacement plant must connect to a building that already has heating distribution, controls, electrical services and operating requirements. Allied’s ICBC Boiler Plant Modernization scope brings these interfaces together within an existing Vancouver facility. Final completion has not been confirmed in the supplied project summary, so this article describes the planned scope and coordination rather than reporting a finished installation.",
@@ -179,7 +197,13 @@
     ],
     "date": "2026-10-31",
     "author": "Allied Plumbing",
-    "readingMinutes": 3
+    "readingMinutes": 3,
+    "relatedService": "boilers",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    }
   },
   {
     "slug": "coordinating-school-mechanical-room-upgrades",
@@ -221,7 +245,13 @@
     ],
     "date": "2026-10-31",
     "author": "Allied Plumbing",
-    "readingMinutes": 3
+    "readingMinutes": 3,
+    "relatedService": "hvac",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    }
   },
   {
     "slug": "integrating-school-hydronic-cooling",
@@ -263,6 +293,12 @@
     ],
     "date": "2026-10-31",
     "author": "Allied Plumbing",
-    "readingMinutes": 3
+    "readingMinutes": 3,
+    "relatedService": "hvac",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    }
   }
 ]

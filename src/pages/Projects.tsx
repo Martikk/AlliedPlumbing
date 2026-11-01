@@ -1,10 +1,13 @@
-import { Link, useSearchParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useSearchParams } from '../lib/navigation';
 import projects from '../data/projects.json';
 
 export default function Projects() {
+  const [hydrated,setHydrated]=useState(false);
+  useEffect(()=>setHydrated(true),[]);
   const [params, setParams] = useSearchParams();
-  const query = params.get('q') ?? '';
-  const category = params.get('category') ?? 'All';
+  const query = hydrated ? params.get('q') ?? '' : '';
+  const category = hydrated ? params.get('category') ?? 'All' : 'All';
   const filtered = projects.filter(project => (category === 'All' || project.category === category) && `${project.title} ${project.location} ${project.summary}`.toLowerCase().includes(query.toLowerCase()));
   function filter(key: string, value: string) {
     const next = new URLSearchParams(params);

@@ -5,7 +5,7 @@ import tsPlugin from '@typescript-eslint/eslint-plugin';
 import hooks from 'eslint-plugin-react-hooks';
 
 export default [
-  { ignores: ['dist/**', 'node_modules/**', 'src/eslint.config.js ', 'vite.config.js', 'vite.config.d.ts'] },
+  { ignores: ['dist/**', '.prerender/**', 'node_modules/**', 'src/eslint.config.js ', 'vite.config.js', 'vite.config.d.ts'] },
   {
     files: ['**/*.{js,mjs,ts,tsx}'],
     languageOptions: { globals: { ...globals.browser, ...globals.node } },

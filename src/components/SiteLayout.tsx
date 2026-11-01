@@ -4,6 +4,7 @@ import { MotionConfig } from 'framer-motion';
 import SiteNav from './SiteNav';
 import Footer from './Footer';
 import Head from './Head';
+import AnalyticsConsent from './AnalyticsConsent';
 import { trackEvent } from '../lib/analytics';
 
 export default function SiteLayout({ children }: { children: ReactNode }) {
@@ -21,5 +22,6 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
     <SiteNav />
     <main id="main" tabIndex={-1} className={pathname === '/' ? '' : 'min-h-[60vh]'}>{children}</main>
     <Footer />
+    <AnalyticsConsent />
   </MotionConfig>;
 }

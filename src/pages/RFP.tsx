@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../lib/navigation';
 
 export default function RFP() {
   return <section className="max-w-4xl mx-auto px-4 md:px-6 py-12 md:py-16">

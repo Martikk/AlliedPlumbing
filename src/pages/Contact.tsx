@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "../lib/navigation";
 import ContactLead from "@/components/ContactLead"; // твой готовый стеклянный блок с формой
 import { PHONE } from "@/config";
 

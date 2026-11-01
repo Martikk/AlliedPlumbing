@@ -1,5 +1,6 @@
+import { sendAnalyticsEvent } from './analytics-consent';
 type EventName = 'phone_click' | 'form_start' | 'generate_lead' | 'form_error' | 'web_vital';
-type FormName = 'contact' | 'quote';
+type FormName = 'contact' | 'quote' | 'careers';
 type Details = { form_name?: FormName; metric_name?: string; metric_value?: number; metric_rating?: string; metric_id?: string; error_type?: 'network_or_server' };
 
 declare global {
@@ -9,4 +10,5 @@ declare global {
 export function trackEvent(event: EventName, details: Details = {}) {
   window.dataLayer ??= [];
   window.dataLayer.push({ event, ...details });
+  sendAnalyticsEvent(event, details);
 }

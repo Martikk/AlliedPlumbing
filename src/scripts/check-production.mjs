@@ -1,6 +1,7 @@
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 
 const origin = 'https://www.alliedplumbing.ca';
+const canonicalPath = path => path === '/' ? '/' : path.replace(/\/+$/, '') + '/';
 const pages = JSON.parse(readFileSync('src/data/seo.json', 'utf8'));
 const failures = [];
 async function request(path) {
@@ -23,8 +24,8 @@ const escape = value => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;')
 const routes = await mapLimit(Object.keys(pages), async path => {
   const response = await request(path);
   const canonical = response.body.match(/<link[^>]*rel="canonical"[^>]*href="([^"]+)/)?.[1];
-  const result = { path, status: response.status, canonicalOK: canonical === origin + path, titleOK: response.body.includes(`<title>${escape(pages[path].title)}</title>`) };
-  if (result.status !== 200 || !result.canonicalOK || !result.titleOK) failures.push(result);
+  const result = { path, status: response.status, canonicalOK: canonical === origin + canonicalPath(path), contentOK: response.body.includes('data-prerendered="true"') && response.body.includes('<h1'), titleOK: response.body.includes(`<title>${escape(pages[path].title)}</title>`) };
+  if (result.status !== 200 || !result.canonicalOK || !result.titleOK || !result.contentOK) failures.push(result);
   return result;
 });
 const home = await request('/');
@@ -42,7 +43,7 @@ const assets = await mapLimit(readdirSync('dist/assets').filter(name => /\.(js|c
 });
 const sitemap = await request('/sitemap.xml');
 const sitemapURLs = [...sitemap.body.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
-const sitemapOK = sitemap.status === 200 && sitemapURLs.length === routes.length && Object.keys(pages).every(path => sitemapURLs.includes(origin + path));
+const sitemapOK = sitemap.status === 200 && sitemapURLs.length === routes.length && Object.keys(pages).every(path => sitemapURLs.includes(origin + canonicalPath(path)));
 if (!sitemapOK) failures.push({ issue: 'Sitemap does not match canonical routes' });
 const missing = await request('/allied-verification-missing-page-20261031');
 if (missing.status !== 404) failures.push({ issue: 'Unknown page does not return HTTP 404', status: missing.status });

@@ -149,3 +149,13 @@ body { margin: 0; }
  .brand-logo {width:auto;}
  .brand-pause {display:none;}
 }
+
+/* Compact text-page rhythm while preserving the pill navigation. */
+.site-header:not(.site-header-home) .navigation-shell { padding-block:12px; }
+.page-photo-hero { min-height:310px; }
+.page-photo-hero > .relative {min-height:310px;padding-top:120px;}
+@media(max-width:767px) {
+ .page-photo-hero {min-height:300px;}
+ .page-photo-hero > .relative {min-height:300px;padding-top:100px;padding-bottom:28px;}
+ .site-header:not(.site-header-home) .navigation-shell {padding-block:10px;}
+}

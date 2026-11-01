@@ -1,0 +1,3 @@
+Browser tab: 1, Title: "PageSpeed Insights", URL: "https://pagespeed.web.dev/analysis/https-www-alliedplumbing-ca/xw98r5au7y?form_factor=mobile".
+There has been no change in the accessibility tree.
+The focused UI element is 0 AXWebArea PageSpeed Insights, URL: pagespeed.web.dev/analysis/https-www-alliedplumbing-ca/xw98r5au7y?form_factor=mobile

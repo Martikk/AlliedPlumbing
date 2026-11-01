@@ -1,8 +1,10 @@
+import { FORMSPREE_ENDPOINT } from '../config';
 // src/pages/GetQuote.tsx
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link } from "../lib/navigation";
 import { QUOTE_FILE_UPLOADS_ENABLED } from "../config";
+import { useFormDraft } from "../hooks/useFormDraft";
 import { sendEnquiry } from "../lib/forms";
 import { trackEvent } from "../lib/analytics";
 
@@ -38,6 +40,12 @@ export default function GetQuote() {
   const maskedPhone = useMemo(() => maskPhone(phone), [phone]);
 
   const formRef = useRef<HTMLFormElement>(null);
+  const inFlight = useRef(false);
+  const [tags, setTags] = useState<string[]>([]);
+  const clearDraft = useFormDraft('quote', formRef, values => {
+    setPhone(values.phone ?? '');
+    setTags((values.tags ?? '').split(', ').filter(value => QUICK_TAGS.includes(value)));
+  });
 
   useEffect(() => {
     const urls = previews.current;
@@ -51,7 +59,8 @@ export default function GetQuote() {
       form.reportValidity();
       return;
     }
-    if (submitting) return;
+    if (inFlight.current) return;
+    inFlight.current = true;
     setSubmitting(true); setError(""); setDone(false);
     try {
       const data = new FormData(form);
@@ -62,12 +71,12 @@ export default function GetQuote() {
       setDone(true);
       previews.current.forEach(url => URL.revokeObjectURL(url));
       previews.current.clear();
-      setFiles([]); form.reset(); setPhone("");
+      clearDraft(); setFiles([]); form.reset(); setPhone(""); setTags([]);
     } catch (failure) {
       setError(failure instanceof Error && failure.name !== "TimeoutError" ? failure.message : "Your request could not be sent. Check your connection and try again, or call 604-731-1000.");
       trackEvent("form_error", { form_name: "quote", error_type: "network_or_server" });
     } finally {
-      setSubmitting(false);
+      inFlight.current = false; setSubmitting(false);
       requestAnimationFrame(() => statusRef.current?.focus());
     }
   }
@@ -132,7 +141,7 @@ export default function GetQuote() {
           >
             <FormHeader />
 
-            <form hidden={done} ref={formRef} onSubmit={onSubmit} aria-busy={submitting} onFocusCapture={() => {
+            <form method="post" action={FORMSPREE_ENDPOINT} hidden={done} ref={formRef} onSubmit={onSubmit} aria-busy={submitting} onFocusCapture={() => {
               if (!started.current) { trackEvent("form_start", { form_name: "quote" }); started.current = true; }
             }} className="mt-4 space-y-5">
               <fieldset disabled={submitting} className="space-y-5">
@@ -216,7 +225,7 @@ export default function GetQuote() {
               </div>
 
               {/* Быстрые пресеты */}
-              <QuickChips name="tags" options={QUICK_TAGS} />
+              <QuickChips name="tags" options={QUICK_TAGS} selected={tags} setSelected={setTags} />
 
               {/* Сообщение */}
               <Field label="Message" htmlFor="message">
@@ -385,8 +394,7 @@ const QUICK_TAGS = [
   "DDC integration",
 ];
 
-function QuickChips({ name, options }: { name: string; options: string[] }) {
-  const [selected, setSelected] = useState<string[]>([]);
+function QuickChips({ name, options, selected, setSelected }: { name: string; options: string[]; selected: string[]; setSelected: React.Dispatch<React.SetStateAction<string[]>> }) {
   return (
     <div>
       <span className="block text-sm font-medium text-neutral-800">

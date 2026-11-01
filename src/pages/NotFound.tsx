@@ -1,5 +1,5 @@
 // src/pages/NotFound.tsx
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "../lib/navigation";
 
 export default function NotFound() {
   const { pathname } = useLocation();

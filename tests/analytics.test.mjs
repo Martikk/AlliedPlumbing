@@ -1,0 +1,25 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import ts from 'typescript';
+test('GA4 waits for consent, strips URL parameters and stops after withdrawal',async()=>{
+ const input=readFileSync('src/lib/analytics-consent.ts','utf8').replace("import.meta.env.VITE_GA_MEASUREMENT_ID", "'G-TEST123'");
+ const source=ts.transpileModule(input,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
+ const appended=[];
+ globalThis.window={};globalThis.localStorage={getItem:()=>null,setItem:()=>{}};
+ globalThis.location={pathname:'/careers/'};
+ globalThis.document={createElement:()=>({}),head:{append:script=>appended.push(script)}};
+ const ga=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
+ ga.trackAnalyticsPage('/careers/');assert.equal(appended.length,0);
+ ga.setAnalyticsConsent('denied');assert.equal(appended.length,0);
+ ga.setAnalyticsConsent('granted');assert.equal(appended.length,1);
+ ga.trackAnalyticsPage('/careers/');ga.trackAnalyticsPage('/careers/');
+ ga.sendAnalyticsEvent('generate_lead',{form_name:'careers'});
+ const calls=window.dataLayer.map(args=>Array.from(args));
+ assert.equal(calls.filter(x=>x[1]==='page_view').length,1);
+ assert.equal(calls.find(x=>x[1]==='generate_lead')[2].page_location,'https://www.alliedplumbing.ca/careers/');
+ ga.setAnalyticsConsent('denied');
+ assert.equal(window['ga-disable-G-TEST123'],true);
+ const count=window.dataLayer.length;ga.sendAnalyticsEvent('phone_click',{});assert.equal(window.dataLayer.length,count);
+ delete globalThis.window;delete globalThis.localStorage;delete globalThis.location;delete globalThis.document;
+});

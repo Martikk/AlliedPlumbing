@@ -30,9 +30,9 @@ const ServiceEmergency = lazy(() => import("./pages/ServiceEmergency"));
 
 const NotFound = lazy(() => import('./pages/NotFound'));
 
-export default function App() {
+export function AppContent() {
   return (
-    <BrowserRouter>
+    <>
       <SkipLink />
       <ScrollToTop />
       <SiteLayout>
@@ -84,6 +84,10 @@ export default function App() {
         </Routes>
       </Suspense>
       </SiteLayout>
-    </BrowserRouter>
+    </>
   );
+}
+
+export default function App() {
+  return <BrowserRouter><AppContent /></BrowserRouter>;
 }
