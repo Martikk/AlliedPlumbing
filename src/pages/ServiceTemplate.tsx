@@ -85,6 +85,7 @@ export default function ServiceTemplate({
 
       {children}
 
+      <section className="max-w-6xl mx-auto px-4 md:px-6 pb-12"><div className="border-t border-neutral-200 pt-8 max-w-3xl"><h2 className="text-2xl md:text-3xl font-bold">What helps us review your request?</h2><p className="mt-4 text-neutral-700 leading-relaxed">Include your building address, the equipment or areas involved, a description of the issue or planned work, and any known access restrictions. If you have equipment details, drawings or photographs, tell us what is available. We can then discuss the information needed for a site review and the next steps for your scope.</p></div></section>
       {/* ==== CTA ==== */}
       <section className="max-w-6xl mx-auto px-4 md:px-6 pb-16 md:pb-24">
         <div className="relative overflow-hidden rounded-2xl bg-neutral-900 text-white p-6 md:p-10">
@@ -98,7 +99,7 @@ export default function ServiceTemplate({
           </p>
           <div className="mt-5 flex flex-wrap items-center gap-3">
             <Link
-              to="/GetQuote"
+              to="/quote"
               className="inline-flex items-center gap-2 rounded-lg bg-white text-neutral-900 px-5 py-3 font-semibold shadow hover:bg-neutral-200"
             >
               Get a quote <span aria-hidden>↗</span>
@@ -112,7 +113,7 @@ export default function ServiceTemplate({
           </div>
         </div>
       </section>
-      {children ? <section className="max-w-6xl mx-auto px-4 md:px-6 pb-12">{children}</section> : null}
+
     </div>
   );
   }

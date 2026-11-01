@@ -1,3 +1,4 @@
+import { useFeedbackMotion } from '../hooks/useFeedbackMotion';
 import { FORMSPREE_ENDPOINT } from '../config';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -19,6 +20,7 @@ export default function CareerApplication() {
   const [error, setError] = useState('');
   const formRef = useRef<HTMLFormElement>(null);
   const resultRef = useRef<HTMLDivElement>(null);
+  useFeedbackMotion(resultRef, status || error);
   const inFlight = useRef(false);
   const clearDraft = useFormDraft('careers', formRef, undefined, role ? { role } : undefined);
   useEffect(() => {
@@ -50,6 +52,7 @@ export default function CareerApplication() {
   }
   return <section ref={section} id="apply" className="max-w-6xl mx-auto px-4 md:px-6 pb-16 md:pb-24 scroll-mt-6">
     <div className="rounded-2xl bg-neutral-900 text-white p-6 md:p-10">
+      <div className="mb-8 max-w-2xl"><h2 className="text-2xl font-bold">What happens after you apply?</h2><p className="mt-3 text-white/85 leading-relaxed">Share your experience, qualifications, availability and the kind of work you’re interested in. Your application details are sent for review. If there is a suitable opportunity, the hiring team can contact you to discuss the role and next steps.</p></div>
       <h2 className="text-2xl md:text-4xl font-extrabold">Introduce yourself</h2>
       <p className="mt-3 max-w-2xl text-white/85 leading-relaxed">Tell us about your trade, experience and the role you’re interested in. No cover letter needed. Include a link to your resume, or email your PDF separately.</p>
       <form method="post" action={FORMSPREE_ENDPOINT} ref={formRef} aria-busy={sending} onSubmit={submit} aria-label="Careers application" className="mt-7 grid md:grid-cols-2 gap-5">

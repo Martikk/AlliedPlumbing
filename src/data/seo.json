@@ -150,5 +150,21 @@
   "/blog/integrating-school-hydronic-cooling": {
     "title": "Planning a Chiller Upgrade in an Existing School — Allied Plumbing",
     "description": "How the Collingwood Parent Wing scope connects chilled water, cooling coils, controls and school access."
+  },
+  "/blog/mechanical-upgrade-request-checklist": {
+    "title": "What to Include in a Mechanical Upgrade Request — Allied Plumbing",
+    "description": "A practical checklist for describing your building, equipment, access and timing before requesting a mechanical upgrade."
+  },
+  "/blog/planning-heating-shutdown-occupied-building": {
+    "title": "Planning a Heating Shutdown in an Occupied Building — Allied Plumbing",
+    "description": "Questions about access, responsibilities, occupant communication and handover to raise before agreeing a shutdown window."
+  },
+  "/blog/preventive-maintenance-records-building-teams": {
+    "title": "Preventive Maintenance Records That Help Building Teams — Allied Plumbing",
+    "description": "How an equipment register, clear service notes and an action log can support the next maintenance conversation."
+  },
+  "/blog/project-turnover-om-package": {
+    "title": "Project Turnover: What Belongs in an O&M Package? — Allied Plumbing",
+    "description": "A building-owner guide to discussing manuals, records, training and outstanding items before mechanical project handover."
   }
 }

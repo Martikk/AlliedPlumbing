@@ -24,13 +24,15 @@ test('corrects the school identity and the Haro boiler system from the supplied 
 });
 test('published articles have complete content and indexed routes', () => {
   const posts = JSON.parse(readFileSync('src/data/posts.json','utf8'));
-  assert.equal(posts.length, 6);
+  assert.equal(posts.length, 10);
   assert.ok(seo['/blog']);
   for (const post of posts) {
     assert.ok(seo['/blog/'+post.slug]);
     assert.ok(projects.some(project=>project.id===post.project));
     const words=[post.intro,...post.sections.flatMap(section=>section.paragraphs)].join(' ').split(/\s+/).length;
     assert.ok(words>=350, post.slug+' needs a complete article');
+    assert.ok(seo['/services/'+post.relatedService]);
+    if(post.checklist.length) { assert.ok(words>=600, post.slug+' needs a useful planning guide'); assert.ok(post.checklist.length>=5); }
   }
 });
 

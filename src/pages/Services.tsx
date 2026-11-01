@@ -1,3 +1,4 @@
+import FaqItem from '../components/FaqItem';
 import { Link } from "../lib/navigation";
 import LogoMarquee from "@/components/LogoMarquee";
 
@@ -123,15 +124,7 @@ export default function Services() {
         </div>
         <div className="divide-y divide-neutral-200 rounded-2xl border border-neutral-200 bg-white">
           {FAQ.map((f) => (
-            <details key={f.q} className="group p-5 [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex cursor-pointer items-center justify-between">
-                <span className="font-medium">{f.q}</span>
-                <span className="ml-4 grid h-6 w-6 place-items-center rounded-full bg-neutral-100 text-neutral-700 group-open:rotate-45 transition">
-                  +
-                </span>
-              </summary>
-              <p className="mt-3 text-neutral-600">{f.a}</p>
-            </details>
+            <FaqItem key={f.q} question={f.q}>{f.a}</FaqItem>
           ))}
         </div>
       </section>

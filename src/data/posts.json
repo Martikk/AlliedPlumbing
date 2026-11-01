@@ -45,7 +45,8 @@
       "status": "pending",
       "reviewer": null,
       "reviewedAt": null
-    }
+    },
+    "checklist": []
   },
   {
     "slug": "boiler-plant-upgrade-ridgeview",
@@ -100,7 +101,8 @@
       "status": "pending",
       "reviewer": null,
       "reviewedAt": null
-    }
+    },
+    "checklist": []
   },
   {
     "slug": "haro-heating-hot-water-upgrade",
@@ -155,7 +157,8 @@
       "status": "pending",
       "reviewer": null,
       "reviewedAt": null
-    }
+    },
+    "checklist": []
   },
   {
     "slug": "integrating-commercial-boiler-controls",
@@ -203,7 +206,8 @@
       "status": "pending",
       "reviewer": null,
       "reviewedAt": null
-    }
+    },
+    "checklist": []
   },
   {
     "slug": "coordinating-school-mechanical-room-upgrades",
@@ -251,7 +255,8 @@
       "status": "pending",
       "reviewer": null,
       "reviewedAt": null
-    }
+    },
+    "checklist": []
   },
   {
     "slug": "integrating-school-hydronic-cooling",
@@ -299,6 +304,242 @@
       "status": "pending",
       "reviewer": null,
       "reviewedAt": null
-    }
+    },
+    "checklist": []
+  },
+  {
+    "slug": "mechanical-upgrade-request-checklist",
+    "title": "What to Include in a Mechanical Upgrade Request",
+    "project": "ridgeview",
+    "relatedService": "commercial-plumbing",
+    "category": "Project planning",
+    "excerpt": "A practical checklist for describing your building, equipment, access and timing before requesting a mechanical upgrade.",
+    "intro": "A useful request for a mechanical upgrade explains the building and the decision you need help making. It does not need to be a finished design, and it should not depend on knowing every technical term. A clear starting brief helps the project team identify missing information, discuss whether a site review is needed and distinguish a planned upgrade from an urgent service issue. Use the following structure to prepare your enquiry; the final information requirements will depend on the site and scope.",
+    "sections": [
+      {
+        "heading": "Describe the building and the reason for the work",
+        "paragraphs": [
+          "Start with the building name, street address and the person responsible for arranging access. Explain how the building is used and which spaces or systems are involved. A school classroom, an apartment hot-water plant and a commercial heating system raise different questions, even when the initial request is simply to replace equipment.",
+          "Describe the reason for the enquiry in ordinary language. Is the equipment unreliable, is a renovation changing the building needs, or is an upgrade already being planned by a consultant? Separate what you have observed from what you suspect. Service reports, photographs of labels and a short account of when the issue occurs are more useful than an unsupported diagnosis.",
+          "State the decision you are asking the contractor to help with. You might need a service assessment, a site visit, an outline scope discussion or pricing against issued documents. If you are comparing proposals, explain what information will be shared with each team so the responses can be assessed on a consistent basis."
+        ]
+      },
+      {
+        "heading": "Gather records without delaying the first conversation",
+        "paragraphs": [
+          "List the drawings, equipment schedules, past service records and consultant documents that are available. Include their dates or revision references where known. Older drawings can still provide context, but label them accurately rather than presenting them as a verified record of current conditions.",
+          "For photographs, begin with the overall equipment area and any accessible manufacturer labels. Only take pictures from places you are authorised to enter safely. Do not remove panels, enter restricted areas or operate equipment just to complete an enquiry. Tell the team when a detail is unavailable; it can become a question for the site review.",
+          "Explain whether the intended scope is limited to one system or part of a wider project. Ridgeview Elementary’s documented scope, for example, combined boiler plant work with classroom ventilation changes and hydronic piping. That case illustrates why a brief should describe connected work, rather than naming only the largest item of equipment."
+        ]
+      },
+      {
+        "heading": "Make access and timing visible",
+        "paragraphs": [
+          "Identify occupied areas, restricted rooms, proposed working hours and known delivery limitations. Describe any dates that matter to building users, such as a school calendar, scheduled tenant work or another contractor’s programme. Distinguish a preferred date from a fixed requirement and explain who can approve changes.",
+          "If an interruption to heating, hot water or ventilation may be involved, flag the concern without assuming its duration. A contractor and the relevant project specialists need to review the system, the work sequence and the operating requirements before a shutdown plan can be agreed. Avoid promising occupants a date or duration based only on an initial enquiry.",
+          "Include the project contact and the best way to arrange the next discussion. Send only information needed to assess the work; an initial request rarely needs tenant names or other personal records. If there is an urgent problem, call 604-731-1000 instead of relying on a planned-work enquiry to be reviewed immediately."
+        ]
+      },
+      {
+        "heading": "Use a short checklist before sending",
+        "paragraphs": [
+          "Check that a reader unfamiliar with the site can identify where the work is, what prompted the enquiry, which records exist and what decision comes next. A concise, well-labelled brief is easier to clarify than a long message that mixes observations, proposed solutions and unconfirmed deadlines.",
+          "You do not need to fill every gap before contacting Allied. Mark unknown information clearly and describe who may hold the relevant records. The next step can then focus on gathering the missing details and defining a scope appropriate to the building, rather than assuming that the first message is a complete specification."
+        ]
+      }
+    ],
+    "checklist": [
+      "Building name, address and access contact",
+      "Observed issue or planned work, with affected areas",
+      "Equipment details and available document revisions",
+      "Access restrictions and preferred timing",
+      "The decision or next step you need help with"
+    ],
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071289/Allied/123_clbeb3.png",
+    "date": "2026-10-31",
+    "author": "Allied Plumbing",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "readingMinutes": 4
+  },
+  {
+    "slug": "planning-heating-shutdown-occupied-building",
+    "title": "Planning a Heating Shutdown in an Occupied Building",
+    "project": "haro",
+    "relatedService": "boilers",
+    "category": "Project planning",
+    "excerpt": "Questions about access, responsibilities, occupant communication and handover to raise before agreeing a shutdown window.",
+    "intro": "In an occupied building, a heating shutdown affects more than the equipment room. Building management, occupants, contractors and consultants may all depend on an agreed sequence. This guide is a planning aid for the scope conversation, not a shutdown procedure or a promise about interruption length. The method, timing and technical decisions must be developed for the actual system by the responsible project team.",
+    "sections": [
+      {
+        "heading": "Identify the systems and people involved",
+        "paragraphs": [
+          "Begin by identifying which building services may be affected and which areas depend on them. Do not assume that heating and domestic hot water share the same interruption requirements. Ask the team to establish the boundaries of the work and explain any uncertainty about existing connections before a programme is communicated.",
+          "Name a building representative who can coordinate access and communications. Confirm who makes project decisions, who speaks with occupants, who manages supporting trades and who reviews technical matters. A simple responsibility list helps prevent an important question from passing between teams without an owner.",
+          "Gather current records and describe known operating concerns. Past service reports, equipment information, drawings and reports of recurring problems can help frame the review. Records are a starting point; the responsible specialists still need to verify the site conditions relevant to the work."
+        ]
+      },
+      {
+        "heading": "Agree the window after reviewing dependencies",
+        "paragraphs": [
+          "An available calendar slot is only one part of a workable shutdown window. Ask how equipment delivery, access, permits where applicable, supporting trades and inspections relate to the proposed sequence. Identify what must be ready before the interruption begins and who confirms that readiness.",
+          "Separate the planned work window from allowances and contingencies. Ask how the team will respond if an existing condition differs from the records, a connection requires further review or a task cannot be completed as expected. The answer should be project-specific; a general website article cannot establish a safe duration or a universal temporary-service arrangement.",
+          "Haro’s documented project scope involves a condensing heating and hot-water plant in an existing apartment building. ICBC’s scope involves an existing heating plant and building automation interfaces. These examples provide context for the coordination discussion, but they do not establish a shutdown schedule for another building."
+        ]
+      },
+      {
+        "heading": "Prepare communication that reflects confirmed information",
+        "paragraphs": [
+          "Before notices are issued, agree which details are confirmed and which remain subject to review. Occupants need a clear description of the affected service, the proposed timing, any arrangements relevant to them and a contact for updates. Building management should decide the appropriate distribution method and any additional communication needs.",
+          "Avoid promising uninterrupted service or an exact restoration time before the project team has agreed the plan. If timing changes, establish who authorises the update and who communicates it. A notice should be understandable to someone who has no access to the technical schedule or the contractor’s daily discussions.",
+          "Keep a record of the communication decisions and the current programme revision. Where several parties are involved, use one agreed source for the latest information rather than distributing competing versions. The aim is a reliable understanding of the plan, not simply a larger volume of email."
+        ]
+      },
+      {
+        "heading": "Discuss restoration and handover before work begins",
+        "paragraphs": [
+          "Ask what checks, documentation and approvals are included before the building returns to its intended operation. Identify the people who need to be available for that stage and how outstanding issues will be recorded. Installation, verification and acceptance should appear as distinct responsibilities in the scope discussion.",
+          "Plan how the building team will receive operating information, contact details and any follow-up actions. Record questions that remain open at handover, with an owner and the next agreed step. Do not treat a general description of commissioning or turnover as proof that every possible check is included in a particular contract.",
+          "Bring these questions to the first planning meeting, alongside your building records and operating constraints. Allied can discuss the project requirements and the information needed for the next review. For an active loss of service or urgent assistance, use the telephone contact rather than waiting for a planned-project response."
+        ]
+      }
+    ],
+    "checklist": [
+      "Affected services and occupied areas identified",
+      "Decision-makers and communication responsibilities named",
+      "Equipment, access and supporting-trade dependencies reviewed",
+      "Occupant notices based on the agreed programme",
+      "Verification, restoration and outstanding-item responsibilities discussed"
+    ],
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071564/Allied/2025-10-09_21.39.57_tne1oo.jpg",
+    "date": "2026-10-31",
+    "author": "Allied Plumbing",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "readingMinutes": 4
+  },
+  {
+    "slug": "preventive-maintenance-records-building-teams",
+    "title": "Preventive Maintenance Records That Help Building Teams",
+    "project": "icbc",
+    "relatedService": "maintenance",
+    "category": "Maintenance",
+    "excerpt": "How an equipment register, clear service notes and an action log can support the next maintenance conversation.",
+    "intro": "Maintenance records are most useful when the next person can understand what equipment was involved, what was observed and what still needs attention. A folder full of invoices may show that visits took place without explaining the follow-up decisions. The structure below is a practical way for building teams to organise information for a maintenance discussion. It is not a prescribed Allied report template, a maintenance schedule or a substitute for equipment-specific instructions.",
+    "sections": [
+      {
+        "heading": "Start with equipment that can be identified",
+        "paragraphs": [
+          "Use a consistent equipment name or reference, with its location and any available manufacturer and model details. Explain how that reference relates to the labels used on drawings or in previous reports. If several similar units serve different areas, the record should make it possible to distinguish them without relying on someone’s memory.",
+          "Record where the source information came from and flag missing details. An equipment register can begin as a simple list and improve as records are checked. Avoid copying an old schedule into a new file and treating every entry as current; changes in plant, controls or building use may need to be confirmed.",
+          "Keep manufacturer documents, relevant drawings and previous service information linked to the equipment reference. These records help the building team find context when a contractor asks a question. They do not, by themselves, confirm that an item is operating correctly or that a particular maintenance task has been completed."
+        ]
+      },
+      {
+        "heading": "Make each visit understandable",
+        "paragraphs": [
+          "A useful service entry identifies the visit date, the equipment or area, the person or organisation carrying out the work and the scope recorded for that visit. Keep observations separate from recommendations and from tasks that were actually completed. This makes it easier to understand what evidence supports a later decision.",
+          "Describe reported concerns in a consistent way. If an issue occurs only at certain times or in a particular area, preserve that context. Give the contractor the opportunity to record findings rather than converting an occupant’s description into a technical diagnosis. Clear observations support investigation without prejudging its result.",
+          "Ask how photographs and supporting records will be labelled and retained. Include only information needed for the maintenance purpose, and avoid unnecessary images of people or private spaces. Store records where the authorised building team can find them when staff or service providers change."
+        ]
+      },
+      {
+        "heading": "Turn recommendations into tracked actions",
+        "paragraphs": [
+          "A recommendation needs an owner and a next step to remain useful. Record whether it requires clarification, pricing, consultant input, approval or a future visit. Keep the status visible so that an unresolved issue is not mistaken for completed work when someone reads the report months later.",
+          "Differentiate routine follow-up from matters requiring prompt contact with the responsible team. The urgency and technical response should come from the relevant professionals, not from a generic filing system. If conditions change or there is an active service problem, contact the appropriate service team rather than relying on an old report entry.",
+          "The ICBC project scope illustrates how mechanical equipment can connect with existing hydronic services and building automation. For maintenance planning, that is a reminder to record interface responsibilities and available controls information. It is not evidence that a particular maintenance programme or reporting format is in place at that site."
+        ]
+      },
+      {
+        "heading": "Use records to prepare the next review",
+        "paragraphs": [
+          "Before a maintenance discussion, collect the equipment register, recent visit records and the outstanding-action list. Identify recurring concerns, missing documentation and changes to the building’s use or access arrangements. This gives the conversation a clear starting point without trying to prescribe the technical work in advance.",
+          "Ask the proposed service provider to explain what their programme includes, what is excluded and how findings and follow-up work are communicated. Maintenance frequency and tasks should reflect the actual equipment, manufacturer guidance, applicable requirements and agreed scope. Do not infer a suitable interval from another building’s programme.",
+          "Allied can discuss maintenance requirements when you provide the building location, equipment information and the records already available. If you want a sample report, request an appropriate anonymised example from the team. This article does not present an invented report as Allied’s established company standard."
+        ]
+      }
+    ],
+    "checklist": [
+      "Equipment reference and location",
+      "Visit date, recorded work and observations",
+      "Recommendations separated from completed tasks",
+      "Action owner, decision and current status",
+      "Supporting records accessible to the authorised team"
+    ],
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png",
+    "date": "2026-10-31",
+    "author": "Allied Plumbing",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "readingMinutes": 4
+  },
+  {
+    "slug": "project-turnover-om-package",
+    "title": "Project Turnover: What Belongs in an O&M Package?",
+    "project": "hillcrest",
+    "relatedService": "hvac",
+    "category": "Project planning",
+    "excerpt": "A building-owner guide to discussing manuals, records, training and outstanding items before mechanical project handover.",
+    "intro": "An operation and maintenance package should help the building team understand the installed work and find the information needed after project handover. Its required contents depend on the contract, equipment, consultant requirements and project scope. Rather than treating an O&M package as a generic binder assembled at the end, discuss its purpose and responsibilities early. This guide outlines questions for that conversation; it does not claim to define Allied’s standard contractual deliverables.",
+    "sections": [
+      {
+        "heading": "Agree what the package must cover",
+        "paragraphs": [
+          "Identify the systems, equipment and project phases included in the turnover scope. An upgrade may involve new equipment connected to existing services, with some elements retained and others changed. The documentation should make that boundary understandable instead of implying that the entire building has been replaced or verified.",
+          "Ask who is responsible for compiling each part of the package, who reviews it and how acceptance is recorded. Mechanical, electrical, controls and other supporting trades may contribute different information. A responsibility list is useful where the owner expects one coordinated handover but the source records come from several organisations.",
+          "Discuss the format and document references before records accumulate. Consistent equipment names, revision dates and a clear index help building staff connect manuals and drawings with the installed equipment. A searchable digital folder may be useful, but the agreed delivery format and any physical-copy requirement belong in the project discussion."
+        ]
+      },
+      {
+        "heading": "Connect equipment information with project records",
+        "paragraphs": [
+          "Ask for the manufacturer information relevant to the equipment actually supplied, rather than an unfiltered collection of product literature. Equipment references should connect the documents to the building’s labels and schedules. Where information is still pending, record the missing item instead of silently substituting a document for a different product.",
+          "Discuss the project records required by the contract, which may include start-up documentation, commissioning information, testing and balancing records, inspection records or drawings that reflect the installed work. Confirm what is applicable, who produces it and what review is required. This list is a discussion guide, not a statement that every item applies to every project.",
+          "Hillcrest’s supplied project summary includes mechanical upgrade and turnover coordination considerations. Capilano Birch also provides context for discussing existing-building interfaces. Neither summary should be used to invent a final O&M index, completed commissioning results or a confirmed closeout date that has not been provided."
+        ]
+      },
+      {
+        "heading": "Plan the handover conversation",
+        "paragraphs": [
+          "Documents and familiarisation serve related but different purposes. Ask which building representatives should attend any agreed training, what systems it covers and how questions will be captured. Arrange access to the relevant records so participants can connect the discussion with the equipment and controls they will encounter.",
+          "Clarify who can answer later questions and which contact applies to service, warranty or unresolved project work. Warranty terms, service arrangements and operating responsibilities are project-specific. A handover meeting should not be treated as creating an ongoing maintenance agreement unless that service has been separately agreed.",
+          "Avoid putting operational settings or technical instructions into an informal summary without the appropriate review. Building users should be directed to the approved project information and responsible specialists. The purpose of the package is to preserve reliable information, not to encourage unqualified adjustments based on a website checklist."
+        ]
+      },
+      {
+        "heading": "Keep outstanding items visible",
+        "paragraphs": [
+          "A handover package can contain open questions or documents awaiting review. Use an outstanding-items list with a description, responsible party and next agreed action. Distinguish installation completion, document submission, review and final closeout so that one milestone is not mistaken for all the others.",
+          "Make it clear how revisions will be issued and where the accepted version will be stored. Building teams need to know whether a replacement file supersedes an earlier one, and contractors need a clear route for responding to review comments. Keep the index and the action list consistent with the current package.",
+          "When planning an upgrade with Allied, raise your turnover requirements alongside the installation scope. Explain who will use the documentation, what records are already available and any consultant or owner requirements. Defining these expectations early gives the project team a better basis for discussing responsibilities, programme and the final handover."
+        ]
+      }
+    ],
+    "checklist": [
+      "Systems, phases and turnover boundaries",
+      "Required documents and responsible contributors",
+      "Equipment references, revisions and package index",
+      "Agreed familiarisation and follow-up contacts",
+      "Outstanding items and final acceptance process"
+    ],
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071564/Allied/2025-10-09_21.39.57_tne1oo.jpg",
+    "date": "2026-10-31",
+    "author": "Allied Plumbing",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "readingMinutes": 4
   }
 ]

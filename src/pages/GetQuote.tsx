@@ -1,7 +1,7 @@
 import { FORMSPREE_ENDPOINT } from '../config';
 // src/pages/GetQuote.tsx
 import { useEffect, useMemo, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { useFeedbackMotion } from '../hooks/useFeedbackMotion';
 import { Link } from "../lib/navigation";
 import { QUOTE_FILE_UPLOADS_ENABLED } from "../config";
 import { useFormDraft } from "../hooks/useFormDraft";
@@ -34,6 +34,8 @@ export default function GetQuote() {
   const started = useRef(false);
   const previews = useRef(new Set<string>());
   const statusRef = useRef<HTMLDivElement>(null);
+
+  useFeedbackMotion(statusRef, done ? 'success' : error);
 
   // простая маска для телефона
   const [phone, setPhone] = useState("");
@@ -127,16 +129,13 @@ export default function GetQuote() {
       <section className="max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-14">
         {/* Успешная отправка */}
         <div ref={statusRef} tabIndex={-1} role="status" aria-live="polite" className="scroll-mt-6">
-          {done && <p className="mb-6 rounded-xl bg-green-50 p-4 text-green-900">Thank you. Your quote request has been received.</p>}
+          {done && <p className="mb-6 rounded-xl bg-green-50 p-4 text-green-900">Your request has been received by our enquiry system. The team will review the details you provided. If the situation is urgent or changes before you hear from us, call 604-731-1000.</p>}
           {error && <p className="mb-6 rounded-xl bg-red-50 p-4 text-red-900">{error}</p>}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Форма */}
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+          <div
             className="lg:col-span-2 rounded-2xl border border-neutral-200/70 bg-white p-5 md:p-6 shadow-sm"
           >
             <FormHeader />
@@ -327,7 +326,7 @@ export default function GetQuote() {
                 </p>
               </div>
             </form>
-          </motion.div>
+          </div>
 
           {/* Sticky доверие/контакты */}
           <aside className="lg:col-span-1">
@@ -356,7 +355,7 @@ function FormHeader() {
           Tell us what you need
         </h2>
         <p className="text-neutral-600 mt-1">
-          Tell us about your site and the work you need. For urgent assistance, please call.
+          A clear description helps us review your request. Tell us what is happening, where the equipment is located and whether there are access or scheduling restrictions. For urgent assistance, call 604-731-1000.
         </p>
       </div>
       <img

@@ -1,3 +1,4 @@
+import { useFeedbackMotion } from '../hooks/useFeedbackMotion';
 import { FORMSPREE_ENDPOINT } from '../config';
 import { useRef, useState } from 'react';
 import { Link } from '../lib/navigation';
@@ -12,6 +13,7 @@ export default function ContactLead() {
   const started = useRef(false);
   const formRef = useRef<HTMLFormElement>(null);
   const resultRef = useRef<HTMLDivElement>(null);
+  useFeedbackMotion(resultRef, ok ? 'success' : error);
   const inFlight = useRef(false);
   const clearDraft = useFormDraft('contact', formRef);
   async function submit(event: React.FormEvent<HTMLFormElement>) {

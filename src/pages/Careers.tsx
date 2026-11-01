@@ -147,6 +147,7 @@ export default function Careers() {
         <p className="mt-6 max-w-3xl text-sm leading-relaxed text-neutral-600">Benefits, training arrangements, equipment and schedules depend on the role and agreed employment terms. Ask the hiring team for the current details.</p>
       </section>
 
+      <p className="max-w-6xl mx-auto px-4 md:px-6 pb-6 text-neutral-700 leading-relaxed">Explore the types of work in our service and project teams. Availability, location and requirements should be confirmed with the hiring team before you apply.</p>
       {/* ========== OPENINGS FILTERS ========== */}
       <section id="openings" className="max-w-6xl mx-auto px-4 md:px-6 pb-6">
         <div className="rounded-2xl border border-neutral-200 bg-white p-4 md:p-5 shadow-sm">

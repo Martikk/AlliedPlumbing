@@ -159,3 +159,29 @@ body { margin: 0; }
  .page-photo-hero > .relative {min-height:300px;padding-top:100px;padding-bottom:28px;}
  .site-header:not(.site-header-home) .navigation-shell {padding-block:10px;}
 }
+
+/* Small interaction feedback; functional state changes never wait for motion. */
+:root { --ease-out: cubic-bezier(0.23, 1, 0.32, 1); }
+.mobile-dropdown { transform-origin: top; }
+.mobile-dropdown[data-motion="pointer"] {
+  transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out), display 180ms allow-discrete;
+  opacity: 1; transform: translateY(0);
+}
+.mobile-dropdown[data-motion="pointer"][hidden] { display: none; opacity: 0; transform: translateY(-6px); }
+@starting-style {
+  .mobile-dropdown[data-motion="pointer"]:not([hidden]) { opacity: 0; transform: translateY(-6px); }
+}
+.faq-item[open] .faq-plus { transform: rotate(45deg); }
+.faq-item[data-motion="pointer"] .faq-plus { transition: transform 160ms var(--ease-out); }
+@media (hover:hover) and (pointer:fine) {
+  .project-photo-card { transition: transform 160ms var(--ease-out); }
+  .project-photo-card:hover { transform: translateY(-3px); }
+}
+.project-photo-card:focus-visible { outline: 3px solid #315cb4; outline-offset: 4px; }
+@media (prefers-reduced-motion:reduce) {
+  .mobile-dropdown[data-motion="pointer"] { transition-duration: 100ms; transform: none; }
+  .mobile-dropdown[data-motion="pointer"][hidden] { transform: none; }
+  @starting-style { .mobile-dropdown[data-motion="pointer"]:not([hidden]) { transform: none; } }
+  .faq-item[data-motion="pointer"] .faq-plus { transition: none; }
+  .project-photo-card:hover { transform: none; outline: 2px solid #315cb4; outline-offset: 2px; }
+}

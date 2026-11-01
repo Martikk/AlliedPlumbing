@@ -7,6 +7,17 @@ const tabs = {
 };
 export default function AboutCompany() {
   const [tab,setTab]=useState<keyof typeof tabs>('Materials');
+  const list = useRef<HTMLUListElement>(null);
+  const listAnimation = useRef<Animation | null>(null);
+  const pointerChange = useRef(false);
+  useEffect(() => {
+    const element = list.current;
+    const from = listAnimation.current?.playState === 'running' && element ? getComputedStyle(element).opacity : '0.6';
+    listAnimation.current?.cancel();
+    if (!pointerChange.current || !element?.animate || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    listAnimation.current = element.animate([{opacity:from},{opacity:1}], {duration:140,easing:'cubic-bezier(0.23, 1, 0.32, 1)'});
+  }, [tab]);
+  useEffect(() => () => listAnimation.current?.cancel(), []);
   const video = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     const player = video.current;
@@ -30,8 +41,8 @@ export default function AboutCompany() {
     <span className="section-eyebrow">About our company</span>
     <h2 className="mt-4 text-3xl md:text-5xl font-extrabold leading-tight">Building with trust,<br className="hidden md:block" /> driven by experience</h2>
     <div className="mt-10 grid lg:grid-cols-2 gap-10 md:gap-14 items-center">
-      <div><div className="flex flex-wrap gap-3 mb-7">{Object.keys(tabs).map(name=><button key={name} type="button" aria-pressed={tab===name} onClick={()=>setTab(name as keyof typeof tabs)} className={`rounded-lg border px-4 py-3 font-semibold ${tab===name?'bg-neutral-900 border-neutral-900 text-white':'border-neutral-300 bg-white hover:bg-neutral-100'}`}>{name}</button>)}</div>
-      <ul className="space-y-5 min-h-[250px]">{tabs[tab].map(text=><li key={text} className="flex gap-4 text-neutral-700 leading-relaxed"><svg aria-hidden="true" className="h-5 w-5 shrink-0 mt-1 text-neutral-900" viewBox="0 0 20 20" fill="currentColor"><path d="M7.5 13.5 3.8 9.8l1.4-1.4 2.3 2.3 6.3-6.3 1.4 1.4-7.7 7.7Z"/></svg><span>{text}</span></li>)}</ul></div>
+      <div><div className="flex flex-wrap gap-3 mb-7">{Object.keys(tabs).map(name=><button key={name} type="button" aria-pressed={tab===name} onClick={event=>{pointerChange.current=event.detail>0;setTab(name as keyof typeof tabs);}} className={`rounded-lg border px-4 py-3 font-semibold ${tab===name?'bg-neutral-900 border-neutral-900 text-white':'border-neutral-300 bg-white hover:bg-neutral-100'}`}>{name}</button>)}</div>
+      <ul ref={list} className="space-y-5 min-h-[250px]">{tabs[tab].map(text=><li key={text} className="flex gap-4 text-neutral-700 leading-relaxed"><svg aria-hidden="true" className="h-5 w-5 shrink-0 mt-1 text-neutral-900" viewBox="0 0 20 20" fill="currentColor"><path d="M7.5 13.5 3.8 9.8l1.4-1.4 2.3 2.3 6.3-6.3 1.4 1.4-7.7 7.7Z"/></svg><span>{text}</span></li>)}</ul></div>
       <div className="about-visual clip-tilt rounded-2xl overflow-hidden"><video ref={video} controls muted loop playsInline preload="none" poster="https://res.cloudinary.com/dzytbkc5l/video/upload/c_crop,ar_1:1,g_center/so_1,f_jpg,q_auto,w_1000/v1760069369/Allied/Allied_Plumbing_Video_Script_Generation_qz6an9.jpg" src="https://res.cloudinary.com/dzytbkc5l/video/upload/c_crop,ar_1:1,g_center/q_auto/v1760069369/Allied/Allied_Plumbing_Video_Script_Generation_qz6an9.mp4" aria-label="Allied mechanical services brand video" className="h-full w-full object-cover" /></div>
     </div>
     <div className="mt-14"><QualityBadges /></div>

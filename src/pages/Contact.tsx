@@ -1,3 +1,4 @@
+import FaqItem from '../components/FaqItem';
 import { Link } from "../lib/navigation";
 import ContactLead from "@/components/ContactLead"; // твой готовый стеклянный блок с формой
 import { PHONE } from "@/config";
@@ -154,6 +155,7 @@ export default function Contact() {
         </div>
       </section>
 
+      <section className="max-w-6xl mx-auto px-4 md:px-6 pb-12"><h2 className="text-2xl font-bold">Help us direct your enquiry</h2><p className="mt-4 max-w-3xl leading-relaxed text-neutral-700">For a service enquiry, include your location and a brief description of the issue. For planned work, tell us about the building, the equipment and your proposed timing. If you are unsure which service fits, describe the requirement and our team can help direct the enquiry.</p></section>
       {/* ===== FAQ (короткий, трендовый) ===== */}
       <section className="max-w-6xl mx-auto px-4 md:px-6 pb-16 md:pb-24">
         <div className="mb-6">
@@ -165,15 +167,7 @@ export default function Contact() {
 
         <div className="divide-y divide-neutral-200 rounded-2xl border border-neutral-200 bg-white">
           {FAQ.map((f) => (
-            <details key={f.q} className="group p-5 [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex cursor-pointer items-center justify-between">
-                <span className="font-medium">{f.q}</span>
-                <span className="ml-4 grid h-6 w-6 place-items-center rounded-full bg-neutral-100 text-neutral-700 group-open:rotate-45 transition">
-                  +
-                </span>
-              </summary>
-              <p className="mt-3 text-neutral-600">{f.a}</p>
-            </details>
+            <FaqItem key={f.q} question={f.q}>{f.a}</FaqItem>
           ))}
         </div>
       </section>
