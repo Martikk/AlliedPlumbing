@@ -1,14 +1,14 @@
 # Allied enquiry backend — deployment package
 
-Status: backend version 3 deployed on 2026-11-01; **frontend not activated**. `src/lib/enquiry-config.json` is empty, so all production forms remain on Formspree.
+Status: backend version 4 deployed on 2026-11-01; **frontend not activated**. `src/lib/enquiry-config.json` is empty, so all production forms remain on Formspree.
 
 ## Fixed routing and file policy
 
 | Type | Recipient | Attachments | Private Drive retention |
 |---|---|---|---|
-| Contact | info@allied-plumbing.ca | None | 180 days |
-| Quote | quote@allied-plumbing.ca | Up to four PDF/JPG/PNG; 10 MB total | 180 days |
-| Careers | careers@allied-plumbing.ca | One PDF; 5 MB | 90 days |
+| Contact | alex@allied-plumbing.ca | None | 180 days |
+| Quote | alex@allied-plumbing.ca | Up to four PDF/JPG/PNG; 10 MB total | 180 days |
+| Careers | alex@allied-plumbing.ca | One PDF; 5 MB | 90 days |
 
 Files are validated for extension, declared MIME and signature. This is not a malware scanner. Email copies are delivered to the fixed recipients; Drive folders remain private to the deploying owner. No public links or Drive permission grants are created. The cleanup trigger moves expired request folders to Trash, not permanent deletion. Copies in mailboxes/backups follow their own retention policy.
 
@@ -41,3 +41,7 @@ Do not add logging of form contents. Monitor Apps Script execution failures and 
 Sources: https://developers.google.com/apps-script/guides/html/communication ; https://developers.google.com/apps-script/advanced/drive ; https://developers.google.com/apps-script/guides/services/quotas .
 
 Version 3 uses display references `ddMMyy-HHmmss-XXXX` in America/Vancouver time, with a four-character UUID suffix. The full UUID remains the internal deduplication key. Stored references are reused on retry; old records retain their previous references.
+
+Temporary routing requested by the owner: all three backend routes send notifications to alex@allied-plumbing.ca. Public Contact/Quote/Careers addresses and form labels remain unchanged.
+
+Version 4 fixture accepted for temporary Alex routing: 011126-074258-AF2F. Mail service accepted notification; actual inbox receipt not yet confirmed for this new destination.

@@ -13,7 +13,7 @@ function harness(){
 function form(type='quote'){return {type,requestId:'12345678-1234-4234-8234-123456789abc',startedAt:String(Date.now()-5000),name:'QA Fixture',email:'fixture@example.test',message:'Fixture request',consent:'yes'};}
 function blob(name,type,bytes){return {getName:()=>name,getContentType:()=>type,getBytes:()=>bytes,setName:()=>{}};}
 test('server routes recipients and deduplicates accepted requests',()=>{
- for(const type of ['contact','quote','careers']){const h=harness(),f=form(type);assert.equal(h.context.submitEnquiry(f).ok,true);assert.equal(h.context.submitEnquiry(f).ok,true);assert.equal(h.mail.length,1);assert.equal(h.mail[0].to,`${type==='contact'?'info':type}@allied-plumbing.ca`);assert.throws(()=>h.context.submitEnquiry({...f,message:'Changed after acceptance'}),/earlier version/);}
+ for(const type of ['contact','quote','careers']){const h=harness(),f=form(type);assert.equal(h.context.submitEnquiry(f).ok,true);assert.equal(h.context.submitEnquiry(f).ok,true);assert.equal(h.mail.length,1);assert.equal(h.mail[0].to,'alex@allied-plumbing.ca');assert.throws(()=>h.context.submitEnquiry({...f,message:'Changed after acceptance'}),/earlier version/);}
 });
 test('mail ambiguity retains archive and never retries notification automatically',()=>{
  const h=harness();h.failMail();const f=form();const r=h.context.submitEnquiry(f);assert.equal(r.stored,true);assert.equal(r.ok,false);assert.equal(h.context.submitEnquiry(f).stored,true);assert.equal(h.folders.length,1);assert.equal(h.folders[0].appProperties.state,'sending');

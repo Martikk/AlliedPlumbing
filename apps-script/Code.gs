@@ -2,9 +2,9 @@
  * No public Drive permissions, no client-controlled recipients, no inbox-reading scope.
  */
 var ROUTES_ = Object.freeze({
-  contact: {email:'info@allied-plumbing.ca', days:180, max:0, count:0},
-  quote: {email:'quote@allied-plumbing.ca', days:180, max:10*1024*1024, count:4},
-  careers: {email:'careers@allied-plumbing.ca', days:90, max:5*1024*1024, count:1}
+  contact: {email:'alex@allied-plumbing.ca', days:180, max:0, count:0},
+  quote: {email:'alex@allied-plumbing.ca', days:180, max:10*1024*1024, count:4},
+  careers: {email:'alex@allied-plumbing.ca', days:90, max:5*1024*1024, count:1}
 });
 function doGet(e) {
   var type=String(e && e.parameter && e.parameter.type || 'contact');
