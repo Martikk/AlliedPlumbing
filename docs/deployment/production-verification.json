@@ -1,0 +1,489 @@
+{
+  "checkedAt": "2026-11-01T05:59:17.518Z",
+  "origin": "https://www.alliedplumbing.ca",
+  "entryMatches": true,
+  "localEntry": [
+    "/assets/index-C5d0TRDg.js"
+  ],
+  "productionEntry": [
+    "/assets/index-C5d0TRDg.js"
+  ],
+  "routes": [
+    {
+      "path": "/",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/services",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/services/maintenance",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/services/residential-plumbing",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/services/commercial-plumbing",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/services/hvac",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/services/boilers",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/services/emergency",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/projects",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/projects/garibaldi",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/projects/ridgeview",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/projects/leigh",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/projects/haro",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/team",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/clients",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/careers",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/rfp",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/quote",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/projects/herbert-spencer",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/projects/howe-sound",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/projects/miller-park",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/blog/planning-school-hvac-upgrades",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/blog/boiler-plant-upgrade-ridgeview",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/blog/haro-heating-hot-water-upgrade",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/projects/icbc",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/projects/crosstown",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/projects/glenayre",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/projects/collingwood",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/projects/capilano-birch",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/projects/herbert-spencer-ashp",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/projects/hillcrest",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/blog/integrating-commercial-boiler-controls",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/blog/coordinating-school-mechanical-room-upgrades",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    },
+    {
+      "path": "/blog/integrating-school-hydronic-cooling",
+      "status": 200,
+      "canonicalOK": true,
+      "contentOK": true,
+      "titleOK": true
+    }
+  ],
+  "assets": [
+    {
+      "path": "/assets/About-BjZApF14.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 2428
+    },
+    {
+      "path": "/assets/Blog-dkm74GQF.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 2245
+    },
+    {
+      "path": "/assets/BlogPost-DrIDdBj5.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 3099
+    },
+    {
+      "path": "/assets/BlogTeasers-BK7S4KAC.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 2107
+    },
+    {
+      "path": "/assets/Careers-Ct8t7QoZ.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 14979
+    },
+    {
+      "path": "/assets/ClientTestimonials-CMKKI63R.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 1507
+    },
+    {
+      "path": "/assets/Clients-CbBpjpdv.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 1093
+    },
+    {
+      "path": "/assets/Contact-Dg6RPilb.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 8333
+    },
+    {
+      "path": "/assets/ContactLead-Dikuaj4u.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 3654
+    },
+    {
+      "path": "/assets/GetQuote-RW8vbO7h.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 11115
+    },
+    {
+      "path": "/assets/Home-BZ2ngpAm.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 20000
+    },
+    {
+      "path": "/assets/LogoMarquee-D52hy6je.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 1291
+    },
+    {
+      "path": "/assets/NotFound-Dxxam0kn.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 6270
+    },
+    {
+      "path": "/assets/ProjectDetail-B7mD6XrF.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 4051
+    },
+    {
+      "path": "/assets/Projects-C7xFKYZq.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 3803
+    },
+    {
+      "path": "/assets/RFP-CmJNHv34.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 1646
+    },
+    {
+      "path": "/assets/ServiceBoilers-zyK8Joip.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 803
+    },
+    {
+      "path": "/assets/ServiceCommercial-Dd6cfTAY.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 675
+    },
+    {
+      "path": "/assets/ServiceEmergency-pKMrGqLi.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 672
+    },
+    {
+      "path": "/assets/ServiceHVAC-bfXZPeyU.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 729
+    },
+    {
+      "path": "/assets/ServiceMaintenance-Bp8miqWE.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 903
+    },
+    {
+      "path": "/assets/ServiceResidential-BqslZZU1.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 3053
+    },
+    {
+      "path": "/assets/ServiceTemplate-IMtDbJ_1.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 3188
+    },
+    {
+      "path": "/assets/Services-2g4OblbC.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 8629
+    },
+    {
+      "path": "/assets/Team-DI8-Qb52.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 1709
+    },
+    {
+      "path": "/assets/TeamSection-BdTQFZQ4.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 1076
+    },
+    {
+      "path": "/assets/index-BOAMarQS.css",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 48504
+    },
+    {
+      "path": "/assets/index-C5d0TRDg.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 254552
+    },
+    {
+      "path": "/assets/posts-D-4fvA45.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 22538
+    },
+    {
+      "path": "/assets/projects-y4RrBCXb.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 25086
+    },
+    {
+      "path": "/assets/proxy-DFGVpNoo.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 112479
+    },
+    {
+      "path": "/assets/team-DElUqFsI.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 2088
+    },
+    {
+      "path": "/assets/useFormDraft-BaxraGDd.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 2186
+    },
+    {
+      "path": "/assets/vitals-CigR4qS6.js",
+      "status": 200,
+      "typeOK": true,
+      "bytes": 9021
+    }
+  ],
+  "sitemapOK": true,
+  "sitemapURLs": 38,
+  "unknownStatus": 404,
+  "failures": []
+}
