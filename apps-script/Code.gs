@@ -59,9 +59,10 @@ function submitEnquiry(form) {
   if(!lock.tryLock(15000))throw new Error('The service is busy. Keep your details and try again shortly.');
   try {
     var existing=findRequest_(request.id);
-    if(existing && existing.appProperties.fingerprint!==request.fingerprint)throw new Error('An earlier version of this request is already recorded. Call 604-731-1000 with reference '+request.id+'.');
-    if(existing && existing.appProperties.state==='notified')return {ok:true,id:request.id};
-    if(existing && ['sending','stored'].indexOf(existing.appProperties.state)>=0)return {ok:false,stored:true,id:request.id,message:'Your request is stored, but notification confirmation is unavailable. Do not resubmit. Call 604-731-1000 with reference '+request.id+'.'};
+    request.reference=existing ? (existing.appProperties.reference || request.id) : Utilities.formatDate(new Date(),'America/Vancouver','ddMMyy-HHmmss')+'-'+request.id.slice(0,4).toUpperCase();
+    if(existing && existing.appProperties.fingerprint!==request.fingerprint)throw new Error('An earlier version of this request is already recorded. Call 604-731-1000 with reference '+request.reference+'.');
+    if(existing && existing.appProperties.state==='notified')return {ok:true,id:request.reference};
+    if(existing && ['sending','stored'].indexOf(existing.appProperties.state)>=0)return {ok:false,stored:true,id:request.reference,message:'Your request is stored, but notification confirmation is unavailable. Do not resubmit. Call 604-731-1000 with reference '+request.reference+'.'};
     if(existing)Drive.Files.update({trashed:true},existing.id);
     var props=PropertiesService.getScriptProperties(),root=props.getProperty('ALLIED_'+request.type.toUpperCase());
     if(!root)throw new Error('The enquiry service is not ready. Please call or email our team.');
@@ -74,20 +75,20 @@ function submitEnquiry(form) {
     cache.put('rate:'+hash,String(rate+1),900);cache.put('global-hour',String(hour+1),3600);
     props.setProperty(dayKey,String(used+1)); // Reserve capacity even if downstream processing fails.
     var expires=String(Date.now()+request.route.days*86400000);
-    var folder=Drive.Files.create({name:today+' '+request.type+' '+request.id,mimeType:'application/vnd.google-apps.folder',parents:[root],appProperties:{alliedRequest:request.id,state:'uploading',expires:expires,fingerprint:request.fingerprint}},null,{fields:'id,appProperties'});
+    var folder=Drive.Files.create({name:today+' '+request.type+' '+request.reference,mimeType:'application/vnd.google-apps.folder',parents:[root],appProperties:{alliedRequest:request.id,reference:request.reference,state:'uploading',expires:expires,fingerprint:request.fingerprint}},null,{fields:'id,appProperties'});
     props.setProperty('request:'+request.id,JSON.stringify({id:folder.id,created:Date.now()}));
     try {
       request.files.forEach(function(blob){Drive.Files.create({name:blob.getName(),parents:[folder.id]},blob,{fields:'id'});});
-      var record={id:request.id,type:request.type,receivedAt:new Date().toISOString(),expiresAt:new Date(Number(expires)).toISOString(),fields:request.fields,consent:'Contact about this enquiry/application',attachments:request.files.map(function(blob){return blob.getName();})};
+      var record={id:request.id,reference:request.reference,type:request.type,receivedAt:new Date().toISOString(),expiresAt:new Date(Number(expires)).toISOString(),fields:request.fields,consent:'Contact about this enquiry/application',attachments:request.files.map(function(blob){return blob.getName();})};
       Drive.Files.create({name:'request.json',parents:[folder.id]},Utilities.newBlob(JSON.stringify(record,null,2),'application/json','request.json'),{fields:'id'});
       status_(folder,'stored');
     } catch(error) { status_(folder,'archive_failed');throw new Error('Your request could not be stored. Your form details are preserved; please try again.'); }
-    var body='Allied Plumbing '+request.type+' enquiry\nReference: '+request.id+'\n\n'+Object.keys(request.fields).map(function(key){return key+': '+request.fields[key];}).join('\n')+'\n\nAttachments are included in this email. A private copy is retained in the website owner’s Drive. Mail acceptance is not proof of inbox delivery.';
+    var body='Allied Plumbing '+request.type+' enquiry\nReference: '+request.reference+'\n\n'+Object.keys(request.fields).map(function(key){return key+': '+request.fields[key];}).join('\n')+'\n\nAttachments are included in this email. A private copy is retained in the website owner’s Drive. Mail acceptance is not proof of inbox delivery.';
     status_(folder,'sending');
-    try { MailApp.sendEmail({to:request.route.email,subject:'Allied Plumbing — '+request.type+' — '+request.id,body:body,replyTo:request.fields.email,attachments:request.files,name:'Allied Plumbing website'}); }
-    catch(error) { return {ok:false,stored:true,id:request.id,message:'Your request is stored, but email notification could not be confirmed. Do not resubmit. Call 604-731-1000 with reference '+request.id+'.'}; }
+    try { MailApp.sendEmail({to:request.route.email,subject:'Allied Plumbing — '+request.type+' — '+request.reference,body:body,replyTo:request.fields.email,attachments:request.files,name:'Allied Plumbing website'}); }
+    catch(error) { return {ok:false,stored:true,id:request.reference,message:'Your request is stored, but email notification could not be confirmed. Do not resubmit. Call 604-731-1000 with reference '+request.reference+'.'}; }
     status_(folder,'notified');
-    return {ok:true,id:request.id};
+    return {ok:true,id:request.reference};
   } finally {lock.releaseLock();}
 }
 /* Owner-only editor setup, never callable through google.script.run. */

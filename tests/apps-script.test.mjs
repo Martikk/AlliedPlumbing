@@ -6,7 +6,7 @@ import {createHash} from 'node:crypto';
 const source=readFileSync('apps-script/Code.gs','utf8');
 function harness(){
  const folders=[],mail=[],props=new Map([['ALLIED_QUOTE','quote-root'],['ALLIED_CAREERS','careers-root'],['ALLIED_CONTACT','contact-root']]);let failMail=false;
- const context={console,Utilities:{DigestAlgorithm:{SHA_256:'sha256'},computeDigest:(_,v)=>[...createHash('sha256').update(typeof v==='string'?v:Buffer.from(v)).digest()],base64EncodeWebSafe:v=>Buffer.from(v).toString('base64url'),formatDate:()=> '2026-10-31',newBlob:v=>v},LockService:{getScriptLock:()=>({tryLock:()=>true,releaseLock:()=>{}})},PropertiesService:{getScriptProperties:()=>({getProperty:k=>props.get(k),setProperty:(k,v)=>props.set(k,v)})},CacheService:{getScriptCache:()=>({get:()=>null,put:()=>{}})},MailApp:{getRemainingDailyQuota:()=>100,sendEmail:payload=>{if(failMail)throw Error('Unknown transport failure');mail.push(payload);}},Drive:{Files:{get:id=>folders.find(x=>x.id===id),list:({q})=>({files:folders.filter(x=>q.includes(x.appProperties.alliedRequest) && !x.trashed)}),create:(metadata)=>{if(metadata.appProperties){const value={...metadata,id:'request-'+folders.length};folders.push(value);return value;}return {id:'file'};},update:(patch,id)=>{const folder=folders.find(x=>x.id===id);Object.assign(folder,patch);}}}};
+ const context={console,Utilities:{DigestAlgorithm:{SHA_256:'sha256'},computeDigest:(_,v)=>[...createHash('sha256').update(typeof v==='string'?v:Buffer.from(v)).digest()],base64EncodeWebSafe:v=>Buffer.from(v).toString('base64url'),formatDate:(_date,zone,pattern)=>{if(pattern==='ddMMyy-HHmmss'){assert.equal(zone,'America/Vancouver');return '011126-061530';}return '2026-10-31';},newBlob:v=>v},LockService:{getScriptLock:()=>({tryLock:()=>true,releaseLock:()=>{}})},PropertiesService:{getScriptProperties:()=>({getProperty:k=>props.get(k),setProperty:(k,v)=>props.set(k,v)})},CacheService:{getScriptCache:()=>({get:()=>null,put:()=>{}})},MailApp:{getRemainingDailyQuota:()=>100,sendEmail:payload=>{if(failMail)throw Error('Unknown transport failure');mail.push(payload);}},Drive:{Files:{get:id=>folders.find(x=>x.id===id),list:({q})=>({files:folders.filter(x=>q.includes(x.appProperties.alliedRequest) && !x.trashed)}),create:(metadata)=>{if(metadata.appProperties){const value={...metadata,id:'request-'+folders.length};folders.push(value);return value;}return {id:'file'};},update:(patch,id)=>{const folder=folders.find(x=>x.id===id);Object.assign(folder,patch);}}}};
  vm.createContext(context);vm.runInContext(source,context);
  return {context,mail,folders,failMail:()=>{failMail=true;}};
 }
@@ -35,4 +35,8 @@ test('HTML config cannot break out into script; client JavaScript parses',()=>{
  assert.equal(html.includes('</script><script>alert(1)'),false);
  const script=html.match(/<script>([\s\S]*)<\/script>/)[1];new vm.Script(script);
  assert.ok(script.includes('/\\.pdf$/i'), 'PDF extension regex must escape the literal dot once');
+});
+
+test('short references match email and archive and stay stable on retry',()=>{
+ const h=harness(),f=form();const first=h.context.submitEnquiry(f);assert.equal(first.id,'011126-061530-1234');assert.equal(h.context.submitEnquiry(f).id,first.id);assert.ok(h.mail[0].subject.endsWith(first.id));assert.ok(h.mail[0].body.includes('Reference: '+first.id));assert.equal(h.folders[0].appProperties.alliedRequest,f.requestId);assert.equal(h.folders[0].appProperties.reference,first.id);
 });

@@ -1,6 +1,6 @@
 # Allied enquiry backend — deployment package
 
-Status: backend version 2 deployed on 2026-11-01; **frontend not activated**. `src/lib/enquiry-config.json` is empty, so all production forms remain on Formspree.
+Status: backend version 3 deployed on 2026-11-01; **frontend not activated**. `src/lib/enquiry-config.json` is empty, so all production forms remain on Formspree.
 
 ## Fixed routing and file policy
 
@@ -30,7 +30,7 @@ Prepared Google project: https://script.google.com/home/projects/1F1iTfQ5foQPXxR
 
 Endpoint: https://script.google.com/macros/s/AKfycbzY-CmGdtjp9EWttkl0-4q_vrWWFLwEQFWOyFejKxZ4RX9KDaONZyQzSYVjRaicAAApLQ/exec
 
-Quote fixture without attachments was accepted: 9f397ea1-7a84-4cc6-86ea-a1d5d8f5c217. Contact accepted: d69c4f19-a39e-4418-a564-0689b0496c25. Careers accepted: 7f59be33-0223-44d0-8a75-245743cd1a86. All three fixtures were clearly labelled TEST ONLY and contained no applicant data. Actual business inbox delivery, anonymous visitor access and PDF upload remain unverified. Browser file chooser automation timed out; do not treat that as a successful upload. Keep frontend config empty until these checks and Privacy changes are complete.
+Quote fixture without attachments was accepted: 9f397ea1-7a84-4cc6-86ea-a1d5d8f5c217. Contact accepted: d69c4f19-a39e-4418-a564-0689b0496c25. Careers accepted: 7f59be33-0223-44d0-8a75-245743cd1a86. All three fixtures were clearly labelled TEST ONLY and contained no applicant data. The user confirmed delivery of all three fixture emails to their business inboxes. Anonymous visitor access and PDF upload remain unverified. Browser file chooser automation timed out; do not treat that as a successful upload. Keep frontend config empty until these checks and Privacy changes are complete.
 
 ## Operational recovery
 
@@ -39,3 +39,5 @@ A request folder contains request.json, attachments and appProperties.state. `no
 Do not add logging of form contents. Monitor Apps Script execution failures and account quota/storage. Maintain the owner account and review Google quota changes. Revoking the grant breaks submissions; the site retains phone/email fallback links.
 
 Sources: https://developers.google.com/apps-script/guides/html/communication ; https://developers.google.com/apps-script/advanced/drive ; https://developers.google.com/apps-script/guides/services/quotas .
+
+Version 3 uses display references `ddMMyy-HHmmss-XXXX` in America/Vancouver time, with a four-character UUID suffix. The full UUID remains the internal deduplication key. Stored references are reused on retry; old records retain their previous references.
