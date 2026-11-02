@@ -44,3 +44,24 @@ test('all public routes include visible page content without JavaScript', () => 
   assert.ok(readFileSync('dist/blog/integrating-commercial-boiler-controls/index.html','utf8').includes('Make controls responsibilities explicit'));
   assert.ok(readFileSync('dist/projects/ridgeview/index.html','utf8').includes('Converted 12 classrooms'));
 });
+
+
+test('business and article structured data match visible facts without invented review or hours', () => {
+  const posts = JSON.parse(readFileSync('src/data/posts.json', 'utf8'));
+  const schemas = path => [...readFileSync(path, 'utf8').matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
+  const business = schemas('dist/index.html').find(item => item['@type'] === 'HVACBusiness');
+  assert.equal(business.address.streetAddress, '4085 2nd Avenue');
+  assert.equal(business.address.addressLocality, 'Burnaby');
+  assert.equal(business.openingHours, undefined);
+  assert.equal(business.aggregateRating, undefined);
+  for (const post of posts) {
+    const article = schemas(`dist/blog/${post.slug}/index.html`).find(item => item['@type'] === 'BlogPosting');
+    assert.ok(article, post.slug);
+    assert.equal(article.headline, post.title);
+    assert.equal(article.mainEntityOfPage, `https://www.alliedplumbing.ca/blog/${post.slug}/`);
+    assert.equal(article.datePublished, post.date);
+    assert.equal(article.author.name, post.author);
+    assert.equal(article.reviewedBy, undefined);
+    assert.equal(article.dateModified, undefined);
+  }
+});

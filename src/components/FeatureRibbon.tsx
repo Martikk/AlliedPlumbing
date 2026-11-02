@@ -1,3 +1,4 @@
+import { responsiveImage, imageCandidates } from '../lib/images';
 import { Link } from "../lib/navigation";
 
 type Props = {
@@ -9,24 +10,24 @@ export default function FeatureRibbon({ className = "" }: Props) {
   const items = [
     {
       title: "Smart methods",
-      text: "Efficient, engineered solutions that save time and cost while ensuring flawless results.From value-driven plumbing layouts to HVAC system optimization, every project starts with planning that minimizes downtime and maximizes performance.",
+      text: "We review existing equipment, access and project requirements before defining the installation sequence. Planning considers the building and the people who use it.",
       src: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068455/Allied/Screenshot_2025-10-09_at_8.53.56_PM_hjz9a5.png",
     },
     {
       title: "Experienced team",
       text:
-        "Led by certified trades and project managers who value precision, safety, and accountability.Our crews bring years of on-site expertise — from mechanical retrofits to new builds — delivering craftsmanship that stands the test of time.",
+        "Our project team coordinates mechanical installations, supporting trades and site requirements across school, residential and commercial upgrades.",
       src: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068155/Allied/10_kubptf.png",
     },
     {
       title: "Modern equipment",
-      text: "Advanced tools and technology for accuracy, speed, and safety.From hydraulic crimping and pipe fusion to DDC commissioning and crane lifts, we invest in equipment that keeps every project running efficiently and safely.",
+      text: "Equipment selection, piping connections, controls interfaces and commissioning requirements are considered together as part of the project scope.",
       src: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068155/Allied/11_r4dgo3.png",
     },
     {
       title: "Proven delivery",
       text:
-        "Trusted performance from first bid to final handover.We stand for clear communication, reliable scheduling, and transparent execution — ensuring every client receives exactly what was promised, on time and on budget.",
+        "Our documented projects show the scope and coordination behind school ventilation, boiler plant and residential heating upgrades. Explore the work and discuss what your building needs.",
       src: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068156/Allied/14_urnogx.png",
     },
   ];
@@ -53,7 +54,7 @@ export default function FeatureRibbon({ className = "" }: Props) {
             {/* верхняя картинка */}
             <div className="aspect-[16/9] overflow-hidden">
               <img
-                src={it.src}
+                src={responsiveImage(it.src, 768)} srcSet={imageCandidates(it.src)} sizes="(min-width: 1024px) 280px, (min-width: 768px) 45vw, 100vw" width={1200} height={675}
                 alt=""
                 className="
                   h-full w-full object-cover

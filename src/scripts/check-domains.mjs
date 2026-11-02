@@ -1,0 +1,7 @@
+import { writeFileSync } from 'node:fs';
+const paths=['/','/services','/services/','/projects','/blog','/privacy','/GetQuote'];
+const canonical=p=>p==='/GetQuote'?'/quote/':p==='/'?'/':p.replace(/\/+$/,'')+'/';
+const inputs=['http://alliedplumbing.ca','https://alliedplumbing.ca','http://www.alliedplumbing.ca','https://www.alliedplumbing.ca'].flatMap(origin=>paths.map(path=>({url:origin+path,expected:'https://www.alliedplumbing.ca'+canonical(path)})));
+const results=[];let cursor=0;
+await Promise.all(Array.from({length:4},async()=>{while(cursor<inputs.length){const input=inputs[cursor++];let url=input.url;const hops=[];try{for(let n=0;n<6;n++){const r=await fetch(url,{redirect:'manual',signal:AbortSignal.timeout(20000)});const location=r.headers.get('location');await r.body?.cancel();hops.push({url,status:r.status,...(location?{location}: {})});if(!location)break;url=new URL(location,url).href;}results.push({...input,hops,pass:url===input.expected&&hops.at(-1).status===200,redirects:hops.length-1});}catch(e){results.push({...input,error:String(e),pass:false});}}}));
+const report={checkedAt:new Date().toISOString(),policy:'https://www.alliedplumbing.ca with trailing slash',results};if(process.argv[2])writeFileSync(process.argv[2],JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({checkedAt:report.checkedAt,checked:results.length,failures:results.filter(r=>!r.pass),chains:results.filter(r=>r.redirects>1).map(r=>({url:r.url,redirects:r.redirects}))},null,2));process.exitCode=results.some(r=>!r.pass)?1:0;

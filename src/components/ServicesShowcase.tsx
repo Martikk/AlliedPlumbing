@@ -1,3 +1,4 @@
+import { responsiveImage, imageCandidates } from '../lib/images';
 import { Link } from '../lib/navigation';
 
 type Item = {
@@ -99,7 +100,7 @@ export default function ServicesShowcase() {
                 }`}
               >
                 <img
-                  src={it.img}
+                  src={responsiveImage(it.img, 768)} srcSet={imageCandidates(it.img)} sizes="(min-width: 1024px) 560px, 100vw" width={1200} height={800}
                   alt=""
                   className="h-64 md:h-72 lg:h-60 w-full object-cover transition duration-500 group-hover:scale-[1.03] group-hover:brightness-105"
                   loading="lazy"

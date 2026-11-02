@@ -12,7 +12,7 @@ export default function Contact() {
         <img
           src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png"
           alt=""
-          className="absolute inset-0 h-[40vh] md:h-[48vh] w-full object-cover"
+          width={1200} height={800} fetchPriority="high" className="absolute inset-0 h-[40vh] md:h-[48vh] w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 md:px-6 pt-28 md:pt-36 pb-10">
@@ -34,7 +34,7 @@ export default function Contact() {
               Call {PHONE} <span aria-hidden>↗</span>
             </a>
             <Link
-              to="/GetQuote"
+              to="/quote"
               className="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-white/10 text-white px-5 py-3 font-semibold backdrop-blur hover:bg-white/20"
             >
               Get a quote
@@ -69,12 +69,12 @@ export default function Contact() {
           {/* Estimates */}
           <div className="rounded-2xl border border-neutral-200/70 bg-white p-6 shadow-sm">
             <div className="text-xs uppercase tracking-widest text-neutral-500">Estimates</div>
-            <h3 className="mt-1 text-xl font-extrabold">Same-Day Quotes</h3>
+            <h3 className="mt-1 text-xl font-extrabold">Project estimates</h3>
             <p className="mt-2 text-neutral-600">
-              Send drawings, photos, or a quick brief — we’ll respond fast.
+              Send drawings, photographs or a brief description so we can discuss your scope and next steps.
             </p>
             <Link
-              to="/GetQuote"
+              to="/quote"
               className="mt-4 inline-flex items-center justify-center w-full rounded-lg bg-[#5776c6] text-white px-4 py-2.5 font-semibold hover:brightness-110"
             >
               Request a quote ↗
@@ -113,7 +113,7 @@ export default function Contact() {
           <div className="rounded-2xl border border-neutral-200/70 bg-white p-6 shadow-sm">
             <h3 className="text-lg font-semibold">Office</h3>
             <p className="mt-2 text-neutral-700">
-              4085 2nd Ave
+              4085 2nd Avenue
               <br />
               Burnaby, BC V5C 3X1
               <br />
@@ -130,18 +130,8 @@ export default function Contact() {
           </div>
 
           <div className="rounded-2xl border border-neutral-200/70 bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold">Hours</h3>
-            <ul className="mt-2 text-neutral-700 text-sm">
-              <li className="flex justify-between">
-                <span>Mon–Fri</span> <span>7:30am–5:00pm</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Sat–Sun</span> <span>On call</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Emergency</span> <span>24/7</span>
-              </li>
-            </ul>
+            <h3 className="text-lg font-semibold">Plan your visit</h3>
+            <p className="mt-2 text-neutral-700 text-sm leading-relaxed">Contact our team before visiting the office to confirm availability and arrange a suitable time. For urgent service, use the emergency phone line.</p>
           </div>
 
           <div className="rounded-2xl overflow-hidden border border-neutral-200/70 shadow-sm">
@@ -191,7 +181,7 @@ export default function Contact() {
               Call {PHONE}
             </a>
             <Link
-              to="/GetQuote"
+              to="/quote"
               className="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-white/10 px-5 py-3 font-semibold backdrop-blur hover:bg-white/20"
             >
               Get a quote

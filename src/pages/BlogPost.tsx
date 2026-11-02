@@ -12,7 +12,17 @@ export default function BlogPost() {
   const date = new Intl.DateTimeFormat('en-CA',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
   const review = post.review;
   const relatedProjects = projects.filter(item=>item.id!==project.id && (item.category===project.category)).slice(0,2);
+  const articleSchema = {
+    '@context': 'https://schema.org', '@type': 'BlogPosting',
+    '@id': `https://www.alliedplumbing.ca/blog/${post.slug}/#article`,
+    mainEntityOfPage: `https://www.alliedplumbing.ca/blog/${post.slug}/`,
+    headline: post.title, description: post.excerpt, image: [post.image],
+    datePublished: post.date, inLanguage: 'en-CA',
+    author: { '@type': 'Organization', name: post.author, url: 'https://www.alliedplumbing.ca/about/' },
+    publisher: { '@id': 'https://www.alliedplumbing.ca/#business' },
+  };
   return <article className="max-w-6xl mx-auto px-4 md:px-6 py-7 md:py-10">
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(articleSchema).replace(/</g,'\\u003c')}} />
     <nav aria-label="Breadcrumb"><Link to="/blog" className="font-semibold text-[#315cb4] underline underline-offset-4">All articles</Link></nav>
     <div className="mt-6 max-w-4xl"><p className="text-sm font-semibold text-slate-600">{post.category} · <time dateTime={post.date}>{date.format(new Date(post.date))}</time> · {post.readingMinutes} min read</p><h1 className="mt-4 text-3xl md:text-5xl font-extrabold leading-tight">{post.title}</h1><p className="mt-5 text-lg text-neutral-600">By {post.author}</p><p className="mt-2 text-sm text-slate-600">{review.status === 'reviewed' && review.reviewer && review.reviewedAt ? `Technical review: ${review.reviewer} · ${date.format(new Date(review.reviewedAt))}` : 'Technical review pending. Project scope and planning information; not installation instructions.'}</p></div>
     <img src={post.image} alt="" width={1200} height={675} fetchPriority="high" className="mt-8 w-full h-64 md:h-[430px] object-cover clip-tilt rounded-2xl" />

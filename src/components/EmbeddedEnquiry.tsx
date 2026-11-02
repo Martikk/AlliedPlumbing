@@ -19,7 +19,7 @@ export default function EmbeddedEnquiry({type,role=''}:{type:Type;role?:string})
       if(!data || data.source!=='allied-enquiry' || data.token!==token || data.type!==type)return;
       if(Number.isFinite(data.height))setHeight(Math.max(300,Math.min(2400,data.height)));
       const name=data.event==='success'?'generate_lead':data.event==='start'?'form_start':['error','stored'].includes(data.event)?'form_error':null;
-      if(name && (name==='form_error'||!events.current.has(name))){events.current.add(name);trackEvent(name,{form_name:type,...(name==='form_error'?{error_type:'network_or_server' as const}:{})});}
+      if(name && (name==='form_error'||!events.current.has(name))){events.current.add(name);trackEvent(name,{form_name:type,...(name==='form_error'?{error_type:'network_or_server' as const}:{})});if(name==='generate_lead')trackEvent(type==='careers'?'careers_success':'enquiry_success',{form_name:type});}
     }
     window.addEventListener('message',receive);
     return()=>window.removeEventListener('message',receive);
@@ -28,7 +28,7 @@ export default function EmbeddedEnquiry({type,role=''}:{type:Type;role?:string})
   const email=type==='contact'?'info@allied-plumbing.ca':`${type}@allied-plumbing.ca`;
   return <div className="rounded-xl bg-white text-neutral-900 overflow-hidden">
     {!loaded && <p role="status" className="p-4 text-sm text-neutral-600">Loading secure enquiry form…</p>}
-    {token && <iframe title={`${type==='careers'?'Careers application':type==='quote'?'Quote request':'Contact enquiry'} with private file processing`} src={`${APPS_SCRIPT_URL}?${query}`} onLoad={()=>setLoaded(true)} style={{height}} className="w-full border-0" referrerPolicy="strict-origin-when-cross-origin" />}
+    {token && <iframe title={`${type==='careers'?'Careers application':type==='quote'?'Quote request':'Contact enquiry'} with private file processing`} src={`${APPS_SCRIPT_URL}?${query}`} loading="lazy" onLoad={()=>setLoaded(true)} style={{height}} className="w-full border-0" referrerPolicy="strict-origin-when-cross-origin" />}
     <p className="p-4 text-sm leading-relaxed text-neutral-600">If the form cannot load, <a className="underline" href={`${APPS_SCRIPT_URL}?type=${type}`} target="_blank" rel="noopener noreferrer">open it in a new tab</a>, email <a className="underline" href={`mailto:${email}`}>{email}</a> or call <a className="underline" href="tel:+16047311000">604-731-1000</a>.</p>
   </div>;
 }

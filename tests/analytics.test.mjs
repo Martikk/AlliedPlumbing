@@ -14,8 +14,10 @@ test('GA4 waits for consent, strips URL parameters and stops after withdrawal',a
  ga.setAnalyticsConsent('denied');assert.equal(appended.length,0);
  ga.setAnalyticsConsent('granted');assert.equal(appended.length,1);
  ga.trackAnalyticsPage('/careers/');ga.trackAnalyticsPage('/careers/');
- ga.sendAnalyticsEvent('generate_lead',{form_name:'careers'});
+ ga.sendAnalyticsEvent('generate_lead',{form_name:'careers',email:'private@example.test',name:'Private Person',message:'private text',resume_url:'https://example.test/private.pdf'});
  const calls=window.dataLayer.map(args=>Array.from(args));
+ for(const key of ['name','email','message','resume_url'])assert.equal(calls.find(x=>x[1]==='generate_lead')[2][key],undefined);
+ assert.equal(calls.find(x=>x[1]==='generate_lead')[2].form_name,'careers');
  assert.equal(calls.filter(x=>x[1]==='page_view').length,1);
  assert.equal(calls.find(x=>x[1]==='generate_lead')[2].page_location,'https://www.alliedplumbing.ca/careers/');
  ga.setAnalyticsConsent('denied');

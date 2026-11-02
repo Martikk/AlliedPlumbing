@@ -39,5 +39,10 @@ export function trackAnalyticsPage(pathname: string) {
   window.gtag?.('event','page_view',{page_location:'https://www.alliedplumbing.ca'+safePath,page_referrer:'',send_to:measurementID});
 }
 export function sendAnalyticsEvent(event: string, details: Record<string,unknown>) {
-  if (allowed && enabled) window.gtag?.('event',event,{...details,send_to:measurementID,page_location:'https://www.alliedplumbing.ca'+(location.pathname.replace(/\/+$/,'')||'')+'/',page_referrer:''});
+  const safe: Record<string,unknown> = {};
+  for (const key of ['form_name','metric_name','metric_value','metric_rating','metric_id','error_type']) {
+    const value=details[key];
+    if ((typeof value==='string' && value.length<=100) || (typeof value==='number' && Number.isFinite(value))) safe[key]=value;
+  }
+  if (allowed && enabled) window.gtag?.('event',event,{...safe,send_to:measurementID,page_location:'https://www.alliedplumbing.ca'+(location.pathname.replace(/\/+$/,'')||'')+'/',page_referrer:''});
 }

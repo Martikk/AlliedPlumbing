@@ -8,7 +8,8 @@ export default function Blog() {
   const [params,setParams]=useSearchParams();
   const categories = ['All',...new Set(posts.map(post=>post.category))];
   const rawCategory = hydrated ? params.get('category') ?? 'All' : 'All';
-  const category = categories.includes(rawCategory) ? rawCategory : 'All';
+  const normalizedCategory = rawCategory === 'Boiler plants' ? 'Heating & boilers' : rawCategory;
+  const category = categories.includes(normalizedCategory) ? normalizedCategory : 'All';
   const query = hydrated ? params.get('q') ?? '' : '';
   function filter(key: string, value: string) {
     const next = new URLSearchParams(params);

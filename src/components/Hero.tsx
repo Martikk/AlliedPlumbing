@@ -1,14 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from '../lib/navigation';
 import { useCarousel } from '../hooks/useCarousel';
 import { responsiveImage } from '../lib/images';
 
 type Props = { slides: string[]; intervalMs?: number };
 export default function Hero({ slides, intervalMs = 5500 }: Props) {
-  const carousel = useCarousel(slides.length, intervalMs);
+  const section = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting));
+    if (section.current) observer.observe(section.current);
+    return () => observer.disconnect();
+  }, []);
+  const carousel = useCarousel(slides.length, intervalMs, visible);
   const [loaded,setLoaded]=useState<number[]>([0]);
   useEffect(() => { setLoaded(previous => previous.includes(carousel.index) ? previous : [...previous,carousel.index]); }, [carousel.index]);
-  return <section aria-label="Plumbing, heating and HVAC services" aria-roledescription="carousel" className="relative w-full overflow-hidden bg-neutral-900" onFocusCapture={carousel.pause} onMouseEnter={carousel.pause}>
+  return <section ref={section} aria-label="Plumbing, heating and HVAC services" aria-roledescription="carousel" className="relative w-full overflow-hidden bg-neutral-900" onFocusCapture={carousel.pause} onMouseEnter={carousel.pause}>
     <div className="absolute inset-0">
       {slides.map((src, index) => loaded.includes(index) ? <img key={src} src={responsiveImage(src, 1600)} srcSet={`${responsiveImage(src, 640)} 640w, ${responsiveImage(src, 1024)} 1024w, ${responsiveImage(src, 1600)} 1600w`} sizes="100vw" alt="" width={1600} height={1000} loading={index === 0 ? 'eager' : 'lazy'} fetchPriority={index === 0 ? 'high' : 'low'} className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 motion-reduce:transition-none ${index === carousel.index ? 'opacity-100' : 'opacity-0'}`} /> : null)}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/25" />

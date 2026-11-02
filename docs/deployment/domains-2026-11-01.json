@@ -1,0 +1,532 @@
+{
+  "checkedAt": "2026-11-02T02:11:21.914Z",
+  "policy": "https://www.alliedplumbing.ca with trailing slash",
+  "results": [
+    {
+      "url": "http://alliedplumbing.ca/",
+      "expected": "https://www.alliedplumbing.ca/",
+      "hops": [
+        {
+          "url": "http://alliedplumbing.ca/",
+          "status": 301,
+          "location": "https://alliedplumbing.ca/"
+        },
+        {
+          "url": "https://alliedplumbing.ca/",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 2
+    },
+    {
+      "url": "http://alliedplumbing.ca/services/",
+      "expected": "https://www.alliedplumbing.ca/services/",
+      "hops": [
+        {
+          "url": "http://alliedplumbing.ca/services/",
+          "status": 301,
+          "location": "https://alliedplumbing.ca/services/"
+        },
+        {
+          "url": "https://alliedplumbing.ca/services/",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/services/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/services/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 2
+    },
+    {
+      "url": "http://alliedplumbing.ca/projects",
+      "expected": "https://www.alliedplumbing.ca/projects/",
+      "hops": [
+        {
+          "url": "http://alliedplumbing.ca/projects",
+          "status": 301,
+          "location": "https://alliedplumbing.ca/projects"
+        },
+        {
+          "url": "https://alliedplumbing.ca/projects",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/projects/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/projects/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 2
+    },
+    {
+      "url": "http://alliedplumbing.ca/services",
+      "expected": "https://www.alliedplumbing.ca/services/",
+      "hops": [
+        {
+          "url": "http://alliedplumbing.ca/services",
+          "status": 301,
+          "location": "https://alliedplumbing.ca/services"
+        },
+        {
+          "url": "https://alliedplumbing.ca/services",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/services/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/services/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 2
+    },
+    {
+      "url": "http://alliedplumbing.ca/blog",
+      "expected": "https://www.alliedplumbing.ca/blog/",
+      "hops": [
+        {
+          "url": "http://alliedplumbing.ca/blog",
+          "status": 301,
+          "location": "https://alliedplumbing.ca/blog"
+        },
+        {
+          "url": "https://alliedplumbing.ca/blog",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/blog/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/blog/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 2
+    },
+    {
+      "url": "https://alliedplumbing.ca/",
+      "expected": "https://www.alliedplumbing.ca/",
+      "hops": [
+        {
+          "url": "https://alliedplumbing.ca/",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 1
+    },
+    {
+      "url": "https://alliedplumbing.ca/services",
+      "expected": "https://www.alliedplumbing.ca/services/",
+      "hops": [
+        {
+          "url": "https://alliedplumbing.ca/services",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/services/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/services/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 1
+    },
+    {
+      "url": "http://alliedplumbing.ca/GetQuote",
+      "expected": "https://www.alliedplumbing.ca/quote/",
+      "hops": [
+        {
+          "url": "http://alliedplumbing.ca/GetQuote",
+          "status": 301,
+          "location": "https://alliedplumbing.ca/GetQuote"
+        },
+        {
+          "url": "https://alliedplumbing.ca/GetQuote",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/quote/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/quote/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 2
+    },
+    {
+      "url": "https://alliedplumbing.ca/services/",
+      "expected": "https://www.alliedplumbing.ca/services/",
+      "hops": [
+        {
+          "url": "https://alliedplumbing.ca/services/",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/services/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/services/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 1
+    },
+    {
+      "url": "http://alliedplumbing.ca/privacy",
+      "expected": "https://www.alliedplumbing.ca/privacy/",
+      "hops": [
+        {
+          "url": "http://alliedplumbing.ca/privacy",
+          "status": 301,
+          "location": "https://alliedplumbing.ca/privacy"
+        },
+        {
+          "url": "https://alliedplumbing.ca/privacy",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/privacy/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/privacy/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 2
+    },
+    {
+      "url": "https://alliedplumbing.ca/projects",
+      "expected": "https://www.alliedplumbing.ca/projects/",
+      "hops": [
+        {
+          "url": "https://alliedplumbing.ca/projects",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/projects/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/projects/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 1
+    },
+    {
+      "url": "https://alliedplumbing.ca/privacy",
+      "expected": "https://www.alliedplumbing.ca/privacy/",
+      "hops": [
+        {
+          "url": "https://alliedplumbing.ca/privacy",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/privacy/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/privacy/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 1
+    },
+    {
+      "url": "https://alliedplumbing.ca/blog",
+      "expected": "https://www.alliedplumbing.ca/blog/",
+      "hops": [
+        {
+          "url": "https://alliedplumbing.ca/blog",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/blog/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/blog/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 1
+    },
+    {
+      "url": "http://www.alliedplumbing.ca/",
+      "expected": "https://www.alliedplumbing.ca/",
+      "hops": [
+        {
+          "url": "http://www.alliedplumbing.ca/",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 1
+    },
+    {
+      "url": "http://www.alliedplumbing.ca/services/",
+      "expected": "https://www.alliedplumbing.ca/services/",
+      "hops": [
+        {
+          "url": "http://www.alliedplumbing.ca/services/",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/services/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/services/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 1
+    },
+    {
+      "url": "http://www.alliedplumbing.ca/services",
+      "expected": "https://www.alliedplumbing.ca/services/",
+      "hops": [
+        {
+          "url": "http://www.alliedplumbing.ca/services",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/services"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/services",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/services/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/services/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 2
+    },
+    {
+      "url": "https://alliedplumbing.ca/GetQuote",
+      "expected": "https://www.alliedplumbing.ca/quote/",
+      "hops": [
+        {
+          "url": "https://alliedplumbing.ca/GetQuote",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/quote/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/quote/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 1
+    },
+    {
+      "url": "http://www.alliedplumbing.ca/blog",
+      "expected": "https://www.alliedplumbing.ca/blog/",
+      "hops": [
+        {
+          "url": "http://www.alliedplumbing.ca/blog",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/blog"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/blog",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/blog/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/blog/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 2
+    },
+    {
+      "url": "http://www.alliedplumbing.ca/privacy",
+      "expected": "https://www.alliedplumbing.ca/privacy/",
+      "hops": [
+        {
+          "url": "http://www.alliedplumbing.ca/privacy",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/privacy"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/privacy",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/privacy/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/privacy/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 2
+    },
+    {
+      "url": "https://www.alliedplumbing.ca/",
+      "expected": "https://www.alliedplumbing.ca/",
+      "hops": [
+        {
+          "url": "https://www.alliedplumbing.ca/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 0
+    },
+    {
+      "url": "http://www.alliedplumbing.ca/projects",
+      "expected": "https://www.alliedplumbing.ca/projects/",
+      "hops": [
+        {
+          "url": "http://www.alliedplumbing.ca/projects",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/projects"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/projects",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/projects/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/projects/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 2
+    },
+    {
+      "url": "https://www.alliedplumbing.ca/services/",
+      "expected": "https://www.alliedplumbing.ca/services/",
+      "hops": [
+        {
+          "url": "https://www.alliedplumbing.ca/services/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 0
+    },
+    {
+      "url": "http://www.alliedplumbing.ca/GetQuote",
+      "expected": "https://www.alliedplumbing.ca/quote/",
+      "hops": [
+        {
+          "url": "http://www.alliedplumbing.ca/GetQuote",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/GetQuote"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/GetQuote",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/quote/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/quote/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 2
+    },
+    {
+      "url": "https://www.alliedplumbing.ca/services",
+      "expected": "https://www.alliedplumbing.ca/services/",
+      "hops": [
+        {
+          "url": "https://www.alliedplumbing.ca/services",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/services/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/services/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 1
+    },
+    {
+      "url": "https://www.alliedplumbing.ca/projects",
+      "expected": "https://www.alliedplumbing.ca/projects/",
+      "hops": [
+        {
+          "url": "https://www.alliedplumbing.ca/projects",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/projects/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/projects/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 1
+    },
+    {
+      "url": "https://www.alliedplumbing.ca/blog",
+      "expected": "https://www.alliedplumbing.ca/blog/",
+      "hops": [
+        {
+          "url": "https://www.alliedplumbing.ca/blog",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/blog/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/blog/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 1
+    },
+    {
+      "url": "https://www.alliedplumbing.ca/privacy",
+      "expected": "https://www.alliedplumbing.ca/privacy/",
+      "hops": [
+        {
+          "url": "https://www.alliedplumbing.ca/privacy",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/privacy/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/privacy/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 1
+    },
+    {
+      "url": "https://www.alliedplumbing.ca/GetQuote",
+      "expected": "https://www.alliedplumbing.ca/quote/",
+      "hops": [
+        {
+          "url": "https://www.alliedplumbing.ca/GetQuote",
+          "status": 301,
+          "location": "https://www.alliedplumbing.ca/quote/"
+        },
+        {
+          "url": "https://www.alliedplumbing.ca/quote/",
+          "status": 200
+        }
+      ],
+      "pass": true,
+      "redirects": 1
+    }
+  ]
+}

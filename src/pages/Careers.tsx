@@ -21,7 +21,7 @@ const OPENINGS: Opening[] = [
     level: "Journeyperson",
     location: "Lower Mainland",
     type: "Full-time",
-    highlights: ["24/7 rotation", "Van provided", "Tablet + DDC exposure"],
+    highlights: ["Service diagnostics", "Occupied buildings", "Controls coordination"],
   },
   {
     id: "appr-plumb-2nd",
@@ -30,7 +30,7 @@ const OPENINGS: Opening[] = [
     level: "Apprentice",
     location: "Tri-Cities",
     type: "Full-time",
-    highlights: ["Repipes / TI", "School projects", "Tuition support"],
+    highlights: ["Repipes / TI", "School projects", "Trade coordination"],
   },
   {
     id: "hvac-lead",
@@ -94,8 +94,7 @@ export default function Careers() {
             Build BC. Grow your craft.
           </h1>
           <p className="mt-3 max-w-2xl text-white/90">
-            Safe work. Modern tools. Apprenticeship sponsorship. From schools to towers — we keep
-            communities running and help you level up.
+            Explore service and mechanical project work across British Columbia. Discuss current roles, trade requirements and development opportunities with our hiring team.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -237,7 +236,7 @@ export default function Careers() {
               <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-neutral-800">
                 <li className="flex items-center gap-2"><Dot /> Site-specific safety planning</li>
                 <li className="flex items-center gap-2"><Dot /> School project experience</li>
-                <li className="flex items-center gap-2"><Dot /> New vans & calibrated meters</li>
+                <li className="flex items-center gap-2"><Dot /> Equipment for the agreed scope</li>
                 <li className="flex items-center gap-2"><Dot /> Tablets & DDC exposure</li>
               </ul>
             </div>
