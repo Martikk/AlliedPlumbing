@@ -76,7 +76,7 @@ export default function ServicesShowcase() {
         </div>
         <Link
           to="/services"
-          className="shrink-0 inline-flex items-center gap-2 rounded-lg bg-[#5776c6] text-white px-4 py-2 text-sm font-semibold hover:brightness-110 transition"
+          className="shrink-0 inline-flex items-center gap-2 rounded-lg bg-[#315cb4] text-white px-4 py-2 text-sm font-semibold hover:brightness-110 transition"
         >
           Explore all <span aria-hidden>↗</span>
         </Link>

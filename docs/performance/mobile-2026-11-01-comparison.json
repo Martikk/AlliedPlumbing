@@ -1,0 +1,37 @@
+{
+  "method": "PageSpeed Insights UI, mobile, one run before and one run after; not field CWV",
+  "date": "2026-11-01",
+  "device": "Emulated Moto G Power",
+  "network": "Slow 4G",
+  "lighthouse": "13.6.0",
+  "fieldData": null,
+  "before": {
+    "report": "https://pagespeed.web.dev/analysis/https-www-alliedplumbing-ca/kz4sfilqvh?form_factor=mobile",
+    "performance": 92,
+    "accessibility": 96,
+    "bestPractices": 100,
+    "seo": 100,
+    "fcpMs": 1250,
+    "lcpMs": 3306,
+    "tbtMs": 0,
+    "cls": 0,
+    "speedIndexMs": 2777
+  },
+  "after": {
+    "report": "https://pagespeed.web.dev/analysis/https-www-alliedplumbing-ca/50vmj86cfg?form_factor=mobile",
+    "commit": "d7e4879",
+    "performance": 95,
+    "accessibility": 96,
+    "bestPractices": 100,
+    "seo": 100,
+    "fcpMs": 1539,
+    "lcpMs": 2509,
+    "tbtMs": 0,
+    "cls": 0,
+    "speedIndexMs": 4003
+  },
+  "notes": [
+    "LCP improved; FCP and Speed Index worsened in these individual runs.",
+    "Contrast fixes were applied after this comparison; no new Lighthouse accessibility score is claimed."
+  ]
+}

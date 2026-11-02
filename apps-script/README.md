@@ -1,6 +1,6 @@
 # Allied enquiry backend — deployment package
 
-Status: backend version 4 deployed on 2026-11-01; **frontend activation authorized by the owner**. `src/lib/enquiry-config.json` points to the deployed endpoint. Production verification follows deployment.
+Status: backend version 5 deployed on 2026-11-01; **frontend activation authorized by the owner**. `src/lib/enquiry-config.json` points to the deployed endpoint. Production verification follows deployment.
 
 ## Fixed routing and file policy
 
@@ -45,3 +45,5 @@ Version 3 uses display references `ddMMyy-HHmmss-XXXX` in America/Vancouver time
 Temporary routing requested by the owner: all three backend routes send notifications to alex@allied-plumbing.ca. Public Contact/Quote/Careers addresses and form labels remain unchanged.
 
 Version 4 fixture accepted for temporary Alex routing: 011126-074258-AF2F. Mail service accepted notification; actual inbox receipt not yet confirmed for this new destination.
+
+Version 5 updates the Quote acknowledgement copy; routing, scopes, file limits and deduplication are unchanged.
