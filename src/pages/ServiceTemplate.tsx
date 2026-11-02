@@ -1,4 +1,4 @@
-import { Link } from "../lib/navigation";
+import { Link, useLocation } from "../lib/navigation";
 
 type Highlight = { label: string; value: string };
 type Props = {
@@ -20,6 +20,16 @@ export default function ServiceTemplate({
   bullets,
   children,                      // ← добавили
 }: Props) {
+  const { pathname } = useLocation();
+  const context: Record<string, { title: string; project: string; questions: string[] }> = {
+    boilers: { title: 'Ridgeview Elementary', project: 'ridgeview', questions: ['Which plant and connected systems are involved?', 'What service records and equipment details are available?', 'Are there known heating shutdown restrictions?'] },
+    hvac: { title: 'Leigh Elementary', project: 'leigh', questions: ['Which rooms and ventilation equipment are affected?', 'What access windows are available?', 'Who coordinates controls and supporting trades?'] },
+    'commercial-plumbing': { title: '1755 Haro Street', project: 'haro', questions: ['Which building services and occupied areas are affected?', 'Are existing drawings available?', 'Who can coordinate access and occupant notices?'] },
+    residential: { title: '1755 Haro Street', project: 'haro', questions: ['Is this an individual home or a shared building system?', 'Where is the issue occurring?', 'What equipment information can you safely provide?'] },
+    maintenance: { title: 'Leigh Elementary', project: 'leigh', questions: ['What equipment is included in the enquiry?', 'Are previous maintenance records available?', 'Who manages access and follow-up recommendations?'] },
+    emergency: { title: '1755 Haro Street', project: 'haro', questions: ['What is the building location?', 'Which service is affected?', 'Who is the on-site contact? For urgent assistance, call rather than wait for a form reply.'] },
+  };
+  const requestContext = context[pathname.replace(/\/+$/, '').split('/').pop() || ''];
   return (
     <div className="bg-white text-neutral-900">
 
@@ -85,7 +95,7 @@ export default function ServiceTemplate({
 
       {children}
 
-      <section className="max-w-6xl mx-auto px-4 md:px-6 pb-12"><div className="border-t border-neutral-200 pt-8 max-w-3xl"><h2 className="text-2xl md:text-3xl font-bold">What helps us review your request?</h2><p className="mt-4 text-neutral-700 leading-relaxed">Include your building address, the equipment or areas involved, a description of the issue or planned work, and any known access restrictions. If you have equipment details, drawings or photographs, tell us what is available. We can then discuss the information needed for a site review and the next steps for your scope.</p></div></section>
+      <section className="max-w-6xl mx-auto px-4 md:px-6 pb-12"><div className="border-t border-neutral-200 pt-8 max-w-3xl"><h2 className="text-2xl md:text-3xl font-bold">What helps us review your request?</h2><p className="mt-4 text-neutral-700 leading-relaxed">Include your building address, the equipment or areas involved, a description of the issue or planned work, and any known access restrictions. If you have equipment details, drawings or photographs, tell us what is available. We can then discuss the information needed for a site review and the next steps for your scope.</p>{requestContext && <><ul className="mt-5 list-disc pl-5 space-y-2 text-neutral-700">{requestContext.questions.map(question => <li key={question}>{question}</li>)}</ul><p className="mt-5 text-sm text-neutral-600">Related project scope: <Link to={`/projects/${requestContext.project}`} className="font-semibold text-[#315cb4] underline underline-offset-4">{requestContext.title}</Link>. Scope requirements vary by building.</p></>}</div></section>
       {/* ==== CTA ==== */}
       <section className="max-w-6xl mx-auto px-4 md:px-6 pb-16 md:pb-24">
         <div className="relative overflow-hidden rounded-2xl bg-neutral-900 text-white p-6 md:p-10">
