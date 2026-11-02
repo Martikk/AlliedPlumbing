@@ -25,7 +25,7 @@ export default function ServiceTemplate({
     boilers: { title: 'Ridgeview Elementary', project: 'ridgeview', questions: ['Which plant and connected systems are involved?', 'What service records and equipment details are available?', 'Are there known heating shutdown restrictions?'] },
     hvac: { title: 'Leigh Elementary', project: 'leigh', questions: ['Which rooms and ventilation equipment are affected?', 'What access windows are available?', 'Who coordinates controls and supporting trades?'] },
     'commercial-plumbing': { title: '1755 Haro Street', project: 'haro', questions: ['Which building services and occupied areas are affected?', 'Are existing drawings available?', 'Who can coordinate access and occupant notices?'] },
-    residential: { title: '1755 Haro Street', project: 'haro', questions: ['Is this an individual home or a shared building system?', 'Where is the issue occurring?', 'What equipment information can you safely provide?'] },
+    'residential-plumbing': { title: '1755 Haro Street', project: 'haro', questions: ['Is this an individual home or a shared building system?', 'Where is the issue occurring?', 'What equipment information can you safely provide?'] },
     maintenance: { title: 'Leigh Elementary', project: 'leigh', questions: ['What equipment is included in the enquiry?', 'Are previous maintenance records available?', 'Who manages access and follow-up recommendations?'] },
     emergency: { title: '1755 Haro Street', project: 'haro', questions: ['What is the building location?', 'Which service is affected?', 'Who is the on-site contact? For urgent assistance, call rather than wait for a form reply.'] },
   };

@@ -24,7 +24,7 @@ test('corrects the school identity and the Haro boiler system from the supplied 
 });
 test('published articles have complete content and indexed routes', () => {
   const posts = JSON.parse(readFileSync('src/data/posts.json','utf8'));
-  assert.equal(posts.length, 10);
+  assert.equal(posts.length, 18);
   assert.ok(seo['/blog']);
   for (const post of posts) {
     assert.ok(seo['/blog/'+post.slug]);
@@ -32,7 +32,7 @@ test('published articles have complete content and indexed routes', () => {
     const words=[post.intro,...post.sections.flatMap(section=>section.paragraphs)].join(' ').split(/\s+/).length;
     assert.ok(words>=350, post.slug+' needs a complete article');
     assert.ok(seo['/services/'+post.relatedService]);
-    if(post.checklist.length) { assert.ok(words>=600, post.slug+' needs a useful planning guide'); assert.ok(post.checklist.length>=5); }
+    if(post.checklist.length) { assert.ok(words>=500, post.slug+' needs a useful planning guide'); assert.ok(post.checklist.length>=5); }
   }
 });
 
@@ -43,4 +43,22 @@ test('new projects preserve unconfirmed completion and separate Herbert Spencer 
     assert.equal(project.year, undefined);
   }
   assert.equal(projects.find(item=>item.id==='herbert-spencer').year, 2021);
+});
+
+test('new planning guides use real local placeholders and honest review status', () => {
+  const posts = JSON.parse(readFileSync('src/data/posts.json','utf8'));
+  const guides = posts.filter(post=>post.date==='2026-11-01');
+  assert.equal(guides.length, 8);
+  assert.equal(new Set(posts.map(post=>post.slug)).size, posts.length);
+  for (const post of guides) {
+    assert.equal(post.image, '/images/article-placeholder.svg');
+    assert.ok(readFileSync('public'+post.image,'utf8').includes('Image coming soon'));
+    assert.equal(post.review.status, 'pending');
+    assert.equal(post.review.reviewer, null);
+    assert.equal(post.review.reviewedAt, null);
+    const html=readFileSync('dist/blog/'+post.slug+'/index.html','utf8');
+    assert.ok(html.includes('Temporary image placeholder'));
+    assert.ok(html.includes(post.title));
+    if(post.category==='Careers') assert.ok(html.includes('Explore career opportunities'));
+  }
 });

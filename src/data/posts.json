@@ -541,5 +541,493 @@
       "reviewedAt": null
     },
     "readingMinutes": 4
+  },
+  {
+    "slug": "boiler-replacement-or-repair",
+    "title": "Boiler Replacement or Repair: Information Your Contractor Needs",
+    "category": "Heating & boilers",
+    "excerpt": "Start with what building users have observed: areas that are not heating as expected, recurring interruptions, unusual sounds or changes in available hot water.",
+    "project": "ridgeview",
+    "image": "/images/article-placeholder.svg",
+    "intro": "Planning starts with a clear description of the building, the work under consideration and the questions still to be resolved. This owner-level guide helps you prepare that discussion. It is general planning information, not a diagnosis, design or instruction for operating equipment.",
+    "sections": [
+      {
+        "heading": "Describe the problem before choosing the answer",
+        "paragraphs": [
+          "Start with what building users have observed: areas that are not heating as expected, recurring interruptions, unusual sounds or changes in available hot water. Record when the issue occurs and whether it affects the whole building or particular areas. A symptom report helps frame an assessment; it does not establish the cause or justify a particular replacement.",
+          "When you describe an interruption, distinguish the observation from an explanation suggested by someone else. For example, a record that several rooms were cold on a particular morning is more useful than an unsupported statement that the plant is undersized. Include who reported the problem and what information is available for the contractor to examine. If conditions are changing or urgent, contact the team directly rather than waiting for a planned-project enquiry to be reviewed."
+        ]
+      },
+      {
+        "heading": "Bring the available history",
+        "paragraphs": [
+          "Gather equipment identification, previous service reports, repair invoices and any existing drawings. Include outstanding recommendations and known changes to the building. If records are incomplete, say so. Photographs taken from a safe, accessible position can help identify equipment, but do not remove covers or enter restricted spaces to prepare an enquiry.",
+          "Organise records by equipment or building area so they can be understood without a long email thread. Note whether the same concern has returned after previous work and include the corresponding reports where available. Avoid editing a previous recommendation into a new diagnosis. The person assessing the system needs to see what was originally recorded and understand any gaps. If a report refers to further investigation, ask whether that investigation happened and where its findings can be found."
+        ]
+      },
+      {
+        "heading": "Compare defined options",
+        "paragraphs": [
+          "Ask what assessment is needed before comparing repair and replacement. Useful questions cover the proposed scope, connected systems, access, anticipated interruptions and responsibilities for design or specialist advice. Compare options against the same requirements rather than equipment price alone. Neither age nor a single fault is a universal decision rule.",
+          "A proposal can be reviewed more clearly when included work, exclusions and unresolved assumptions are separated. Ask which connected components are included, whether access work is allowed for and what documentation will be provided. If two options assume different interruptions or different supporting work, those differences matter to the comparison. Owners can request clarification without trying to make the technical decision themselves. The assessment should establish what further professional input is needed."
+        ]
+      },
+      {
+        "heading": "Agree the next decision",
+        "paragraphs": [
+          "A useful next step may be a service visit, further investigation or a consultant-led review. Request a written explanation of what is known, what remains uncertain and what information is needed next. Ridgeview is a related boiler plant case, not proof that the same solution fits another building.",
+          "Before authorising the next stage, identify who will receive the assessment and who can make decisions for the building. Keep the questions, proposals and relevant records together. That information helps preserve the reasoning behind the choice and gives future building teams useful context. A repair may address a defined issue, while an upgrade proposal may cover a broader scope; the actual requirements and recommendations must come from the site assessment, not from a general article."
+        ]
+      },
+      {
+        "heading": "Keep a useful decision record",
+        "paragraphs": [
+          "After the discussion, keep a brief record of the scope being considered, the information still needed and the person responsible for each next step. Separate an initial enquiry from an agreed proposal: neither a conversation nor a related project example establishes the scope for your building. If new information changes the assumptions, bring it back to the responsible team before work proceeds. This gives owner representatives a clear reference when comparing proposals or handing the enquiry to another colleague, without turning planning notes into technical instructions or approval."
+        ]
+      }
+    ],
+    "date": "2026-11-01",
+    "author": "Allied Plumbing",
+    "readingMinutes": 3,
+    "relatedService": "boilers",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "checklist": [
+      "Equipment identification and available reports",
+      "Observed symptoms and dates",
+      "Previous repairs and recommendations",
+      "Access and occupancy restrictions",
+      "Questions for the assessing specialist"
+    ]
+  },
+  {
+    "slug": "controls-boiler-plant-coordination",
+    "title": "Coordinating Controls During a Boiler Plant Upgrade",
+    "category": "Heating & boilers",
+    "excerpt": "Identify who defines the operating requirements, supplies controls, installs connections and verifies the agreed sequence.",
+    "project": "glenayre",
+    "image": "/images/article-placeholder.svg",
+    "intro": "Planning starts with a clear description of the building, the work under consideration and the questions still to be resolved. This owner-level guide helps you prepare that discussion. It is general planning information, not a diagnosis, design or instruction for operating equipment.",
+    "sections": [
+      {
+        "heading": "Make responsibility visible",
+        "paragraphs": [
+          "Identify who defines the operating requirements, supplies controls, installs connections and verifies the agreed sequence. A responsibility matrix helps the owner, consultant and trades see the interfaces. It should be agreed for the particular project rather than assumed from trade titles.",
+          "The owner can start by naming a contact who understands the building’s current records and operating requirements. Identify existing documents without assuming that they describe the present arrangement accurately. Where information is missing, record the gap for the responsible team to investigate. Clear ownership of questions helps avoid a situation where several trades each expect someone else to resolve an interface. Keep responsibility decisions with the project correspondence."
+        ]
+      },
+      {
+        "heading": "Review information before installation",
+        "paragraphs": [
+          "Discuss the submittals and existing records required for coordination. Record outstanding questions and assign someone to resolve them. Approved equipment information and the project sequence should be coordinated through the responsible team; an article cannot supply a sequence suitable for a specific plant.",
+          "Use the review process to distinguish proposed information from approved information and from the final record. A revision should be identifiable so that people are not working from different versions. Ask who maintains the current documents and how changes reach the affected trades. This is a document coordination practice, not a claim that any particular controls design has been checked. Technical approval remains with the people appointed for that work."
+        ]
+      },
+      {
+        "heading": "Schedule the handoffs",
+        "paragraphs": [
+          "Controls work depends on the readiness of other parts of the installation. Ask how the programme identifies installation, connections, verification and any follow-up visits. Include access and the availability of people needed to witness or discuss the checks.",
+          "Building access and owner availability can be dependencies as well as equipment readiness. Establish who can attend discussions and how findings will reach decision-makers. If work is incomplete, record what remains and who will confirm the next step. Avoid assuming that a scheduled visit proves the system is ready or that one check covers every part of the project. The programme and verification scope need to reflect the actual installation."
+        ]
+      },
+      {
+        "heading": "Record the final arrangement",
+        "paragraphs": [
+          "Ask what controls documentation and operating information will be included in turnover, and how unresolved items will be tracked. Glenayre provides a related boiler upgrade scope, with completion to be confirmed. This general coordination guide does not reproduce or approve that project’s operating sequence.",
+          "Turnover is also an opportunity to make the information usable for future building teams. Ask where the agreed records will be stored and how later questions should be raised. Track outstanding items separately from the completed records so the owner can understand both. Any operating instruction should come from the approved project information and appropriate professionals. A general coordination article should never be used to change plant settings or bypass a control."
+        ]
+      },
+      {
+        "heading": "Keep a useful decision record",
+        "paragraphs": [
+          "After the discussion, keep a brief record of the scope being considered, the information still needed and the person responsible for each next step. Separate an initial enquiry from an agreed proposal: neither a conversation nor a related project example establishes the scope for your building. If new information changes the assumptions, bring it back to the responsible team before work proceeds. This gives owner representatives a clear reference when comparing proposals or handing the enquiry to another colleague, without turning planning notes into technical instructions or approval."
+        ]
+      }
+    ],
+    "date": "2026-11-01",
+    "author": "Allied Plumbing",
+    "readingMinutes": 3,
+    "relatedService": "boilers",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "checklist": [
+      "Agreed responsibility matrix",
+      "Submittal and question register",
+      "Verification activities in the programme",
+      "Owner representative availability",
+      "Turnover and outstanding-item records"
+    ]
+  },
+  {
+    "slug": "hydronic-heating-domestic-hot-water",
+    "title": "Hydronic Heating and Domestic Hot Water: Two Different Building Needs",
+    "category": "Heating & boilers",
+    "excerpt": "A request for better heating can mean warmer occupied rooms, more reliable domestic hot water, or both.",
+    "project": "haro",
+    "image": "/images/article-placeholder.svg",
+    "intro": "Planning starts with a clear description of the building, the work under consideration and the questions still to be resolved. This owner-level guide helps you prepare that discussion. It is general planning information, not a diagnosis, design or instruction for operating equipment.",
+    "sections": [
+      {
+        "heading": "Name the building need",
+        "paragraphs": [
+          "A request for better heating can mean warmer occupied rooms, more reliable domestic hot water, or both. Describe the affected use and locations in everyday language. Hydronic space heating and domestic hot water serve different purposes; the contractor needs to understand which service is involved before defining an assessment.",
+          "Domestic hot water concerns water used at building fixtures, while hydronic space heating uses circulating water to transfer heat to occupied areas. That distinction helps an owner describe the request, but it does not identify the equipment arrangement in a particular building. Report whether the concern involves room comfort, water at fixtures or another observed service issue. A clear description reduces ambiguity before anyone starts discussing replacement equipment or the boundaries of planned work."
+        ]
+      },
+      {
+        "heading": "Identify the interfaces",
+        "paragraphs": [
+          "Buildings can have equipment and controls that connect several services. Owners should provide available system drawings and equipment records rather than assume that a boiler serves only one purpose. A qualified project team needs to confirm the actual arrangement and any interfaces before changing equipment or planning an interruption.",
+          "If your records use unfamiliar equipment names, include the documents rather than trying to translate every label. A photograph of an accessible identification plate may help the team connect a report with the right unit. Do not assume that a shared room means every item serves the same system. Ask the responsible contractor or consultant to explain which services the proposed work involves and what other equipment may need review."
+        ]
+      },
+      {
+        "heading": "Describe the occupancy",
+        "paragraphs": [
+          "List the areas served, normal occupancy and known access restrictions. Explain whether the enquiry concerns a recurring service issue or a planned upgrade. Include observed timing and affected locations without guessing at temperatures, sizing or operating settings. This guide does not provide instructions for adjusting either system.",
+          "For a shared building, the owner representative can gather reports from affected areas and identify a contact who understands access arrangements. Keep the observations factual and avoid circulating private occupant information that is unnecessary for the enquiry. When available, a simple list of locations and dates can be easier to review than several forwarded conversations. The objective is to give the assessor a useful starting point, not to prescribe the solution."
+        ]
+      },
+      {
+        "heading": "Prepare a connected scope",
+        "paragraphs": [
+          "Ask which services may be affected by the proposed work and who will coordinate notices, access and verification. The Haro project provides a related heating and hot water scope to discuss. Its equipment selection is specific to that project and should not be treated as a recommendation for another building.",
+          "When a proposal is developed, ask for a plain-language description of the included building services and the proposed coordination. Building users may need different information about space heating and hot water interruptions. Agree who will prepare and distribute notices once the programme is established. Retain the resulting records with the building documentation so a future service team can understand what changed and where to find the relevant operating information."
+        ]
+      },
+      {
+        "heading": "Keep a useful decision record",
+        "paragraphs": [
+          "After the discussion, keep a brief record of the scope being considered, the information still needed and the person responsible for each next step. Separate an initial enquiry from an agreed proposal: neither a conversation nor a related project example establishes the scope for your building. If new information changes the assumptions, bring it back to the responsible team before work proceeds. This gives owner representatives a clear reference when comparing proposals or handing the enquiry to another colleague, without turning planning notes into technical instructions or approval."
+        ]
+      }
+    ],
+    "date": "2026-11-01",
+    "author": "Allied Plumbing",
+    "readingMinutes": 3,
+    "relatedService": "commercial-plumbing",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "checklist": [
+      "Affected service and locations",
+      "Available drawings and equipment list",
+      "Observed timing of the issue",
+      "Access restrictions",
+      "Responsibility for scope assessment"
+    ]
+  },
+  {
+    "slug": "mechanical-career-paths",
+    "title": "From Apprentice to Site Lead: Mechanical Career Paths",
+    "category": "Careers",
+    "excerpt": "Mechanical work includes hands-on installation and service, trade coordination, supervision and project management.",
+    "project": "leigh",
+    "image": "/images/article-placeholder.svg",
+    "intro": "A mechanical career involves practical work, communication and increasing responsibility. This guide helps candidates prepare questions about roles and experience without assuming a vacancy, benefit or guaranteed promotion. Confirm current opportunities with the hiring team.",
+    "sections": [
+      {
+        "heading": "Understand the kinds of responsibility",
+        "paragraphs": [
+          "Mechanical work includes hands-on installation and service, trade coordination, supervision and project management. These responsibilities can overlap, but job titles do not describe every employer’s requirements. Ask the hiring team how a particular role is defined and what work it involves.",
+          "An apprentice, an experienced tradesperson and a site lead may contribute to the same project in different ways. A useful discussion focuses on tasks, supervision and responsibility rather than on the title alone. Candidates can ask what the team expects in the advertised role and which experience is most relevant. The answer should come from the current hiring conversation; a general career article cannot confirm an opening or an employer’s progression policy."
+        ]
+      },
+      {
+        "heading": "Describe your actual experience",
+        "paragraphs": [
+          "Prepare an accurate account of the systems and environments you have worked with and the responsibilities you held. Include relevant qualifications and current status without overstating experience. You can explain experience in teamwork, documentation or coordination alongside practical trade work.",
+          "Use clear examples of your contribution without sharing a former client’s confidential information. Explain what you did, who you worked with and which responsibilities belonged to other people. If a qualification or document needs updating, describe its current status accurately. This gives the hiring team a better starting point than a broad claim of expertise in every system. Bring questions about any role requirement that is unclear."
+        ]
+      },
+      {
+        "heading": "Ask about development",
+        "paragraphs": [
+          "Discuss supervision, learning expectations and the skills needed for the role you want to pursue. Ask about any support currently available rather than assuming tuition, sponsorship or a specific progression timetable. Allied’s current opportunities and employment conditions must be confirmed with the hiring team.",
+          "Career development can include practical experience, stronger communication, planning and a better understanding of project documentation. Ask how the role balances those activities and what supervision is available. Confirm any employment condition directly, including location and expectations around availability. Do not rely on an old vacancy or a general website paragraph as evidence of current benefits. Any future employee interview should be reviewed and approved by the person quoted."
+        ]
+      },
+      {
+        "heading": "Prepare for a useful conversation",
+        "paragraphs": [
+          "Share your availability and the type of work that interests you. Ask about location, duties and the next steps in the application process. This is a general career guide, not an employee interview, a promise of an open position or a guaranteed path to promotion. A future employee story should use an approved interview.",
+          "An application is a way to begin that discussion, not a promise of an interview, an offer or a fixed career timeline. Review your details before submitting and choose the type of work that best matches your interest. If an opportunity is not currently available, ask the hiring team about the appropriate next step. The careers page explains how to contact Allied; the team can clarify the current requirements and process."
+        ]
+      },
+      {
+        "heading": "Keep your application useful",
+        "paragraphs": [
+          "Check that the contact details on your application and resume agree. Explain the kind of position you are asking about, and avoid attaching unnecessary personal documents. If the team asks for further information, clarify what is needed and how it should be provided. Keep a copy of the role description you used so that questions about duties and requirements have a shared reference. Your experience may be relevant to more than one kind of work, but the hiring team needs an accurate account to assess that fit."
+        ]
+      }
+    ],
+    "date": "2026-11-01",
+    "author": "Allied Plumbing",
+    "readingMinutes": 3,
+    "relatedService": "maintenance",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "checklist": [
+      "Relevant experience and qualifications",
+      "Current availability",
+      "Preferred type of work",
+      "Questions about supervision and development",
+      "Confirmed role and employment requirements"
+    ]
+  },
+  {
+    "slug": "preparing-chiller-replacement",
+    "title": "Preparing a Building for a Chiller Replacement",
+    "category": "Project planning",
+    "excerpt": "A replacement enquiry should describe the equipment location, available access information and the surrounding occupied areas.",
+    "project": "collingwood",
+    "image": "/images/article-placeholder.svg",
+    "intro": "Planning starts with a clear description of the building, the work under consideration and the questions still to be resolved. This owner-level guide helps you prepare that discussion. It is general planning information, not a diagnosis, design or instruction for operating equipment.",
+    "sections": [
+      {
+        "heading": "Survey the route as well as the equipment",
+        "paragraphs": [
+          "A replacement enquiry should describe the equipment location, available access information and the surrounding occupied areas. Existing drawings and photographs can support early discussions. The project team must assess actual site conditions; do not assume a new unit can follow the original installation route.",
+          "Collect existing information about the building and identify what needs checking before a proposal can be finalised. Note known restrictions rather than estimating clearances or capacities yourself. If access involves shared areas, name the owner representative who can coordinate discussions. A photograph can help explain a location, but it cannot replace a professional site assessment. Do not enter restricted equipment spaces or approach operating equipment simply to obtain an image."
+        ]
+      },
+      {
+        "heading": "Define specialist coordination",
+        "paragraphs": [
+          "Ask who is responsible for access planning, lifting arrangements, supports, electrical readiness and connected services. These activities need project-specific planning and appropriate specialists. Detailed lifting instructions and sensitive site access information do not belong in a public case study.",
+          "The scope discussion should explain which activities are included in the proposal and which need a separate appointment or specialist assessment. Identify the party who will coordinate questions between the owner and the trades. Supporting work can affect readiness even when it is outside the equipment supplier’s package. Recording those boundaries gives the owner a clearer basis for reviewing a proposal without turning the enquiry into a technical installation plan."
+        ]
+      },
+      {
+        "heading": "Put readiness into the programme",
+        "paragraphs": [
+          "Discuss what must be complete before delivery, installation and startup. Identify constraints around building use and proposed interruption windows. A programme should show dependencies and the person responsible for confirming readiness, rather than treating delivery as the finish date.",
+          "When considering dates, distinguish an intended work window from an agreed programme. Access arrangements, equipment availability and supporting work need confirmation by the relevant parties. Discuss how changes will be communicated and who can make decisions if the assumptions change. Occupied buildings also need a clear contact for notices and access. Avoid promising a specific interruption duration until the actual scope and sequence have been assessed."
+        ]
+      },
+      {
+        "heading": "Plan the handover",
+        "paragraphs": [
+          "Ask how startup, testing and balancing where required, documentation and outstanding work will be coordinated. Collingwood is a related chiller replacement scope, with final completion to be confirmed. It illustrates the type of work to discuss, not a reusable lifting plan or a promised duration.",
+          "Ask what the building team will receive at the end of the agreed work and how unresolved items will be followed up. Keep the proposal, agreed changes and turnover records together. These documents provide context for future service and maintenance enquiries. Published project summaries can explain scope and coordination, but they should not disclose sensitive access arrangements or imply that another site’s equipment, lifting method or programme is suitable for your building."
+        ]
+      },
+      {
+        "heading": "Keep a useful decision record",
+        "paragraphs": [
+          "After the discussion, keep a brief record of the scope being considered, the information still needed and the person responsible for each next step. Separate an initial enquiry from an agreed proposal: neither a conversation nor a related project example establishes the scope for your building. If new information changes the assumptions, bring it back to the responsible team before work proceeds. This gives owner representatives a clear reference when comparing proposals or handing the enquiry to another colleague, without turning planning notes into technical instructions or approval."
+        ]
+      }
+    ],
+    "date": "2026-11-01",
+    "author": "Allied Plumbing",
+    "readingMinutes": 3,
+    "relatedService": "hvac",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "checklist": [
+      "Equipment location and existing information",
+      "Access review responsibility",
+      "Supporting trade interfaces",
+      "Occupancy and interruption constraints",
+      "Startup and turnover requirements"
+    ]
+  },
+  {
+    "slug": "school-heat-pump-upgrade-discussion",
+    "title": "What to Discuss Before a School Heat Pump Upgrade",
+    "category": "School projects",
+    "excerpt": "Define the rooms and building needs under consideration before selecting equipment.",
+    "project": "herbert-spencer-ashp",
+    "image": "/images/article-placeholder.svg",
+    "intro": "Planning starts with a clear description of the building, the work under consideration and the questions still to be resolved. This owner-level guide helps you prepare that discussion. It is general planning information, not a diagnosis, design or instruction for operating equipment.",
+    "sections": [
+      {
+        "heading": "Begin with the school brief",
+        "paragraphs": [
+          "Define the rooms and building needs under consideration before selecting equipment. Share the existing system information, known comfort concerns and available drawings. A school upgrade needs a project-specific assessment; a generic equipment description cannot establish the appropriate scope.",
+          "Include information about how the spaces are used and whether concerns vary by room or time. Distinguish the desired result from a suggested product. A brief that explains the school’s needs lets the responsible team assess options against those requirements. Existing equipment records, previous assessments and known constraints can provide useful context, even when they are incomplete. Identify which records are current and which may need verification at the site."
+        ]
+      },
+      {
+        "heading": "Bring the supporting disciplines together",
+        "paragraphs": [
+          "Ask who will review electrical requirements, equipment placement, supporting construction and controls. Discuss noise considerations, maintenance access and the relationship with retained systems. These are coordination questions for the project team, not a substitute for design or a checklist of approvals already obtained.",
+          "A useful early meeting can identify decisions that belong to the owner, consultant and individual trades. Record unresolved questions, the person responsible and the information needed to answer them. This avoids treating an early equipment discussion as an approved design. Where the assessment requires additional professional input, make that dependency explicit in the scope discussion. Do not publish project-specific layouts or access details merely to illustrate a general planning article."
+        ]
+      },
+      {
+        "heading": "Plan around school use",
+        "paragraphs": [
+          "Provide the school calendar, proposed work windows and the spaces that could be released. Identify the school contact who can confirm access and changes. Discuss how deliveries and disruptive activities will be coordinated before assuming that the whole project can fit within a holiday period.",
+          "Access is more than a start and finish time. Discuss which spaces could be affected, how deliveries will be coordinated and who can confirm changes to school activities. Some work may depend on other trades reaching an agreed stage. A programme should make those interfaces visible and allow the school representative to understand the proposed sequence. Avoid promising that all disruption can be eliminated before the actual work and constraints are assessed."
+        ]
+      },
+      {
+        "heading": "Keep claims tied to evidence",
+        "paragraphs": [
+          "Ask which performance expectations will be assessed and how project requirements will be verified. Do not assume an energy saving or completion date from the equipment type alone. The Herbert Spencer ASHP scope is a related reference; its final completion and closeout remain to be confirmed.",
+          "At turnover, the school team should know where the agreed project records are kept and who can address outstanding items. Ask what information and familiarisation are included in the proposed scope rather than assuming a standard package. Equipment choice, expected performance and verification all need project-specific review. A completed scope discussion is a basis for the next decision; it is not evidence that installation has been completed or a saving has been achieved."
+        ]
+      },
+      {
+        "heading": "Keep a useful decision record",
+        "paragraphs": [
+          "After the discussion, keep a brief record of the scope being considered, the information still needed and the person responsible for each next step. Separate an initial enquiry from an agreed proposal: neither a conversation nor a related project example establishes the scope for your building. If new information changes the assumptions, bring it back to the responsible team before work proceeds. This gives owner representatives a clear reference when comparing proposals or handing the enquiry to another colleague, without turning planning notes into technical instructions or approval."
+        ]
+      }
+    ],
+    "date": "2026-11-01",
+    "author": "Allied Plumbing",
+    "readingMinutes": 3,
+    "relatedService": "hvac",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "checklist": [
+      "School requirements and existing records",
+      "Electrical and controls review responsibilities",
+      "Placement and maintenance access",
+      "School calendar and contact",
+      "Project-specific verification requirements"
+    ]
+  },
+  {
+    "slug": "testing-balancing-programme",
+    "title": "Why Testing and Balancing Belongs in the Project Programme",
+    "category": "Project planning",
+    "excerpt": "Testing and balancing requirements should be established for the actual scope by the responsible project team.",
+    "project": "leigh",
+    "image": "/images/article-placeholder.svg",
+    "intro": "Planning starts with a clear description of the building, the work under consideration and the questions still to be resolved. This owner-level guide helps you prepare that discussion. It is general planning information, not a diagnosis, design or instruction for operating equipment.",
+    "sections": [
+      {
+        "heading": "Define what the project requires",
+        "paragraphs": [
+          "Testing and balancing requirements should be established for the actual scope by the responsible project team. Owners can ask which systems and areas are included and what records are expected. This article explains coordination questions; it does not set technical acceptance values or replace a specialist’s procedures.",
+          "At the enquiry stage, provide available drawings, equipment information and the areas involved in the proposed work. If a specification or consultant brief already defines requirements, identify it clearly. The responsible team can then discuss what information needs review. An owner does not need to supply technical settings to ask useful questions about scope, responsibilities and records. Distinguishing existing information from items still to be determined helps the discussion stay precise."
+        ]
+      },
+      {
+        "heading": "Allow time for readiness",
+        "paragraphs": [
+          "Discuss what installation and controls work must be ready before the relevant checks can take place. Make these dependencies visible in the programme. Booking an activity without confirming readiness can leave unresolved work and additional coordination at the end of a project.",
+          "A project programme is more useful when it shows who confirms that a preceding activity is complete. Ask how the team will communicate readiness and what happens if an installation or controls question remains open. Allow the responsible specialists to identify the conditions needed for their work. This makes the coordination explicit without pretending that a general schedule template can establish the technical readiness of a particular building system."
+        ]
+      },
+      {
+        "heading": "Agree how findings are handled",
+        "paragraphs": [
+          "Ask who receives reports, reviews findings and coordinates corrective work if needed. Define how outstanding items are recorded and when follow-up checks will be discussed. A report is useful when the team understands what action it requires and who owns that action.",
+          "Findings should remain connected with the project requirements and the relevant records. Ask how questions will be raised and who is responsible for reviewing them. If a follow-up visit is required, record its purpose and the dependencies that need attention first. Avoid treating every recorded finding as either a failure or a completed correction without the responsible team’s assessment. Clear records help the owner understand the actual status."
+        ]
+      },
+      {
+        "heading": "Include records in turnover",
+        "paragraphs": [
+          "Identify the project records expected in the handover package and who will explain them to the building team. Leigh included coordination with testing and balancing agents. That documented scope does not establish the requirements for every future school or building project.",
+          "Building teams benefit from knowing which documents belong to the completed scope and which items remain outstanding. Ask how the records will be organised and who can answer questions after turnover. Where operating guidance is required, use the approved project documents and appropriate specialist advice. This article does not supply test methods, acceptance thresholds or balancing adjustments. Those details need qualified project-specific input rather than instructions copied from a website."
+        ]
+      },
+      {
+        "heading": "Keep a useful decision record",
+        "paragraphs": [
+          "After the discussion, keep a brief record of the scope being considered, the information still needed and the person responsible for each next step. Separate an initial enquiry from an agreed proposal: neither a conversation nor a related project example establishes the scope for your building. If new information changes the assumptions, bring it back to the responsible team before work proceeds. This gives owner representatives a clear reference when comparing proposals or handing the enquiry to another colleague, without turning planning notes into technical instructions or approval."
+        ]
+      }
+    ],
+    "date": "2026-11-01",
+    "author": "Allied Plumbing",
+    "readingMinutes": 3,
+    "relatedService": "hvac",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "checklist": [
+      "Project-specific requirements",
+      "Readiness dependencies",
+      "Responsible specialist and coordinator",
+      "Finding and follow-up process",
+      "Records for owner turnover"
+    ]
+  },
+  {
+    "slug": "working-in-schools-coordination",
+    "title": "Working in Schools: Access, Sequencing and Communication",
+    "category": "School projects",
+    "excerpt": "Identify the people who can confirm access, scheduling constraints and changes to school use.",
+    "project": "garibaldi",
+    "image": "/images/article-placeholder.svg",
+    "intro": "Planning starts with a clear description of the building, the work under consideration and the questions still to be resolved. This owner-level guide helps you prepare that discussion. It is general planning information, not a diagnosis, design or instruction for operating equipment.",
+    "sections": [
+      {
+        "heading": "Choose a clear school contact",
+        "paragraphs": [
+          "Identify the people who can confirm access, scheduling constraints and changes to school use. Agree how questions and notices will be routed. The communication arrangement should suit the particular school and project, rather than rely on informal messages reaching everyone.",
+          "A short communication plan can identify routine questions, changes that need approval and the contact route for urgent matters. Use roles as well as names so the arrangement remains understandable when someone is unavailable. Confirm who can authorise access and who only needs to receive information. That distinction helps the team avoid assuming that a copied email constitutes approval. The plan should follow the school’s requirements for the actual work."
+        ]
+      },
+      {
+        "heading": "Map the affected spaces",
+        "paragraphs": [
+          "Discuss classrooms, corridors, service areas and delivery routes that may be affected. Ask which areas can be released and when. Site-specific safety and separation arrangements must be defined by the responsible team; do not infer approvals or universal credentials from another school project.",
+          "Existing drawings can support the discussion, but actual access and space use need confirmation. Identify any known restrictions and ask who will verify the proposed arrangements. Keep sensitive details in the appropriate project channels rather than on public pages. Staff and building users need clear, relevant notices, while contractors need the agreed instructions for their work. Those documents serve different purposes and should be prepared accordingly."
+        ]
+      },
+      {
+        "heading": "Sequence around dependencies",
+        "paragraphs": [
+          "Connect mechanical tasks with the supporting trades and the available work windows. The programme needs to account for the next activity as well as the current installation. Where afternoon, weekend or holiday work is proposed, confirm availability instead of presenting those hours as automatic.",
+          "For each proposed work window, consider the preceding tasks and the next handoff. Ask whether supporting trades and the school contact are available when their input is needed. Where assumptions have not been confirmed, label them as provisional. The purpose is to develop a programme everyone can assess, not to imply that every school project requires the same shift pattern. Document changes so that the current plan is easy to identify."
+        ]
+      },
+      {
+        "heading": "Close the communication loop",
+        "paragraphs": [
+          "Agree how the school will learn about changes, readiness for use and outstanding work. Garibaldi and Leigh provide related mechanical project scopes. Their arrangements are examples for discussion, not a guarantee of identical access, timing or disruption at another site.",
+          "Before an affected area is returned for use, the responsible team should agree how readiness and remaining items are communicated. Ask who maintains that record and who receives questions afterwards. A clear closeout discussion helps preserve context for the school facilities team. It should reflect the agreed scope and actual project status. Do not turn a project example into a universal promise about approvals, school operations or the absence of disruption."
+        ]
+      },
+      {
+        "heading": "Keep a useful decision record",
+        "paragraphs": [
+          "After the discussion, keep a brief record of the scope being considered, the information still needed and the person responsible for each next step. Separate an initial enquiry from an agreed proposal: neither a conversation nor a related project example establishes the scope for your building. If new information changes the assumptions, bring it back to the responsible team before work proceeds. This gives owner representatives a clear reference when comparing proposals or handing the enquiry to another colleague, without turning planning notes into technical instructions or approval."
+        ]
+      }
+    ],
+    "date": "2026-11-01",
+    "author": "Allied Plumbing",
+    "readingMinutes": 3,
+    "relatedService": "hvac",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "checklist": [
+      "School and contractor contacts",
+      "Affected rooms and routes",
+      "Agreed access windows",
+      "Supporting trade dependencies",
+      "Change notices and handover communication"
+    ]
   }
 ]

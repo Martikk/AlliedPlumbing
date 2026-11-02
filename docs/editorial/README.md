@@ -1,6 +1,6 @@
 # Next editorial release
 
-Prepared 1 November 2026. These eight initial English drafts complete the topic backlog from the supplied plan. They are not published articles and are intentionally outside `src/data/posts.json`, SEO routes and sitemap. Expand with approved examples where useful; do not pad to a word target.
+Prepared 1 November 2026. The eight guides were reviewed editorially and added to `src/data/posts.json` and SEO routes for publication on 1 November 2026 at the owner’s request. The Markdown files below preserve the earlier draft snapshot; the website JSON is the current publication source. All eight use a neutral image placeholder. Technical review remains pending and is disclosed on each article.
 
 | Draft | Required review |
 |---|---|
@@ -13,7 +13,7 @@ Prepared 1 November 2026. These eight initial English drafts complete the topic 
 | [School access and communication](drafts/working-in-schools-coordination.md) | Site coordination and school access practices |
 | [Mechanical career paths](drafts/mechanical-career-paths.md) | Hiring team; no fabricated employee interview |
 
-Each draft includes four sections, a five-point checklist, related service/project and CTA. Reviewers and review dates remain unassigned. Do not present pending review as approval.
+Each draft includes five sections, a five-point checklist, related service/project and CTA. Reviewers and review dates remain unassigned. Do not present pending review as approval.
 
 ## Reconciliation with supplied plan
 

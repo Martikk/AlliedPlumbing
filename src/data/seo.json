@@ -166,5 +166,37 @@
   "/blog/project-turnover-om-package": {
     "title": "Project Turnover: What Belongs in an O&M Package? — Allied Plumbing",
     "description": "A building-owner guide to discussing manuals, records, training and outstanding items before mechanical project handover."
+  },
+  "/blog/boiler-replacement-or-repair": {
+    "title": "Boiler Replacement or Repair: Information Your Contractor Needs — Allied Plumbing",
+    "description": "Start with what building users have observed: areas that are not heating as expected, recurring interruptions, unusual sounds or changes in available hot water."
+  },
+  "/blog/controls-boiler-plant-coordination": {
+    "title": "Coordinating Controls During a Boiler Plant Upgrade — Allied Plumbing",
+    "description": "Identify who defines the operating requirements, supplies controls, installs connections and verifies the agreed sequence."
+  },
+  "/blog/hydronic-heating-domestic-hot-water": {
+    "title": "Hydronic Heating and Domestic Hot Water: Two Different Building Needs — Allied Plumbing",
+    "description": "A request for better heating can mean warmer occupied rooms, more reliable domestic hot water, or both."
+  },
+  "/blog/mechanical-career-paths": {
+    "title": "From Apprentice to Site Lead: Mechanical Career Paths — Allied Plumbing",
+    "description": "Mechanical work includes hands-on installation and service, trade coordination, supervision and project management."
+  },
+  "/blog/preparing-chiller-replacement": {
+    "title": "Preparing a Building for a Chiller Replacement — Allied Plumbing",
+    "description": "A replacement enquiry should describe the equipment location, available access information and the surrounding occupied areas."
+  },
+  "/blog/school-heat-pump-upgrade-discussion": {
+    "title": "What to Discuss Before a School Heat Pump Upgrade — Allied Plumbing",
+    "description": "Define the rooms and building needs under consideration before selecting equipment."
+  },
+  "/blog/testing-balancing-programme": {
+    "title": "Why Testing and Balancing Belongs in the Project Programme — Allied Plumbing",
+    "description": "Testing and balancing requirements should be established for the actual scope by the responsible project team."
+  },
+  "/blog/working-in-schools-coordination": {
+    "title": "Working in Schools: Access, Sequencing and Communication — Allied Plumbing",
+    "description": "Identify the people who can confirm access, scheduling constraints and changes to school use."
   }
 }
