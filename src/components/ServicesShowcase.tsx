@@ -64,7 +64,7 @@ export default function ServicesShowcase() {
   return (
     <section className="relativ py-10 md:py-14 rounded-3xl">
       {/* заголовок + explore */}
-      <div className="max-w-6xl mx-auto px-4 md:px-6 mb-6 md:mb-8 flex items-end justify-between gap-4">
+      <div className="section-head-split max-w-6xl mx-auto px-4 md:px-6 mb-6 md:mb-8 flex items-end justify-between gap-4">
         <div>
           <div className="text-xs uppercase tracking-[0.14em] text-neutral-500 mb-2">
             Our services

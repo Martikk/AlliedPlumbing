@@ -157,6 +157,46 @@ on every other page type checked (about, services hub and detail, projects hub
 and detail, blog hub and article, team, clients, careers, rfp, contact, quote,
 privacy).
 
+### Mobile adaptation (after the revert)
+
+The original design was built desktop-first and several blocks did not survive
+a narrow, tall viewport. Fixed with mobile-only rules — every one of them is
+inside `@media (max-width: 767px)` in `src/index.css`, so desktop is byte-for-byte
+unchanged:
+
+- **The contact band's photo panel.** It is tilted 2°. On desktop it wraps a
+  ~620 px two-column block and reads as a deliberate angle; on a phone the same
+  block is ~1,900 px tall, so the tilt throws its corners about 66 px and the
+  panel appears to slide off the screen behind the form. Straightened on phones,
+  rounded corners kept.
+- **Photo heroes** scrim left-to-right, which works when the text occupies the
+  left half. At 390 px the text spans the full width and its right edge sat on
+  the bright part of the photo. They scrim downward on phones (`.hero-scrim`).
+- **Section headers** that are "heading left, link right" put the link against
+  the last line of a three-line heading. They stack (`.section-head-split`).
+- **The parallelogram badges** are quarter-width on desktop, where a 10% clip is
+  a slim corner. Full-width on a phone that is ~35 px eating into the label, so
+  the angle is halved (`.skew-badge`).
+- **The floating analytics pill** is fixed bottom-left, so on a 390 px screen it
+  sits on top of whatever is underneath — on the quote page, directly over the
+  form's radio buttons, intercepting taps. Hidden on phones; the same control is
+  a "Cookie settings" link in the footer, which is desktop-hidden.
+
+Two component fixes came out of it:
+
+- `EnquiryForm` got a `chrome` prop. The quote page sits the form inside its own
+  card and passed `className="p-0"` to drop the doubled padding — which does
+  nothing, because Tailwind utility order decides, not attribute order, and
+  `p-5` wins. At 320 px that cost 40 px of form width and wrapped every radio
+  label. The card is now the component's decision, not an override.
+- `EnquiryForm` got `titleHidden`, so the quote page keeps one visible heading
+  instead of "Tell us what you need" followed by "Your enquiry". The accessible
+  name is unchanged.
+
+Checked for horizontal overflow at **320, 360 and 390 px across all 16 route
+types** — none. Mobile Lighthouse after the work: performance 91–96,
+accessibility, best-practices and SEO 100, CLS 0.
+
 ---
 
 ## 5. Measured result

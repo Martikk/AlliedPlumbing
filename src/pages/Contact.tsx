@@ -18,7 +18,7 @@ export default function Contact() {
           alt=""
           width={1200} height={800} fetchPriority="high" className="absolute inset-0 h-[40vh] md:h-[48vh] w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+        <div className="hero-scrim absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 md:px-6 pt-28 md:pt-36 pb-10">
           <div className="inline-flex items-center gap-2 rounded-full bg-white/15 text-white px-3 py-1 text-xs ring-1 ring-white/25 backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-emerald-400" /> Contact us

@@ -29,6 +29,7 @@ function SkewBadge({ title, delay = 0 }: BadgeProps) {
       {/* карточка со скошенными краями */}
       <div
         className="
+          skew-badge
           relative
           rounded-xl border border-sky-100 bg-sky-50/80
           shadow-sm

@@ -1,4 +1,5 @@
 import { Link } from '../lib/navigation';
+import { openCookieSettings } from './AnalyticsConsent';
 
 export default function Footer() {
   return <footer className="bg-[#f3f7fb] text-neutral-700 mt-12">
@@ -15,6 +16,9 @@ export default function Footer() {
           <Link to="/projects" className="hover:underline">Projects</Link>
           <Link to="/blog" className="hover:underline">Articles</Link><Link to="/careers" className="hover:underline">Careers</Link><Link to="/team" className="hover:underline">Team</Link><Link to="/contact" className="hover:underline">Contact</Link>
           <Link to="/privacy" className="hover:underline">Privacy</Link>
+          {/* Phones only: the floating analytics pill is hidden there because
+              it covers form fields, so the control lives here instead. */}
+          <button type="button" onClick={openCookieSettings} className="md:hidden hover:underline">Cookie settings</button>
         </nav>
       </div>
       <p className="mt-8 border-t border-neutral-200 pt-4 text-sm">© {new Date().getFullYear()} Allied Plumbing. All rights reserved.</p>

@@ -26,7 +26,7 @@ export default function GetQuote() {
             fetchPriority="high"
             className="h-64 md:h-80 w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+          <div className="hero-scrim absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
         </div>
         <div className="relative max-w-6xl mx-auto px-4 md:px-6 h-64 md:h-80 flex items-end pb-6">
           <div>
@@ -50,7 +50,7 @@ export default function GetQuote() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 rounded-2xl border border-neutral-200/70 bg-white p-5 md:p-6 shadow-sm">
             <FormHeader />
-            <EnquiryForm defaultType="quote" title="Your enquiry" className="mt-4 border-0 p-0" />
+            <EnquiryForm defaultType="quote" title="Your enquiry" titleHidden chrome={false} className="mt-4" />
           </div>
 
           {/* Sticky trust / contact column */}

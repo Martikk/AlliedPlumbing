@@ -189,3 +189,65 @@ body { margin: 0; }
   .faq-item[data-motion="pointer"] .faq-plus { transition: none; }
   .project-photo-card:hover { transform: none; outline: 2px solid #315cb4; outline-offset: 2px; }
 }
+
+/* ===================================================================
+   Phone layout (≤ 767 px)
+   Desktop is untouched: every rule here is inside the media query and
+   only undoes something that was sized for a wide, short, two-column
+   block and does not survive a narrow, tall, one-column one.
+   =================================================================== */
+@media (max-width: 767px) {
+  /* The contact band's photo panel is tilted 2°. On desktop it wraps a
+     ~620 px block and reads as a deliberate angle. On a phone the same
+     block is ~1,900 px tall, so the tilt throws its corners about 66 px
+     and the panel appears to slide off the screen behind the form.
+     Straighten it and keep the rounded photo panel. */
+  .contact-photo-layout::before,
+  .contact-photo-layout::after {
+    inset: 0;
+    transform: none;
+    border-radius: 20px;
+  }
+  .contact-photo-layout {
+    gap: 1.25rem;
+    padding: 1.25rem;
+    min-height: 0;
+  }
+  .contact-photo-copy {
+    padding: 0.25rem 0 0;
+  }
+
+  /* Photo heroes scrim left-to-right, which works when the text occupies
+     the left half. At 390 px the text spans the full width and its right
+     edge sits on the bright part of the photo. Scrim downward instead. */
+  .hero-scrim {
+    background-image: linear-gradient(
+      180deg,
+      rgb(0 0 0 / 0.45) 0%,
+      rgb(0 0 0 / 0.6) 55%,
+      rgb(0 0 0 / 0.75) 100%
+    );
+  }
+
+  /* A section header that is "heading left, link right" on desktop puts the
+     link against the last line of a three-line heading on a phone. Stack. */
+  .section-head-split {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* The parallelogram badges are a quarter-width on desktop, where a 10%
+     clip is a slim corner. Full-width on a phone the same 10% is ~35 px and
+     crowds the label. Halve the angle; the motif still reads. */
+  .skew-badge {
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%) !important;
+  }
+
+  /* The floating analytics pill is fixed to the bottom-left, so on a phone it
+     sits on top of whatever is there — form fields included. On small screens
+     the control moves into the footer instead (see AnalyticsConsent). */
+  .analytics-pill {
+    display: none;
+  }
+}

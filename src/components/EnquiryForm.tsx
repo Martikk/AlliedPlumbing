@@ -39,6 +39,15 @@ type Props = {
   defaultType?: EnquiryType;
   /** Rendered as the form's accessible name. */
   title?: string;
+  /** Keeps the accessible name but hides the heading, for a page that
+   *  already has one directly above the form. */
+  titleHidden?: boolean;
+  /** Draws the form's own card — border, background and padding. Set false
+   *  when the form already sits inside a card: a Tailwind `p-0` in
+   *  `className` does NOT win against the `p-5` here (utility order, not
+   *  attribute order, decides), and the doubled padding costs 40 px of a
+   *  320 px screen. */
+  chrome?: boolean;
   className?: string;
 };
 
@@ -87,6 +96,8 @@ function Field({
 export default function EnquiryForm({
   defaultType = 'quote',
   title = 'Send an enquiry',
+  titleHidden = false,
+  chrome = true,
   className = '',
 }: Props) {
   const uid = useId();
@@ -201,12 +212,21 @@ export default function EnquiryForm({
       aria-busy={sending}
       aria-labelledby={id('title')}
       data-cta-anchor
-      className={`rounded-[var(--radius-lg)] border border-[var(--line)] bg-[var(--surface)] p-5 md:p-7 ${className}`}
+      className={`${
+        chrome
+          ? 'rounded-[var(--radius-lg)] border border-[var(--line)] bg-[var(--surface)] p-5 md:p-7'
+          : ''
+      } ${className}`}
     >
-      <h2 id={id('title')} className="text-h3 font-bold text-[var(--ink)]">
+      <h2
+        id={id('title')}
+        className={titleHidden ? 'sr-only' : 'text-h3 font-bold text-[var(--ink)]'}
+      >
         {title}
       </h2>
-      <p className="mt-2 text-sm text-[var(--body)]">{RESPONSE_PROMISE}</p>
+      <p className={`text-sm text-[var(--body)] ${titleHidden ? '' : 'mt-2'}`}>
+        {RESPONSE_PROMISE}
+      </p>
 
       {/* Error summary — takes focus when a submit is blocked (F-08). */}
       <div ref={summary} tabIndex={-1} role="alert" aria-live="assertive">
