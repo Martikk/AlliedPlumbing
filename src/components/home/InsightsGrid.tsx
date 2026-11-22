@@ -1,5 +1,6 @@
 import Section from '../ui/Section';
 import Card from '../ui/Card';
+import CardRail from '../ui/CardRail';
 import Button, { ArrowRight } from '../ui/Button';
 import posts from '../../data/posts.json';
 import { useReveal } from '../../hooks/useReveal';
@@ -32,9 +33,10 @@ export default function InsightsGrid() {
         </Button>
       }
     >
-      <div ref={ref} className="grid gap-5 md:grid-cols-3 md:gap-6">
+      <div ref={ref}>
+        <CardRail columns={3} aria-label="Latest articles">
         {latest.map(post => (
-          <div key={post.slug} data-reveal="" className="flex">
+          <li key={post.slug} data-reveal="" className="flex">
             <Card
               to={`/blog/${post.slug}`}
               eyebrow={post.category}
@@ -42,12 +44,13 @@ export default function InsightsGrid() {
               summary={post.excerpt}
               metric={`${post.author} · ${post.readingMinutes} min read`}
               image={post.image}
-              sizes="(min-width: 768px) 368px, 100vw"
+              sizes="(min-width: 768px) 368px, 78vw"
               variant="article"
               className="w-full"
             />
-          </div>
+          </li>
         ))}
+        </CardRail>
       </div>
     </Section>
   );

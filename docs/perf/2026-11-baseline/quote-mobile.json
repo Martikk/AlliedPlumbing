@@ -1,0 +1,119 @@
+{
+  "_note": "Trimmed Lighthouse report: scores, headline metrics and failing audits. Full reports (screenshots, traces) are 1 MB each and are not kept in git; rerun with `npx lighthouse@12 <url>` to regenerate.",
+  "requestedUrl": "https://www.alliedplumbing.ca/quote/",
+  "finalDisplayedUrl": "https://www.alliedplumbing.ca/quote/",
+  "fetchTime": "2026-11-22T21:26:31.236Z",
+  "lighthouseVersion": "12.8.2",
+  "formFactor": "mobile",
+  "categories": {
+    "performance": {
+      "score": 0.85,
+      "title": "Performance"
+    },
+    "accessibility": {
+      "score": 1,
+      "title": "Accessibility"
+    },
+    "best-practices": {
+      "score": 0.96,
+      "title": "Best Practices"
+    },
+    "seo": {
+      "score": 1,
+      "title": "SEO"
+    }
+  },
+  "metrics": {
+    "first-contentful-paint": {
+      "score": 0.81,
+      "displayValue": "2.1\u00a0s",
+      "numericValue": 2095.58395
+    },
+    "largest-contentful-paint": {
+      "score": 0.57,
+      "displayValue": "3.7\u00a0s",
+      "numericValue": 3742.9488999999994
+    },
+    "total-blocking-time": {
+      "score": 1,
+      "displayValue": "0\u00a0ms",
+      "numericValue": 0
+    },
+    "cumulative-layout-shift": {
+      "score": 0.89,
+      "displayValue": "0.101",
+      "numericValue": 0.1008210548667555
+    },
+    "speed-index": {
+      "score": 0.99,
+      "displayValue": "2.1\u00a0s",
+      "numericValue": 2095.58395
+    },
+    "interactive": {
+      "score": 0.9,
+      "displayValue": "3.7\u00a0s",
+      "numericValue": 3742.9488999999994
+    },
+    "server-response-time": {
+      "score": 1,
+      "displayValue": "Root document took 20\u00a0ms",
+      "numericValue": 21.055
+    },
+    "total-byte-weight": {
+      "score": 1,
+      "displayValue": "Total size was 1,551\u00a0KiB",
+      "numericValue": 1588589
+    },
+    "largest-contentful-paint-element": {
+      "score": 0,
+      "displayValue": "3,740\u00a0ms",
+      "numericValue": null
+    }
+  },
+  "failingAudits": [
+    {
+      "id": "first-contentful-paint",
+      "title": "First Contentful Paint",
+      "score": 0.81,
+      "displayValue": "2.1\u00a0s",
+      "itemCount": 0,
+      "firstItems": []
+    },
+    {
+      "id": "largest-contentful-paint",
+      "title": "Largest Contentful Paint",
+      "score": 0.57,
+      "displayValue": "3.7\u00a0s",
+      "itemCount": 0,
+      "firstItems": []
+    },
+    {
+      "id": "cumulative-layout-shift",
+      "title": "Cumulative Layout Shift",
+      "score": 0.89,
+      "displayValue": "0.101",
+      "itemCount": 1,
+      "firstItems": [
+        {}
+      ]
+    },
+    {
+      "id": "speed-index",
+      "title": "Speed Index",
+      "score": 0.99,
+      "displayValue": "2.1\u00a0s",
+      "itemCount": 0,
+      "firstItems": []
+    },
+    {
+      "id": "errors-in-console",
+      "title": "Browser errors were logged to the console",
+      "score": 0,
+      "displayValue": null,
+      "itemCount": 1,
+      "firstItems": [
+        {}
+      ]
+    }
+  ]
+}

@@ -5,7 +5,7 @@ import Card from '../components/ui/Card';
 import Button, { PhoneIcon } from '../components/ui/Button';
 import FaqItem from '../components/FaqItem';
 import JsonLd from '../components/JsonLd';
-import projects from '../data/projects.json';
+import { projects, type Project } from '../lib/projects';
 import content from '../data/services-content.json';
 import { SERVICE_BY_KEY, type ServiceKey } from '../lib/site-links';
 import { faqForService, faqSchema } from '../lib/faq';
@@ -55,7 +55,7 @@ export default function ServiceTemplate({ service }: Props) {
   const url = canonicalURL(link.to);
   const related = copy.relatedProjects
     .map(id => projects.find(project => project.id === id))
-    .filter((project): project is (typeof projects)[number] => Boolean(project));
+    .filter((project): project is Project => Boolean(project));
 
   return (
     <>

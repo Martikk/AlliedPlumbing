@@ -1,0 +1,91 @@
+{
+  "_note": "Trimmed Lighthouse report: scores, headline metrics and failing audits. Full reports (screenshots, traces) are 1 MB each and are not kept in git; rerun with `npx lighthouse@12 <url>` to regenerate.",
+  "requestedUrl": "https://www.alliedplumbing.ca/projects/ridgeview/",
+  "finalDisplayedUrl": "https://www.alliedplumbing.ca/projects/ridgeview/",
+  "fetchTime": "2026-11-22T21:26:08.161Z",
+  "lighthouseVersion": "12.8.2",
+  "formFactor": "mobile",
+  "categories": {
+    "performance": {
+      "score": 0.9,
+      "title": "Performance"
+    },
+    "accessibility": {
+      "score": 1,
+      "title": "Accessibility"
+    },
+    "best-practices": {
+      "score": 1,
+      "title": "Best Practices"
+    },
+    "seo": {
+      "score": 1,
+      "title": "SEO"
+    }
+  },
+  "metrics": {
+    "first-contentful-paint": {
+      "score": 0.86,
+      "displayValue": "1.9\u00a0s",
+      "numericValue": 1940.4765000000002
+    },
+    "largest-contentful-paint": {
+      "score": 0.67,
+      "displayValue": "3.4\u00a0s",
+      "numericValue": 3381.487
+    },
+    "total-blocking-time": {
+      "score": 1,
+      "displayValue": "0\u00a0ms",
+      "numericValue": 0
+    },
+    "cumulative-layout-shift": {
+      "score": 1,
+      "displayValue": "0",
+      "numericValue": 0
+    },
+    "speed-index": {
+      "score": 1,
+      "displayValue": "1.9\u00a0s",
+      "numericValue": 1940.4765000000002
+    },
+    "interactive": {
+      "score": 0.93,
+      "displayValue": "3.4\u00a0s",
+      "numericValue": 3381.487
+    },
+    "server-response-time": {
+      "score": 1,
+      "displayValue": "Root document took 20\u00a0ms",
+      "numericValue": 22.820000000000007
+    },
+    "total-byte-weight": {
+      "score": 1,
+      "displayValue": "Total size was 810\u00a0KiB",
+      "numericValue": 829519
+    },
+    "largest-contentful-paint-element": {
+      "score": 0,
+      "displayValue": "3,380\u00a0ms",
+      "numericValue": null
+    }
+  },
+  "failingAudits": [
+    {
+      "id": "first-contentful-paint",
+      "title": "First Contentful Paint",
+      "score": 0.86,
+      "displayValue": "1.9\u00a0s",
+      "itemCount": 0,
+      "firstItems": []
+    },
+    {
+      "id": "largest-contentful-paint",
+      "title": "Largest Contentful Paint",
+      "score": 0.67,
+      "displayValue": "3.4\u00a0s",
+      "itemCount": 0,
+      "firstItems": []
+    }
+  ]
+}

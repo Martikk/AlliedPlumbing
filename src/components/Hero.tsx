@@ -43,16 +43,11 @@ export default function Hero({
   const mobile = { ar: MOBILE } as const;
   return (
     <section className="scrim scrim-left relative isolate overflow-hidden bg-[var(--surface-ink)]">
-      {/* React hoists this into <head>; it is the same candidate set the
-          <picture> below resolves to, so the browser starts the LCP fetch
-          before the component tree exists. */}
-      <link
-        rel="preload"
-        as="image"
-        fetchPriority="high"
-        imageSrcSet={srcSet(image, 1920, desktop)}
-        imageSizes="100vw"
-      />
+      {/* The LCP preload for this image lives in src/lib/lcp-preload.ts and is
+          written into <head> by the prerender step. It cannot be rendered
+          here: renderToString emits <link> in place, so the markup would
+          disagree with the hydrated tree (React #418). Keep the candidate
+          sets below in step with that module. */}
       <div className="absolute inset-0 -z-10">
         <picture>
           <source
@@ -76,7 +71,7 @@ export default function Hero({
 
       <div
         className={`on-dark relative mx-auto flex w-full max-w-[1200px] flex-col justify-center px-4 md:px-6 ${
-          compact ? 'min-h-[38vh] py-14 md:py-20' : 'min-h-[60vh] py-20 md:py-28'
+          compact ? 'min-h-[36vh] py-12 md:py-20' : 'min-h-[60vh] py-14 md:py-28'
         }`}
       >
         {eyebrow && (

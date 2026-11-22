@@ -1,6 +1,8 @@
 // src/pages/Careers.tsx
 import { useMemo, useState } from "react";
-import { Link } from "../lib/navigation";
+import Hero from "../components/Hero";
+import Breadcrumb from "../components/Breadcrumb";
+import Button from "../components/ui/Button";
 import CareerApplication from "../components/CareerApplication";
 
 type Opening = {
@@ -78,41 +80,26 @@ export default function Careers() {
   return (
     <div className="bg-white text-neutral-900">
 
-      {/* ========== HERO ========== */}
-      <section className="page-photo-hero relative overflow-hidden">
-        <img
-          src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png"
-          className="absolute inset-0 h-[44vh] md:h-[56vh] w-full object-cover"
-          alt=""
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
-        <div className="relative max-w-6xl mx-auto px-4 md:px-6 pt-28 md:pt-36 pb-10">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/15 text-white px-3 py-1 text-xs ring-1 ring-white/25 backdrop-blur">
-            Careers at Allied
-          </span>
-          <h1 className="mt-4 text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow">
-            Build BC. Grow your craft.
-          </h1>
-          <p className="mt-3 max-w-2xl text-white/90">
-            Explore service and mechanical project work across British Columbia. Discuss current roles, trade requirements and development opportunities with our hiring team.
-          </p>
-
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <a
-              href="#openings"
-              className="inline-flex items-center gap-2 rounded-lg bg-white text-neutral-900 px-5 py-3 font-semibold shadow hover:bg-neutral-200"
-            >
-              View openings <span aria-hidden>↘</span>
-            </a>
-            <Link
-              to="/projects"
-              className="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-white/10 text-white px-5 py-3 font-semibold backdrop-blur hover:bg-white/20"
-            >
-              About our work
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* HERO — C-02/C-04: the shared Hero component, the shared Button. */}
+      <Hero
+        compact
+        eyebrow="Careers at Allied"
+        heading="Mechanical work worth staying for"
+        subhead="Service and project work across British Columbia. Tell us your ticket, your apprenticeship level and what you want to be doing in three years."
+        image="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065876/Allied/3_gk4dl8.png"
+        alt="Allied technicians working together in a mechanical room"
+        actions={
+          <>
+            <Button href="#openings" className="on-dark">
+              View openings
+            </Button>
+            <Button href="/projects" variant="secondary" className="on-dark">
+              See our projects
+            </Button>
+          </>
+        }
+      />
+      <Breadcrumb trail={[{ name: 'Careers', path: '/careers' }]} />
 
       {/* ========== PERKS / WHY ALLIED ========== */}
       <section className="max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-16">

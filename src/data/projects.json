@@ -24,7 +24,16 @@
     "status": "Completion to be confirmed",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png",
     "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
-    "featured": false
+    "featured": false,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": ""
   },
   {
     "id": "crosstown",
@@ -51,7 +60,16 @@
     "status": "Completion to be confirmed",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071289/Allied/123_clbeb3.png",
     "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
-    "featured": false
+    "featured": false,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": ""
   },
   {
     "id": "glenayre",
@@ -78,7 +96,16 @@
     "status": "Completion to be confirmed",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071233/Allied/2025-10-09_21.40.08_wxp8bk.jpg",
     "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
-    "featured": false
+    "featured": false,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": ""
   },
   {
     "id": "collingwood",
@@ -105,7 +132,16 @@
     "status": "Completion to be confirmed",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760072887/Allied/Allied_1_n00b0m.png",
     "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
-    "featured": false
+    "featured": false,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": ""
   },
   {
     "id": "capilano-birch",
@@ -132,7 +168,16 @@
     "status": "Completion to be confirmed",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068155/Allied/10_kubptf.png",
     "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
-    "featured": false
+    "featured": false,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": ""
   },
   {
     "id": "herbert-spencer-ashp",
@@ -160,7 +205,16 @@
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068156/Allied/14_urnogx.png",
     "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
     "featured": false,
-    "relatedProject": "herbert-spencer"
+    "relatedProject": "herbert-spencer",
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": ""
   },
   {
     "id": "hillcrest",
@@ -187,7 +241,16 @@
     "status": "Completion to be confirmed",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071564/Allied/2025-10-09_21.39.57_tne1oo.jpg",
     "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
-    "featured": false
+    "featured": false,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": ""
   },
   {
     "id": "garibaldi",
@@ -215,7 +278,16 @@
       "Include supporting trades, testing, documentation and turnover requirements in the project plan."
     ],
     "outcomeLine": "Over 20 furnaces replaced with unit ventilators, rooftop and make-up air equipment, plus a new mechanical room — School District No. 48, 2023.",
-    "featured": true
+    "featured": true,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": ""
   },
   {
     "id": "ridgeview",
@@ -243,7 +315,16 @@
       "Include supporting trades, testing, documentation and turnover requirements in the project plan."
     ],
     "outcomeLine": "12 classrooms converted to unit ventilators and a six-boiler IBC plant — School District No. 45, 2022.",
-    "featured": true
+    "featured": true,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": ""
   },
   {
     "id": "leigh",
@@ -270,7 +351,16 @@
       "Include supporting trades, testing, documentation and turnover requirements in the project plan."
     ],
     "outcomeLine": "12 unit ventilators, a rooftop air handling unit and seismic remediation, delivered in an occupied school — School District No. 43.",
-    "featured": false
+    "featured": false,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": ""
   },
   {
     "id": "herbert-spencer",
@@ -300,7 +390,16 @@
     ],
     "outcomeLine": "Five condensing boilers, nine hydronic pumps and a DDC upgrade, with cleaning, treatment and balancing verified — School District No. 40, 2021.",
     "featured": false,
-    "relatedProject": "herbert-spencer-ashp"
+    "relatedProject": "herbert-spencer-ashp",
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": ""
   },
   {
     "id": "howe-sound",
@@ -327,7 +426,16 @@
       "Agree access, work sequencing and any operational restrictions with the building team.",
       "Include supporting trades, testing, documentation and turnover requirements in the project plan."
     ],
-    "featured": false
+    "featured": false,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": ""
   },
   {
     "id": "miller-park",
@@ -353,7 +461,16 @@
       "Agree access, work sequencing and any operational restrictions with the building team.",
       "Include supporting trades, testing, documentation and turnover requirements in the project plan."
     ],
-    "featured": false
+    "featured": false,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": ""
   },
   {
     "id": "haro",
@@ -380,6 +497,15 @@
       "Include supporting trades, testing, documentation and turnover requirements in the project plan."
     ],
     "outcomeLine": "A 2.5 million BTU Viessmann condensing plant serving heating and domestic hot water in an occupied apartment building — Starlight Investments.",
-    "featured": true
+    "featured": true,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": ""
   }
 ]

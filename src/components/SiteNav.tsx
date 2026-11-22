@@ -82,15 +82,15 @@ export default function SiteNav() {
               className="flex min-h-11 items-center gap-2 font-extrabold leading-tight text-[var(--ink)]"
             >
               <img
-                src="/favicon.ico"
+                src="/icon-192.png"
                 alt=""
                 width={28}
                 height={28}
                 className="h-7 w-7 shrink-0"
               />
               <span className="text-sm sm:text-base">
-                Allied Plumbing,
-                <span className="hidden sm:inline"> Heating &amp; Air Conditioning</span>
+                Allied Plumbing
+                <span className="hidden sm:inline">, Heating &amp; Air Conditioning</span>
               </span>
             </Link>
 

@@ -25,6 +25,7 @@ dist-ssr
 tsconfig*.tsbuildinfo
 vite.config.d.ts
 vite.config.js
-dist/
 
 .prerender/
+dist-dev
+.prerender-dev

@@ -4,6 +4,10 @@ import { renderToPipeableStream, renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { AppContent } from './App';
 
+/** Re-exported so generate-sitemap.mjs builds the LCP preloads from the same
+ *  data and the same Cloudinary helper the pages use (B-02). */
+export { preloadTags } from './lib/lcp-preload';
+
 /** Wait for lazy route chunks before writing crawlable static HTML. No server runtime is required after build. */
 export function render(path: string): Promise<string> {
   return new Promise((resolve, reject) => {

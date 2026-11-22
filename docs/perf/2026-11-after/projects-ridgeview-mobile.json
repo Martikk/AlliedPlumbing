@@ -1,0 +1,91 @@
+{
+  "_note": "Trimmed Lighthouse report: scores, headline metrics and failing audits. Full reports (screenshots, traces) are 1 MB each and are not kept in git; rerun with `npx lighthouse@12 <url>` to regenerate.",
+  "requestedUrl": "http://localhost:4173/projects/ridgeview/",
+  "finalDisplayedUrl": "http://localhost:4173/projects/ridgeview/",
+  "fetchTime": "2026-11-22T21:44:26.022Z",
+  "lighthouseVersion": "12.8.2",
+  "formFactor": "mobile",
+  "categories": {
+    "performance": {
+      "score": 0.95,
+      "title": "Performance"
+    },
+    "accessibility": {
+      "score": 1,
+      "title": "Accessibility"
+    },
+    "best-practices": {
+      "score": 1,
+      "title": "Best Practices"
+    },
+    "seo": {
+      "score": 1,
+      "title": "SEO"
+    }
+  },
+  "metrics": {
+    "first-contentful-paint": {
+      "score": 0.94,
+      "displayValue": "1.6\u00a0s",
+      "numericValue": 1601.64685
+    },
+    "largest-contentful-paint": {
+      "score": 0.81,
+      "displayValue": "2.9\u00a0s",
+      "numericValue": 2886.42535
+    },
+    "total-blocking-time": {
+      "score": 1,
+      "displayValue": "0\u00a0ms",
+      "numericValue": 0
+    },
+    "cumulative-layout-shift": {
+      "score": 1,
+      "displayValue": "0",
+      "numericValue": 0
+    },
+    "speed-index": {
+      "score": 1,
+      "displayValue": "1.6\u00a0s",
+      "numericValue": 1601.64685
+    },
+    "interactive": {
+      "score": 0.96,
+      "displayValue": "2.9\u00a0s",
+      "numericValue": 2886.4253500000004
+    },
+    "server-response-time": {
+      "score": 1,
+      "displayValue": "Root document took 10\u00a0ms",
+      "numericValue": 5.839
+    },
+    "total-byte-weight": {
+      "score": 1,
+      "displayValue": "Total size was 316\u00a0KiB",
+      "numericValue": 323913
+    },
+    "largest-contentful-paint-element": {
+      "score": 0,
+      "displayValue": "2,890\u00a0ms",
+      "numericValue": null
+    }
+  },
+  "failingAudits": [
+    {
+      "id": "first-contentful-paint",
+      "title": "First Contentful Paint",
+      "score": 0.94,
+      "displayValue": "1.6\u00a0s",
+      "itemCount": 0,
+      "firstItems": []
+    },
+    {
+      "id": "largest-contentful-paint",
+      "title": "Largest Contentful Paint",
+      "score": 0.81,
+      "displayValue": "2.9\u00a0s",
+      "itemCount": 0,
+      "firstItems": []
+    }
+  ]
+}

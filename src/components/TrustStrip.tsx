@@ -15,11 +15,14 @@ function yearsInBusiness() {
   return sinceYears + Math.max(0, new Date().getFullYear() - sinceYear);
 }
 
+/** These are the top-level headings inside the strip's own labelled region,
+ *  so they are h2 — an h3 here skips a level after the page's h1 (F-ADD:
+ *  Lighthouse heading-order). */
 function GroupHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="text-eyebrow font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
+    <h2 className="text-eyebrow font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
       {children}
-    </h3>
+    </h2>
   );
 }
 

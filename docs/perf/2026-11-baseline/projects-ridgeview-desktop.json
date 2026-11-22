@@ -1,0 +1,119 @@
+{
+  "_note": "Trimmed Lighthouse report: scores, headline metrics and failing audits. Full reports (screenshots, traces) are 1 MB each and are not kept in git; rerun with `npx lighthouse@12 <url>` to regenerate.",
+  "requestedUrl": "https://www.alliedplumbing.ca/projects/ridgeview/",
+  "finalDisplayedUrl": "https://www.alliedplumbing.ca/projects/ridgeview/",
+  "fetchTime": "2026-11-22T21:26:19.720Z",
+  "lighthouseVersion": "12.8.2",
+  "formFactor": "desktop",
+  "categories": {
+    "performance": {
+      "score": 0.99,
+      "title": "Performance"
+    },
+    "accessibility": {
+      "score": 0.96,
+      "title": "Accessibility"
+    },
+    "best-practices": {
+      "score": 1,
+      "title": "Best Practices"
+    },
+    "seo": {
+      "score": 1,
+      "title": "SEO"
+    }
+  },
+  "metrics": {
+    "first-contentful-paint": {
+      "score": 0.99,
+      "displayValue": "0.6\u00a0s",
+      "numericValue": 604.328
+    },
+    "largest-contentful-paint": {
+      "score": 0.97,
+      "displayValue": "0.9\u00a0s",
+      "numericValue": 868.492
+    },
+    "total-blocking-time": {
+      "score": 1,
+      "displayValue": "0\u00a0ms",
+      "numericValue": 0
+    },
+    "cumulative-layout-shift": {
+      "score": 1,
+      "displayValue": "0",
+      "numericValue": 0
+    },
+    "speed-index": {
+      "score": 1,
+      "displayValue": "0.6\u00a0s",
+      "numericValue": 604.328
+    },
+    "interactive": {
+      "score": 1,
+      "displayValue": "0.9\u00a0s",
+      "numericValue": 868.492
+    },
+    "server-response-time": {
+      "score": 1,
+      "displayValue": "Root document took 30\u00a0ms",
+      "numericValue": 32.641000000000005
+    },
+    "total-byte-weight": {
+      "score": 1,
+      "displayValue": "Total size was 805\u00a0KiB",
+      "numericValue": 824034
+    },
+    "largest-contentful-paint-element": {
+      "score": 1,
+      "displayValue": "870\u00a0ms",
+      "numericValue": null
+    }
+  },
+  "failingAudits": [
+    {
+      "id": "first-contentful-paint",
+      "title": "First Contentful Paint",
+      "score": 0.99,
+      "displayValue": "0.6\u00a0s",
+      "itemCount": 0,
+      "firstItems": []
+    },
+    {
+      "id": "largest-contentful-paint",
+      "title": "Largest Contentful Paint",
+      "score": 0.97,
+      "displayValue": "0.9\u00a0s",
+      "itemCount": 0,
+      "firstItems": []
+    },
+    {
+      "id": "color-contrast",
+      "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+      "score": 0,
+      "displayValue": null,
+      "itemCount": 1,
+      "firstItems": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-SPAN",
+            "path": "1,HTML,1,BODY,0,DIV,2,HEADER,0,DIV,0,DIV,1,A,0,SPAN",
+            "selector": "div.emergency-strip > div.mx-auto > a.emergency-phone > span.hidden",
+            "boundingRect": {
+              "top": 12,
+              "bottom": 32,
+              "left": 1015,
+              "right": 1155,
+              "width": 140,
+              "height": 20
+            },
+            "snippet": "<span class=\"hidden md:inline\">",
+            "nodeLabel": "24/7 Emergency Line:",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #ffffff, background color: #e4453f, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        }
+      ]
+    }
+  ]
+}

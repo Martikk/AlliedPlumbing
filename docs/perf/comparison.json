@@ -1,0 +1,185 @@
+{
+  "tool": "Lighthouse 12, headless Chrome, single run per URL",
+  "before": "live site over the AWS Amplify CDN, 2026-11-22",
+  "after": "this build on a local static server (no CDN, no HTTP/2), 2026-11-22; images come from Cloudinary in both, so the after figures understate what the CDN will give",
+  "baseline": {
+    "home-desktop": {
+      "url": "https://www.alliedplumbing.ca/",
+      "performance": 97,
+      "accessibility": 96,
+      "seo": 100,
+      "bestPractices": 100,
+      "lcpMs": 1168,
+      "tbtMs": 0,
+      "cls": 0.0,
+      "totalKB": 1172
+    },
+    "home-mobile": {
+      "url": "https://www.alliedplumbing.ca/",
+      "performance": 88,
+      "accessibility": 100,
+      "seo": 100,
+      "bestPractices": 100,
+      "lcpMs": 3695,
+      "tbtMs": 15,
+      "cls": 0.0,
+      "totalKB": 1071
+    },
+    "projects-ridgeview-desktop": {
+      "url": "https://www.alliedplumbing.ca/projects/ridgeview/",
+      "performance": 99,
+      "accessibility": 96,
+      "seo": 100,
+      "bestPractices": 100,
+      "lcpMs": 868,
+      "tbtMs": 0,
+      "cls": 0,
+      "totalKB": 805
+    },
+    "projects-ridgeview-mobile": {
+      "url": "https://www.alliedplumbing.ca/projects/ridgeview/",
+      "performance": 90,
+      "accessibility": 100,
+      "seo": 100,
+      "bestPractices": 100,
+      "lcpMs": 3381,
+      "tbtMs": 0,
+      "cls": 0,
+      "totalKB": 810
+    },
+    "quote-desktop": {
+      "url": "https://www.alliedplumbing.ca/quote/",
+      "performance": 97,
+      "accessibility": 96,
+      "seo": 100,
+      "bestPractices": 96,
+      "lcpMs": 1137,
+      "tbtMs": 0,
+      "cls": 0.029,
+      "totalKB": 1658
+    },
+    "quote-mobile": {
+      "url": "https://www.alliedplumbing.ca/quote/",
+      "performance": 85,
+      "accessibility": 100,
+      "seo": 100,
+      "bestPractices": 96,
+      "lcpMs": 3743,
+      "tbtMs": 0,
+      "cls": 0.101,
+      "totalKB": 1551
+    },
+    "services-hvac-desktop": {
+      "url": "https://www.alliedplumbing.ca/services/hvac/",
+      "performance": 98,
+      "accessibility": 96,
+      "seo": 100,
+      "bestPractices": 100,
+      "lcpMs": 1150,
+      "tbtMs": 0,
+      "cls": 0,
+      "totalKB": 719
+    },
+    "services-hvac-mobile": {
+      "url": "https://www.alliedplumbing.ca/services/hvac/",
+      "performance": 95,
+      "accessibility": 100,
+      "seo": 100,
+      "bestPractices": 100,
+      "lcpMs": 2650,
+      "tbtMs": 0,
+      "cls": 0,
+      "totalKB": 720
+    }
+  },
+  "current": {
+    "home-desktop": {
+      "url": "http://localhost:4173/",
+      "performance": 100,
+      "accessibility": 100,
+      "seo": 100,
+      "bestPractices": 100,
+      "lcpMs": 749,
+      "tbtMs": 0,
+      "cls": 0,
+      "totalKB": 507
+    },
+    "home-mobile": {
+      "url": "http://localhost:4173/",
+      "performance": 95,
+      "accessibility": 100,
+      "seo": 100,
+      "bestPractices": 100,
+      "lcpMs": 2804,
+      "tbtMs": 0,
+      "cls": 0,
+      "totalKB": 556
+    },
+    "projects-ridgeview-desktop": {
+      "url": "http://localhost:4173/projects/ridgeview/",
+      "performance": 100,
+      "accessibility": 100,
+      "seo": 100,
+      "bestPractices": 100,
+      "lcpMs": 621,
+      "tbtMs": 0,
+      "cls": 0,
+      "totalKB": 285
+    },
+    "projects-ridgeview-mobile": {
+      "url": "http://localhost:4173/projects/ridgeview/",
+      "performance": 95,
+      "accessibility": 100,
+      "seo": 100,
+      "bestPractices": 100,
+      "lcpMs": 2886,
+      "tbtMs": 0,
+      "cls": 0,
+      "totalKB": 316
+    },
+    "quote-desktop": {
+      "url": "http://localhost:4173/quote/",
+      "performance": 100,
+      "accessibility": 100,
+      "seo": 100,
+      "bestPractices": 100,
+      "lcpMs": 458,
+      "tbtMs": 0,
+      "cls": 0,
+      "totalKB": 122
+    },
+    "quote-mobile": {
+      "url": "http://localhost:4173/quote/",
+      "performance": 99,
+      "accessibility": 100,
+      "seo": 100,
+      "bestPractices": 100,
+      "lcpMs": 1969,
+      "tbtMs": 0,
+      "cls": 0,
+      "totalKB": 122
+    },
+    "services-hvac-desktop": {
+      "url": "http://localhost:4173/services/hvac/",
+      "performance": 100,
+      "accessibility": 100,
+      "seo": 100,
+      "bestPractices": 100,
+      "lcpMs": 708,
+      "tbtMs": 0,
+      "cls": 0,
+      "totalKB": 352
+    },
+    "services-hvac-mobile": {
+      "url": "http://localhost:4173/services/hvac/",
+      "performance": 96,
+      "accessibility": 100,
+      "seo": 100,
+      "bestPractices": 100,
+      "lcpMs": 2702,
+      "tbtMs": 0,
+      "cls": 0,
+      "totalKB": 293
+    }
+  }
+}

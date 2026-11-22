@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { Link } from '../../lib/navigation';
-import { responsiveImage, imageCandidates } from '../../lib/images';
+import { cld, srcSet } from '../../lib/images';
 
 /** Audit C-06 + F-04 — the only card.
  *
@@ -23,6 +23,10 @@ type Props = {
   /** Real layout width, for the `sizes` attribute (B-03). */
   sizes?: string;
   variant?: Variant;
+  /** Hides the summary below 640 px. For a two-up grid of small cards, where
+   *  the summary wraps to eight lines in a 175 px column and the title
+   *  already says where the card goes (E-06: "image 4:3, title, one line"). */
+  compact?: boolean;
   className?: string;
 };
 
@@ -35,6 +39,7 @@ export default function Card({
   image,
   sizes = '(min-width: 1024px) 380px, (min-width: 768px) 50vw, 100vw',
   variant = 'service',
+  compact = false,
   className = '',
 }: Props) {
   return (
@@ -44,8 +49,8 @@ export default function Card({
       {image && (
         <div className="aspect-[4/3] overflow-hidden bg-[var(--surface-alt)]">
           <img
-            src={responsiveImage(image, 960)}
-            srcSet={imageCandidates(image)}
+            src={cld(image, 960, { ar: '4:3' })}
+            srcSet={srcSet(image, 1280, { ar: '4:3' })}
             sizes={sizes}
             alt=""
             width={960}
@@ -68,7 +73,13 @@ export default function Card({
           </Link>
         </h3>
         {summary && (
-          <p className="mt-2 text-sm leading-[var(--lh-body)] text-[var(--body)]">{summary}</p>
+          <p
+            className={`mt-2 text-sm leading-[var(--lh-body)] text-[var(--body)] ${
+              compact ? 'hidden sm:block' : ''
+            }`}
+          >
+            {summary}
+          </p>
         )}
         {metric && (
           <p className="mt-4 border-t border-[var(--line)] pt-4 text-sm font-semibold text-[var(--ink)]">

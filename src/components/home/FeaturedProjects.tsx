@@ -1,7 +1,8 @@
 import Section from '../ui/Section';
 import Card from '../ui/Card';
+import CardRail from '../ui/CardRail';
 import Button, { ArrowRight } from '../ui/Button';
-import projects from '../../data/projects.json';
+import { featuredProjects } from '../../lib/projects';
 import { useReveal } from '../../hooks/useReveal';
 import { LABEL } from '../../config';
 
@@ -16,7 +17,7 @@ import { LABEL } from '../../config';
 
 export default function FeaturedProjects() {
   const ref = useReveal<HTMLDivElement>({ stagger: true });
-  const featured = projects.filter(project => project.featured).slice(0, 3);
+  const featured = featuredProjects.slice(0, 3);
   if (!featured.length) return null;
 
   return (
@@ -32,9 +33,10 @@ export default function FeaturedProjects() {
         </Button>
       }
     >
-      <div ref={ref} className="grid gap-5 md:grid-cols-3 md:gap-6">
+      <div ref={ref}>
+        <CardRail columns={3} aria-label="Selected projects">
         {featured.map(project => (
-          <div key={project.id} data-reveal="" className="flex">
+          <li key={project.id} data-reveal="" className="flex">
             <Card
               to={`/projects/${project.id}`}
               eyebrow={project.client}
@@ -42,12 +44,13 @@ export default function FeaturedProjects() {
               summary={project.summary}
               metric={project.outcomeLine}
               image={project.cover}
-              sizes="(min-width: 768px) 368px, 100vw"
+              sizes="(min-width: 768px) 368px, 78vw"
               variant="project"
               className="w-full"
             />
-          </div>
+          </li>
         ))}
+        </CardRail>
       </div>
     </Section>
   );

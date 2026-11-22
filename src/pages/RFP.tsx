@@ -3,7 +3,7 @@ import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import EnquiryForm from '../components/EnquiryForm';
-import projects from '../data/projects.json';
+import { projects } from '../lib/projects';
 import { EMAIL_QUOTE, PHONE, PHONE_HREF } from '../config';
 
 /** Audit H-02 §3 — "Tenders & RFPs". Good B2B content that used to be

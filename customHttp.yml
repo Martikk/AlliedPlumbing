@@ -1,0 +1,49 @@
+# Audit B-07 — cache headers.
+#
+# AWS Amplify reads this file from the repository root and applies it at the
+# CDN edge. Vite fingerprints everything under /assets, so those files are
+# immutable; HTML must always revalidate or a deploy will not reach anyone
+# holding a cached page.
+#
+# Verify after a deploy:
+#   curl -sI https://www.alliedplumbing.ca/ | grep -i cache-control
+#   curl -sI https://www.alliedplumbing.ca/assets/<hashed>.js | grep -i cache-control
+
+customHeaders:
+  # Hashed build output — the name changes whenever the bytes do.
+  - pattern: '/assets/**'
+    headers:
+      - key: Cache-Control
+        value: 'public, max-age=31536000, immutable'
+
+  # Icons and the manifest change rarely and are not hashed, so a day at the
+  # browser with a long shared cache is the right trade.
+  - pattern: '/*.@(ico|png|svg|webmanifest)'
+    headers:
+      - key: Cache-Control
+        value: 'public, max-age=86400, stale-while-revalidate=604800'
+
+  # HTML: never trusted from the browser cache, but the CDN may hold it.
+  - pattern: '**/*.html'
+    headers:
+      - key: Cache-Control
+        value: 'public, max-age=0, must-revalidate'
+
+  - pattern: '/sitemap.xml'
+    headers:
+      - key: Cache-Control
+        value: 'public, max-age=3600'
+
+  # Security headers, applied everywhere. No CSP yet: the site loads
+  # Cloudinary, Google Fonts-free but GA4 and an Apps Script iframe on
+  # /careers/, so a CSP needs its own pass and a report-only run first.
+  - pattern: '**'
+    headers:
+      - key: Strict-Transport-Security
+        value: 'max-age=63072000; includeSubDomains; preload'
+      - key: X-Content-Type-Options
+        value: 'nosniff'
+      - key: Referrer-Policy
+        value: 'strict-origin-when-cross-origin'
+      - key: Permissions-Policy
+        value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()'

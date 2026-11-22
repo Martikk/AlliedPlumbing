@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 const canonicalPath = path => path === '/' ? '/' : path.replace(/\/+$/, '') + '/';
 const pages = JSON.parse(readFileSync('src/data/seo.json', 'utf8'));
@@ -47,15 +48,24 @@ test('sitemap lists only indexable canonical routes, with lastmod from content h
     locations.sort(),
     indexable.map(path => 'https://www.alliedplumbing.ca' + canonicalPath(path)).sort(),
   );
-  // Audit A-03: lastmod comes from the content file's last commit, never from
-  // the build clock, so a redeploy must not look like a content change.
-  const today = new Date().toISOString().slice(0, 10);
+  // Audit A-03: lastmod is the content file's last commit date, never the
+  // build clock, so a redeploy must not look like a content change.
   const dates = [...sitemap.matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map(match => match[1]);
   assert.ok(dates.length > 0, 'sitemap should carry lastmod');
-  for (const date of dates) {
-    assert.ok(!Number.isNaN(Date.parse(date)), `invalid lastmod: ${date}`);
-    assert.notEqual(date.slice(0, 10), today, 'lastmod must not be the build date');
-  }
+  for (const date of dates) assert.ok(!Number.isNaN(Date.parse(date)), `invalid lastmod: ${date}`);
+
+  const commitDate = file =>
+    execFileSync('git', ['log', '-1', '--format=%cI', '--', file], { encoding: 'utf8' }).trim();
+  const lastmodFor = path => {
+    const entry = sitemap.match(
+      new RegExp(`<loc>https://www\\.alliedplumbing\\.ca${path}</loc><lastmod>(.*?)</lastmod>`),
+    );
+    return entry && entry[1];
+  };
+  // The sitemap library normalises to UTC, so compare instants, not strings.
+  const sameInstant = (a, b) => assert.equal(Date.parse(a), Date.parse(b));
+  sameInstant(lastmodFor('/blog/planning-school-hvac-upgrades/'), commitDate('src/data/posts.json'));
+  sameInstant(lastmodFor('/projects/ridgeview/'), commitDate('src/data/projects.json'));
 });
 test('404 artifact is noindex and has no homepage canonical or misleading open graph URL', () => {
   const html = readFileSync('dist/404.html', 'utf8');

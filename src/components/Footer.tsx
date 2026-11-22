@@ -60,7 +60,7 @@ export default function Footer() {
             <h2 className="text-eyebrow font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
               Services
             </h2>
-            <ul className="mt-3">
+            <ul className="mt-3 grid grid-cols-2 gap-x-6 md:grid-cols-1">
               {SERVICE_LINKS.map(service => (
                 <li key={service.key}>
                   <Link to={service.to} className="inline-flex min-h-11 items-center hover:underline">

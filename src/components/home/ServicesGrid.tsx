@@ -34,6 +34,7 @@ export default function ServicesGrid() {
               image={service.image}
               sizes="(min-width: 1024px) 368px, 50vw"
               variant="service"
+              compact
               className="w-full"
             />
           </div>

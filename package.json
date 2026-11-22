@@ -10,14 +10,17 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "generate-sitemap": "node src/scripts/generate-sitemap.mjs",
     "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir .prerender && node src/scripts/generate-sitemap.mjs",
     "preview": "vite preview",
+    "generate-sitemap": "node src/scripts/generate-sitemap.mjs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier . --write",
     "test": "node --test tests/*.test.mjs",
-    "test:production": "node src/scripts/check-production.mjs"
+    "check:head": "node src/scripts/check-head.mjs",
+    "check:domains": "node src/scripts/check-domains.mjs",
+    "test:production": "node src/scripts/check-production.mjs",
+    "lighthouse": "lhci autorun"
   },
   "dependencies": {
     "classnames": "^2.5.1",

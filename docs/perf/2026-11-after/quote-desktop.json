@@ -1,0 +1,74 @@
+{
+  "_note": "Trimmed Lighthouse report: scores, headline metrics and failing audits. Full reports (screenshots, traces) are 1 MB each and are not kept in git; rerun with `npx lighthouse@12 <url>` to regenerate.",
+  "requestedUrl": "http://localhost:4173/quote/",
+  "finalDisplayedUrl": "http://localhost:4173/quote/",
+  "fetchTime": "2026-11-22T21:45:00.479Z",
+  "lighthouseVersion": "12.8.2",
+  "formFactor": "desktop",
+  "categories": {
+    "performance": {
+      "score": 1,
+      "title": "Performance"
+    },
+    "accessibility": {
+      "score": 1,
+      "title": "Accessibility"
+    },
+    "best-practices": {
+      "score": 1,
+      "title": "Best Practices"
+    },
+    "seo": {
+      "score": 1,
+      "title": "SEO"
+    }
+  },
+  "metrics": {
+    "first-contentful-paint": {
+      "score": 1,
+      "displayValue": "0.4\u00a0s",
+      "numericValue": 373.97249999999997
+    },
+    "largest-contentful-paint": {
+      "score": 1,
+      "displayValue": "0.5\u00a0s",
+      "numericValue": 457.567
+    },
+    "total-blocking-time": {
+      "score": 1,
+      "displayValue": "0\u00a0ms",
+      "numericValue": 0
+    },
+    "cumulative-layout-shift": {
+      "score": 1,
+      "displayValue": "0",
+      "numericValue": 0
+    },
+    "speed-index": {
+      "score": 1,
+      "displayValue": "0.4\u00a0s",
+      "numericValue": 373.97249999999997
+    },
+    "interactive": {
+      "score": 1,
+      "displayValue": "0.5\u00a0s",
+      "numericValue": 457.567
+    },
+    "server-response-time": {
+      "score": 1,
+      "displayValue": "Root document took 0\u00a0ms",
+      "numericValue": 1.905
+    },
+    "total-byte-weight": {
+      "score": 1,
+      "displayValue": "Total size was 122\u00a0KiB",
+      "numericValue": 124992
+    },
+    "largest-contentful-paint-element": {
+      "score": 1,
+      "displayValue": "460\u00a0ms",
+      "numericValue": null
+    }
+  },
+  "failingAudits": []
+}

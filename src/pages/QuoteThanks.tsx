@@ -2,7 +2,7 @@ import { useSearchParams } from 'react-router-dom';
 import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
 import Button, { PhoneIcon } from '../components/ui/Button';
-import projects from '../data/projects.json';
+import { featuredProjects } from '../lib/projects';
 import { PHONE, PHONE_HREF } from '../config';
 
 /** Audit H-03 — the thank-you page.
@@ -29,7 +29,7 @@ const STEPS = [
 export default function QuoteThanks() {
   const [params] = useSearchParams();
   const reference = params.get('ref');
-  const related = projects.filter(project => project.featured).slice(0, 2);
+  const related = featuredProjects.slice(0, 2);
 
   return (
     <>

@@ -5,7 +5,7 @@ import { SitemapStream, streamToPromise } from 'sitemap';
 
 const { origin } = JSON.parse(readFileSync('src/lib/site-policy.json', 'utf8'));
 const canonicalPath = path => (path === '/' ? '/' : path.replace(/\/+$/, '') + '/');
-const { render } = await import('../../.prerender/entry-server.js');
+const { render, preloadTags } = await import('../../.prerender/entry-server.js');
 const pages = JSON.parse(readFileSync('src/data/seo.json', 'utf8'));
 const template = readFileSync('dist/index.html', 'utf8');
 const escape = text =>
@@ -77,6 +77,11 @@ for (const [path, metadata] of Object.entries(pages)) {
     '<div id="root"></div>',
     () => `<div id="root" data-prerendered="true">${content}</div>`,
   );
+  // B-02 — the LCP preload goes in <head>, ahead of the stylesheet. It is
+  // built here rather than rendered by a component, because renderToString
+  // emits <link> in place and the hydrated tree would then disagree.
+  const preloads = preloadTags(path);
+  if (preloads) html = html.replace('</head>', `${preloads}</head>`);
   // A noindex route is still prerendered, so a direct hit or a refresh works
   // (H-03), but it stays out of the sitemap and carries robots=noindex.
   if (metadata.noindex) html = noindexed(html);

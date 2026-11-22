@@ -58,15 +58,16 @@ export default function AnalyticsConsent() {
       aria-label="Analytics preferences"
       className="fixed inset-x-3 bottom-[calc(0.75rem+var(--mobile-bar-space,0px))] z-[60] mx-auto max-w-3xl rounded-[var(--radius-lg)] border border-[var(--line)] bg-[var(--surface)] p-5 shadow-md md:bottom-3"
     >
-      <h2 className="font-bold text-[var(--ink)]">Optional website analytics</h2>
-      <p className="mt-2 text-sm leading-[var(--lh-body)] text-[var(--body)]">
-        Allow Google Analytics to help us understand page visits and completed enquiries? Form
-        contents and resume links are never included. You can change this later from the footer.{' '}
+      {/* Kept short on purpose: this sits over the hero CTA until the visitor
+          answers, and it only ever appears once (E-03). */}
+      <h2 className="font-bold text-[var(--ink)]">Allow optional analytics?</h2>
+      <p className="mt-1 text-sm leading-snug text-[var(--body)]">
+        Page visits and completed enquiries only — never form contents.{' '}
         <Link to="/privacy" className="underline underline-offset-2">
           Privacy notice
         </Link>
       </p>
-      <div className="mt-4 flex flex-wrap gap-3">
+      <div className="mt-3 flex flex-wrap gap-3">
         <button
           type="button"
           onClick={() => choose('denied')}
