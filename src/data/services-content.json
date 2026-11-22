@@ -1,0 +1,189 @@
+{
+  "_comment": "Audit I-02 / A-06 — the service page template's content. H1 follows the pattern '<Service> for <building types> in <region>'; the equipment list moves to the subhead, where it belongs. Every claim here is supported by the project pages in projects.json. `relatedProjects` must be real project ids.",
+
+  "hvac": {
+    "h1": "Commercial HVAC installation and service for schools and commercial buildings in Metro Vancouver",
+    "promise": "Rooftop units, make-up air, air handlers, classroom unit ventilators, heat pumps and VRF — installed around the people still using the building.",
+    "subhead": "RTU, MUA, AHU, unit ventilators, heat pumps and VRF, with DDC integration to Delta, Reliable and Trane.",
+    "serviceType": "Commercial HVAC installation and service",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065876/Allied/3_gk4dl8.png",
+    "alt": "Rooftop air handling unit being serviced on a school roof",
+    "audiences": [
+      { "title": "School districts", "copy": "Classroom ventilation upgrades delivered in term time, phased so teaching continues. Districts 40, 43, 45 and 48." },
+      { "title": "Strata and property managers", "copy": "Make-up air, corridor pressurisation and suite heat pumps in occupied residential buildings." },
+      { "title": "Commercial buildings and GCs", "copy": "Rooftop and air handling replacements coordinated with tenants, trades and the consultant's schedule." }
+    ],
+    "deliver": [
+      "Rooftop unit, make-up air unit and air handler replacement and retrofit",
+      "Classroom unit ventilators, including removal of existing convectors and coils",
+      "Heat pumps and VRF multi-zone systems",
+      "Hydronic connections, circulator pumps and piping to existing systems",
+      "Seismic restraint, housekeeping pads and associated carpentry",
+      "Air balance, performance verification and commissioning coordination"
+    ],
+    "equipment": "We work to the consultant's equipment schedule. Controls integration is usually Delta, Reliable or Trane DDC, with trending and alarms set up at handover.",
+    "steps": [
+      { "title": "Site review", "copy": "We walk the mechanical rooms and the affected spaces, confirm what is actually installed, and agree access windows." },
+      { "title": "Proposal", "copy": "A written scope with the equipment, the sequence and the phasing, priced against the drawings or against what we found on site." },
+      { "title": "Shop drawings and submittals", "copy": "Equipment submittals and shop drawings through the engineer, with lead times confirmed before anything is ordered." },
+      { "title": "Install around occupancy", "copy": "Evenings, weekends or term breaks where the space has to stay in use. Trade coordination with electrical, sheet metal, controls and insulation." },
+      { "title": "Commissioning and turnover", "copy": "Air balance, verification, O&M manuals, as-builts and a walkthrough with the people who will operate it." }
+    ],
+    "relatedProjects": ["leigh", "garibaldi", "hillcrest"]
+  },
+
+  "boilers": {
+    "h1": "Boiler plant replacement and heating service for schools, strata and commercial buildings in Metro Vancouver",
+    "promise": "Condensing plants swapped into live buildings — sized, piped, controlled and commissioned without losing a heating season.",
+    "subhead": "Condensing boilers, burners, VFD pumps, heat exchangers, tanks, safety devices and controls.",
+    "serviceType": "Commercial boiler plant replacement and heating service",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/10_kubptf.png",
+    "alt": "Bank of condensing boilers in a school mechanical room",
+    "audiences": [
+      { "title": "School districts", "copy": "Plant replacements sequenced around the school year. At Ridgeview we installed six IBC boilers alongside a classroom ventilation conversion." },
+      { "title": "Strata and apartment buildings", "copy": "Heating and domestic hot water plants in buildings that cannot go cold — a 2.5 million BTU Viessmann plant at 1755 Haro Street." },
+      { "title": "Commercial and institutional owners", "copy": "Plant modernisation tied into existing hydronics and building automation, as at the ICBC facility on West 5th." }
+    ],
+    "deliver": [
+      "Condensing boiler plant replacement, including removal of redundant equipment",
+      "Hydronic piping, circulation pumps, heat exchangers and expansion equipment",
+      "Gas distribution, venting and condensate management",
+      "Pre-operational cleaning, chemical treatment and water-system balancing",
+      "Direct digital control upgrades and HVAC system verification",
+      "Seismic restraint, concrete housekeeping pads and remediation"
+    ],
+    "equipment": "We install IBC, Viessmann, Rinnai and Daikin equipment, and whatever else the specification calls for. Controls work is typically Delta, Reliable or Trane.",
+    "steps": [
+      { "title": "Site review", "copy": "Existing plant condition, flue routes, gas capacity, electrical supply and how much room there really is to get equipment in and out." },
+      { "title": "Proposal", "copy": "Scope, equipment, the shutdown window required and what temporary heat, if any, the building needs." },
+      { "title": "Submittals and procurement", "copy": "Boiler and pump submittals through the engineer. Compatibility between proposed operating temperatures and existing coils is confirmed before order." },
+      { "title": "Changeover", "copy": "The plant comes out and goes in inside the agreed window, with gas, venting, controls and electrical coordinated to one sequence." },
+      { "title": "Commissioning and turnover", "copy": "Cleaning, treatment, balancing, verification, O&M manuals and as-builts, then a handover with the operating team." }
+    ],
+    "relatedProjects": ["ridgeview", "herbert-spencer", "haro"]
+  },
+
+  "commercial-plumbing": {
+    "h1": "Commercial and institutional plumbing for schools, strata and commercial buildings in Metro Vancouver",
+    "promise": "Risers, plants and fixtures in buildings that stay occupied — planned around shutdown notices, not around us.",
+    "subhead": "Backflow prevention, PRVs, booster pumps, domestic hot water plants, riser work and tenant improvements.",
+    "serviceType": "Commercial and institutional plumbing",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065875/Allied/1_tc9jiy.png",
+    "alt": "Copper and press-fit plumbing risers in a commercial washroom",
+    "audiences": [
+      { "title": "Schools and public buildings", "copy": "Washroom renewals, domestic water and drainage work scheduled against the school calendar." },
+      { "title": "Strata and apartment buildings", "copy": "Riser replacement, domestic hot water plants and booster sets, with resident notice periods built into the plan." },
+      { "title": "Commercial landlords and GCs", "copy": "Tenant improvements, backflow testing and PRV stations, coordinated with building operations." }
+    ],
+    "deliver": [
+      "Backflow prevention installation and testing",
+      "Pressure reducing valve stations and booster pump sets",
+      "Domestic hot water plants and recirculation",
+      "Riser, main and branch replacement in copper and press-fit",
+      "Fixture replacement and tenant improvement rough-in",
+      "Drainage, venting and sanitary work"
+    ],
+    "equipment": "Material and fixture selection follows the specification. Where there is none, we propose what we would install in our own building and tell you why.",
+    "steps": [
+      { "title": "Site review", "copy": "What is installed now, where the isolation points are, and which parts of the building each shutdown affects." },
+      { "title": "Proposal", "copy": "Scope and sequence, with the shutdown windows and notice periods stated up front." },
+      { "title": "Notices and coordination", "copy": "We work with the building manager on resident or tenant notices, access and temporary provisions." },
+      { "title": "Execution", "copy": "Work done in the agreed windows, with the system back in service at the end of each one wherever possible." },
+      { "title": "Turnover", "copy": "Testing records, as-builts and the documentation the building team needs for its own records." }
+    ],
+    "relatedProjects": ["haro", "icbc", "crosstown"]
+  },
+
+  "maintenance": {
+    "h1": "Preventive maintenance programs for schools, strata and commercial buildings in Metro Vancouver",
+    "promise": "A scheduled visit, a written report and a recommendation list you can budget against — instead of a call-out at 2 am.",
+    "subhead": "Monthly, quarterly and annual programs with equipment checks, DDC trend reviews and reporting.",
+    "serviceType": "Mechanical preventive maintenance program",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760069670/Allied/maintance_grwetv.png",
+    "alt": "Technician checking a mechanical room equipment list on a tablet",
+    "audiences": [
+      { "title": "School districts", "copy": "Multi-site programs across a district's buildings, with one report format and one point of contact." },
+      { "title": "Strata councils", "copy": "Boiler, domestic hot water and ventilation equipment on a schedule the council can plan reserves against." },
+      { "title": "Property and facility managers", "copy": "Equipment lists kept current, so a failure is a known risk rather than a surprise." }
+    ],
+    "deliver": [
+      "Scheduled visits — monthly, quarterly or annual, set per equipment list",
+      "Boiler, pump, air handling and ventilation equipment checks",
+      "DDC trend review, alarm history and setpoint verification",
+      "Water treatment checks and filter programs",
+      "A written report after each visit, with recommendations and priorities",
+      "Service history kept against each piece of equipment"
+    ],
+    "equipment": "The equipment list is agreed at the start and kept current as things are replaced, so the report always matches the building.",
+    "steps": [
+      { "title": "Equipment survey", "copy": "We walk the building and build the list: make, model, capacity, age and condition." },
+      { "title": "Program proposal", "copy": "Visit frequency and scope per equipment type, priced annually so it fits a budget cycle." },
+      { "title": "First visit", "copy": "A baseline condition report — this is usually where deferred items surface." },
+      { "title": "Ongoing visits", "copy": "Scheduled work, with a report and a recommendation list after each one." },
+      { "title": "Annual review", "copy": "What changed, what is coming due, and what should be in next year's capital plan." }
+    ],
+    "relatedProjects": ["glenayre", "hillcrest", "miller-park"]
+  },
+
+  "emergency": {
+    "h1": "24/7 emergency plumbing, heating and HVAC service across Metro Vancouver",
+    "promise": "No heat, a leak, a flood or a plant failure. One number, answered any hour.",
+    "subhead": "Call 604-731-1000. For a gas smell, leave the building first and call FortisBC on 1-800-663-9911.",
+    "serviceType": "24/7 emergency mechanical service",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/11_r4dgo3.png",
+    "alt": "Allied service van at night with a technician working by flashlight",
+    "audiences": [
+      { "title": "Schools", "copy": "A plant failure before a school day is a different problem from one on a Saturday. Tell us which it is." },
+      { "title": "Strata and apartment buildings", "copy": "No heat or no hot water across a building, and leaks that affect more than one suite." },
+      { "title": "Commercial buildings", "copy": "Plant failures, floods and anything that is about to stop the building being usable." }
+    ],
+    "deliver": [
+      "No heat and no hot water across a building",
+      "Leaks, burst pipes and flooding",
+      "Boiler plant and pump failures",
+      "Rooftop and air handling unit failures",
+      "Drain blockages affecting occupied space",
+      "Temporary provisions while a permanent repair is arranged"
+    ],
+    "equipment": "Tell the dispatcher the building address, what has failed and who is on site. That is usually enough to send the right person with the right parts.",
+    "steps": [
+      { "title": "Call, do not email", "copy": "604-731-1000 is answered around the clock. A form sits in an inbox until someone opens it." },
+      { "title": "Make it safe", "copy": "If you can reach the isolation valve or the main shut-off safely, close it. For a gas smell, leave the building and call FortisBC." },
+      { "title": "We attend", "copy": "Timing depends on your location, the failure and who is available. The dispatcher will tell you what to expect." },
+      { "title": "Stabilise", "copy": "Get the building usable — a temporary provision now, with the permanent repair scheduled properly." },
+      { "title": "Follow up", "copy": "A written note of what failed and what we recommend, so it can go into the maintenance plan." }
+    ],
+    "relatedProjects": ["haro", "icbc"]
+  },
+
+  "residential-plumbing": {
+    "h1": "Residential plumbing, heating and hot water across Metro Vancouver",
+    "promise": "Repairs, replacements and repipes, done tidily and explained in plain language.",
+    "subhead": "Repairs, fixture replacements, rough-ins, repipes, and tank and tankless water heaters.",
+    "serviceType": "Residential plumbing and heating",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068156/Allied/14_urnogx.png",
+    "alt": "Plumber fitting a fixture in a residential bathroom",
+    "audiences": [
+      { "title": "Homeowners", "copy": "Repairs, fixture replacements and water heaters, with the work and the price agreed before it starts." },
+      { "title": "Apartment residents", "copy": "In-suite work, coordinated with your building manager where a shut-off affects neighbours." },
+      { "title": "Renovations", "copy": "Rough-in and finish plumbing for bathroom and kitchen work, scheduled around the other trades." }
+    ],
+    "deliver": [
+      "Repairs to supply, drainage and venting",
+      "Fixture replacement and installation",
+      "Rough-in for renovations and additions",
+      "Repipes in PEX and copper",
+      "Tank and tankless water heater replacement",
+      "Gas fitting for appliances and heating equipment"
+    ],
+    "equipment": "Tankless and tank water heaters from Rinnai and others. We will tell you honestly when a repair is the better call than a replacement.",
+    "steps": [
+      { "title": "Tell us what is happening", "copy": "Where it is, what it does, and how long it has done it. Photos help more than you would think." },
+      { "title": "Attend and diagnose", "copy": "We confirm the cause before quoting a fix, so you are not paying for guesswork." },
+      { "title": "Agree the work", "copy": "A price for the work itself, and a clear answer on whether repair or replacement makes more sense." },
+      { "title": "Do the work", "copy": "Isolation, the work, testing, and the site left clean." },
+      { "title": "Hand over", "copy": "How to operate anything new, and what to watch for." }
+    ],
+    "relatedProjects": ["haro"]
+  }
+}

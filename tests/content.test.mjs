@@ -9,7 +9,13 @@ test('all documented case studies have a unique route and matching search title'
   assert.equal(new Set(projects.map(project=>project.id)).size, 14);
   for (const project of projects) {
     assert.ok(project.scope.length >= 3);
-    assert.ok(seo['/projects/'+project.id].title.startsWith(project.title));
+    // Audit A-04/A-06: the search title no longer mirrors the H1 verbatim —
+    // it has to fit 60 characters — but it must still name the building.
+    const searchTitle = seo['/projects/' + project.id].title;
+    assert.ok(searchTitle, project.id);
+    assert.ok(searchTitle.length <= 60, `${project.id} title is ${searchTitle.length} chars`);
+    const building = project.title.split(/[\u2014,-]| --/)[0].trim().split(' ').slice(0, 2).join(' ');
+    assert.ok(searchTitle.includes(building), `${project.id} title should name ${building}`);
     assert.ok(project.cover.startsWith('https://res.cloudinary.com/'));
     assert.ok(project.overview && project.approach && project.outcome);
   }

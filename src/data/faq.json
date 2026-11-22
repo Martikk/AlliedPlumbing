@@ -1,0 +1,76 @@
+{
+  "_comment": "Audit I-03 — FAQ content, rendered on service pages and marked up as FAQPage JSON-LD (A-05). Every answer below is grounded in what the project pages already document (phased work in occupied schools, shop drawings, as-builts, O&M documentation, commissioning, DDC integration with Delta/Reliable/Trane, seismic remediation). Entries carrying \"confirm\": true make a claim Allied has not yet verified in writing — they are NOT rendered until the flag is removed. See docs/audit/open-items.md (Q3, Q6).",
+
+  "general": [
+    {
+      "q": "Can you replace a boiler plant while the school is occupied?",
+      "a": "Yes — most of our school work is done in occupied buildings. At Ridgeview Elementary we converted 12 classrooms to unit ventilators and installed a six-boiler plant around the school's operating requirements; at Garibaldi Highlands we replaced over 20 furnaces and built a new mechanical room. Phasing, after-hours work and shutdown windows are agreed before anything starts."
+    },
+    {
+      "q": "Do you provide O&M manuals and as-builts?",
+      "a": "Yes. Shop drawings, as-built records and operation and maintenance documentation are part of our project scope, along with testing, balancing and commissioning coordination, so the building team can run what we installed."
+    },
+    {
+      "q": "Can you integrate with our existing DDC?",
+      "a": "Yes. We regularly work with Delta, Reliable and Trane controls for integration, trending, alarms and commissioning. At École Glenayre the DDC upgrade ran alongside the boiler plant work."
+    },
+    {
+      "q": "Do you work to our engineer's specification?",
+      "a": "Yes. We install to the consultant's drawings and specification, and coordinate submittals and engineering review through them. Tell us who the engineer is when you send the enquiry."
+    },
+    {
+      "q": "What does a preventive maintenance contract include?",
+      "a": "Monthly, quarterly or annual visits with equipment checks, DDC reviews, trend analysis and a written report with recommendations. The visit frequency and the equipment list are set per building."
+    },
+    {
+      "q": "Do you service schools and strata?",
+      "a": "Both. Our documented work covers school districts 40, 43, 45 and 48, Capilano University, ICBC and strata and apartment buildings such as 1755 Haro Street for Starlight Investments."
+    },
+    {
+      "q": "How quickly can you respond to an emergency?",
+      "a": "Our line is answered 24/7 on 604-731-1000. Response timing depends on your location, the issue and technician availability — call rather than wait for a form reply.",
+      "confirm": false
+    },
+    {
+      "q": "Do you handle permits and Technical Safety BC inspections?",
+      "a": "",
+      "confirm": true,
+      "_note": "Q3 — confirm which permits Allied pulls directly and which licences it holds before publishing an answer."
+    }
+  ],
+
+  "byService": {
+    "hvac": [
+      "Can you integrate with our existing DDC?",
+      "Can you replace a boiler plant while the school is occupied?",
+      "Do you work to our engineer's specification?",
+      "Do you provide O&M manuals and as-builts?"
+    ],
+    "boilers": [
+      "Can you replace a boiler plant while the school is occupied?",
+      "Can you integrate with our existing DDC?",
+      "Do you provide O&M manuals and as-builts?",
+      "Do you work to our engineer's specification?"
+    ],
+    "commercial-plumbing": [
+      "Do you service schools and strata?",
+      "Can you replace a boiler plant while the school is occupied?",
+      "Do you provide O&M manuals and as-builts?"
+    ],
+    "maintenance": [
+      "What does a preventive maintenance contract include?",
+      "Can you integrate with our existing DDC?",
+      "Do you service schools and strata?",
+      "How quickly can you respond to an emergency?"
+    ],
+    "emergency": [
+      "How quickly can you respond to an emergency?",
+      "Do you service schools and strata?",
+      "What does a preventive maintenance contract include?"
+    ],
+    "residential-plumbing": [
+      "How quickly can you respond to an emergency?",
+      "Do you service schools and strata?"
+    ]
+  }
+}

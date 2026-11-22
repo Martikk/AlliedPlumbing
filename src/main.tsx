@@ -4,6 +4,10 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 import App from './App';
 import './index.css';
 
+// G-02 — reveal animations hide their target only while JS is running, so the
+// prerendered HTML and no-JS visitors always see the content.
+document.documentElement.classList.add('js');
+
 const el = document.getElementById('root');
 if (!el) {
   throw new Error('Root element #root not found');

@@ -12,7 +12,12 @@ test('GA4 waits for consent, strips URL parameters and stops after withdrawal',a
  const ga=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
  ga.trackAnalyticsPage('/careers/');assert.equal(appended.length,0);
  ga.setAnalyticsConsent('denied');assert.equal(appended.length,0);
- ga.setAnalyticsConsent('granted');assert.equal(appended.length,1);
+ ga.setAnalyticsConsent('granted');
+ // Audit B-06: gtag is fetched only after consent AND only once the browser
+ // is idle, so no third party competes with the LCP image.
+ assert.equal(appended.length,0,'gtag must not load synchronously on grant');
+ await new Promise(resolve=>setTimeout(resolve,1400));
+ assert.equal(appended.length,1,'gtag loads once the browser goes idle');
  ga.trackAnalyticsPage('/careers/');ga.trackAnalyticsPage('/careers/');
  ga.sendAnalyticsEvent('generate_lead',{form_name:'careers',email:'private@example.test',name:'Private Person',message:'private text',resume_url:'https://example.test/private.pdf'});
  const calls=window.dataLayer.map(args=>Array.from(args));

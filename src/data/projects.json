@@ -23,7 +23,8 @@
     "outcome": "Final completion has not been confirmed in the supplied project summary.",
     "status": "Completion to be confirmed",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png",
-    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow."
+    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
+    "featured": false
   },
   {
     "id": "crosstown",
@@ -49,7 +50,8 @@
     "outcome": "Final completion has not been confirmed in the supplied project summary.",
     "status": "Completion to be confirmed",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071289/Allied/123_clbeb3.png",
-    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow."
+    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
+    "featured": false
   },
   {
     "id": "glenayre",
@@ -75,7 +77,8 @@
     "outcome": "Final completion has not been confirmed in the supplied project summary.",
     "status": "Completion to be confirmed",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071233/Allied/2025-10-09_21.40.08_wxp8bk.jpg",
-    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow."
+    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
+    "featured": false
   },
   {
     "id": "collingwood",
@@ -101,7 +104,8 @@
     "outcome": "Final completion has not been confirmed in the supplied project summary.",
     "status": "Completion to be confirmed",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760072887/Allied/Allied_1_n00b0m.png",
-    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow."
+    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
+    "featured": false
   },
   {
     "id": "capilano-birch",
@@ -127,11 +131,12 @@
     "outcome": "Final completion has not been confirmed in the supplied project summary.",
     "status": "Completion to be confirmed",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068155/Allied/10_kubptf.png",
-    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow."
+    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
+    "featured": false
   },
   {
     "id": "herbert-spencer-ashp",
-    "title": "Herbert Spencer Elementary ASHP Upgrade — Phase 1",
+    "title": "Herbert Spencer Elementary — air-source heat pump upgrade, Phase 1",
     "category": "Institutional",
     "location": "New Westminster, BC",
     "client": "School District No. 40",
@@ -153,7 +158,9 @@
     "outcome": "Final completion has not been confirmed in the supplied project summary.",
     "status": "Completion to be confirmed",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068156/Allied/14_urnogx.png",
-    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow."
+    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
+    "featured": false,
+    "relatedProject": "herbert-spencer"
   },
   {
     "id": "hillcrest",
@@ -179,7 +186,8 @@
     "outcome": "Final completion has not been confirmed in the supplied project summary.",
     "status": "Completion to be confirmed",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071564/Allied/2025-10-09_21.39.57_tne1oo.jpg",
-    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow."
+    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
+    "featured": false
   },
   {
     "id": "garibaldi",
@@ -205,7 +213,9 @@
       "Confirm the existing equipment, drawings and connection points before defining the replacement scope.",
       "Agree access, work sequencing and any operational restrictions with the building team.",
       "Include supporting trades, testing, documentation and turnover requirements in the project plan."
-    ]
+    ],
+    "outcomeLine": "Over 20 furnaces replaced with unit ventilators, rooftop and make-up air equipment, plus a new mechanical room — School District No. 48, 2023.",
+    "featured": true
   },
   {
     "id": "ridgeview",
@@ -231,7 +241,9 @@
       "Confirm the existing equipment, drawings and connection points before defining the replacement scope.",
       "Agree access, work sequencing and any operational restrictions with the building team.",
       "Include supporting trades, testing, documentation and turnover requirements in the project plan."
-    ]
+    ],
+    "outcomeLine": "12 classrooms converted to unit ventilators and a six-boiler IBC plant — School District No. 45, 2022.",
+    "featured": true
   },
   {
     "id": "leigh",
@@ -256,11 +268,13 @@
       "Confirm the existing equipment, drawings and connection points before defining the replacement scope.",
       "Agree access, work sequencing and any operational restrictions with the building team.",
       "Include supporting trades, testing, documentation and turnover requirements in the project plan."
-    ]
+    ],
+    "outcomeLine": "12 unit ventilators, a rooftop air handling unit and seismic remediation, delivered in an occupied school — School District No. 43.",
+    "featured": false
   },
   {
     "id": "herbert-spencer",
-    "title": "Herbert Spencer Elementary School",
+    "title": "Herbert Spencer Elementary — condensing boiler plant and DDC upgrade",
     "category": "Institutional",
     "location": "New Westminster, BC",
     "client": "School District No. 40",
@@ -283,7 +297,10 @@
       "Confirm the existing equipment, drawings and connection points before defining the replacement scope.",
       "Agree access, work sequencing and any operational restrictions with the building team.",
       "Include supporting trades, testing, documentation and turnover requirements in the project plan."
-    ]
+    ],
+    "outcomeLine": "Five condensing boilers, nine hydronic pumps and a DDC upgrade, with cleaning, treatment and balancing verified — School District No. 40, 2021.",
+    "featured": false,
+    "relatedProject": "herbert-spencer-ashp"
   },
   {
     "id": "howe-sound",
@@ -309,7 +326,8 @@
       "Confirm the existing equipment, drawings and connection points before defining the replacement scope.",
       "Agree access, work sequencing and any operational restrictions with the building team.",
       "Include supporting trades, testing, documentation and turnover requirements in the project plan."
-    ]
+    ],
+    "featured": false
   },
   {
     "id": "miller-park",
@@ -334,7 +352,8 @@
       "Confirm the existing equipment, drawings and connection points before defining the replacement scope.",
       "Agree access, work sequencing and any operational restrictions with the building team.",
       "Include supporting trades, testing, documentation and turnover requirements in the project plan."
-    ]
+    ],
+    "featured": false
   },
   {
     "id": "haro",
@@ -359,6 +378,8 @@
       "Confirm the existing equipment, drawings and connection points before defining the replacement scope.",
       "Agree access, work sequencing and any operational restrictions with the building team.",
       "Include supporting trades, testing, documentation and turnover requirements in the project plan."
-    ]
+    ],
+    "outcomeLine": "A 2.5 million BTU Viessmann condensing plant serving heating and domestic hot water in an occupied apartment building — Starlight Investments.",
+    "featured": true
   }
 ]

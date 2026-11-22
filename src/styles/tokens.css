@@ -1,0 +1,62 @@
+/* Design tokens — audit C-01 (colour, type, space) and G-01 (motion).
+   One source of truth: Tailwind reads these in tailwind.config.js, and raw CSS
+   reads them directly. Components must not contain hex colours or arbitrary
+   pixel values; add a token here instead.
+
+   OPEN QUESTION Q1: --brand / --navy are taken from the colours already in use
+   on the live site (theme-color #d61e1e, emergency strip #df241d). Confirm the
+   exact values against the logo source file and update only this block. */
+
+:root {
+  /* ---- colour -------------------------------------------------------- */
+  --brand: #d61e1e; /* Q1: confirm from logo source */
+  --brand-hover: #b21919; /* brand darkened ~8%; 6.8:1 on white */
+  --brand-ink: #9a1414; /* brand red that passes AA as text on white */
+
+  --ink: #0f172a; /* every heading */
+  --body: #334155; /* body copy, 10.4:1 on white */
+  --muted: #4b5563; /* captions, step numbers, eyebrows — 7.5:1 */
+  --line: #e2e8f0;
+  --surface: #ffffff;
+  --surface-alt: #f8fafc; /* replaces the old light-blue section background */
+  --surface-ink: #0f172a; /* dark sections */
+  --focus: #1d4ed8;
+
+  /* ---- type ---------------------------------------------------------- */
+  --fs-h1: clamp(2.25rem, 5vw, 4.25rem);
+  --fs-h2: clamp(1.75rem, 3.2vw, 2.75rem);
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+  --fs-eyebrow: 0.75rem;
+  --lh-body: 1.6;
+
+  /* ---- space and shape ----------------------------------------------- */
+  --section-y: 3.5rem;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.06);
+  --shadow-md: 0 6px 20px rgb(15 23 42 / 0.1);
+
+  /* ---- header -------------------------------------------------------- */
+  --header-h: 64px;
+  --header-h-tall: 80px;
+
+  /* ---- motion (G-01) ------------------------------------------------- */
+  --dur-fast: 150ms; /* hover, press */
+  --dur-base: 250ms; /* menus, tabs, dropdowns */
+  --dur-slow: 450ms; /* section reveals, image fades */
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-y: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section-y: 7rem;
+  }
+}

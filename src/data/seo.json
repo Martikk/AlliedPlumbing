@@ -1,202 +1,207 @@
 {
   "/": {
-    "title": "Plumbing, Heating & HVAC in British Columbia — Allied Plumbing",
-    "description": "Plumbing, heating and HVAC installation, repairs and preventive maintenance for residential and commercial properties across British Columbia."
+    "title": "Mechanical Contractor, Metro Vancouver | Allied Plumbing",
+    "description": "Plumbing, heating, boiler plants and HVAC for schools, strata and commercial buildings across Metro Vancouver. 24/7: 604-731-1000."
   },
   "/about": {
-    "title": "About Allied Plumbing — British Columbia",
-    "description": "Meet Allied Plumbing, Heating & Air Conditioning and learn about our approach to mechanical installation, service and maintenance."
+    "title": "About Allied Plumbing, Heating & Air Conditioning",
+    "description": "Burnaby-based mechanical contractor working in occupied schools, strata and commercial buildings across BC since the late 1990s."
   },
   "/services": {
-    "title": "Plumbing, Heating & HVAC Services — Allied Plumbing",
-    "description": "Explore residential and commercial plumbing, HVAC, boilers, preventive maintenance and emergency services from Allied Plumbing."
+    "title": "Commercial Mechanical Services, Metro Vancouver | Allied",
+    "description": "Six service lines: HVAC, boiler plants, commercial plumbing, preventive maintenance, 24/7 emergency and residential. Call 604-731-1000."
   },
   "/services/maintenance": {
-    "title": "Preventive Maintenance Programs — Allied Plumbing",
-    "description": "Planned plumbing, heating and HVAC maintenance with inspections, equipment checks and reporting for your building."
+    "title": "Preventive Maintenance Programs, Vancouver | Allied",
+    "description": "Monthly, quarterly and annual mechanical maintenance with DDC trend reviews and a written report after every visit. Call 604-731-1000."
   },
   "/services/residential-plumbing": {
-    "title": "Residential Plumbing Services — Allied Plumbing",
-    "description": "Plumbing repairs, fixture replacement, repiping and water heater services for residential properties."
+    "title": "Residential Plumbing, Metro Vancouver | Allied Plumbing",
+    "description": "Repairs, fixture replacement, repipes and tank or tankless water heaters for homes across Metro Vancouver. Call Allied on 604-731-1000."
   },
   "/services/commercial-plumbing": {
-    "title": "Commercial Plumbing Services — Allied Plumbing",
-    "description": "Plumbing service for commercial properties, strata and schools, including hot water systems, pumps and backflow equipment."
+    "title": "Commercial Plumbing Contractor, Vancouver | Allied",
+    "description": "Backflow prevention, PRVs, booster pumps, DHW plants and riser work for schools, strata and commercial buildings. Call 604-731-1000."
   },
   "/services/hvac": {
-    "title": "Air Conditioning & HVAC Services — Allied Plumbing",
-    "description": "HVAC installation, maintenance and repairs for heating, cooling and ventilation systems in British Columbia."
+    "title": "Commercial HVAC Contractor, Metro Vancouver | Allied",
+    "description": "RTU, MUA, AHU, unit ventilators, heat pumps and VRF with DDC integration. 12 classroom ventilators delivered at Leigh Elementary, SD 43."
   },
   "/services/boilers": {
-    "title": "Heating & Boiler Services — Allied Plumbing",
-    "description": "Boiler plant installation, repairs and maintenance, including pumps, controls and hot water equipment."
+    "title": "Boiler Plant Replacement, Metro Vancouver | Allied",
+    "description": "Condensing boiler plants, pumps, heat exchangers and controls. Six IBC boilers installed at Ridgeview Elementary for SD 45 in 2022."
   },
   "/services/emergency": {
-    "title": "Emergency Plumbing & HVAC — Allied Plumbing",
-    "description": "Call Allied Plumbing for urgent plumbing, heating and HVAC service. For urgent assistance, call 604-731-1000."
+    "title": "24/7 Emergency Plumbing & HVAC, Vancouver | Allied",
+    "description": "No heat, leaks, floods and plant failures answered around the clock across Metro Vancouver. Call Allied on 604-731-1000, any hour."
   },
   "/projects": {
-    "title": "Mechanical Projects — Allied Plumbing",
-    "description": "Explore Allied Plumbing mechanical projects, including plumbing, heating and HVAC installations and upgrades."
+    "title": "Mechanical Projects, Metro Vancouver | Allied Plumbing",
+    "description": "School ventilation upgrades, boiler plant replacements and residential heating work, with the scope and constraints of each job stated."
   },
   "/projects/garibaldi": {
     "title": "Garibaldi Highlands Elementary School — Allied Plumbing",
-    "description": "Boiler plant and ventilation upgrades across an operating school."
+    "description": "Boiler plant and ventilation upgrades across an operating school. School District No. 48, Squamish, BC. Call Allied on 604-731-1000."
   },
   "/projects/ridgeview": {
     "title": "Ridgeview Elementary School — Allied Plumbing",
-    "description": "Classroom ventilation conversion and a six-boiler heating plant upgrade."
+    "description": "Classroom ventilation conversion and a six-boiler heating plant upgrade. School District No. 45, West Vancouver, BC. Call Allied on 604-731-1000."
   },
   "/projects/leigh": {
     "title": "Leigh Elementary School — Allied Plumbing",
-    "description": "Unit ventilator replacement, rooftop air handling and hydronic upgrades."
+    "description": "Unit ventilator replacement, rooftop air handling and hydronic upgrades. School District No. 43, School District No. 43, BC."
   },
   "/projects/haro": {
     "title": "1755 Haro Street — Allied Plumbing",
-    "description": "A Viessmann condensing plant serving an apartment building’s heating and domestic hot water."
+    "description": "A Viessmann condensing plant serving an apartment building’s heating and domestic hot water. Starlight Investments, Vancouver, BC."
   },
   "/team": {
-    "title": "Our Team — Allied Plumbing",
-    "description": "Meet the people behind Allied Plumbing, Heating & Air Conditioning."
+    "title": "Our Team — Allied Plumbing, Heating & Air Conditioning",
+    "description": "The project managers, estimators and service leads who run Allied's mechanical work across Metro Vancouver and the Sea-to-Sky corridor."
   },
   "/clients": {
-    "title": "Project Clients — Allied Plumbing",
-    "description": "Explore school district and residential building projects delivered by Allied Plumbing."
+    "title": "Our Clients — Allied Plumbing, Metro Vancouver",
+    "description": "School districts 40, 43, 45 and 48, Capilano University, ICBC and Starlight Investments — the organisations whose buildings we work in."
   },
   "/careers": {
     "title": "Careers — Allied Plumbing",
-    "description": "Explore plumbing, heating and HVAC career opportunities with Allied Plumbing in British Columbia."
+    "description": "Explore plumbing, heating and HVAC career opportunities with Allied Plumbing in British Columbia. Call Allied on 604-731-1000."
   },
   "/rfp": {
-    "title": "Mechanical Project & RFP Enquiries — Allied Plumbing",
-    "description": "Contact Allied Plumbing about mechanical project requirements, coordination and tender enquiries."
+    "title": "Tenders & RFPs — Allied Plumbing, Metro Vancouver",
+    "description": "Send mechanical tender documents, drawings and closing dates to Allied's estimating team. Institutional references and 25+ years in BC."
   },
   "/contact": {
-    "title": "Contact Allied Plumbing — British Columbia",
-    "description": "Contact Allied Plumbing for plumbing, heating and HVAC enquiries. Call 604-731-1000 or send a message."
+    "title": "Contact Allied Plumbing — Burnaby, BC",
+    "description": "Call 604-731-1000 any hour, email us, or send an enquiry. Our shop is at 4085 2nd Avenue, Burnaby. We reply within one business day."
   },
   "/quote": {
-    "title": "Request a Quote — Allied Plumbing",
-    "description": "Request a quote for plumbing, heating, HVAC or maintenance work. Tell us about your property and service needs."
+    "title": "Get a Quote — Allied Plumbing, Heating & HVAC",
+    "description": "Send your building, equipment and access windows and we reply within one business day. For urgent work call 604-731-1000, 24 hours."
   },
   "/privacy": {
     "title": "Privacy Notice — Allied Plumbing",
-    "description": "How contact and quote forms on this website collect and process the information you choose to submit."
+    "description": "How contact and quote forms on this website collect and process the information you choose to submit. Call Allied on 604-731-1000."
   },
   "/projects/herbert-spencer": {
-    "title": "Herbert Spencer Elementary School — Allied Plumbing",
-    "description": "Condensing boiler installation, hydronic pumping and digital controls."
+    "title": "Herbert Spencer Boiler Plant & DDC Upgrade | Allied",
+    "description": "Condensing boiler installation, hydronic pumping and digital controls. School District No. 40, New Westminster, BC. Call Allied on 604-731-1000."
   },
   "/projects/howe-sound": {
     "title": "Howe Sound Secondary School — Allied Plumbing",
-    "description": "Boiler plant replacement with heat exchange and hydronic equipment."
+    "description": "Boiler plant replacement with heat exchange and hydronic equipment. School District No. 48, Squamish, BC. Call Allied on 604-731-1000."
   },
   "/projects/miller-park": {
     "title": "Miller Park Community School — Allied Plumbing",
-    "description": "Classroom ventilation and a four-boiler heating plant upgrade."
+    "description": "Classroom ventilation and a four-boiler heating plant upgrade. School District No. 43, School District No. 43, BC. Call Allied on 604-731-1000."
   },
   "/blog": {
     "title": "Plumbing, Heating & HVAC Articles — Allied Plumbing",
-    "description": "Project insights on school HVAC upgrades, boiler plants and apartment heating systems from Allied Plumbing."
+    "description": "Project insights on school HVAC upgrades, boiler plants and apartment heating systems from Allied Plumbing. Call Allied on 604-731-1000."
   },
   "/blog/planning-school-hvac-upgrades": {
-    "title": "Planning a School HVAC Upgrade Around the School Day — Allied Plumbing",
-    "description": "How scope, trade coordination and afternoon or weekend work came together at Leigh Elementary."
+    "title": "Planning a School HVAC Upgrade Around the School Day",
+    "description": "How scope, trade coordination and afternoon or weekend work came together at Leigh Elementary. A school projects planning note from Allied Plumbing."
   },
   "/blog/boiler-plant-upgrade-ridgeview": {
-    "title": "What Goes Into a School Boiler Plant Upgrade? — Allied Plumbing",
-    "description": "A closer look at Ridgeview Elementary’s six IBC boilers, classroom conversion and hydronic piping."
+    "title": "What Goes Into a School Boiler Plant Upgrade? | Allied",
+    "description": "A closer look at Ridgeview Elementary’s six IBC boilers, classroom conversion and hydronic piping. A heating & boilers planning note from Allied Plumbing."
   },
   "/blog/haro-heating-hot-water-upgrade": {
-    "title": "Upgrading Heating and Hot Water in an Existing Apartment Building — Allied Plumbing",
-    "description": "Inside the scope of the Viessmann CA3 condensing plant project at 1755 Haro Street."
+    "title": "Upgrading Heating and Hot Water in an Existing Apartment",
+    "description": "Inside the scope of the Viessmann CA3 condensing plant project at 1755 Haro Street. A residential buildings planning note from Allied Plumbing."
   },
   "/projects/icbc": {
     "title": "ICBC Boiler Plant Modernization — Allied Plumbing",
-    "description": "Modernizing an existing heating plant with Viessmann condensing boilers and building automation integration."
+    "description": "Modernizing an existing heating plant with Viessmann condensing boilers and building automation integration. ICBC / Warrington PCI, Vancouver, BC."
   },
   "/projects/crosstown": {
-    "title": "Crosstown Elementary Mechanical Upgrade — Phase 1 — Allied Plumbing",
-    "description": "Mechanical plant and hydronic upgrades coordinated with building, electrical and fire protection work."
+    "title": "Crosstown Elementary Mechanical Upgrade — Phase 1 | Allied",
+    "description": "Mechanical plant and hydronic upgrades coordinated with building, electrical and fire protection work. Vancouver School District, Vancouver, BC."
   },
   "/projects/glenayre": {
-    "title": "École Glenayre Elementary DDC & Boiler Plant Upgrade — Allied Plumbing",
-    "description": "Boiler plant, hydronic and digital controls modernization in an existing elementary school."
+    "title": "École Glenayre Elementary DDC & Boiler Plant Upgrade",
+    "description": "Boiler plant, hydronic and digital controls modernization in an existing elementary school. School District No. 43, British Columbia."
   },
   "/projects/collingwood": {
     "title": "Collingwood School Parent Wing AC Upgrade — Allied Plumbing",
-    "description": "Chiller and hydronic cooling upgrades integrated with existing school systems."
+    "description": "Chiller and hydronic cooling upgrades integrated with existing school systems. Collingwood School, West Vancouver, BC. Call Allied on 604-731-1000."
   },
   "/projects/capilano-birch": {
-    "title": "Capilano University Birch Building Chiller Replacement — Allied Plumbing",
-    "description": "Chiller replacement with electrical shutdown planning, startup and commissioning coordination."
+    "title": "Capilano University Birch Building Chiller Replacement",
+    "description": "Chiller replacement with electrical shutdown planning, startup and commissioning coordination. Capilano University, North Vancouver, BC."
   },
   "/projects/herbert-spencer-ashp": {
-    "title": "Herbert Spencer Elementary ASHP Upgrade — Phase 1 — Allied Plumbing",
-    "description": "First-phase air-source heat pump upgrade with equipment procurement and engineering submissions."
+    "title": "Herbert Spencer Heat Pump Upgrade, Phase 1 | Allied",
+    "description": "First-phase air-source heat pump upgrade with equipment procurement and engineering submissions. School District No. 40, New Westminster, BC."
   },
   "/projects/hillcrest": {
     "title": "Hillcrest Middle HVAC Upgrade — Phase 2 — Allied Plumbing",
-    "description": "HVAC upgrade involving Trane rooftop equipment and technical closeout coordination."
+    "description": "HVAC upgrade involving Trane rooftop equipment and technical closeout coordination. School District No. 43, British Columbia."
   },
   "/blog/integrating-commercial-boiler-controls": {
-    "title": "Connecting a New Boiler Plant to an Existing Building — Allied Plumbing",
-    "description": "What the ICBC project scope shows about hydronic interfaces, controls responsibilities and occupied-building planning."
+    "title": "Connecting a New Boiler Plant to an Existing Building",
+    "description": "What the ICBC project scope shows about hydronic interfaces, controls responsibilities and occupied-building planning. Planning notes from Allied Plumbing."
   },
   "/blog/coordinating-school-mechanical-room-upgrades": {
-    "title": "Why Mechanical Room Readiness Matters in a School Upgrade — Allied Plumbing",
-    "description": "Lessons in planning equipment, room construction and supporting trades from the Crosstown Phase 1 scope."
+    "title": "Why Mechanical Room Readiness Matters in a School Upgrade",
+    "description": "Lessons in planning equipment, room construction and supporting trades from the Crosstown Phase 1 scope. Planning notes from Allied Plumbing."
   },
   "/blog/integrating-school-hydronic-cooling": {
-    "title": "Planning a Chiller Upgrade in an Existing School — Allied Plumbing",
-    "description": "How the Collingwood Parent Wing scope connects chilled water, cooling coils, controls and school access."
+    "title": "Planning a Chiller Upgrade in an Existing School | Allied",
+    "description": "How the Collingwood Parent Wing scope connects chilled water, cooling coils, controls and school access. Planning notes from Allied Plumbing."
   },
   "/blog/mechanical-upgrade-request-checklist": {
-    "title": "What to Include in a Mechanical Upgrade Request — Allied Plumbing",
+    "title": "What to Include in a Mechanical Upgrade Request | Allied",
     "description": "A practical checklist for describing your building, equipment, access and timing before requesting a mechanical upgrade."
   },
   "/blog/planning-heating-shutdown-occupied-building": {
-    "title": "Planning a Heating Shutdown in an Occupied Building — Allied Plumbing",
+    "title": "Planning a Heating Shutdown in an Occupied Building | Allied",
     "description": "Questions about access, responsibilities, occupant communication and handover to raise before agreeing a shutdown window."
   },
   "/blog/preventive-maintenance-records-building-teams": {
-    "title": "Preventive Maintenance Records That Help Building Teams — Allied Plumbing",
-    "description": "How an equipment register, clear service notes and an action log can support the next maintenance conversation."
+    "title": "Preventive Maintenance Records That Help Building Teams",
+    "description": "How an equipment register, clear service notes and an action log can support the next maintenance conversation. Planning notes from Allied Plumbing."
   },
   "/blog/project-turnover-om-package": {
-    "title": "Project Turnover: What Belongs in an O&M Package? — Allied Plumbing",
+    "title": "Project Turnover: What Belongs in an O&M Package? | Allied",
     "description": "A building-owner guide to discussing manuals, records, training and outstanding items before mechanical project handover."
   },
   "/blog/boiler-replacement-or-repair": {
-    "title": "Boiler Replacement or Repair: Information Your Contractor Needs — Allied Plumbing",
-    "description": "Start with what building users have observed: areas that are not heating as expected, recurring interruptions, unusual sounds or changes in available hot water."
+    "title": "Boiler Replacement or Repair: Information Your Contractor",
+    "description": "Start with what building users have observed: areas that are not heating as expected, recurring interruptions, unusual sounds or changes in available hot."
   },
   "/blog/controls-boiler-plant-coordination": {
-    "title": "Coordinating Controls During a Boiler Plant Upgrade — Allied Plumbing",
+    "title": "Coordinating Controls During a Boiler Plant Upgrade | Allied",
     "description": "Identify who defines the operating requirements, supplies controls, installs connections and verifies the agreed sequence."
   },
   "/blog/hydronic-heating-domestic-hot-water": {
-    "title": "Hydronic Heating and Domestic Hot Water: Two Different Building Needs — Allied Plumbing",
-    "description": "A request for better heating can mean warmer occupied rooms, more reliable domestic hot water, or both."
+    "title": "Hydronic Heating and Domestic Hot Water: Two Different",
+    "description": "A request for better heating can mean warmer occupied rooms, more reliable domestic hot water, or both. Planning notes from Allied Plumbing."
   },
   "/blog/mechanical-career-paths": {
-    "title": "From Apprentice to Site Lead: Mechanical Career Paths — Allied Plumbing",
-    "description": "Mechanical work includes hands-on installation and service, trade coordination, supervision and project management."
+    "title": "From Apprentice to Site Lead: Mechanical Career Paths",
+    "description": "Mechanical work includes hands-on installation and service, trade coordination, supervision and project management. Planning notes from Allied Plumbing."
   },
   "/blog/preparing-chiller-replacement": {
-    "title": "Preparing a Building for a Chiller Replacement — Allied Plumbing",
+    "title": "Preparing a Building for a Chiller Replacement | Allied",
     "description": "A replacement enquiry should describe the equipment location, available access information and the surrounding occupied areas."
   },
   "/blog/school-heat-pump-upgrade-discussion": {
-    "title": "What to Discuss Before a School Heat Pump Upgrade — Allied Plumbing",
-    "description": "Define the rooms and building needs under consideration before selecting equipment."
+    "title": "What to Discuss Before a School Heat Pump Upgrade | Allied",
+    "description": "Define the rooms and building needs under consideration before selecting equipment. A school projects planning note from Allied Plumbing."
   },
   "/blog/testing-balancing-programme": {
-    "title": "Why Testing and Balancing Belongs in the Project Programme — Allied Plumbing",
-    "description": "Testing and balancing requirements should be established for the actual scope by the responsible project team."
+    "title": "Why Testing and Balancing Belongs in the Project Programme",
+    "description": "Testing and balancing requirements should be established for the actual scope by the responsible project team. Planning notes from Allied Plumbing."
   },
   "/blog/working-in-schools-coordination": {
-    "title": "Working in Schools: Access, Sequencing and Communication — Allied Plumbing",
-    "description": "Identify the people who can confirm access, scheduling constraints and changes to school use."
+    "title": "Working in Schools: Access, Sequencing and Communication",
+    "description": "Identify the people who can confirm access, scheduling constraints and changes to school use. A school projects planning note from Allied Plumbing."
+  },
+  "/quote/thanks": {
+    "title": "Enquiry received — Allied Plumbing",
+    "description": "Thank you — we have your enquiry and will reply within one business day. For urgent plumbing, heating or HVAC work call 604-731-1000.",
+    "noindex": true
   }
 }

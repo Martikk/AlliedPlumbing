@@ -18,6 +18,7 @@ const RFP = lazy(() => import('./pages/RFP'));
 const Careers = lazy(() => import('./pages/Careers'));
 const Contact = lazy(() => import('./pages/Contact'));
 const GetQuote = lazy(() => import('./pages/GetQuote'));
+const QuoteThanks = lazy(() => import('./pages/QuoteThanks'));
 const Team = lazy(() => import('./pages/Team'));
 const Clients = lazy(() => import('./pages/Clients'));
 
@@ -69,6 +70,8 @@ export function AppContent() {
           {/* Contact / Quote */}
           <Route path="/contact" element={<Contact />} />
           <Route path="/quote" element={<GetQuote />} />
+          {/* H-03 — thank-you page, noindex, also the GA4 conversion destination. */}
+          <Route path="/quote/thanks" element={<QuoteThanks />} />
 
           {/* ✅ Redirect aliases (SEO/UX) */}
           <Route path="/GetQuote" element={<Navigate to="/quote" replace />} />

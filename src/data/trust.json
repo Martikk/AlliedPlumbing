@@ -1,0 +1,53 @@
+{
+  "_comment": "Audit D-04 — the trust strip. Show ONLY what Allied can prove. Anything left empty renders nothing rather than a placeholder. Open questions Q2 (which clients may be named) and Q3 (which licences, safety program, insurance and bonding may be stated publicly) are answered by filling the arrays below — no component changes needed.",
+
+  "clients": {
+    "_q2": "Confirm written permission before adding a client here. Logos go in `logo` once supplied; until then the name alone is shown.",
+    "items": [
+      { "name": "School District No. 43 (Coquitlam)", "short": "SD 43", "logo": null },
+      { "name": "School District No. 45 (West Vancouver)", "short": "SD 45", "logo": null },
+      { "name": "Starlight Investments", "short": "Starlight", "logo": null }
+    ]
+  },
+
+  "experience": {
+    "sinceYears": 25,
+    "sinceYear": 2025,
+    "_note": "January 2025 RFPQ states 25+ years in business; no exact founding date is documented. The displayed figure is 25 + (current year - 2025)."
+  },
+
+  "credentials": {
+    "_q3": "Add only credentials Allied actually holds and can evidence: Technical Safety BC licence number, gas and refrigeration certifications, WorkSafeBC coverage, COR (if held), liability insurance limit, bonding capacity. Each entry needs `label` and may carry `detail`.",
+    "items": []
+  },
+
+  "partners": {
+    "_note": "Equipment brands Allied installs. Greyscale logos, alt text = brand name (A-07).",
+    "items": [
+      {
+        "name": "Rinnai",
+        "src": "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074745/Allied/Rinnai_Logo_Red_uqwftm.png",
+        "width": 360,
+        "height": 137
+      },
+      {
+        "name": "Daikin",
+        "src": "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760075323/Allied/download_y9tiqd.png",
+        "width": 360,
+        "height": 99
+      },
+      {
+        "name": "Viessmann",
+        "src": "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760075211/Allied/Viessmann-Logo-1_ipdbjs.png",
+        "width": 360,
+        "height": 95
+      },
+      {
+        "name": "IBC",
+        "src": "https://res.cloudinary.com/dzytbkc5l/image/upload/v1760074743/Allied/IBC-Logo-for-Gallery_hsklz0.webp",
+        "width": 360,
+        "height": 246
+      }
+    ]
+  }
+}

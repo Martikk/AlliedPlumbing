@@ -4,46 +4,57 @@
     <link rel="preconnect" href="https://res.cloudinary.com" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Allied Plumbing, Heating & Air Conditioning — 24/7 Service Across BC</title>
+    <title>Mechanical Contractor, Metro Vancouver | Allied Plumbing</title>
     <meta
       name="description"
-      content="Plumbing, heating, and HVAC experts for schools, strata, commercial, and residential across BC. Installation, repairs and preventive maintenance."
+      content="Plumbing, heating, boiler plants and HVAC for schools, strata and commercial buildings across Metro Vancouver. 24/7: 604-731-1000."
     />
     <meta name="theme-color" content="#d61e1e" />
 
-    <!-- ✅ CANONICAL -->
+    <!-- CANONICAL — rewritten per route by the prerender step. -->
     <link rel="canonical" href="https://www.alliedplumbing.ca/" />
 
-    <!-- ✅ FAVICONS -->
-    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dzytbkc5l/image/upload/v1761888486/favicon_otdygx.ico" />
-    <link rel="icon" href="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760859054/faviconallied_qilnwp.png" sizes="32x32" />
-
+    <!--
+      FAVICONS — audit B-01.
+      These replace a 539 KB PNG served from Cloudinary on every single visit.
+      Local, hashed-origin, long-cached: 589 B on first load, ~16 KB in total.
+      TODO: add icon.svg once the vector logo source is available (Q1); an SVG
+      mark cannot be traced from the raster file these were generated from.
+    -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- ✅ OPEN GRAPH (Facebook, LinkedIn, Telegram) -->
+    <!-- OPEN GRAPH -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.alliedplumbing.ca/" />
-    <meta property="og:title" content="Allied Plumbing — We Build. We Maintain.We Care" />
+    <meta property="og:title" content="Mechanical Contractor, Metro Vancouver | Allied Plumbing" />
     <meta
       property="og:description"
-      content="Plumbing, heating and HVAC installation, repairs and preventive maintenance across British Columbia."
+      content="Plumbing, heating, boiler plants and HVAC for schools, strata and commercial buildings across Metro Vancouver. 24/7: 604-731-1000."
     />
     <meta property="og:image" content="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760859510/alliedbanner_ovbxu6.png" />
-    <meta property="og:site_name" content="Allied Plumbing, Heating & Air Conditioning" />
+    <meta property="og:site_name" content="Allied Plumbing, Heating &amp; Air Conditioning" />
 
-    <!-- ✅ TWITTER CARD -->
+    <!-- TWITTER CARD -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Allied Plumbing — We Build. We Maintain.We Care" />
-    <meta name="twitter:description" content="Plumbing, heating and HVAC services for residential, commercial and institutional buildings." />
+    <meta name="twitter:title" content="Mechanical Contractor, Metro Vancouver | Allied Plumbing" />
+    <meta name="twitter:description" content="Plumbing, heating, boiler plants and HVAC for schools, strata and commercial buildings across Metro Vancouver." />
     <meta name="twitter:image" content="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760859510/alliedbanner_ovbxu6.png" />
 
-
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HVACBusiness","@id":"https://www.alliedplumbing.ca/#business","name":"Allied Plumbing, Heating & Air Conditioning","url":"https://www.alliedplumbing.ca/","telephone":"+1-604-731-1000","areaServed":"British Columbia","email":"info@allied-plumbing.ca","address":{"@type":"PostalAddress","streetAddress":"4085 2nd Avenue","addressLocality":"Burnaby","addressRegion":"BC","postalCode":"V5C 3X1","addressCountry":"CA"}}</script>
+    <!--
+      ORGANISATION — audit A-05. Sitewide, so Service, Article and
+      BreadcrumbList blocks on other templates can reference it by @id.
+      `geo` is omitted rather than guessed, and `sameAs` stays out until the
+      Google Business Profile is claimed (I-05). See docs/audit/open-items.md.
+      Keep this in sync with src/lib/schema.ts — tests/seo.test.mjs checks it.
+    -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":["HVACBusiness","Plumber"],"@id":"https://www.alliedplumbing.ca/#business","name":"Allied Plumbing, Heating & Air Conditioning Ltd.","url":"https://www.alliedplumbing.ca/","telephone":"+1-604-731-1000","email":"info@allied-plumbing.ca","image":"https://www.alliedplumbing.ca/icon-512.png","logo":"https://www.alliedplumbing.ca/icon-512.png","address":{"@type":"PostalAddress","streetAddress":"4085 2nd Avenue","addressLocality":"Burnaby","addressRegion":"BC","postalCode":"V5C 3X1","addressCountry":"CA"},"areaServed":["Burnaby","Vancouver","North Vancouver","West Vancouver","New Westminster","Coquitlam","Port Coquitlam","Squamish"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}]}</script>
   </head>
 
   <body>
     <div id="root"></div>
-    <noscript><p>Allied Plumbing — Plumbing, Heating &amp; HVAC in British Columbia. Call <a href="tel:+16047311000">604-731-1000</a>. Enable JavaScript to use our enquiry forms.</p><nav><a href="/services/">Services</a> · <a href="/projects/">Projects</a> · <a href="/contact/">Contact</a></nav></noscript>
+    <noscript><p>Allied Plumbing, Heating &amp; Air Conditioning — plumbing, heating and HVAC for schools, strata and commercial buildings in Metro Vancouver. Call <a href="tel:+16047311000">604-731-1000</a>, 24/7. Enable JavaScript to use our enquiry form.</p><nav><a href="/services/">Services</a> · <a href="/projects/">Projects</a> · <a href="/contact/">Contact</a></nav></noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

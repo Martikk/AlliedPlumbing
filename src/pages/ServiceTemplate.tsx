@@ -1,129 +1,209 @@
-import { Link, useLocation } from "../lib/navigation";
+import Hero from '../components/Hero';
+import Breadcrumb from '../components/Breadcrumb';
+import Section from '../components/ui/Section';
+import Card from '../components/ui/Card';
+import Button, { PhoneIcon } from '../components/ui/Button';
+import FaqItem from '../components/FaqItem';
+import JsonLd from '../components/JsonLd';
+import projects from '../data/projects.json';
+import content from '../data/services-content.json';
+import { SERVICE_BY_KEY, type ServiceKey } from '../lib/site-links';
+import { faqForService, faqSchema } from '../lib/faq';
+import { serviceSchema } from '../lib/schema';
+import { canonicalURL } from '../lib/site-url';
+import { PHONE, PHONE_HREF } from '../config';
+import { useReveal } from '../hooks/useReveal';
 
-type Highlight = { label: string; value: string };
-type Props = {
-  title: string;
-  subtitle: string;
-  description: string;
-  heroImg: string;
-  highlights: Highlight[];
-  bullets: string[];
-  children?: React.ReactNode;   // ← добавили
+/** Audit I-02 — the service page template, seven blocks.
+ *
+ *  1 Hero (A-06 H1 pattern, promise, Get a quote + Call)
+ *  2 Who it is for — three building types
+ *  3 What we deliver — scope in plain language, then equipment and brands
+ *  4 How a job runs — five steps specific to the service
+ *  5 Proof — related project cards
+ *  6 FAQ (I-03) — also emitted as FAQPage JSON-LD (A-05)
+ *  7 CTA with a prefilled form link (H-05)
+ *
+ *  Pages were ~150–180 words with no FAQ and at most one project link.
+ *
+ *  PENDING: block 5 should also carry one named client quote. The site has no
+ *  attributed testimonial and the audit's rule is never to write or paraphrase
+ *  one (I-05), so the slot stays empty until Allied supplies a real quote with
+ *  permission to publish it. */
+
+type Props = { service: ServiceKey };
+
+type Content = {
+  h1: string;
+  promise: string;
+  subhead: string;
+  serviceType: string;
+  image: string;
+  alt: string;
+  audiences: { title: string; copy: string }[];
+  deliver: string[];
+  equipment: string;
+  steps: { title: string; copy: string }[];
+  relatedProjects: string[];
 };
 
-export default function ServiceTemplate({
-  title,
-  subtitle,
-  description,
-  heroImg,
-  highlights,
-  bullets,
-  children,                      // ← добавили
-}: Props) {
-  const { pathname } = useLocation();
-  const context: Record<string, { title: string; project: string; questions: string[] }> = {
-    boilers: { title: 'Ridgeview Elementary', project: 'ridgeview', questions: ['Which plant and connected systems are involved?', 'What service records and equipment details are available?', 'Are there known heating shutdown restrictions?'] },
-    hvac: { title: 'Leigh Elementary', project: 'leigh', questions: ['Which rooms and ventilation equipment are affected?', 'What access windows are available?', 'Who coordinates controls and supporting trades?'] },
-    'commercial-plumbing': { title: '1755 Haro Street', project: 'haro', questions: ['Which building services and occupied areas are affected?', 'Are existing drawings available?', 'Who can coordinate access and occupant notices?'] },
-    'residential-plumbing': { title: '1755 Haro Street', project: 'haro', questions: ['Is this an individual home or a shared building system?', 'Where is the issue occurring?', 'What equipment information can you safely provide?'] },
-    maintenance: { title: 'Leigh Elementary', project: 'leigh', questions: ['What equipment is included in the enquiry?', 'Are previous maintenance records available?', 'Who manages access and follow-up recommendations?'] },
-    emergency: { title: '1755 Haro Street', project: 'haro', questions: ['What is the building location?', 'Which service is affected?', 'Who is the on-site contact? For urgent assistance, call rather than wait for a form reply.'] },
-  };
-  const requestContext = context[pathname.replace(/\/+$/, '').split('/').pop() || ''];
+export default function ServiceTemplate({ service }: Props) {
+  const link = SERVICE_BY_KEY[service];
+  const copy = (content as unknown as Record<ServiceKey, Content>)[service];
+  const stepsRef = useReveal<HTMLOListElement>({ stagger: true });
+  const faq = faqForService(service);
+  const url = canonicalURL(link.to);
+  const related = copy.relatedProjects
+    .map(id => projects.find(project => project.id === id))
+    .filter((project): project is (typeof projects)[number] => Boolean(project));
+
   return (
-    <div className="bg-white text-neutral-900">
+    <>
+      <Hero
+        compact
+        eyebrow={link.label}
+        heading={copy.h1}
+        subhead={copy.promise}
+        image={copy.image}
+        alt={copy.alt}
+      />
+      <Breadcrumb
+        trail={[
+          { name: 'Services', path: '/services' },
+          { name: link.label, path: link.to },
+        ]}
+      />
+      <JsonLd
+        data={serviceSchema({
+          path: link.to,
+          name: link.label,
+          description: copy.promise,
+          serviceType: copy.serviceType,
+        })}
+      />
+      <JsonLd data={faqSchema(faq, url)} />
 
-      {/* ==== HERO ==== */}
-      <section className="page-photo-hero relative overflow-hidden">
-        <img
-          src={heroImg}
-          alt=""
-          className="absolute inset-0 h-[44vh] md:h-[58vh] w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
-        <div className="relative max-w-6xl mx-auto px-4 md:px-6 pt-28 md:pt-36 pb-10">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/15 text-white px-3 py-1 text-xs ring-1 ring-white/25 backdrop-blur">
-            {subtitle}
-          </span>
-          <h1 className="mt-4 text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow">
-            {title}
-          </h1>
-          <p className="mt-3 max-w-2xl text-white/90">{description}</p>
+      <Section>
+        <p className="max-w-3xl text-lg leading-[var(--lh-body)] text-[var(--body)]">
+          {copy.subhead}
+        </p>
+      </Section>
+
+      <Section tone="alt" eyebrow="Who it is for" heading="Buildings we do this in">
+        <div className="grid gap-6 md:grid-cols-3 md:gap-8">
+          {copy.audiences.map(audience => (
+            <div key={audience.title} className="border-t-2 border-[var(--line)] pt-5">
+              <h3 className="text-h3 font-bold text-[var(--ink)]">{audience.title}</h3>
+              <p className="mt-3 text-sm text-[var(--body)]">{audience.copy}</p>
+            </div>
+          ))}
         </div>
-      </section>
+      </Section>
 
-      {/* ==== OVERVIEW ==== */}
-      <section className="max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-16">
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
-          <div>
-            <h2 className="text-2xl md:text-4xl font-extrabold mb-3">
-              What We Deliver
-            </h2>
-            <ul className="space-y-2 text-neutral-700">
-              {bullets.map((b) => (
-                <li key={b} className="flex items-start gap-2">
-                  <svg
-                    className="h-5 w-5 text-[#5776c6] mt-[2px]"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path d="M7.5 13.5 3.8 9.8l1.4-1.4 2.3 2.3 6.3-6.3 1.4 1.4-7.7 7.7Z" />
-                  </svg>
-                  {b}
-                </li>
-              ))}
-            </ul>
-          </div>
+      <Section eyebrow="What we deliver" heading="Scope">
+        <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:gap-12">
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {copy.deliver.map(item => (
+              <li key={item} className="flex gap-3 text-[var(--body)]">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="mt-1 h-4 w-4 shrink-0 text-[var(--brand)]"
+                >
+                  <path d="M7.5 13.5 3.8 9.8l1.4-1.4 2.3 2.3 6.3-6.3 1.4 1.4-7.7 7.7Z" />
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <aside className="rounded-[var(--radius-lg)] border border-[var(--line)] bg-[var(--surface-alt)] p-6">
+            <h3 className="text-h3 font-bold text-[var(--ink)]">Equipment and brands</h3>
+            <p className="mt-3 text-sm text-[var(--body)]">{copy.equipment}</p>
+          </aside>
+        </div>
+      </Section>
 
-          <div className="grid grid-cols-2 gap-5">
-            {highlights.map((h) => (
-              <div
-                key={h.label}
-                className="rounded-2xl border border-neutral-200 p-5 text-center bg-neutral-50 hover:bg-neutral-100 transition"
-              >
-                <div className="text-2xl md:text-3xl font-extrabold text-[#5776c6]">
-                  {h.value}
-                </div>
-                <div className="text-sm md:text-base text-neutral-700">
-                  {h.label}
-                </div>
-              </div>
+      <Section tone="alt" eyebrow="How a job runs" heading="From first call to turnover">
+        <ol ref={stepsRef} className="grid gap-6 md:grid-cols-5">
+          {copy.steps.map((step, index) => (
+            <li key={step.title} data-reveal="" className="border-t-2 border-[var(--line)] pt-5">
+              <span className="text-sm font-bold tracking-widest text-[var(--muted)]">
+                0{index + 1}
+              </span>
+              <h3 className="mt-2 font-bold text-[var(--ink)]">{step.title}</h3>
+              <p className="mt-2 text-sm text-[var(--body)]">{step.copy}</p>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
+      {related.length > 0 && (
+        <Section
+          eyebrow="Proof"
+          heading="Where we have done this"
+          action={
+            <Button href="/projects" variant="tertiary">
+              See our projects
+            </Button>
+          }
+        >
+          <div className="grid gap-5 md:grid-cols-3 md:gap-6">
+            {related.map(project => (
+              <Card
+                key={project.id}
+                to={`/projects/${project.id}`}
+                eyebrow={project.client}
+                title={project.title}
+                summary={project.summary}
+                metric={project.outcomeLine}
+                image={project.cover}
+                sizes="(min-width: 768px) 368px, 100vw"
+                variant="project"
+              />
             ))}
           </div>
-        </div>
-      </section>
+        </Section>
+      )}
 
-      {children}
+      {faq.length > 0 && (
+        <Section tone="alt" eyebrow="FAQ" heading="Common questions">
+          <div className="divide-y divide-[var(--line)] rounded-[var(--radius-lg)] border border-[var(--line)] bg-[var(--surface)]">
+            {faq.map(entry => (
+              <FaqItem key={entry.q} question={entry.q}>
+                {entry.a}
+              </FaqItem>
+            ))}
+          </div>
+        </Section>
+      )}
 
-      <section className="max-w-6xl mx-auto px-4 md:px-6 pb-12"><div className="border-t border-neutral-200 pt-8 max-w-3xl"><h2 className="text-2xl md:text-3xl font-bold">What helps us review your request?</h2><p className="mt-4 text-neutral-700 leading-relaxed">Include your building address, the equipment or areas involved, a description of the issue or planned work, and any known access restrictions. If you have equipment details, drawings or photographs, tell us what is available. We can then discuss the information needed for a site review and the next steps for your scope.</p>{requestContext && <><ul className="mt-5 list-disc pl-5 space-y-2 text-neutral-700">{requestContext.questions.map(question => <li key={question}>{question}</li>)}</ul><p className="mt-5 text-sm text-neutral-600">Related project scope: <Link to={`/projects/${requestContext.project}`} className="font-semibold text-[#315cb4] underline underline-offset-4">{requestContext.title}</Link>. Scope requirements vary by building.</p></>}</div></section>
-      {/* ==== CTA ==== */}
-      <section className="max-w-6xl mx-auto px-4 md:px-6 pb-16 md:pb-24">
-        <div className="relative overflow-hidden rounded-2xl bg-neutral-900 text-white p-6 md:p-10">
-          <div
-            className="absolute -top-10 -right-10 h-56 w-56 rounded-full blur-3xl opacity-30"
-            style={{ background: "radial-gradient(closest-side,#60a5fa 30%,transparent)" }}
-          />
-          <h3 className="text-2xl md:text-4xl font-extrabold">Need help today?</h3>
-          <p className="mt-2 text-white/80 max-w-prose">
-            Request a service visit or discuss a project with our team. For urgent assistance, call.
+      {/* H-05 — the CTA prefills the form with this service. */}
+      <Section>
+        <div className="scrim relative overflow-hidden rounded-[var(--radius-lg)] bg-[var(--surface-ink)] p-8 md:p-12">
+          <h2 className="text-h2 font-extrabold text-white">
+            Get a quote for {link.label.toLowerCase()}
+          </h2>
+          <p className="mt-3 max-w-2xl text-white">
+            Tell us the building, the equipment and your access windows. We reply within one
+            business day.
           </p>
-          <div className="mt-5 flex flex-wrap items-center gap-3">
-            <Link
-              to="/quote"
-              className="inline-flex items-center gap-2 rounded-lg bg-white text-neutral-900 px-5 py-3 font-semibold shadow hover:bg-neutral-200"
+          <div data-cta-anchor className="on-dark mt-7 flex flex-wrap gap-3">
+            <Button href={`/quote?type=quote&service=${service}`} className="on-dark">
+              Get a quote
+            </Button>
+            <Button
+              href={PHONE_HREF}
+              variant="secondary"
+              icon={<PhoneIcon />}
+              className="on-dark"
+              data-cta-location="page"
             >
-              Get a quote <span aria-hidden>↗</span>
-            </Link>
-            <a
-              href="tel:604-731-1000"
-              className="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-white/10 px-5 py-3 font-semibold backdrop-blur hover:bg-white/20"
-            >
-              Call 604-731-1000
-            </a>
+              Call {PHONE} (24/7)
+            </Button>
           </div>
         </div>
-      </section>
-
-    </div>
+      </Section>
+    </>
   );
-  }
+}

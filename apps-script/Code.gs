@@ -12,6 +12,64 @@ function doGet(e) {
   var config={type:type,token:String(e && e.parameter && e.parameter.token || '').replace(/[^a-zA-Z0-9-]/g,'').slice(0,80),role:String(e && e.parameter && e.parameter.role || '').slice(0,160)};
   return HtmlService.createHtmlOutput(formHtml_(config)).setTitle('Allied Plumbing enquiry').setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
+/* Audit H-01 — native enquiry form endpoint.
+ *
+ * The site no longer embeds this script in an iframe; it POSTs JSON here from
+ * its own React form, so validation, errors, tracking and prefill all live in
+ * the site. Everything after parsing is the existing pipeline: checked_(),
+ * dedupe by requestId, private Drive storage, retention, MailApp.
+ *
+ * Content-Type is text/plain so the browser sends a simple request. Apps
+ * Script cannot answer a CORS preflight, so never switch this to
+ * application/json.
+ *
+ * Attachments arrive as {name, type, data} with `data` base64-encoded.
+ *
+ * AFTER EDITING: Deploy → Manage deployments → edit the active deployment →
+ * New version. The /exec URL stays the same, so no site change is needed.
+ */
+function doPost(e) {
+  var reply = function (payload) {
+    return ContentService.createTextOutput(JSON.stringify(payload)).setMimeType(
+      ContentService.MimeType.JSON
+    );
+  };
+  try {
+    if (!e || !e.postData || !e.postData.contents) throw new Error('Empty request.');
+    if (e.postData.contents.length > 20 * 1024 * 1024) throw new Error('Request too large.');
+    var body = JSON.parse(e.postData.contents);
+    var form = {};
+    ['type','name','email','phone','address','service','urgency','role','resume_url','message',
+     'consent','website','requestId','startedAt','enquiryType','propertyType','organisation',
+     'tenderClosing'].forEach(function (key) {
+      if (body[key] !== undefined && body[key] !== null) form[key] = String(body[key]);
+    });
+    // Context the operator needs but checked_() does not model as its own
+    // field; folded into the message so nothing is silently dropped.
+    var extra = [];
+    if (form.enquiryType) extra.push('Enquiry type: ' + form.enquiryType);
+    if (form.propertyType) extra.push('Property type: ' + form.propertyType);
+    if (form.organisation) extra.push('Organisation: ' + form.organisation);
+    if (form.tenderClosing) extra.push('Tender closing: ' + form.tenderClosing);
+    if (extra.length) form.message = extra.join('\n') + '\n\n' + (form.message || '');
+    delete form.enquiryType; delete form.propertyType;
+    delete form.organisation; delete form.tenderClosing;
+
+    var files = Array.isArray(body.files) ? body.files.slice(0, 4) : [];
+    files.forEach(function (file, index) {
+      if (!file || !file.data) return;
+      form['file' + index] = Utilities.newBlob(
+        Utilities.base64Decode(String(file.data)),
+        String(file.type || 'application/octet-stream'),
+        String(file.name || 'attachment')
+      );
+    });
+    return reply(submitEnquiry(form));
+  } catch (error) {
+    return reply({ ok: false, message: String(error && error.message || error) });
+  }
+}
+
 function text_(value,max,required) {
   if(typeof value!=='string' || value.length>max || (required && !value.trim())) throw new Error('Check the required fields and text lengths.');
   return value.trim();
