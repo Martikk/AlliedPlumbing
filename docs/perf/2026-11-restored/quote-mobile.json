@@ -1,12 +1,12 @@
 {
   "_note": "Trimmed Lighthouse report: scores, headline metrics and failing audits.",
   "finalDisplayedUrl": "http://localhost:4173/quote/",
-  "fetchTime": "2026-11-22T22:13:38.813Z",
+  "fetchTime": "2026-11-22T22:44:18.190Z",
   "lighthouseVersion": "12.8.2",
   "formFactor": "mobile",
   "categories": {
     "performance": {
-      "score": 0.97,
+      "score": 0.96,
       "title": "Performance"
     },
     "accessibility": {
@@ -24,14 +24,14 @@
   },
   "metrics": {
     "first-contentful-paint": {
-      "score": 0.95,
+      "score": 0.96,
       "displayValue": "1.5\u00a0s",
-      "numericValue": 1523.752625
+      "numericValue": 1509.55925
     },
     "largest-contentful-paint": {
-      "score": 0.88,
+      "score": 0.87,
       "displayValue": "2.6\u00a0s",
-      "numericValue": 2560.7905499999997
+      "numericValue": 2610.1652000000004
     },
     "total-blocking-time": {
       "score": 1,
@@ -46,25 +46,25 @@
     "speed-index": {
       "score": 1,
       "displayValue": "1.5\u00a0s",
-      "numericValue": 1523.752625
+      "numericValue": 1509.55925
     },
     "total-byte-weight": {
       "score": 1,
       "displayValue": "Total size was 236\u00a0KiB",
-      "numericValue": 241932
+      "numericValue": 242034
     }
   },
   "failingAudits": [
     {
       "id": "first-contentful-paint",
       "title": "First Contentful Paint",
-      "score": 0.95,
+      "score": 0.96,
       "displayValue": "1.5\u00a0s"
     },
     {
       "id": "largest-contentful-paint",
       "title": "Largest Contentful Paint",
-      "score": 0.88,
+      "score": 0.87,
       "displayValue": "2.6\u00a0s"
     }
   ]

@@ -45,7 +45,7 @@ function ExtraContent() {
             ].map((item) => (
               <li key={item} className="flex items-start gap-2">
                 <svg
-                  className="h-5 w-5 text-[#5776c6] mt-[3px]"
+                  className="h-5 w-5 text-[#5272c4] mt-[3px]"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >

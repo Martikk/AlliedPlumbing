@@ -70,7 +70,7 @@ export default function ServicesShowcase() {
             Our services
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold leading-tight">
-            What We Provide<br className="hidden md:block" />
+            What We Provide<br className="hidden md:block" />{' '}
             In Our Services
           </h2>
         </div>
@@ -112,7 +112,7 @@ export default function ServicesShowcase() {
               <div className={`flex ${imgLeft ? 'lg:pl-6' : 'lg:pr-6 lg:order-1'}`}>
                 {/* номер + вертикальная линия */}
                 <div className="hidden md:flex flex-col items-center pr-5">
-                  <span className="text-neutral-400 font-semibold tracking-widest">
+                  <span className="text-neutral-600 font-semibold tracking-widest">
                     {it.n}
                   </span>
                   <span className="mt-2 h-full w-px bg-neutral-200" />

@@ -1,7 +1,7 @@
 {
   "tool": "Lighthouse 12, headless Chrome",
   "baselineNote": "the live site over the AWS Amplify CDN, 2026-11-22, before any change",
-  "restoredNote": "the original design restored, with the non-visual audit work kept; served from a local static server (no CDN, no HTTP/2), so these understate production",
+  "restoredNote": "the original design restored, with the non-visual audit work kept and the three contrast defects fixed; served from a local static server (no CDN, no HTTP/2), so these understate production",
   "baseline": {
     "home-desktop": {
       "performance": 97,
@@ -78,11 +78,11 @@
   },
   "restored": {
     "home-desktop": {
-      "performance": 99,
-      "accessibility": 96,
+      "performance": 100,
+      "accessibility": 100,
       "seo": 100,
       "bestPractices": 100,
-      "lcpMs": 835,
+      "lcpMs": 819,
       "cls": 0.0,
       "totalKB": 842
     },
@@ -91,52 +91,52 @@
       "accessibility": 100,
       "seo": 100,
       "bestPractices": 100,
-      "lcpMs": 3390,
+      "lcpMs": 3361,
       "cls": 0.0,
-      "totalKB": 694
+      "totalKB": 693
     },
     "projects-ridgeview-desktop": {
       "performance": 100,
-      "accessibility": 96,
+      "accessibility": 100,
       "seo": 100,
       "bestPractices": 100,
-      "lcpMs": 678,
+      "lcpMs": 655,
       "cls": 0,
       "totalKB": 277
     },
     "projects-ridgeview-mobile": {
-      "performance": 93,
+      "performance": 94,
       "accessibility": 100,
       "seo": 100,
       "bestPractices": 100,
-      "lcpMs": 3056,
+      "lcpMs": 2925,
       "cls": 0,
       "totalKB": 277
     },
     "quote-desktop": {
       "performance": 100,
-      "accessibility": 97,
-      "seo": 100,
-      "bestPractices": 100,
-      "lcpMs": 644,
-      "cls": 0,
-      "totalKB": 794
-    },
-    "quote-mobile": {
-      "performance": 97,
       "accessibility": 100,
       "seo": 100,
       "bestPractices": 100,
-      "lcpMs": 2561,
+      "lcpMs": 741,
+      "cls": 0,
+      "totalKB": 800
+    },
+    "quote-mobile": {
+      "performance": 96,
+      "accessibility": 100,
+      "seo": 100,
+      "bestPractices": 100,
+      "lcpMs": 2610,
       "cls": 0,
       "totalKB": 236
     },
     "services-hvac-desktop": {
       "performance": 100,
-      "accessibility": 96,
+      "accessibility": 100,
       "seo": 100,
       "bestPractices": 100,
-      "lcpMs": 621,
+      "lcpMs": 626,
       "cls": 0,
       "totalKB": 190
     },
@@ -145,7 +145,7 @@
       "accessibility": 100,
       "seo": 100,
       "bestPractices": 100,
-      "lcpMs": 2538,
+      "lcpMs": 2466,
       "cls": 0,
       "totalKB": 190
     }

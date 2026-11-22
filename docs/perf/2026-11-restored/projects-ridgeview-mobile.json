@@ -1,12 +1,12 @@
 {
   "_note": "Trimmed Lighthouse report: scores, headline metrics and failing audits.",
   "finalDisplayedUrl": "http://localhost:4173/projects/ridgeview/",
-  "fetchTime": "2026-11-22T22:13:15.680Z",
+  "fetchTime": "2026-11-22T22:43:54.827Z",
   "lighthouseVersion": "12.8.2",
   "formFactor": "mobile",
   "categories": {
     "performance": {
-      "score": 0.93,
+      "score": 0.94,
       "title": "Performance"
     },
     "accessibility": {
@@ -26,12 +26,12 @@
     "first-contentful-paint": {
       "score": 0.93,
       "displayValue": "1.7\u00a0s",
-      "numericValue": 1658.356
+      "numericValue": 1662.056125
     },
     "largest-contentful-paint": {
-      "score": 0.76,
-      "displayValue": "3.1\u00a0s",
-      "numericValue": 3056.0606
+      "score": 0.8,
+      "displayValue": "2.9\u00a0s",
+      "numericValue": 2924.61585
     },
     "total-blocking-time": {
       "score": 1,
@@ -46,12 +46,12 @@
     "speed-index": {
       "score": 1,
       "displayValue": "1.7\u00a0s",
-      "numericValue": 1658.356
+      "numericValue": 1662.056125
     },
     "total-byte-weight": {
       "score": 1,
       "displayValue": "Total size was 277\u00a0KiB",
-      "numericValue": 283834
+      "numericValue": 283716
     }
   },
   "failingAudits": [
@@ -64,8 +64,8 @@
     {
       "id": "largest-contentful-paint",
       "title": "Largest Contentful Paint",
-      "score": 0.76,
-      "displayValue": "3.1\u00a0s"
+      "score": 0.8,
+      "displayValue": "2.9\u00a0s"
     }
   ]
 }

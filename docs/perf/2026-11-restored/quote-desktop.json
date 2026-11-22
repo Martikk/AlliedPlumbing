@@ -1,7 +1,7 @@
 {
   "_note": "Trimmed Lighthouse report: scores, headline metrics and failing audits.",
   "finalDisplayedUrl": "http://localhost:4173/quote/",
-  "fetchTime": "2026-11-22T22:13:50.468Z",
+  "fetchTime": "2026-11-22T22:44:29.770Z",
   "lighthouseVersion": "12.8.2",
   "formFactor": "desktop",
   "categories": {
@@ -10,7 +10,7 @@
       "title": "Performance"
     },
     "accessibility": {
-      "score": 0.97,
+      "score": 1,
       "title": "Accessibility"
     },
     "best-practices": {
@@ -26,12 +26,12 @@
     "first-contentful-paint": {
       "score": 1,
       "displayValue": "0.4\u00a0s",
-      "numericValue": 374.46387500000003
+      "numericValue": 380.50425
     },
     "largest-contentful-paint": {
-      "score": 0.99,
-      "displayValue": "0.6\u00a0s",
-      "numericValue": 644.3579
+      "score": 0.98,
+      "displayValue": "0.7\u00a0s",
+      "numericValue": 740.8040000000002
     },
     "total-blocking-time": {
       "score": 1,
@@ -45,27 +45,21 @@
     },
     "speed-index": {
       "score": 1,
-      "displayValue": "0.5\u00a0s",
-      "numericValue": 507.3408143290671
+      "displayValue": "0.6\u00a0s",
+      "numericValue": 558.811382248928
     },
     "total-byte-weight": {
       "score": 1,
-      "displayValue": "Total size was 794\u00a0KiB",
-      "numericValue": 812983
+      "displayValue": "Total size was 800\u00a0KiB",
+      "numericValue": 819369
     }
   },
   "failingAudits": [
     {
       "id": "largest-contentful-paint",
       "title": "Largest Contentful Paint",
-      "score": 0.99,
-      "displayValue": "0.6\u00a0s"
-    },
-    {
-      "id": "color-contrast",
-      "title": "Background and foreground colors do not have a sufficient contrast ratio.",
-      "score": 0,
-      "displayValue": null
+      "score": 0.98,
+      "displayValue": "0.7\u00a0s"
     }
   ]
 }

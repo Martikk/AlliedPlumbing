@@ -35,7 +35,7 @@ The site is built like a product, not a brochure. Every route is prerendered for
 | **One native enquiry form** | A single React form branches by enquiry type (quote, service call, maintenance, tender, other) and posts to a Google Apps Script backend: dedupe by idempotency key, human-readable reference numbers, attachments in a private Drive with 90/180-day retention. Careers keeps its own résumé flow. |
 | **Server-side file checks** | Quote accepts up to 4 PDF/JPG/PNG (10 MB total); Careers accepts one PDF up to 5 MB. Count, size, extension, MIME type and file signature are verified. |
 | **Privacy-first analytics** | Consent Mode v2 defaults to denied; GA4 loads only after an explicit opt-in, and then on idle. Lead, call and email events carry only parameters on an allowlist — a name, email or file name cannot reach a report. |
-| **Performance** | Lighthouse: SEO and best-practices 100 on all four baseline URLs, mobile performance 91–97, accessibility 100 on mobile, CLS 0. Images go through one Cloudinary helper. |
+| **Performance** | Lighthouse on the four baseline URLs: desktop 100 across performance, accessibility, SEO and best-practices; mobile performance 91–97 with accessibility, SEO and best-practices at 100. CLS 0 everywhere. |
 | **Production verification** | `npm run test:production` checks every live route (HTTP status, title, canonical, prerendered h1), asset hashes against the local build, and the sitemap. |
 
 ## Screenshots
@@ -121,7 +121,9 @@ A full UX, performance, accessibility and conversion audit was carried out in
 November 2026. Its non-visual tickets shipped — the native enquiry form,
 structured data, the favicon, sitemap `lastmod`, titles and descriptions, cache
 headers, the head check and CI. Its visual redesign was built and then rolled
-back at Allied's request, so the original design is what you see.
+back at Allied's request, so the original design is what you see — with four
+defects that the rollback re-exposed fixed in place: three colour-contrast
+failures and a heading that read "What We ProvideIn Our Services" on phones.
 
 **[docs/audit/open-items.md](docs/audit/open-items.md)** tracks every ticket:
 what shipped, what went back, what is waiting on information from Allied, and

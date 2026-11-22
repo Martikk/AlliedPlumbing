@@ -1,7 +1,7 @@
 {
   "_note": "Trimmed Lighthouse report: scores, headline metrics and failing audits.",
   "finalDisplayedUrl": "http://localhost:4173/services/hvac/",
-  "fetchTime": "2026-11-22T22:12:53.233Z",
+  "fetchTime": "2026-11-22T22:43:31.445Z",
   "lighthouseVersion": "12.8.2",
   "formFactor": "mobile",
   "categories": {
@@ -24,14 +24,14 @@
   },
   "metrics": {
     "first-contentful-paint": {
-      "score": 0.96,
+      "score": 0.95,
       "displayValue": "1.5\u00a0s",
-      "numericValue": 1510.86
+      "numericValue": 1536.2886250000001
     },
     "largest-contentful-paint": {
-      "score": 0.89,
+      "score": 0.9,
       "displayValue": "2.5\u00a0s",
-      "numericValue": 2537.808
+      "numericValue": 2466.261
     },
     "total-blocking-time": {
       "score": 1,
@@ -46,25 +46,25 @@
     "speed-index": {
       "score": 1,
       "displayValue": "1.5\u00a0s",
-      "numericValue": 1510.86
+      "numericValue": 1536.2886250000001
     },
     "total-byte-weight": {
       "score": 1,
       "displayValue": "Total size was 190\u00a0KiB",
-      "numericValue": 194678
+      "numericValue": 194764
     }
   },
   "failingAudits": [
     {
       "id": "first-contentful-paint",
       "title": "First Contentful Paint",
-      "score": 0.96,
+      "score": 0.95,
       "displayValue": "1.5\u00a0s"
     },
     {
       "id": "largest-contentful-paint",
       "title": "Largest Contentful Paint",
-      "score": 0.89,
+      "score": 0.9,
       "displayValue": "2.5\u00a0s"
     }
   ]

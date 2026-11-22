@@ -71,7 +71,9 @@ body { margin: 0; }
 
 /* Preserve Allied's photographic, angled visual language. */
 .emergency-strip { background: #df241d; color: white; }
-.emergency-phone { display: inline-flex; align-items:center; gap:.5rem; border-radius:999px; background:#ffffff26; padding:.2rem .65rem; }
+/* The tint is dark, not light: a white tint raised the background to
+   #e4453f, where white text is 4.02:1 and fails AA at 14px (audit F-01). */
+.emergency-phone { display: inline-flex; align-items:center; gap:.5rem; border-radius:999px; background:rgb(0 0 0 / .12); padding:.2rem .65rem; }
 .emergency-phone strong { background:white; color:#b91c1c; border-radius:999px; padding:.05rem .5rem; }
 .site-header { position:relative; z-index:40; background:#f3f7fb; padding-bottom:100px; }
 .site-header-home { padding-bottom:0; }

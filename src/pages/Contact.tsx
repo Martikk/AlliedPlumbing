@@ -3,6 +3,10 @@ import { Link } from "../lib/navigation";
 import ContactLead from "@/components/ContactLead"; // твой готовый стеклянный блок с формой
 import { PHONE } from "@/config";
 
+/** The accent blue is #5272c4, not the slightly lighter #5776c6 it used to be.
+ *  The old value measured 4.36:1 against white, just under the 4.5:1 minimum,
+ *  in both directions — white text on the button and blue text on the page
+ *  (audit F-01). This is the same hue, 1.2% darker, at 4.60:1. */
 export default function Contact() {
   return (
     <div className="bg-white text-neutral-900">
@@ -75,7 +79,7 @@ export default function Contact() {
             </p>
             <Link
               to="/quote"
-              className="mt-4 inline-flex items-center justify-center w-full rounded-lg bg-[#5776c6] text-white px-4 py-2.5 font-semibold hover:brightness-110"
+              className="mt-4 inline-flex items-center justify-center w-full rounded-lg bg-[#5272c4] text-white px-4 py-2.5 font-semibold hover:brightness-110"
             >
               Request a quote ↗
             </Link>
@@ -123,7 +127,7 @@ export default function Contact() {
               href="https://maps.google.com/?q=4085%202nd%20Ave%20Burnaby%20BC%20V5C%203X1"
               target="_blank"
               rel="noreferrer"
-              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[#5776c6]"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[#5272c4]"
             >
               Open in Maps ↗
             </a>

@@ -82,7 +82,7 @@ export default function ServiceTemplate({
               {bullets.map((b) => (
                 <li key={b} className="flex items-start gap-2">
                   <svg
-                    className="h-5 w-5 text-[#5776c6] mt-[2px]"
+                    className="h-5 w-5 text-[#5272c4] mt-[2px]"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -100,7 +100,7 @@ export default function ServiceTemplate({
                 key={h.label}
                 className="rounded-2xl border border-neutral-200 p-5 text-center bg-neutral-50 hover:bg-neutral-100 transition"
               >
-                <div className="text-2xl md:text-3xl font-extrabold text-[#5776c6]">
+                <div className="text-2xl md:text-3xl font-extrabold text-[#5272c4]">
                   {h.value}
                 </div>
                 <div className="text-sm md:text-base text-neutral-700">

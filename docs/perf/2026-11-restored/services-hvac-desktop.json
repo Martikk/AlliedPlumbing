@@ -1,7 +1,7 @@
 {
   "_note": "Trimmed Lighthouse report: scores, headline metrics and failing audits.",
   "finalDisplayedUrl": "http://localhost:4173/services/hvac/",
-  "fetchTime": "2026-11-22T22:13:04.256Z",
+  "fetchTime": "2026-11-22T22:43:43.045Z",
   "lighthouseVersion": "12.8.2",
   "formFactor": "desktop",
   "categories": {
@@ -10,7 +10,7 @@
       "title": "Performance"
     },
     "accessibility": {
-      "score": 0.96,
+      "score": 1,
       "title": "Accessibility"
     },
     "best-practices": {
@@ -26,12 +26,12 @@
     "first-contentful-paint": {
       "score": 1,
       "displayValue": "0.4\u00a0s",
-      "numericValue": 367.09574999999995
+      "numericValue": 367.61087499999996
     },
     "largest-contentful-paint": {
       "score": 0.99,
       "displayValue": "0.6\u00a0s",
-      "numericValue": 621.3114
+      "numericValue": 625.9474499999999
     },
     "total-blocking-time": {
       "score": 1,
@@ -46,12 +46,12 @@
     "speed-index": {
       "score": 1,
       "displayValue": "0.4\u00a0s",
-      "numericValue": 395.7384829935211
+      "numericValue": 367.61087499999996
     },
     "total-byte-weight": {
       "score": 1,
       "displayValue": "Total size was 190\u00a0KiB",
-      "numericValue": 194678
+      "numericValue": 194675
     }
   },
   "failingAudits": [
@@ -60,12 +60,6 @@
       "title": "Largest Contentful Paint",
       "score": 0.99,
       "displayValue": "0.6\u00a0s"
-    },
-    {
-      "id": "color-contrast",
-      "title": "Background and foreground colors do not have a sufficient contrast ratio.",
-      "score": 0,
-      "displayValue": null
     }
   ]
 }

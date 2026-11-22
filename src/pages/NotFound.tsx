@@ -72,7 +72,7 @@ export default function NotFound() {
               </Link>
               <Link
                 to="/GetQuote"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#5776c6] text-white px-5 py-3 font-semibold hover:brightness-110"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#5272c4] text-white px-5 py-3 font-semibold hover:brightness-110"
               >
                 Get a quote
               </Link>
@@ -81,7 +81,7 @@ export default function NotFound() {
             {/* quick search */}
             <form action="/search" className="mt-6" role="search" aria-label="Site search">
               <label htmlFor="q" className="sr-only">Search</label>
-              <div className="flex rounded-xl border border-neutral-200 bg-white/80 backdrop-blur focus-within:ring-2 focus-within:ring-[#5776c6]">
+              <div className="flex rounded-xl border border-neutral-200 bg-white/80 backdrop-blur focus-within:ring-2 focus-within:ring-[#5272c4]">
                 <input
                   id="q"
                   name="q"

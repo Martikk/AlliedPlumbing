@@ -131,22 +131,31 @@ All of it is in git at commit `607bf84` if any piece is wanted back.
 enquiry form is built on them. Nothing else reads them, so they cannot affect
 the restored design.
 
-### Known, not fixed
+### Also fixed, after the revert
 
-Two contrast failures that the reverted F-01 would have fixed. Both are
-colour changes, so they were left alone rather than altering the design
-unasked:
+F-01's contrast work was rolled back with the design, which left three real
+failures. All three were fixed with the smallest change that passes — same
+hue, same layout, same wording:
 
-- The service step numbers `01`–`06` are `text-neutral-400` on white — **2.5:1**,
-  against a 4.5:1 minimum. `text-neutral-600` fixes it and stays grey.
+- The service step numbers `01`–`06` were `text-neutral-400` on white — **2.5:1**
+  against a 4.5:1 minimum. Now `text-neutral-600`, **7.0:1**, still a muted grey.
   `src/components/ServicesShowcase.tsx`.
-- `24/7 Emergency Line:` is white on the red strip's translucent pill —
-  **4.0:1**, just under 4.5:1. Changing `.emergency-phone`'s background from
-  `#ffffff26` to `rgb(0 0 0 / .12)` takes it to 5.9:1 and keeps the pill.
-  `src/index.css`.
+- `24/7 Emergency Line:` was white on the red strip's pill. The pill's 15% white
+  tint lifted the background to `#e4453f`, where white is **4.0:1**. The tint is
+  now 12% black, which darkens it instead: **5.9:1**, same pill. `src/index.css`.
+- The accent blue `#5776c6` was **4.36:1** against white in both directions — as
+  a button background under white text, and as blue text on white. Now `#5272c4`:
+  the same hue 1.2% darker, **4.60:1**. Four files.
 
-Neither affects the mobile Lighthouse score (the emergency label is hidden at
-phone widths), which is why accessibility reads 100 on mobile and 96 on desktop.
+E-01 came back with the design too and was fixed the same way: the services
+heading relies on a `<br className="hidden md:block" />`, and JSX strips the
+newline after it, so phones read **"What We ProvideIn Our Services"**. A `{' '}`
+after the `<br>` restores the space without touching the desktop line break.
+
+**Accessibility is now 100 on all four baseline URLs, mobile and desktop**, and
+on every other page type checked (about, services hub and detail, projects hub
+and detail, blog hub and article, team, clients, careers, rfp, contact, quote,
+privacy).
 
 ---
 
@@ -158,20 +167,19 @@ audit work kept — on a local static server, so the network path is *slower*
 than production and these figures understate what the CDN will give. Images
 come from Cloudinary in both.
 
-| Page | Performance | LCP | CLS | Weight |
+| Page | Performance | Accessibility | LCP | CLS |
 |---|---|---|---|---|
-| Home — mobile | 88 → **91** | 3,695 → **3,390 ms** | 0 → 0 | 1,071 → **694 KB** |
-| Home — desktop | 97 → **99** | 1,168 → **835 ms** | 0 → 0 | 1,172 → **842 KB** |
-| /services/hvac/ — mobile | 95 → **97** | 2,650 → **2,538 ms** | 0 → 0 | 720 → **190 KB** |
-| /services/hvac/ — desktop | 98 → **100** | 1,150 → **621 ms** | 0 → 0 | 719 → **190 KB** |
-| /projects/ridgeview/ — mobile | 90 → **93** | 3,381 → **3,056 ms** | 0 → 0 | 810 → **277 KB** |
-| /projects/ridgeview/ — desktop | 99 → **100** | 868 → **678 ms** | 0 → 0 | 805 → **277 KB** |
-| /quote/ — mobile | 85 → **97** | 3,743 → **2,561 ms** | **0.101 → 0** | 1,551 → **236 KB** |
-| /quote/ — desktop | 97 → **100** | 1,137 → **644 ms** | **0.029 → 0** | 1,658 → **794 KB** |
+| Home — mobile | 88 → **91** | 100 → **100** | 3,695 → **3,361 ms** | 0 → 0 |
+| Home — desktop | 97 → **100** | 96 → **100** | 1,168 → **819 ms** | 0 → 0 |
+| /services/hvac/ — mobile | 95 → **97** | 100 → **100** | 2,650 → **2,466 ms** | 0 → 0 |
+| /services/hvac/ — desktop | 98 → **100** | 96 → **100** | 1,150 → **626 ms** | 0 → 0 |
+| /projects/ridgeview/ — mobile | 90 → **94** | 100 → **100** | 3,381 → **2,925 ms** | 0 → 0 |
+| /projects/ridgeview/ — desktop | 99 → **100** | 96 → **100** | 868 → **655 ms** | 0 → 0 |
+| /quote/ — mobile | 85 → **96** | 100 → **100** | 3,743 → **2,610 ms** | **0.101 → 0** |
+| /quote/ — desktop | 97 → **100** | 96 → **100** | 1,137 → **741 ms** | **0.029 → 0** |
 
 SEO and best-practices are 100 on all eight runs, and no page logs a console
-error. Accessibility is 100 on mobile and 96–97 on desktop (the two contrast
-items above).
+error. Desktop performance and accessibility are 100 everywhere.
 
 `/quote/` is the clearest win and it is almost all H-01 and B-06: dropping the
 iframe and deferring the map took the page from 1,551 KB to 236 KB on mobile

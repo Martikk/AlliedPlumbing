@@ -1,7 +1,7 @@
 {
   "_note": "Trimmed Lighthouse report: scores, headline metrics and failing audits.",
   "finalDisplayedUrl": "http://localhost:4173/projects/ridgeview/",
-  "fetchTime": "2026-11-22T22:13:27.586Z",
+  "fetchTime": "2026-11-22T22:44:06.505Z",
   "lighthouseVersion": "12.8.2",
   "formFactor": "desktop",
   "categories": {
@@ -10,7 +10,7 @@
       "title": "Performance"
     },
     "accessibility": {
-      "score": 0.96,
+      "score": 1,
       "title": "Accessibility"
     },
     "best-practices": {
@@ -26,12 +26,12 @@
     "first-contentful-paint": {
       "score": 1,
       "displayValue": "0.4\u00a0s",
-      "numericValue": 372.63075000000003
+      "numericValue": 408.597125
     },
     "largest-contentful-paint": {
       "score": 0.99,
       "displayValue": "0.7\u00a0s",
-      "numericValue": 678.1406999999999
+      "numericValue": 654.9876499999999
     },
     "total-blocking-time": {
       "score": 1,
@@ -46,12 +46,12 @@
     "speed-index": {
       "score": 1,
       "displayValue": "0.4\u00a0s",
-      "numericValue": 372.63075000000003
+      "numericValue": 408.597125
     },
     "total-byte-weight": {
       "score": 1,
       "displayValue": "Total size was 277\u00a0KiB",
-      "numericValue": 283718
+      "numericValue": 283831
     }
   },
   "failingAudits": [
@@ -60,12 +60,6 @@
       "title": "Largest Contentful Paint",
       "score": 0.99,
       "displayValue": "0.7\u00a0s"
-    },
-    {
-      "id": "color-contrast",
-      "title": "Background and foreground colors do not have a sufficient contrast ratio.",
-      "score": 0,
-      "displayValue": null
     }
   ]
 }
