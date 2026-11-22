@@ -65,10 +65,23 @@ Both are small. It needs Allied's answer on who the site is for.
 
 ## 3. Ops — nobody can do these from the repo
 
-- **Apps Script redeploy.** `apps-script/Code.gs` gained a `doPost` so the
-  native form can reach the existing backend. **The form cannot submit until
-  this is deployed**: Deploy → Manage deployments → edit the active deployment
-  → New version. The `/exec` URL does not change.
+- **Apps Script redeploy — URGENT, the live form is broken.**
+  `apps-script/Code.gs` gained a `doPost` so the native form can reach the
+  existing backend. **It has not been deployed.** Verified 2026-11-22: a POST
+  to the `/exec` URL answers `Script function not found: doPost`, while
+  https://www.alliedplumbing.ca/quote/ already serves the native form. So an
+  enquiry submitted on the live site today fails — the visitor sees the error
+  panel with the phone number and their typed details are preserved, but the
+  enquiry does not reach anyone.
+  Fix: Apps Script → Deploy → Manage deployments → edit the active deployment
+  → New version. The `/exec` URL does not change, so nothing in the site needs
+  to change with it.
+  Re-check with:
+  `curl -s -X POST "$(node -p "require('./src/lib/enquiry-config.json').appsScriptUrl")" -H 'Content-Type: text/plain' --data '{}' | head -c 200`
+  — JSON means it is deployed, HTML means it is not.
+  Until it is deployed, the alternative is to point `/quote/`, `/contact/` and
+  the homepage band back at `EmbeddedEnquiry` (still in the codebase, still
+  used by Careers), which works today.
 - **A-08** — verify Search Console and Bing Webmaster Tools, submit the
   sitemap, set a monthly check of Coverage, Core Web Vitals and top queries.
 - **I-05** — claim the Google Business Profile and the HomeStars listing

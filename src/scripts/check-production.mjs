@@ -24,7 +24,15 @@ const escape = value => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;')
 const routes = await mapLimit(Object.keys(pages), async path => {
   const response = await request(path);
   const canonical = response.body.match(/<link[^>]*rel="canonical"[^>]*href="([^"]+)/)?.[1];
-  const result = { path, status: response.status, canonicalOK: canonical === origin + canonicalPath(path), contentOK: response.body.includes('data-prerendered="true"') && response.body.includes('<h1'), titleOK: response.body.includes(`<title>${escape(pages[path].title)}</title>`) };
+  // A noindex route (audit H-03: /quote/thanks/) is prerendered so a refresh
+  // works, but it must NOT declare a canonical and must carry robots=noindex.
+  // Checking it against the indexable rule reported a false failure on every
+  // run, which is how a production check stops being believed.
+  const noindex = Boolean(pages[path].noindex);
+  const canonicalOK = noindex
+    ? canonical === undefined && response.body.includes('content="noindex,follow"')
+    : canonical === origin + canonicalPath(path);
+  const result = { path, status: response.status, noindex, canonicalOK, contentOK: response.body.includes('data-prerendered="true"') && response.body.includes('<h1'), titleOK: response.body.includes(`<title>${escape(pages[path].title)}</title>`) };
   if (result.status !== 200 || !result.canonicalOK || !result.titleOK || !result.contentOK) failures.push(result);
   return result;
 });
@@ -43,8 +51,15 @@ const assets = await mapLimit(readdirSync('dist/assets').filter(name => /\.(js|c
 });
 const sitemap = await request('/sitemap.xml');
 const sitemapURLs = [...sitemap.body.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
-const sitemapOK = sitemap.status === 200 && sitemapURLs.length === routes.length && Object.keys(pages).every(path => sitemapURLs.includes(origin + canonicalPath(path)));
-if (!sitemapOK) failures.push({ issue: 'Sitemap does not match canonical routes' });
+// Only indexable routes belong in the sitemap (A-03 / H-03).
+const indexablePaths = Object.keys(pages).filter(path => !pages[path].noindex);
+const noindexPaths = Object.keys(pages).filter(path => pages[path].noindex);
+const sitemapOK =
+  sitemap.status === 200 &&
+  sitemapURLs.length === indexablePaths.length &&
+  indexablePaths.every(path => sitemapURLs.includes(origin + canonicalPath(path))) &&
+  noindexPaths.every(path => !sitemapURLs.includes(origin + canonicalPath(path)));
+if (!sitemapOK) failures.push({ issue: 'Sitemap does not match the indexable canonical routes' });
 const missing = await request('/allied-verification-missing-page-20261031');
 if (missing.status !== 404) failures.push({ issue: 'Unknown page does not return HTTP 404', status: missing.status });
 const result = { checkedAt: new Date().toISOString(), origin, entryMatches, localEntry, productionEntry, routes, assets, sitemapOK, sitemapURLs: sitemapURLs.length, unknownStatus: missing.status, failures };
