@@ -1,6 +1,5 @@
 import { useEffect, type ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
-import { MotionConfig } from 'framer-motion';
 import SiteNav from './SiteNav';
 import Footer from './Footer';
 import Head from './Head';
@@ -35,7 +34,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
   const { pathname } = useLocation();
   useLinkTracking();
   return (
-    <MotionConfig reducedMotion="user">
+    <>
       <Head />
       <SiteNav />
       <main id="main" tabIndex={-1} className={pathname === '/' ? '' : 'min-h-[60vh]'}>
@@ -43,6 +42,6 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
       </main>
       <Footer />
       <AnalyticsConsent />
-    </MotionConfig>
+    </>
   );
 }

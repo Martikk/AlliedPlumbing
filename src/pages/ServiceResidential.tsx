@@ -1,5 +1,4 @@
 // src/pages/ServiceResidential.tsx
-import { motion } from "framer-motion";
 import ServiceTemplate from "./ServiceTemplate";
 
 export default function ServiceResidential() {
@@ -59,26 +58,26 @@ function ExtraContent() {
 
         {/* Right side – animated image collage */}
         <div className="relative grid grid-cols-2 gap-4">
-          <motion.img
+          <img
             src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074743/Allied/IBC-Logo-for-Gallery_hsklz0.webp"
             alt="High-efficiency systems"
-            className="rounded-2xl object-cover h-56 md:h-64 shadow-lg"
-            whileHover={{ scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            loading="lazy"
+            decoding="async"
+            className="rounded-2xl object-cover h-56 md:h-64 shadow-lg transition-transform duration-200 ease-out motion-safe:hover:scale-[1.03] motion-reduce:transform-none"
           />
-          <motion.img
+          <img
             src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074745/Allied/Rinnai_Logo_Red_uqwftm.png"
             alt="Tankless water heater install"
-            className="rounded-2xl object-cover h-56 md:h-64 shadow-lg"
-            whileHover={{ scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            loading="lazy"
+            decoding="async"
+            className="rounded-2xl object-cover h-56 md:h-64 shadow-lg transition-transform duration-200 ease-out motion-safe:hover:scale-[1.03] motion-reduce:transform-none"
           />
-          <motion.img
+          <img
             src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074307/Allied/Gemini_Generated_Image_9on55p9on55p9on5_ga0mso.png"
             alt="Repiping system detail"
-            className="col-span-2 rounded-2xl object-cover h-60 md:h-72 shadow-xl"
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            loading="lazy"
+            decoding="async"
+            className="col-span-2 rounded-2xl object-cover h-60 md:h-72 shadow-xl transition-transform duration-200 ease-out motion-safe:hover:scale-[1.02] motion-reduce:transform-none"
           />
         </div>
       </div>

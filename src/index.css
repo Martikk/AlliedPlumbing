@@ -251,3 +251,21 @@ body { margin: 0; }
     display: none;
   }
 }
+
+/* The CTA band's fade-up, previously framer-motion's job. The hidden state
+   applies only under `html.js`, so prerendered HTML and no-JS visitors see
+   the band immediately. */
+.js [data-reveal]:not([data-revealed]) {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.js [data-reveal] {
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal]:not([data-revealed]) {
+    opacity: 1;
+    transform: none;
+  }
+}

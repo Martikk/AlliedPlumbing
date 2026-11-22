@@ -169,6 +169,51 @@ function toBase64(file: File) {
 
 export type SubmitResult = { ok: true; reference: string };
 
+/** Why a submit failed. `backend` means the endpoint is reachable but is not
+ *  answering the contract — the usual cause is an Apps Script deployment that
+ *  predates `doPost`, which answers an HTML error page instead of JSON. The
+ *  visitor cannot do anything about that, so the form offers them a route that
+ *  does not depend on it. */
+export type FailureKind = 'network' | 'backend' | 'rejected';
+
+export class EnquiryError extends Error {
+  kind: FailureKind;
+  constructor(kind: FailureKind, message: string) {
+    super(message);
+    this.name = 'EnquiryError';
+    this.kind = kind;
+  }
+}
+
+/** A mailto: carrying everything the visitor typed.
+ *
+ *  Attachments cannot ride along, so they are named instead and the reply asks
+ *  for them. This exists so that a misconfigured backend can never turn a
+ *  completed form into a lost enquiry — the visitor always leaves with a way
+ *  to reach Allied that works. */
+export function mailtoFor(values: EnquiryValues, files: File[], to: string) {
+  const type = ENQUIRY_TYPES.find(t => t.value === values.enquiryType)?.label ?? values.enquiryType;
+  const lines = [
+    `Enquiry type: ${type}`,
+    `Name: ${values.name}`,
+    values.organisation && `Organisation: ${values.organisation}`,
+    `Email: ${values.email}`,
+    values.phone && `Phone: ${values.phone}`,
+    values.propertyType &&
+      `Property type: ${PROPERTY_TYPES.find(t => t.value === values.propertyType)?.label ?? ''}`,
+    values.service && `Service: ${serviceLabel(values.service)}`,
+    values.address && `Site address: ${values.address}`,
+    values.urgency && `Urgency: ${URGENCY.find(u => u.value === values.urgency)?.label ?? ''}`,
+    values.tenderClosing && `Tender closing: ${values.tenderClosing}`,
+    '',
+    values.message,
+    files.length ? `\n(${files.length} file(s) to follow: ${files.map(f => f.name).join(', ')})` : '',
+  ]
+    .filter(Boolean)
+    .join('\n');
+  return `mailto:${to}?subject=${encodeURIComponent(`Website enquiry — ${type}`)}&body=${encodeURIComponent(lines)}`;
+}
+
 /** Maps an enquiry type onto the backend's three storage routes. */
 function backendType(type: EnquiryType) {
   return type === 'other' ? 'contact' : 'quote';
@@ -181,7 +226,8 @@ export async function submitEnquiry(
   files: File[],
   meta: { requestId: string; startedAt: number; honeypot: string },
 ): Promise<SubmitResult> {
-  if (!APPS_SCRIPT_URL) throw new Error('The enquiry service is not configured. Please call 604-731-1000.');
+  if (!APPS_SCRIPT_URL)
+    throw new EnquiryError('backend', 'The enquiry service is not configured.');
 
   const payload = {
     type: backendType(values.enquiryType),
@@ -218,16 +264,30 @@ export async function submitEnquiry(
       signal: AbortSignal.timeout(60000),
     });
   } catch {
-    throw new Error(
-      'Your enquiry could not be sent. Check your connection and try again, or call 604-731-1000.',
+    throw new EnquiryError(
+      'network',
+      'Your enquiry could not be sent. Check your connection and try again.',
     );
   }
 
-  const result: unknown = await response.json().catch(() => null);
-  if (!result || typeof result !== 'object')
-    throw new Error('Your enquiry could not be sent. Please try again or call 604-731-1000.');
+  // Apps Script answers an HTML error page when the deployed version has no
+  // doPost ("Script function not found"). That is a deployment fault, not
+  // something the visitor can retry their way out of.
+  const text = await response.text();
+  let result: unknown = null;
+  try {
+    result = JSON.parse(text);
+  } catch {
+    throw new EnquiryError(
+      'backend',
+      'Our enquiry system is not accepting messages right now. This is our fault, not yours.',
+    );
+  }
 
   const data = result as { ok?: boolean; id?: string; message?: string; stored?: boolean };
   if (data.ok && data.id) return { ok: true, reference: data.id };
-  throw new Error(data.message || 'Your enquiry could not be sent. Please try again or call 604-731-1000.');
+  throw new EnquiryError(
+    'rejected',
+    data.message || 'Your enquiry could not be sent. Please try again.',
+  );
 }

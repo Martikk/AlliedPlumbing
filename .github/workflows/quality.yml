@@ -11,6 +11,11 @@ on:
   pull_request:
   push:
     branches: [main]
+  # The enquiry backend is deployed from the Apps Script console, so it can
+  # fall behind this repository with no commit to notice it. Check daily.
+  schedule:
+    - cron: '17 7 * * *'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -47,6 +52,20 @@ jobs:
           name: dist
           path: dist
           retention-days: 7
+
+  # Is the live enquiry backend running the code in apps-script/?
+  # This is its own job so a broken backend does not hide a build failure, and
+  # a build failure does not hide a broken backend. It sends a payload that
+  # server-side validation rejects before anything is stored or emailed.
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Enquiry backend contract
+        run: npm run check:backend
 
   lighthouse:
     needs: build

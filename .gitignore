@@ -29,3 +29,6 @@ vite.config.js
 .prerender/
 dist-dev
 .prerender-dev
+
+# clasp project id for the Apps Script backend (not public)
+.clasp.json

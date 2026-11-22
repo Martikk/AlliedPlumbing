@@ -25,12 +25,12 @@
     "Resource budgets are TRANSFER bytes, which is what Lighthouse reports, not source size.",
     "Today: ~85 KB JS and ~10 KB CSS transferred.",
     "",
-    "JS budget: the audit asks for 150 KB transferred. The homepage ships ~181 KB, and roughly",
-    "50 KB of that is framer-motion, pulled in for a MotionConfig, one fade-up on the CTA band",
-    "and two hover scales on the residential service page. Replacing those three with CSS would",
-    "meet the target, but it changes how the site animates, so it is a design decision rather",
-    "than a build one. The limit is set at 190 KB as a regression guard; see",
-    "docs/audit/open-items.md."
+    "",
+    "JS budget: the audit asks for 150 KB transferred; the homepage ships ~181 KB, which is",
+    "React, React Router and the route chunk. framer-motion was removed and it was worth only",
+    "783 bytes gzipped \u2014 it tree-shook almost completely, so an earlier 50 KB estimate for it",
+    "was wrong. The remaining gap needs a smaller router or preact, not a dependency trim.",
+    "The limit sits at 190 KB as a regression guard."
   ],
   "ci": {
     "collect": {

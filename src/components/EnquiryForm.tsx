@@ -2,11 +2,13 @@ import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Link } from '../lib/navigation';
 import Button from './ui/Button';
-import { PHONE, PHONE_HREF, RESPONSE_PROMISE } from '../config';
+import { EMAIL_QUOTE, PHONE, PHONE_HREF, RESPONSE_PROMISE } from '../config';
 import { SERVICE_LINKS, type ServiceKey } from '../lib/site-links';
 import { trackEvent } from '../lib/analytics';
 import {
   ACCEPT_ATTR,
+  EnquiryError,
+  mailtoFor,
   EMPTY,
   ENQUIRY_TYPES,
   FIELD_ORDER,
@@ -108,6 +110,7 @@ export default function EnquiryForm({
   const [errors, setErrors] = useState<Errors>({});
   const [sending, setSending] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [escapeHatch, setEscapeHatch] = useState<string | null>(null);
   const summary = useRef<HTMLDivElement>(null);
   const startedAt = useRef(Date.now());
   const requestId = useRef('');
@@ -194,8 +197,16 @@ export default function EnquiryForm({
       const message =
         failure instanceof Error
           ? failure.message
-          : `Your enquiry could not be sent. Please try again or call ${PHONE}.`;
+          : 'Your enquiry could not be sent. Please try again.';
       setErrors({ form: message });
+      // When the backend itself is misconfigured, retrying cannot help, so
+      // hand the visitor a route that does not depend on it. Everything they
+      // typed goes into the mail body; nothing is lost.
+      setEscapeHatch(
+        failure instanceof EnquiryError && failure.kind === 'backend'
+          ? mailtoFor(values, files, EMAIL_QUOTE)
+          : null,
+      );
       trackEvent('form_error', { error_type: 'network_or_server', enquiry_type: values.enquiryType });
       requestAnimationFrame(() => summary.current?.focus());
     } finally {
@@ -248,13 +259,30 @@ export default function EnquiryForm({
               </ul>
             )}
             {errors.form && (
-              <p className="mt-3 text-sm">
-                Your details are still here — you can try again, or call{' '}
-                <a href={PHONE_HREF} className="font-semibold underline underline-offset-2">
-                  {PHONE}
-                </a>
-                .
-              </p>
+              <>
+                <p className="mt-3 text-sm">
+                  Your details are still here. You can{' '}
+                  {escapeHatch ? 'send them by email' : 'try again'}, or call{' '}
+                  <a
+                    href={PHONE_HREF}
+                    data-cta-location="page"
+                    className="font-semibold underline underline-offset-2"
+                  >
+                    {PHONE}
+                  </a>
+                  .
+                </p>
+                {escapeHatch && (
+                  <a
+                    href={escapeHatch}
+                    data-tracked="true"
+                    onClick={() => trackEvent('click_email', { location: 'page' })}
+                    className="mt-3 inline-flex min-h-12 items-center rounded-[var(--radius)] bg-[var(--brand)] px-5 font-semibold text-white hover:bg-[var(--brand-hover)]"
+                  >
+                    Send this enquiry by email
+                  </a>
+                )}
+              </>
             )}
           </div>
         )}
