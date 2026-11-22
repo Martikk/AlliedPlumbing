@@ -1,45 +1,10 @@
+import { responsiveImage, imageCandidates } from '../lib/images';
 import { Link } from '../lib/navigation';
-import { cld, srcSet } from '../lib/images';
 import team from '../data/team.json';
-
-/** D-02 §6 — three to six people, consistent crops.
- *
- *  The section heading and the "View all" link now belong to the <Section>
- *  that wraps this (C-06), so the same component drops into the homepage and
- *  /about/ without duplicating a heading.
- *
- *  Only people with a photograph appear; a mixed grid of headshots and empty
- *  tiles reads worse than a shorter row. PENDING D-01 §4: one 30-minute
- *  session, same background, 4:5 crop, same lighting, for everyone. */
 export default function TeamSection() {
-  const featured = team.filter(member => member.image).slice(0, 3);
-  if (!featured.length) return null;
-  return (
-    <ul className="team-rail">
-      {featured.map(member => (
-        <li key={member.name}>
-        <Link
-          to="/team"
-          className="team-photo-card clip-tilt"
-          aria-label={`${member.name}, ${member.role} — see the whole team`}
-        >
-          <img
-            src={cld(member.image!, 640, { ar: '4:5' })}
-            srcSet={srcSet(member.image!, 960, { ar: '4:5' })}
-            sizes="(min-width: 768px) 330px, 85vw"
-            alt=""
-            width={640}
-            height={800}
-            loading="lazy"
-            decoding="async"
-          />
-          <div>
-            <h3>{member.name}</h3>
-            <p>{member.role}</p>
-          </div>
-        </Link>
-        </li>
-      ))}
-    </ul>
-  );
+  const featured=['Nick Fedele','Alex Martishyn','Liam Dillon'].map(name=>team.find(member=>member.name===name)!);
+  return <section className="rounded-3xl bg-[#f6fafd] p-6 md:p-10 lg:p-12">
+    <div className="flex flex-wrap justify-between items-center gap-4"><div><span className="section-kicker">Our team</span><h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">Meet Our Team</h2></div><Link to="/team" className="rounded-lg border border-slate-300 px-4 py-3 font-semibold text-slate-800 hover:bg-white">View all <span aria-hidden>↗</span></Link></div>
+    <div className="team-photo-grid mt-9">{featured.map(member=><Link to="/team" key={member.name} className="team-photo-card clip-tilt"><img src={responsiveImage(member.image!, 768)} srcSet={imageCandidates(member.image!)} sizes="(min-width: 768px) 330px, 85vw"  alt="" width={600} height={750} loading="lazy" /><div><h3>{member.name}</h3><p>{member.role}</p></div></Link>)}</div>
+  </section>;
 }

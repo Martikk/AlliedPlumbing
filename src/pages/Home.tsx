@@ -1,50 +1,52 @@
+// src/pages/Home.tsx
 import Hero from '@/components/Hero';
-import TrustStrip from '@/components/TrustStrip';
-import ServicesGrid from '@/components/home/ServicesGrid';
-import FeaturedProjects from '@/components/home/FeaturedProjects';
-import HowWeWork from '@/components/home/HowWeWork';
+import { HOME_SLIDES } from '@/lib/lcp-preload';
+import FeatureRibbon from '@/components/FeatureRibbon';
+import AboutCompany from '@/components/AboutCompany';
+import ServicesShowcase from '@/components/ServicesShowcase';
+import ProjectsBanner from '@/components/ProjectsBanner';
 import TeamSection from '@/components/TeamSection';
-import InsightsGrid from '@/components/home/InsightsGrid';
-import ContactBlock from '@/components/home/ContactBlock';
-import Section from '@/components/ui/Section';
-
-/** Audit D-02 — eight sections, in the order a facilities manager asks their
- *  three questions: can you do my job, have you done it before, how do I start.
- *
- *  1 Hero · 2 Trust strip · 3 Services · 4 Featured projects ·
- *  5 How we work · 6 Team · 7 Insights · 8 Contact
- *
- *  Removed from the old thirteen-block page: the four "Smart methods /
- *  Experienced team / Modern equipment / Proven delivery" cards (generic, and
- *  they repeated the process block), the "We build, we maintain, we care" CTA
- *  band, the unlabelled "Quality control system / Project coordination…" list,
- *  the separate Clients block (folded into the project cards) and the logo
- *  marquee (now static, inside the trust strip).
- *
- *  I-01 — this page is written for the institutional and commercial buyer
- *  (Option A). Residential is one service page, not the headline. If Allied
- *  decides otherwise, the hero copy below and the service page H1s (A-06) are
- *  the two places to change. */
+import LogoMarquee from "../components/LogoMarquee";
+import CallToAction from "@/components/CallToAction";
+import ClientTestimonials from '../components/ClientTestimonials';
+import BlogTeasers from '../components/BlogTeasers';
+import ContactLead from "@/components/ContactLead";
 
 export default function Home() {
   return (
-    <>
-      <Hero
-        eyebrow="We build. We maintain. We care."
-        heading="Mechanical contractor for schools, strata and commercial buildings"
-        subhead="Plumbing, heating, boiler plants and HVAC across Metro Vancouver, the North Shore and Sea-to-Sky — installed, maintained and on call 24/7."
-        image="https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065876/Allied/3_gk4dl8.png"
-        alt="Allied crew working in a school mechanical room"
-      />
-      <TrustStrip />
-      <ServicesGrid />
-      <FeaturedProjects />
-      <HowWeWork />
-      <Section eyebrow="Our team" heading="The people who run the work">
-        <TeamSection />
-      </Section>
-      <InsightsGrid />
-      <ContactBlock />
-    </>
+    <div className="bg-white overflow-x-hidden">
+
+      <Hero slides={HOME_SLIDES} />
+
+      <FeatureRibbon className="-mt-8 md:-mt-32" />
+
+      <section className="max-w-6xl mx-auto px-4 flex flex-col gap-12">
+        <section className="pt-10 md:pt-14">
+          <h2 className="text-3xl md:text-4xl font-extrabold">From first enquiry to a defined scope.</h2>
+          <ol className="mt-8 grid md:grid-cols-3 gap-7">{[
+            ['Tell us about your building.','Share the location, the system involved and what you need help with. Available drawings and photographs can help us understand the request.'],
+            ['Review the requirements.','We discuss access, timing and the information needed to assess the work. Some requests will require a site visit or consultant input.'],
+            ['Agree the next steps.','Scope, scheduling and project-specific requirements are discussed before work proceeds.'],
+          ].map(([title,copy],index)=><li key={title} className="border-t border-slate-300 pt-5"><span className="text-sm font-semibold text-slate-500">0{index+1}</span><h3 className="mt-3 text-xl font-bold">{title}</h3><p className="mt-3 text-neutral-700 leading-relaxed">{copy}</p></li>)}</ol>
+          <a href="/quote/" className="btn-brand mt-7">Discuss your project <span aria-hidden>↗</span></a>
+        </section>
+        <AboutCompany />
+
+        <div className="space-y-10">
+          <ServicesShowcase />
+          <ProjectsBanner />
+          <TeamSection />
+          <ClientTestimonials />
+          <LogoMarquee />
+          <CallToAction />
+          <ContactLead />
+          <BlogTeasers />
+
+        </div>
+      </section>
+
+      {/* Поп-ап CTA — Renders поверх всего, помним про suppression в localStorage */}
+
+    </div>
   );
 }

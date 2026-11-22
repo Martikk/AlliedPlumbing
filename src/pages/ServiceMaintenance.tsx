@@ -1,7 +1,21 @@
-import ServiceTemplate from './ServiceTemplate';
+// src/pages/ServiceMaintenance.tsx
+import ServiceTemplate from "./ServiceTemplate";
 
-/** All content lives in src/data/services-content.json (audit I-02), so a
- *  copy change never touches a component. */
 export default function ServiceMaintenance() {
-  return <ServiceTemplate service="maintenance" />;
+  return (
+    <ServiceTemplate
+      title="Preventive Maintenance Programs"
+      subtitle="01 / Mechanical PM"
+      description="Planned maintenance for peace of mind. Monthly, quarterly, and annual programs with DDC trend reviews, safety checks, and lifecycle forecasting — ensuring your systems run efficiently, safely, and within budget."
+      heroImg="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074307/Allied/Gemini_Generated_Image_9on55p9on55p9on5_ga0mso.png"
+      highlights={[]}
+      bullets={[
+        "Custom PM checklists aligned with equipment type and manufacturer specs",
+        "DDC trend reviews and performance optimization reports",
+        "Capex forecasting and lifecycle planning tools",
+        "Predictive alerts and pre-season inspections",
+        "Detailed documentation for compliance and budgeting",
+      ]}
+    />
+  );
 }

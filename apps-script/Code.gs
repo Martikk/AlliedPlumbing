@@ -175,7 +175,7 @@ function formHtml_(config) {
 <label><span id="message-label">Message</span><textarea name="message" required maxlength="5000"></textarea></label><div id="files"></div>
 <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>I agree to be contacted about this enquiry/application. <a href="https://www.alliedplumbing.ca/privacy/" target="_blank" rel="noopener">Privacy notice (opens in a new tab)</a>.</span></label>
 </fieldset><button id="send" type="submit">Send enquiry</button></form>
-<div id="result" role="status" aria-live="polite" tabindex="-1"></div><p><small>Keep your reference number. Acceptance by our system does not mean a team member has read your message.</small></p>
+<div id="result" role="status" aria-live="polite" tabindex="-1"></div><p><small>Keep your reference number. We reply within one business day; for urgent plumbing, heating or HVAC work call 604-731-1000 \u2014 24/7.</small></p>
 <script>
 var config=${encoded};
 var form=document.getElementById('enquiry'),button=document.getElementById('send'),result=document.getElementById('result'),busy=false,locked=false;

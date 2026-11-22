@@ -35,7 +35,7 @@ The site is built like a product, not a brochure. Every route is prerendered for
 | **One native enquiry form** | A single React form branches by enquiry type (quote, service call, maintenance, tender, other) and posts to a Google Apps Script backend: dedupe by idempotency key, human-readable reference numbers, attachments in a private Drive with 90/180-day retention. Careers keeps its own résumé flow. |
 | **Server-side file checks** | Quote accepts up to 4 PDF/JPG/PNG (10 MB total); Careers accepts one PDF up to 5 MB. Count, size, extension, MIME type and file signature are verified. |
 | **Privacy-first analytics** | Consent Mode v2 defaults to denied; GA4 loads only after an explicit opt-in, and then on idle. Lead, call and email events carry only parameters on an allowlist — a name, email or file name cannot reach a report. |
-| **Performance** | Lighthouse desktop: performance, accessibility, SEO and best-practices all 100 on the four baseline URLs. Mobile performance 95–99, accessibility 100, CLS 0. Images go through one Cloudinary helper with art-directed crops and a single width ladder. |
+| **Performance** | Lighthouse: SEO and best-practices 100 on all four baseline URLs, mobile performance 91–97, accessibility 100 on mobile, CLS 0. Images go through one Cloudinary helper. |
 | **Production verification** | `npm run test:production` checks every live route (HTTP status, title, canonical, prerendered h1), asset hashes against the local build, and the sitemap. |
 
 ## Screenshots
@@ -77,7 +77,6 @@ Browser ──► AWS Amplify (static, prerendered HTML + hashed assets)
 - **Build:** Vite with an SSR prerender pass and sitemap generation
 - **Backend:** Google Apps Script (`apps-script/`)
 - **Hosting:** AWS Amplify with managed redirects
-- **Design system:** CSS variable tokens in `src/styles/tokens.css`, mirrored in `tailwind.config.js`. One `Button`, one `Card`, one `Section`. No hex colour lives in a component.
 - **Quality:** ESLint, Prettier, Node test runner (content, SEO, analytics, forms, Apps Script), a head check over every built page, a production check against the live site, and Lighthouse CI on every PR
 
 ## Getting started
@@ -101,8 +100,8 @@ src/
   pages/        route components (services, projects, careers, blog, quote)
   components/   shared UI, analytics consent, CTAs
   data/         projects, team, blog posts, SEO metadata (JSON)
-  components/ui/    Button, Card, Section, CardRail — the whole design system
-  styles/tokens.css colour, type, space and motion tokens
+  components/ui/    Button, shared by the enquiry form
+  styles/tokens.css colour, type and motion tokens used by the form
   lib/          enquiry schema and transport, Cloudinary helper, schema.org
                 builders, LCP preloads, analytics consent
   scripts/      sitemap generation, head check, production checks
@@ -118,10 +117,15 @@ lighthouserc.json  performance budget enforced in CI
 
 ## Audit follow-up
 
-The site was rebuilt in November 2026 against a full UX, performance,
-accessibility and conversion audit. **[docs/audit/open-items.md](docs/audit/open-items.md)**
-tracks every ticket: what shipped, what is waiting on information from Allied,
-and the measured before/after.
+A full UX, performance, accessibility and conversion audit was carried out in
+November 2026. Its non-visual tickets shipped — the native enquiry form,
+structured data, the favicon, sitemap `lastmod`, titles and descriptions, cache
+headers, the head check and CI. Its visual redesign was built and then rolled
+back at Allied's request, so the original design is what you see.
+
+**[docs/audit/open-items.md](docs/audit/open-items.md)** tracks every ticket:
+what shipped, what went back, what is waiting on information from Allied, and
+the measured before/after.
 
 ---
 

@@ -1,7 +1,21 @@
-import ServiceTemplate from './ServiceTemplate';
+// src/pages/ServiceCommercial.tsx
+import ServiceTemplate from "./ServiceTemplate";
 
-/** All content lives in src/data/services-content.json (audit I-02), so a
- *  copy change never touches a component. */
 export default function ServiceCommercial() {
-  return <ServiceTemplate service="commercial-plumbing" />;
+  return (
+    <ServiceTemplate
+      title="Commercial & Institutional Plumbing"
+      subtitle="03 / Plumbing"
+      description="Backflows, PRVs, booster pumps, DHW plants, tenant improvements and school/strata programs — engineered for uptime and safety."
+      heroImg="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065875/Allied/1_tc9jiy.png"
+      highlights={[]}
+      bullets={[
+        "Backflow testing & certification",
+        "PRVs / booster pump systems",
+        "DHW plants, recirc & mixing valves",
+        "Tenant improvements & fit-outs",
+        "Strata / schools / municipal facilities",
+      ]}
+    />
+  );
 }

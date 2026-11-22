@@ -5,14 +5,17 @@ import SiteNav from './SiteNav';
 import Footer from './Footer';
 import Head from './Head';
 import AnalyticsConsent from './AnalyticsConsent';
-import MobileActionBar from './MobileActionBar';
 import { trackEvent, type CtaLocation } from '../lib/analytics';
 
 /** Delegated tracking for J-02's `click_call` and `click_email`.
  *
- * A link can name where it sits with `data-cta-location`; otherwise the event
- * is attributed to "page". Buttons that already fire their own event set
- * `data-tracked` so nothing is counted twice. */
+ * Invisible: it only listens. A link can name where it sits with
+ * `data-cta-location`; otherwise the event is attributed to "page". Links
+ * that fire their own event set `data-tracked` so nothing is double-counted.
+ *
+ * The audit's sticky mobile action bar (E-02) is not mounted here — it was
+ * part of the redesign that was rolled back. To bring it back, restore
+ * src/components/MobileActionBar.tsx from git and render it below <Footer>. */
 function useLinkTracking() {
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
@@ -39,7 +42,6 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
         {children}
       </main>
       <Footer />
-      <MobileActionBar />
       <AnalyticsConsent />
     </MotionConfig>
   );

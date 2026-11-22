@@ -1,100 +1,109 @@
 import { useSearchParams } from 'react-router-dom';
-import Section from '../components/ui/Section';
-import Card from '../components/ui/Card';
-import Button, { PhoneIcon } from '../components/ui/Button';
-import { featuredProjects } from '../lib/projects';
-import { PHONE, PHONE_HREF } from '../config';
+import { Link } from '../lib/navigation';
+import { responsiveImage, imageCandidates } from '../lib/images';
+import projects from '../data/projects.json';
+import { PHONE } from '../config';
 
-/** Audit H-03 — the thank-you page.
+/** Audit H-03 — the thank-you page, in the site's own visual language.
  *
- * noindex (handled by Head.tsx, which marks any route missing from seo.json
- * as noindex,follow). This page is also the GA4 conversion destination, as a
- * backup to the `generate_lead` event. */
+ *  noindex and out of the sitemap (set in src/data/seo.json), but still
+ *  prerendered so a refresh or a direct link works. It is also the GA4
+ *  conversion destination, as a backup to the `generate_lead` event. */
 
-const STEPS = [
-  {
-    title: 'We read it the same day',
-    copy: 'Your enquiry goes to the person who handles that type of work — dispatch for service calls, estimating for tenders, the quote desk for everything else.',
-  },
-  {
-    title: 'We reply within one business day',
-    copy: 'Usually with questions: access windows, equipment details, or a time for a site visit. Urgent service calls are answered by phone, not email.',
-  },
-  {
-    title: 'You get a written scope',
-    copy: 'Sequence, submittals and turnover documents, priced. Nothing starts until you have agreed it.',
-  },
+const STEPS: [string, string][] = [
+  [
+    'We read it the same day',
+    'Your enquiry goes to the person who handles that kind of work — dispatch for service calls, estimating for tenders, the quote desk for everything else.',
+  ],
+  [
+    'We reply within one business day',
+    'Usually with questions: access windows, equipment details, or a time for a site visit. Urgent service calls are answered by phone, not email.',
+  ],
+  [
+    'You get a written scope',
+    'Sequence, submittals and turnover documents, priced. Nothing starts until you have agreed it.',
+  ],
 ];
 
 export default function QuoteThanks() {
   const [params] = useSearchParams();
   const reference = params.get('ref');
-  const related = featuredProjects.slice(0, 2);
+  const related = projects.filter(project => project.featured).slice(0, 2);
 
   return (
-    <>
-      <Section
-        headingLevel={1}
-        eyebrow="Enquiry received"
-        heading="Thank you — we have your enquiry"
-        intro="A copy is on its way to your inbox."
-      >
-        {reference && (
-          <p className="rounded-[var(--radius-lg)] border border-[var(--line)] bg-[var(--surface-alt)] p-5">
-            <span className="text-eyebrow font-bold uppercase tracking-[0.16em] text-[var(--muted)]">
-              Your reference
-            </span>
-            <strong className="mt-1 block text-2xl font-extrabold text-[var(--ink)]">
-              {reference}
-            </strong>
-            <span className="mt-2 block text-sm text-[var(--body)]">
-              Quote this if you call us about this enquiry.
-            </span>
-          </p>
-        )}
+    <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-12">
+      <span className="section-kicker">Enquiry received</span>
+      <h1 className="mt-4 text-4xl md:text-5xl font-extrabold leading-tight">
+        Thank you — we have your enquiry
+      </h1>
+      <p className="mt-5 max-w-2xl text-lg leading-relaxed text-neutral-700">
+        A copy is on its way to your inbox.
+      </p>
 
-        <h2 className="mt-12 text-h2 font-extrabold text-[var(--ink)]">What happens next</h2>
-        <ol className="mt-6 grid gap-8 md:grid-cols-3">
-          {STEPS.map((step, index) => (
-            <li key={step.title} className="border-t-2 border-[var(--line)] pt-5">
-              <span className="text-sm font-bold tracking-widest text-[var(--muted)]">
-                0{index + 1}
-              </span>
-              <h3 className="mt-3 text-h3 font-bold text-[var(--ink)]">{step.title}</h3>
-              <p className="mt-3 text-sm text-[var(--body)]">{step.copy}</p>
+      {reference && (
+        <div className="project-metrics company-experience mt-8 max-w-md">
+          <div>
+            <span>Your reference</span>
+            <strong>{reference}</strong>
+            <small>Quote this if you call us about this enquiry.</small>
+          </div>
+        </div>
+      )}
+
+      <section className="mt-12">
+        <h2 className="text-3xl md:text-4xl font-extrabold">What happens next</h2>
+        <ol className="mt-8 grid md:grid-cols-3 gap-7">
+          {STEPS.map(([title, copy], index) => (
+            <li key={title} className="border-t border-slate-300 pt-5">
+              <span className="text-sm font-semibold text-slate-600">0{index + 1}</span>
+              <h3 className="mt-3 text-xl font-bold">{title}</h3>
+              <p className="mt-3 text-neutral-700 leading-relaxed">{copy}</p>
             </li>
           ))}
         </ol>
-
-        <div data-cta-anchor className="mt-10 flex flex-wrap gap-3">
-          <Button href={PHONE_HREF} variant="secondary" icon={<PhoneIcon />}>
-            Call {PHONE} (24/7)
-          </Button>
-          <Button href="/projects" variant="tertiary">
-            See our projects
-          </Button>
+        <div className="mt-8 flex flex-wrap items-center gap-5">
+          <a href="tel:+16047311000" data-cta-location="page" className="btn-brand">
+            Call {PHONE}
+          </a>
+          <Link to="/projects" className="font-semibold text-red-800 underline underline-offset-4">
+            Explore our projects
+          </Link>
         </div>
-      </Section>
+      </section>
 
       {related.length > 0 && (
-        <Section tone="alt" eyebrow="While you wait" heading="Work like yours">
-          <div className="grid gap-5 md:grid-cols-2 md:gap-6">
+        <section className="mt-14 border-t border-slate-200 pt-8">
+          <h2 className="text-2xl md:text-3xl font-extrabold">Work like yours</h2>
+          <div className="mt-7 grid md:grid-cols-2 gap-6">
             {related.map(project => (
-              <Card
-                key={project.id}
-                to={`/projects/${project.id}`}
-                eyebrow={project.client}
-                title={project.title}
-                summary={project.summary}
-                metric={project.outcomeLine}
-                image={project.cover}
-                sizes="(min-width: 768px) 568px, 100vw"
-                variant="project"
-              />
+              <article key={project.id}>
+                <Link to={`/projects/${project.id}`} className="group block">
+                  <div className="relative clip-tilt rounded-2xl overflow-hidden">
+                    <img
+                      src={responsiveImage(project.cover, 768)}
+                      srcSet={imageCandidates(project.cover)}
+                      sizes="(min-width: 768px) 460px, 100vw"
+                      alt=""
+                      width={900}
+                      height={650}
+                      loading="lazy"
+                      className="w-full h-56 md:h-60 object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <div className="clip-tilt mt-3 rounded-xl bg-neutral-100 px-5 py-4">
+                    <h3 className="font-semibold text-neutral-800 leading-relaxed">
+                      {project.title}
+                    </h3>
+                  </div>
+                </Link>
+                <p className="mt-3 px-2 text-sm leading-relaxed text-neutral-600">
+                  {project.outcomeLine ?? project.summary}
+                </p>
+              </article>
             ))}
           </div>
-        </Section>
+        </section>
       )}
-    </>
+    </div>
   );
 }

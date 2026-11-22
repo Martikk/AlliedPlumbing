@@ -2,9 +2,16 @@
 
 Source: *alliedplumbing.ca — Full Website Audit & Developer Spec*, 2026-11-22.
 
-This file tracks the tickets from that spec. It is the one place to look for
-"what still needs a human answer". Each blocked item says exactly which file
-to edit, so nothing below needs a developer once the answer exists.
+> **Scope note, 2026-11-22.** The audit's visual redesign (epics C, D, E, F, G)
+> was built, reviewed and then **rolled back at Allied's request**. The original
+> design is what ships: the red emergency strip and floating navigation pill,
+> the four-slide hero, the `clip-tilt` cards, the original homepage order and
+> button styles.
+>
+> Everything that is **not** visual was kept: the native enquiry form, the
+> favicon, structured data, sitemap `lastmod`, page titles and descriptions,
+> cache headers, the head check, the tests and CI. Section 4 below says exactly
+> which tickets survived and which went back.
 
 ---
 
@@ -12,192 +19,203 @@ to edit, so nothing below needs a developer once the answer exists.
 
 | # | Question | Where the answer goes | Blocks |
 |---|---|---|---|
-| Q1 | The exact brand red and navy from the logo source file. Is a brand font required? | `src/styles/tokens.css` → `--brand`, `--brand-hover`. Nothing else contains a colour. | C-01 |
-| Q2 | Which clients may be named and shown by logo? | `src/data/trust.json` → `clients.items` | D-04, D-05 |
-| Q3 | Which licences, certifications, safety program (COR?), insurance limits and bonding may be stated publicly? | `src/data/trust.json` → `credentials.items`. Also unblocks the permits FAQ in `src/data/faq.json`. | D-04, H-04, I-07 |
-| Q4 | Exact service area, and is residential still a target segment? | `src/lib/schema.ts` → `AREA_SERVED` | A-05, I-01, I-09 |
+| Q1 | The exact brand red and navy from the logo source file | `src/styles/tokens.css`. **Scope is now small**: tokens only drive the enquiry form and the shared `Button`. The restored design keeps its own colours inline. | form styling, `icon.svg` |
+| Q2 | Which clients may be named and shown by logo? | No home right now — the trust strip that would have carried them went back with the design. The natural place is `/clients/`. | D-04 (reverted) |
+| Q3 | Which licences, certifications, safety program (COR?), insurance limits and bonding may be stated publicly? | `TrustCard` in `src/pages/GetQuote.tsx` — it already lists equipment brands and is where a credential line belongs | H-04, I-07 |
+| Q4 | Exact service area, and is residential still a target segment? | `src/lib/schema.ts` → `AREA_SERVED` | A-05, I-09 |
 | Q5 | Which inbox receives each enquiry type? | `apps-script/Code.gs` → `ROUTES_` (all three currently go to `alex@allied-plumbing.ca`) | H-02 |
-| Q6 | Can Allied state an emergency response time or coverage radius? | `src/pages/ServiceEmergency.tsx` — deliberately states none today | H-06 |
-| Q7 | Is `allied-plumbing.ca` owned and staying as the email domain? Does it redirect to the site? | DNS — the site shows `alliedplumbing.ca` while emails use `allied-plumbing.ca` | I-08 |
+| Q6 | Can Allied state an emergency response time or coverage radius? | Nowhere states one today, deliberately | H-06 |
+| Q7 | Is `allied-plumbing.ca` owned and staying as the email domain? Does it redirect? | DNS — the site is `alliedplumbing.ca`, emails are `allied-plumbing.ca` | I-08 |
 | Q8 | Budget for a half-day photo shoot and for call tracking | — | D-01, J-03 |
 | Q9 | Who has DNS and GA4 admin access? | Hosting is **AWS Amplify**, not Vercel or Netlify — the audit assumed otherwise | A-01, J-01 |
 
-### Decisions taken in the meantime
+### Decision still outstanding: I-01, the primary buyer
 
-- **I-01 (primary buyer)** — the site is written for the **institutional and
-  commercial** buyer (the audit's Option A). The evidence points that way:
-  14 project pages, all but one institutional or strata; an RFP page; school
-  districts 40, 43, 45 and 48. Residential is one service page, not the
-  headline. To change this, the hero copy in `src/pages/Home.tsx` and the H1s
-  in `src/data/services-content.json` are the two places to edit.
-- **Years in business** — shown as `25 + (current year − 2025)`, from the
-  January 2025 RFPQ. No founding date is documented. `src/data/trust.json`.
+The page **titles and descriptions** in `src/data/seo.json` were rewritten for
+the institutional buyer — "Mechanical Contractor, Metro Vancouver", "for
+schools, strata and commercial buildings". Those were kept. The restored
+homepage copy is the original, generic version ("Plumbing, Heating & HVAC in
+British Columbia", residential and commercial together).
+
+So a search result currently promises a school-district contractor and the page
+opens with general copy. That is not broken, but it is a seam. Either:
+
+- rewrite the homepage hero copy to match the titles, or
+- revert `src/data/seo.json` to the original titles and descriptions.
+
+Both are small. It needs Allied's answer on who the site is for.
 
 ---
 
-## 2. Allied's own work (excluded from this pass by request)
+## 2. Allied's own work (excluded by request)
 
-- **D-01 — real photography.** Every image is still an AI render. This is the
-  single highest-value fix in the audit and it bounds the remaining mobile LCP
-  gap: the hero sources are upscaled PNGs. The shot list is in the spec
-  (section 7). Swap the Cloudinary public IDs in `src/lib/site-links.ts`,
-  `src/data/services-content.json`, `src/data/projects.json` and
-  `src/pages/Home.tsx` — no component changes needed.
-  `npm run check:head` warns if a `Gemini_Generated` or `Prompt_Generation`
-  asset reaches a build.
-- **I-04 — project facts.** `src/data/projects.json` now has the case-study
-  fields the template renders: `contractType`, `engineer`, `valueRange`,
-  `duration`, `challenge`, `result`, `gallery`, `quote`, `imageAlt`. All are
-  blank. Each block appears only when filled.
-- **Alt text (A-07)** — once real photos land, `imageAlt` on each project and
-  the `alt` on each hero should describe the work ("Six IBC condensing boilers
-  in the new Ridgeview Elementary mechanical room"), not the keyword.
+- **D-01 — real photography.** Every image is still an AI render, and this is
+  what bounds the remaining mobile LCP: the hero sources are upscaled PNGs.
+  The shot list is in the spec, section 7. `npm run check:head` warns when a
+  `Gemini_Generated` or `Prompt_Generation` asset reaches a build — it does
+  today, on `/`, `/services/` and three service pages.
+- **I-04 — project facts.** `src/data/projects.json` carries the case-study
+  fields (`contractType`, `engineer`, `valueRange`, `duration`, `challenge`,
+  `result`, `gallery`, `quote`, `imageAlt`, `outcomeLine`). They are filled in
+  for five projects' `outcomeLine` only; the rest are blank. The template that
+  rendered them went back with the design, so they are currently unused data —
+  they are kept because the facts are worth collecting either way.
 
 ---
 
 ## 3. Ops — nobody can do these from the repo
 
+- **Apps Script redeploy.** `apps-script/Code.gs` gained a `doPost` so the
+  native form can reach the existing backend. **The form cannot submit until
+  this is deployed**: Deploy → Manage deployments → edit the active deployment
+  → New version. The `/exec` URL does not change.
 - **A-08** — verify Search Console and Bing Webmaster Tools, submit the
   sitemap, set a monthly check of Coverage, Core Web Vitals and top queries.
-- **I-05** — claim and complete the Google Business Profile and the HomeStars
-  listing (3 reviews, 8.7/10, apparently unclaimed). Then start asking for
-  reviews at job closeout. **Never write or paraphrase a testimonial**: the
-  site has no `aggregateRating` and a test asserts it never gains one.
-- **J-01** — in GA4 Admin: 14-month retention, an internal-traffic filter for
-  the office IP, link Search Console, enhanced measurement on but form
-  interactions off (the custom events are more accurate).
-- **J-03 / J-04** — call tracking and the Looker Studio dashboard. Both are
-  cost decisions.
+- **I-05** — claim the Google Business Profile and the HomeStars listing
+  (3 reviews, 8.7/10, apparently unclaimed), then ask for reviews at job
+  closeout. **Never write or paraphrase a testimonial**: the site has no
+  `aggregateRating` and a test asserts it never gains one.
+- **J-01** — GA4 Admin: 14-month retention, internal-traffic filter for the
+  office IP, link Search Console, enhanced measurement on but form
+  interactions off.
+- **J-03 / J-04** — call tracking and the Looker Studio dashboard. Cost
+  decisions.
 - **Turnstile (H-01 step 6)** — the form has a honeypot and a minimum fill
-  time, both re-checked server side. Cloudflare Turnstile needs a Cloudflare
-  account and a site key; it is not wired up.
-- **Apps Script redeploy** — `apps-script/Code.gs` gained a `doPost` so the
-  native form can reach the existing backend. **The form cannot submit until
-  this is deployed**: Deploy → Manage deployments → edit the active
-  deployment → New version. The `/exec` URL does not change.
+  time, both re-checked server side. Turnstile needs a Cloudflare account.
 - **customHttp.yml** — Amplify reads it on the next deploy. Verify with
   `curl -sI https://www.alliedplumbing.ca/assets/<hashed>.js | grep -i cache`.
 
 ---
 
-## 4. Done in this pass
+## 4. Ticket status
 
-### Epic A — technical SEO
-- **A-01** *verified, not changed*: the apex already 301s to `www`, and a
-  missing trailing slash already 301s once. The audit's finding was stale.
-- **A-02** one `Head` owns the tags; the canonical is built from the route,
-  never from `window.location`. All 51 routes: title ≤ 60, description
-  120–155, both unique. `npm run check:head` enforces it in CI.
-- **A-03** `lastmod` from each content file's last commit date, not the build
-  clock. `priority` and `changefreq` dropped.
-- **A-04** the two Herbert Spencer pages are different scopes, so each has a
-  distinct H1 and they cross-link.
-- **A-05** `Service`, `FAQPage`, `BreadcrumbList` and `Project` per template;
-  the organisation block is now `["HVACBusiness","Plumber"]`. `geo` is omitted
-  rather than guessed and `sameAs` waits on I-05.
-- **A-06** H1s follow `<Service> for <building types> in <region>`; the
-  equipment list moved to the subhead.
+### Kept
 
-### Epic B — page speed
-- **B-00** baseline measured and saved to `docs/perf/`. PageSpeed Insights
-  refused without an API key (shared quota exhausted), so these are local
-  Lighthouse 12 runs: the live site, then this build.
-- **B-01** the 539 KB Cloudinary favicon is replaced by a local set — 589 B on
-  first load, ~16 KB in total. *An `icon.svg` still needs the vector logo
-  (Q1); it cannot be traced from the raster file these came from.*
-- **B-02** the slideshow is gone. One art-directed photo, 4:5 under 768 px and
-  16:9 above, preloaded per breakpoint with `fetchpriority="high"`.
-- **B-03** one Cloudinary helper; `q_auto` for photos and `q_auto:eco` only
-  under 400 px; one width ladder; cards request a 4:3 crop.
-- **B-04** CSS is 43 KB raw / 8.6 KB transferred, with no inline `<style>`
-  block. *Not done: extracting critical CSS. The stylesheet costs ~150 ms of
-  render-blocking on simulated 3G, and the acceptance criteria (< 60 KB, no
-  inline block > 14 KB) already pass, so this did not seem worth the build
-  complexity.*
-- **B-05** no `@font-face` anywhere; the site renders in `system-ui`.
-- **B-06** gtag loads after consent and on idle; the Careers iframe mounts
-  within 600 px of the viewport; the map on `/contact/` is behind a button.
-- **B-07 / B-08** cache headers and a Lighthouse budget in CI.
+| Ticket | What shipped |
+|---|---|
+| **A-01** | *Verified, no change needed*: the apex already 301s to `www`, and a missing trailing slash already 301s once. The audit's finding was stale. |
+| **A-02** | One `Head` owns the tags; the canonical is built from the route, never from `window.location`. All 51 routes: title ≤ 60, description 120–155, both unique. `npm run check:head` enforces it in CI. |
+| **A-03** | Sitemap `lastmod` from each content file's last commit, not the build clock. `priority` and `changefreq` dropped. |
+| **A-04** | The two Herbert Spencer pages are different scopes, so each has a distinct title and they cross-link. |
+| **A-05** | `Service` and `BreadcrumbList` on service pages, `Project` + `BreadcrumbList` on project pages, `BreadcrumbList` beside the existing `BlogPosting`. The organisation block is now `["HVACBusiness","Plumber"]`. `geo` omitted rather than guessed; `sameAs` waits on I-05. |
+| **A-07** | Partner logos carry the brand name instead of `alt=""`. |
+| **B-01** | The 539 KB Cloudinary favicon is replaced by a local set — **589 B** on first load, ~16 KB in total. *An `icon.svg` still needs the vector logo (Q1).* |
+| **B-03** | One Cloudinary helper; `q_auto` for photos and `q_auto:eco` only under 400 px. |
+| **B-06** | gtag loads after consent **and** on idle. The careers iframe mounts within 600 px of the viewport. The map on `/quote/` mounts within 400 px — it used to pull ~187 KB of Maps JavaScript on first paint. |
+| **B-07** | `customHttp.yml`: immutable caching for hashed assets, revalidated HTML, HSTS, nosniff, Referrer-Policy, Permissions-Policy. |
+| **B-08** | `lighthouserc.json` plus a GitHub workflow running lint, build, tests, the head check and Lighthouse. |
+| **E-07** | Every phone link is `tel:+16047311000`; the visible text stays `604-731-1000`. Several were dash-formatted, which is not valid E.164. |
+| **H-01** | The cross-origin Apps Script iframe is replaced by one native form with branching fields, inline and summarised errors, honeypot, minimum fill time, `?type=` / `?service=` prefill and a `generate_lead` event. `apps-script/Code.gs` gained a matching `doPost`. |
+| **H-02** | `/quote/`, `/contact/` and the homepage band are the same form with three presets. |
+| **H-03** | `/quote/thanks/` with the reference number — prerendered, `noindex`, out of the sitemap. |
+| **H-04** | The response promise replaces *"Acceptance by our system does not mean a team member has read your message"*, on the site and in the Apps Script acknowledgement. *"Fast, transparent pricing from certified technicians"* is gone, since no certification is named on that page. |
+| **H-05** | Service and project CTAs can prefill the form through the query string. |
+| **I-08** | One display name and one legal name, in `src/config.ts`. |
+| **J-01** | Consent Mode v2 defaults to denied. |
+| **J-02** | The full event plan with a parameter allowlist, so a name, email or file name cannot reach GA4. |
 
-### Epic C — design system
-Tokens, one `Button` (three variants), one label per action in `config.ts`,
-one sticky header, skew removed from anything containing text, `Card` and
-`Section`. A grep for a hex colour in `src/components` returns the token file.
+### Rolled back with the design
 
-### Epic D — homepage
-Thirteen blocks to eight, institutional hero copy, static trust strip, one
-outcome line per featured project, batch-published dates hidden on cards.
-Height at 390 px: ~15,900 px → **9,312 px** (target 9,000; the remaining
-2,500 px is the enquiry form the spec puts in section 8).
+**C-01 … C-06** (tokens, one `Button`, one label per action, single sticky
+header, skew removed from text, `Card`/`Section`) · **D-02 … D-06** (eight-section
+homepage, institutional hero copy, trust strip, outcome lines on cards, hidden
+batch-published dates) · **E-01 … E-06** (mobile action bar, analytics pill moved
+to the footer, 44 px targets, shorter page) · **F-01 … F-07** (contrast, scrims,
+ARIA tabs, one link per card, focus ring) · **G-01 … G-03** (motion tokens,
+reveal-once sections, marquee and pulse-ring removal) · **I-02 / I-03**
+(seven-block service pages, FAQ content).
 
-### Epic E / F — mobile and accessibility
-Sticky action bar, the analytics pill moved to a footer link, 44 px targets,
-`tel:`/`mailto:` throughout, contrast fixed, scrims on text over photos, one
-link per card, one focus ring, full form semantics.
-**Lighthouse accessibility: 100 on all four baseline URLs, mobile and
-desktop.** The tabs ticket (F-03) and the "ProvideIn" line break (E-01) both
-resolved by deleting the components that carried them. No `wheel` listener
-exists anywhere, so G-00 needed no change.
+All of it is in git at commit `607bf84` if any piece is wanted back.
 
-### Epic G — motion
-Motion tokens, reveal-once sections, reduced motion honoured in CSS *and* in
-JS. The infinite marquee and the infinite pulse rings are gone.
+`src/styles/tokens.css` and `src/components/ui/Button.tsx` survive because the
+enquiry form is built on them. Nothing else reads them, so they cannot affect
+the restored design.
 
-### Epic H — conversion
-The cross-origin iframe is replaced by a native form with branching fields,
-inline and summarised errors, honeypot, minimum fill time, query-string
-prefill and a `generate_lead` event. `/quote/`, `/contact/` and `/rfp/` are
-one form with three presets. `/quote/thanks/` carries the reference number.
+### Known, not fixed
 
-### Epic I / J
-Service pages rebuilt on the seven-block template with FAQs; the display name
-and legal name live in `config.ts`; Consent Mode v2 defaults to denied; the
-full event plan ships with a parameter allowlist, so a name, email or file
-name cannot reach GA4.
+Two contrast failures that the reverted F-01 would have fixed. Both are
+colour changes, so they were left alone rather than altering the design
+unasked:
+
+- The service step numbers `01`–`06` are `text-neutral-400` on white — **2.5:1**,
+  against a 4.5:1 minimum. `text-neutral-600` fixes it and stays grey.
+  `src/components/ServicesShowcase.tsx`.
+- `24/7 Emergency Line:` is white on the red strip's translucent pill —
+  **4.0:1**, just under 4.5:1. Changing `.emergency-phone`'s background from
+  `#ffffff26` to `rgb(0 0 0 / .12)` takes it to 5.9:1 and keeps the pill.
+  `src/index.css`.
+
+Neither affects the mobile Lighthouse score (the emergency label is hidden at
+phone widths), which is why accessibility reads 100 on mobile and 96 on desktop.
 
 ---
 
 ## 5. Measured result
 
 Lighthouse 12, headless Chrome. **Before** is the live site over the Amplify
-CDN; **after** is this build on a local static server, so the network path is
-*slower* than production and these figures understate what the CDN will give.
-Images come from Cloudinary in both.
+CDN on 2026-11-22. **After** is the current build — original design, non-visual
+audit work kept — on a local static server, so the network path is *slower*
+than production and these figures understate what the CDN will give. Images
+come from Cloudinary in both.
 
-| Page | Performance | Accessibility | LCP | CLS | Weight |
-|---|---|---|---|---|---|
-| Home — mobile | 88 → **95** | 100 → **100** | 3,695 → **2,804 ms** | 0 → 0 | 1,071 → **556 KB** |
-| Home — desktop | 97 → **100** | 96 → **100** | 1,168 → **749 ms** | 0 → 0 | 1,172 → **507 KB** |
-| /services/hvac/ — mobile | 95 → **96** | 100 → **100** | 2,650 → **2,702 ms** | 0 → 0 | 720 → **293 KB** |
-| /services/hvac/ — desktop | 98 → **100** | 96 → **100** | 1,150 → **708 ms** | 0 → 0 | 719 → **352 KB** |
-| /projects/ridgeview/ — mobile | 90 → **95** | 100 → **100** | 3,381 → **2,886 ms** | 0 → 0 | 810 → **316 KB** |
-| /projects/ridgeview/ — desktop | 99 → **100** | 96 → **100** | 868 → **621 ms** | 0 → 0 | 805 → **285 KB** |
-| /quote/ — mobile | 85 → **99** | 100 → **100** | 3,743 → **1,969 ms** | **0.101 → 0** | 1,551 → **122 KB** |
-| /quote/ — desktop | 97 → **100** | 96 → **100** | 1,137 → **458 ms** | **0.029 → 0** | 1,658 → **122 KB** |
+| Page | Performance | LCP | CLS | Weight |
+|---|---|---|---|---|
+| Home — mobile | 88 → **91** | 3,695 → **3,390 ms** | 0 → 0 | 1,071 → **694 KB** |
+| Home — desktop | 97 → **99** | 1,168 → **835 ms** | 0 → 0 | 1,172 → **842 KB** |
+| /services/hvac/ — mobile | 95 → **97** | 2,650 → **2,538 ms** | 0 → 0 | 720 → **190 KB** |
+| /services/hvac/ — desktop | 98 → **100** | 1,150 → **621 ms** | 0 → 0 | 719 → **190 KB** |
+| /projects/ridgeview/ — mobile | 90 → **93** | 3,381 → **3,056 ms** | 0 → 0 | 810 → **277 KB** |
+| /projects/ridgeview/ — desktop | 99 → **100** | 868 → **678 ms** | 0 → 0 | 805 → **277 KB** |
+| /quote/ — mobile | 85 → **97** | 3,743 → **2,561 ms** | **0.101 → 0** | 1,551 → **236 KB** |
+| /quote/ — desktop | 97 → **100** | 1,137 → **644 ms** | **0.029 → 0** | 1,658 → **794 KB** |
 
 SEO and best-practices are 100 on all eight runs, and no page logs a console
-error.
+error. Accessibility is 100 on mobile and 96–97 on desktop (the two contrast
+items above).
 
-**Still short of target:** mobile LCP is 2.7–2.9 s on the two hero pages,
-against the 2.5 s goal. The hero sources are upscaled AI-generated PNGs; a
-real photograph at 2400×1350, saved as a JPEG, closes that gap without any
-code change. This is D-01.
+`/quote/` is the clearest win and it is almost all H-01 and B-06: dropping the
+iframe and deferring the map took the page from 1,551 KB to 236 KB on mobile
+and removed the 0.101 layout shift.
+
+**Still short of target:** mobile LCP is 3.0–3.4 s on the two photographic
+heroes, against the audit's 2.5 s goal. The sources are upscaled AI-generated
+PNGs; real photography at 2400×1350, saved as JPEG, closes that gap with no
+code change. That is D-01.
+
+**JS budget:** the audit asks for 150 KB transferred; the homepage ships
+~181 KB. About 50 KB of that is framer-motion, pulled in for a `MotionConfig`,
+one fade-up on the CTA band and two hover scales on the residential service
+page. Replacing those three with CSS would meet the target but changes how the
+site animates, so it is a design decision. The CI limit sits at 190 KB as a
+regression guard.
 
 ---
 
 ## 6. Deviations from the spec, and why
 
-- **React Hook Form + Zod (H-01)** — not used. They add ~26 KB gzipped against
-  a 150 KB total-JS budget, for a form with eleven fields. `src/lib/enquiry.ts`
-  validates by hand, client and server, with the same rules.
+- **The visual redesign was reverted** at Allied's request. See the scope note
+  at the top.
+- **React Hook Form + Zod (H-01)** — not used. They add ~26 KB gzipped for a
+  form with eleven fields. `src/lib/enquiry.ts` validates by hand, client and
+  server, with the same rules, and `tests/enquiry.test.mjs` locks the field
+  matrix to the audit's own table.
 - **Serverless endpoint (H-01 step 3)** — the spec assumes Vercel or Netlify.
-  Hosting is AWS Amplify, which serves static files only, and the existing
-  Apps Script backend already does validation, dedupe, reference numbers,
-  private Drive storage with retention, and mail. So the native form POSTs to
-  a new `doPost` in that same backend rather than to a new Lambda.
+  Hosting is AWS Amplify, which serves static files only, and the Apps Script
+  backend already does validation, dedupe, reference numbers, private Drive
+  storage with retention, and mail. So the form POSTs to a new `doPost` there
+  rather than to a new Lambda.
 - **Organisation `@id`** — kept as `#business`, not the spec's `#org`, so the
   `publisher` references already in the build keep resolving.
 - **Careers form** — still the Apps Script iframe. It owns the résumé upload
   flow and the audit does not ask for it to be replaced; it is now lazily
-  mounted (B-06).
-- **Critical CSS (B-04)** — see Epic B above.
+  mounted.
+- **LCP preloads** — these cannot be rendered from a React component:
+  `renderToString` emits `<link>` in place rather than hoisting it, so the
+  markup disagrees with the hydrated tree (React #418) and the page
+  re-renders on the client. `src/lib/lcp-preload.ts` declares them per route
+  and the prerender step writes them into `<head>`. It covers only the three
+  data-driven heroes; the rest hard-code their hero URL in the component and
+  already carry `fetchpriority="high"`.
+- **Critical CSS (B-04)** — not extracted. The stylesheet costs ~150 ms of
+  render-blocking on simulated 3G, and the acceptance criteria (< 60 KB, no
+  inline block > 14 KB) already pass at ~10 KB transferred.
