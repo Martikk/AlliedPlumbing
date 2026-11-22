@@ -31,11 +31,11 @@ The site is built like a product, not a brochure. Every route is prerendered for
 
 | | |
 |---|---|
-| **42 prerendered routes** | React SSR at build time produces static HTML with titles, canonicals and structured data for each page; sitemap is generated from the same route list. |
-| **Lead capture pipeline** | Contact, Quote and Careers forms post to a Google Apps Script backend: dedupe by idempotency key, human-readable reference numbers, attachments stored in a private Drive with 90/180-day retention. |
+| **51 prerendered routes** | React SSR at build time produces static HTML with a title, canonical, meta description and structured data for each page. The sitemap comes from the same route list, with `lastmod` taken from each content file's last commit. |
+| **One native enquiry form** | A single React form branches by enquiry type (quote, service call, maintenance, tender, other) and posts to a Google Apps Script backend: dedupe by idempotency key, human-readable reference numbers, attachments in a private Drive with 90/180-day retention. Careers keeps its own résumé flow. |
 | **Server-side file checks** | Quote accepts up to 4 PDF/JPG/PNG (10 MB total); Careers accepts one PDF up to 5 MB. Count, size, extension, MIME type and file signature are verified. |
-| **Privacy-first analytics** | GA4 loads only after explicit opt-in. Lead and phone-call events are tracked; form contents and résumé links never are. |
-| **Performance** | PageSpeed mobile: Performance 95, Best Practices 100, SEO 100, CLS 0, TBT 0 ms. Images served through Cloudinary with automatic format selection. |
+| **Privacy-first analytics** | Consent Mode v2 defaults to denied; GA4 loads only after an explicit opt-in, and then on idle. Lead, call and email events carry only parameters on an allowlist — a name, email or file name cannot reach a report. |
+| **Performance** | Lighthouse desktop: performance, accessibility, SEO and best-practices all 100 on the four baseline URLs. Mobile performance 95–99, accessibility 100, CLS 0. Images go through one Cloudinary helper with art-directed crops and a single width ladder. |
 | **Production verification** | `npm run test:production` checks every live route (HTTP status, title, canonical, prerendered h1), asset hashes against the local build, and the sitemap. |
 
 ## Screenshots
@@ -77,7 +77,8 @@ Browser ──► AWS Amplify (static, prerendered HTML + hashed assets)
 - **Build:** Vite with an SSR prerender pass and sitemap generation
 - **Backend:** Google Apps Script (`apps-script/`)
 - **Hosting:** AWS Amplify with managed redirects
-- **Quality:** ESLint, Prettier, Node test runner (content, SEO, analytics, forms, Apps Script), production check script
+- **Design system:** CSS variable tokens in `src/styles/tokens.css`, mirrored in `tailwind.config.js`. One `Button`, one `Card`, one `Section`. No hex colour lives in a component.
+- **Quality:** ESLint, Prettier, Node test runner (content, SEO, analytics, forms, Apps Script), a head check over every built page, a production check against the live site, and Lighthouse CI on every PR
 
 ## Getting started
 
@@ -86,7 +87,9 @@ npm install
 npm run dev              # local dev server
 npm run build            # type-check, build, prerender, sitemap
 npm test                 # unit and content tests
+npm run check:head       # every built page: one canonical, title, description, h1, valid JSON-LD
 npm run test:production  # verify the live site against this build
+npm run lighthouse       # performance budget (needs a build first)
 ```
 
 Requires Node 18.17 – 22.
@@ -98,13 +101,27 @@ src/
   pages/        route components (services, projects, careers, blog, quote)
   components/   shared UI, analytics consent, CTAs
   data/         projects, team, blog posts, SEO metadata (JSON)
-  lib/          analytics consent and helpers
-  scripts/      sitemap generation, production checks
+  components/ui/    Button, Card, Section, CardRail — the whole design system
+  styles/tokens.css colour, type, space and motion tokens
+  lib/          enquiry schema and transport, Cloudinary helper, schema.org
+                builders, LCP preloads, analytics consent
+  scripts/      sitemap generation, head check, production checks
   entry-server.tsx  SSR entry used for prerendering
-apps-script/    Google Apps Script forms backend
+apps-script/    Google Apps Script forms backend (doGet serves the careers
+                form, doPost receives the native enquiry form)
 tests/          automated tests
 docs/           audits, performance reports, deployment notes
+docs/audit/open-items.md   audit follow-up: what is done, what needs an answer
+customHttp.yml  cache and security headers, read by AWS Amplify
+lighthouserc.json  performance budget enforced in CI
 ```
+
+## Audit follow-up
+
+The site was rebuilt in November 2026 against a full UX, performance,
+accessibility and conversion audit. **[docs/audit/open-items.md](docs/audit/open-items.md)**
+tracks every ticket: what shipped, what is waiting on information from Allied,
+and the measured before/after.
 
 ---
 

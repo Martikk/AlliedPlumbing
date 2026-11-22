@@ -196,7 +196,7 @@ export default function Careers() {
                     href={`?job=${encodeURIComponent(o.title)}#apply`}
                     className="inline-flex items-center justify-center rounded-lg bg-neutral-900 text-white px-5 py-2.5 font-semibold hover:brightness-110"
                   >
-                    Apply now <span aria-hidden className="ml-2">↗</span>
+                    Apply now
                   </a>
                 </div>
               </li>
