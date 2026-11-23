@@ -32,6 +32,26 @@ Project: https://script.google.com/home/projects/1F1iTfQ5foQPXxREF3MZ5aLGmIpxiHX
    `checked_()` rejects on its first line, so it stores nothing and emails
    nobody, and it reports which of the two failures you have if it fails.
 
+### When the console has not worked
+
+If the `/exec` URL still serves old code after a release, the deployment that
+was edited is probably not the one the site calls. Nothing in the console shows
+that at a glance, so list them:
+
+```
+npx --yes @google/clasp@3.4.x login     # once per machine
+npm run backend:deployments
+```
+
+The script id is already in `.clasp.json`. The listing gives every deployment
+with its id and version; the site calls the one whose id matches the `AKfycb…`
+segment in `src/lib/enquiry-config.json`. Then either release to that id with
+`npm run deploy:backend`, or point the site at the deployment that is current.
+
+The CLI is `@google/clasp`. The unscoped `clasp` on npm is a 1.0.0 stub that
+calls itself an alias and has no 2.x, so `clasp@2` — which this repository used
+to tell people to run — is a 404.
+
 `npm run deploy:backend` does steps 1–5 in one command once `clasp` is set up.
 
 ### Changing the manifest

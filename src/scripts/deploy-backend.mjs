@@ -16,7 +16,7 @@
  * so there is nothing to keep in sync by hand.
  *
  * One-time setup (per machine):
- *   1. npx clasp@2 login
+ *   1. npx --yes @google/clasp@3.4.x login
  *   2. Put the script id in .clasp.json (gitignored) or APPS_SCRIPT_ID:
  *        { "scriptId": "<id>", "rootDir": "apps-script" }
  *      Find it in the Apps Script console under Project Settings.
@@ -51,7 +51,7 @@ x  No Apps Script id.
    owner's Google account — but .clasp.json stays gitignored anyway. Then:
 
      echo '{"scriptId":"<id>","rootDir":"apps-script"}' > .clasp.json
-     npx clasp@2 login
+     npx --yes @google/clasp@3.4.x login
      npm run deploy:backend
 
    .clasp.json is gitignored. In CI, set APPS_SCRIPT_ID instead.
@@ -66,12 +66,21 @@ if (!existsSync('.clasp.json')) {
   console.log('Wrote .clasp.json from APPS_SCRIPT_ID.');
 }
 
+/** The CLI is `@google/clasp`. The unscoped name `clasp` on npm is a 1.0.0
+ *  stub describing itself as an alias, with no 2.x at all, so the `clasp@2`
+ *  this script used to call was a 404 and it could never have run. Pinned to a
+ *  line, as CI pins Lighthouse, so a future major cannot change the flags
+ *  under it: v3 takes `push --force` and `deploy --deploymentId`. */
+const CLASP = '@google/clasp@3.4.x';
+
 function run(step, args) {
   console.log(`\n→ ${step}`);
   try {
-    execFileSync('npx', ['--yes', 'clasp@2', ...args], { stdio: 'inherit' });
+    execFileSync('npx', ['--yes', CLASP, ...args], { stdio: 'inherit' });
   } catch {
-    console.error(`\nx  ${step} failed. If this is an auth error, run: npx clasp@2 login`);
+    console.error(`\nx  ${step} failed.`);
+    console.error(`   Auth error? npx --yes ${CLASP} login`);
+    console.error('   Wrong deployment? npm run backend:deployments lists them all.');
     process.exit(1);
   }
 }

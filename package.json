@@ -23,6 +23,7 @@
     "check:backend": "node src/scripts/check-backend.mjs",
     "test:production": "node src/scripts/check-production.mjs && node src/scripts/check-backend.mjs",
     "deploy:backend": "node src/scripts/deploy-backend.mjs",
+    "backend:deployments": "npx --yes @google/clasp@3.4.x list-deployments",
     "lighthouse": "npx --yes @lhci/cli@0.14.x autorun"
   },
   "dependencies": {
