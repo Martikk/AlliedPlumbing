@@ -1,6 +1,6 @@
 import { Link, useParams } from '../lib/navigation';
 import projects from '../data/projects.json';
-import posts from '../data/posts.json';
+import posts from '../data/posts-index.json';
 import NotFound from './NotFound';
 import servicesSEO from '../data/seo.json';
 import JsonLd from '../components/JsonLd';

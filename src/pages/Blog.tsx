@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import BlogTeasers from '../components/BlogTeasers';
-import posts from '../data/posts.json';
+import posts from '../data/posts-index.json';
 export default function Blog() {
   const [hydrated,setHydrated]=useState(false);
   useEffect(()=>setHydrated(true),[]);

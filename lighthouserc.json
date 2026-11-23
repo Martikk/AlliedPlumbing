@@ -26,11 +26,12 @@
     "Today: ~85 KB JS and ~10 KB CSS transferred.",
     "",
     "",
-    "JS budget: the audit asks for 150 KB transferred; the homepage ships ~181 KB, which is",
-    "React, React Router and the route chunk. framer-motion was removed and it was worth only",
-    "783 bytes gzipped \u2014 it tree-shook almost completely, so an earlier 50 KB estimate for it",
-    "was wrong. The remaining gap needs a smaller router or preact, not a dependency trim.",
-    "The limit sits at 190 KB as a regression guard."
+    "JS budget: the audit's 150 KB transferred, enforced as written. Measured today: 119 KB on",
+    "the home page, 101 KB on a project page, 97 KB on /quote/, 92 KB on a service page. The",
+    "corpus of blog articles used to ride along on every listing page (22.6 KB gzipped);",
+    "src/scripts/generate-posts-index.mjs now derives a 2.2 KB teaser index and only the",
+    "article route loads the full posts.json. An earlier note here claimed 181 KB with 50 KB of",
+    "framer-motion in it \u2014 both were wrong; framer-motion was worth 783 bytes gzipped."
   ],
   "ci": {
     "collect": {
@@ -93,7 +94,7 @@
         "resource-summary:script:size": [
           "error",
           {
-            "maxNumericValue": 194560
+            "maxNumericValue": 153600
           }
         ],
         "resource-summary:stylesheet:size": [

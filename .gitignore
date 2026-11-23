@@ -32,3 +32,6 @@ dist-dev
 
 # clasp project id for the Apps Script backend (not public)
 .clasp.json
+
+# Lighthouse CI output
+.lighthouseci/

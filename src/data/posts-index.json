@@ -1,0 +1,164 @@
+[
+  {
+    "slug": "planning-school-hvac-upgrades",
+    "title": "Planning a School HVAC Upgrade Around the School Day",
+    "category": "School projects",
+    "excerpt": "How scope, trade coordination and afternoon or weekend work came together at Leigh Elementary.",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071233/Allied/2025-10-09_21.40.08_wxp8bk.jpg",
+    "date": "2026-10-31",
+    "project": "leigh"
+  },
+  {
+    "slug": "boiler-plant-upgrade-ridgeview",
+    "title": "What Goes Into a School Boiler Plant Upgrade?",
+    "category": "Heating & boilers",
+    "excerpt": "A closer look at Ridgeview Elementary’s six IBC boilers, classroom conversion and hydronic piping.",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760072887/Allied/Allied_1_n00b0m.png",
+    "date": "2026-10-31",
+    "project": "ridgeview"
+  },
+  {
+    "slug": "haro-heating-hot-water-upgrade",
+    "title": "Upgrading Heating and Hot Water in an Existing Apartment Building",
+    "category": "Residential buildings",
+    "excerpt": "Inside the scope of the Viessmann CA3 condensing plant project at 1755 Haro Street.",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071564/Allied/2025-10-09_21.39.57_tne1oo.jpg",
+    "date": "2026-10-31",
+    "project": "haro"
+  },
+  {
+    "slug": "integrating-commercial-boiler-controls",
+    "title": "Connecting a New Boiler Plant to an Existing Building",
+    "category": "Heating & boilers",
+    "excerpt": "What the ICBC project scope shows about hydronic interfaces, controls responsibilities and occupied-building planning.",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png",
+    "date": "2026-10-31",
+    "project": "icbc"
+  },
+  {
+    "slug": "coordinating-school-mechanical-room-upgrades",
+    "title": "Why Mechanical Room Readiness Matters in a School Upgrade",
+    "category": "School projects",
+    "excerpt": "Lessons in planning equipment, room construction and supporting trades from the Crosstown Phase 1 scope.",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071289/Allied/123_clbeb3.png",
+    "date": "2026-10-31",
+    "project": "crosstown"
+  },
+  {
+    "slug": "integrating-school-hydronic-cooling",
+    "title": "Planning a Chiller Upgrade in an Existing School",
+    "category": "Cooling systems",
+    "excerpt": "How the Collingwood Parent Wing scope connects chilled water, cooling coils, controls and school access.",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760072887/Allied/Allied_1_n00b0m.png",
+    "date": "2026-10-31",
+    "project": "collingwood"
+  },
+  {
+    "slug": "mechanical-upgrade-request-checklist",
+    "title": "What to Include in a Mechanical Upgrade Request",
+    "category": "Project planning",
+    "excerpt": "A practical checklist for describing your building, equipment, access and timing before requesting a mechanical upgrade.",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071289/Allied/123_clbeb3.png",
+    "date": "2026-10-31",
+    "project": "ridgeview"
+  },
+  {
+    "slug": "planning-heating-shutdown-occupied-building",
+    "title": "Planning a Heating Shutdown in an Occupied Building",
+    "category": "Project planning",
+    "excerpt": "Questions about access, responsibilities, occupant communication and handover to raise before agreeing a shutdown window.",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071564/Allied/2025-10-09_21.39.57_tne1oo.jpg",
+    "date": "2026-10-31",
+    "project": "haro"
+  },
+  {
+    "slug": "preventive-maintenance-records-building-teams",
+    "title": "Preventive Maintenance Records That Help Building Teams",
+    "category": "Maintenance",
+    "excerpt": "How an equipment register, clear service notes and an action log can support the next maintenance conversation.",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png",
+    "date": "2026-10-31",
+    "project": "icbc"
+  },
+  {
+    "slug": "project-turnover-om-package",
+    "title": "Project Turnover: What Belongs in an O&M Package?",
+    "category": "Project planning",
+    "excerpt": "A building-owner guide to discussing manuals, records, training and outstanding items before mechanical project handover.",
+    "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071564/Allied/2025-10-09_21.39.57_tne1oo.jpg",
+    "date": "2026-10-31",
+    "project": "hillcrest"
+  },
+  {
+    "slug": "boiler-replacement-or-repair",
+    "title": "Boiler Replacement or Repair: Information Your Contractor Needs",
+    "category": "Heating & boilers",
+    "excerpt": "Start with what building users have observed: areas that are not heating as expected, recurring interruptions, unusual sounds or changes in available hot water.",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-01",
+    "project": "ridgeview"
+  },
+  {
+    "slug": "controls-boiler-plant-coordination",
+    "title": "Coordinating Controls During a Boiler Plant Upgrade",
+    "category": "Heating & boilers",
+    "excerpt": "Identify who defines the operating requirements, supplies controls, installs connections and verifies the agreed sequence.",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-01",
+    "project": "glenayre"
+  },
+  {
+    "slug": "hydronic-heating-domestic-hot-water",
+    "title": "Hydronic Heating and Domestic Hot Water: Two Different Building Needs",
+    "category": "Heating & boilers",
+    "excerpt": "A request for better heating can mean warmer occupied rooms, more reliable domestic hot water, or both.",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-01",
+    "project": "haro"
+  },
+  {
+    "slug": "mechanical-career-paths",
+    "title": "From Apprentice to Site Lead: Mechanical Career Paths",
+    "category": "Careers",
+    "excerpt": "Mechanical work includes hands-on installation and service, trade coordination, supervision and project management.",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-01",
+    "project": "leigh"
+  },
+  {
+    "slug": "preparing-chiller-replacement",
+    "title": "Preparing a Building for a Chiller Replacement",
+    "category": "Project planning",
+    "excerpt": "A replacement enquiry should describe the equipment location, available access information and the surrounding occupied areas.",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-01",
+    "project": "collingwood"
+  },
+  {
+    "slug": "school-heat-pump-upgrade-discussion",
+    "title": "What to Discuss Before a School Heat Pump Upgrade",
+    "category": "School projects",
+    "excerpt": "Define the rooms and building needs under consideration before selecting equipment.",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-01",
+    "project": "herbert-spencer-ashp"
+  },
+  {
+    "slug": "testing-balancing-programme",
+    "title": "Why Testing and Balancing Belongs in the Project Programme",
+    "category": "Project planning",
+    "excerpt": "Testing and balancing requirements should be established for the actual scope by the responsible project team.",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-01",
+    "project": "leigh"
+  },
+  {
+    "slug": "working-in-schools-coordination",
+    "title": "Working in Schools: Access, Sequencing and Communication",
+    "category": "School projects",
+    "excerpt": "Identify the people who can confirm access, scheduling constraints and changes to school use.",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-01",
+    "project": "garibaldi"
+  }
+]

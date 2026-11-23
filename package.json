@@ -10,9 +10,10 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir .prerender && node src/scripts/generate-sitemap.mjs",
+    "build": "node src/scripts/generate-posts-index.mjs && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir .prerender && node src/scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "generate-sitemap": "node src/scripts/generate-sitemap.mjs",
+    "gen:posts": "node src/scripts/generate-posts-index.mjs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier . --write",
@@ -22,7 +23,7 @@
     "check:backend": "node src/scripts/check-backend.mjs",
     "test:production": "node src/scripts/check-production.mjs && node src/scripts/check-backend.mjs",
     "deploy:backend": "node src/scripts/deploy-backend.mjs",
-    "lighthouse": "lhci autorun"
+    "lighthouse": "npx --yes @lhci/cli@0.14.x autorun"
   },
   "dependencies": {
     "classnames": "^2.5.1",

@@ -1,6 +1,6 @@
 import { responsiveImage, imageCandidates } from '../lib/images';
 import { Link } from '../lib/navigation';
-import posts from '../data/posts.json';
+import posts from '../data/posts-index.json';
 export default function BlogTeasers({ all = false, category = 'All', query = '' }: { all?: boolean; category?: string; query?: string }) {
   const visible = all ? posts.filter(post => (category === 'All' || post.category === category) && `${post.title} ${post.excerpt}`.toLowerCase().includes(query.toLowerCase())) : posts.slice(0,3);
   return <section className="py-12 md:py-16"><div className="flex flex-wrap justify-between items-end gap-5 mb-9"><h2 className="text-3xl md:text-4xl font-extrabold leading-tight">{all ? 'Project guides and insights' : <>From our projects<br /> to your next upgrade.</>}</h2>{!all && <Link to="/blog" className="rounded-lg bg-neutral-900 text-white px-5 py-3 font-semibold hover:bg-neutral-700">View all articles <span aria-hidden>↗</span></Link>}</div>

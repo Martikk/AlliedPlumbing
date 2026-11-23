@@ -68,3 +68,37 @@ test('new planning guides use real local placeholders and honest review status',
     if(post.category==='Careers') assert.ok(html.includes('Explore career opportunities'));
   }
 });
+
+/** Audit B-08 — the derived teaser index must not drift from posts.json.
+ *
+ *  posts-index.json is generated and committed so dev and typecheck work
+ *  without a build. That is only safe while the committed copy matches what
+ *  the generator would produce, so this regenerates it in memory and compares.
+ *  Edit posts.json, then run `npm run gen:posts`. */
+test('the posts index matches posts.json', async () => {
+  const { buildIndex, readPosts, serialise, INDEX_FIELDS } = await import(
+    '../src/scripts/generate-posts-index.mjs'
+  );
+  const committed = readFileSync('src/data/posts-index.json', 'utf8');
+  assert.equal(
+    serialise(buildIndex(readPosts())),
+    committed,
+    'src/data/posts-index.json is stale — run `npm run gen:posts`',
+  );
+
+  // The index exists to keep the article bodies off the listing pages. If a
+  // body field ever appears here, it has stopped doing its job.
+  for (const heavy of ['sections', 'intro', 'checklist', 'review']) {
+    assert.ok(!INDEX_FIELDS.includes(heavy), `the index must not carry ${heavy}`);
+  }
+
+  // Only the page that renders an article may import the full corpus.
+  const importers = ['src/components/BlogTeasers.tsx', 'src/pages/Blog.tsx',
+    'src/pages/ProjectDetail.tsx', 'src/lib/lcp-preload.ts'];
+  for (const file of importers) {
+    assert.ok(
+      !/from '[^']*data\/posts\.json'/.test(readFileSync(file, 'utf8')),
+      `${file} must import the index, not the full corpus`,
+    );
+  }
+});

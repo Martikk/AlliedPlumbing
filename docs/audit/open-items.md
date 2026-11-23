@@ -276,12 +276,35 @@ heroes, against the audit's 2.5 s goal. The sources are upscaled AI-generated
 PNGs; real photography at 2400×1350, saved as JPEG, closes that gap with no
 code change. That is D-01.
 
-**JS budget:** the audit asks for 150 KB transferred; the homepage ships
-~181 KB. About 50 KB of that is framer-motion, pulled in for a `MotionConfig`,
-one fade-up on the CTA band and two hover scales on the residential service
-page. Replacing those three with CSS would meet the target but changes how the
-site animates, so it is a design decision. The CI limit sits at 190 KB as a
-regression guard.
+**JS budget (B-08): met.** The audit asks for 150 KB of script transferred.
+Measured with Lighthouse against the built site:
+
+| Page | Before | After |
+|---|---|---|
+| Home | 139.5 KB | **119.1 KB** |
+| /projects/ridgeview/ | 121.8 KB | **101.3 KB** |
+| /quote/ | 97.0 KB | 97.1 KB |
+| /services/hvac/ | 92.0 KB | 92.0 KB |
+
+The saving is the blog corpus. `posts.json` carries all eighteen articles in
+full — intro, sections, checklists, reviews — and the home page, /blog/ and
+every project page imported it to render teaser cards. A bundler cannot
+tree-shake fields out of a JSON import, so a visitor who never opened an
+article downloaded all eighteen anyway: 22.6 KB gzipped.
+`src/scripts/generate-posts-index.mjs` derives the seven fields a card needs
+into `posts-index.json` (2.2 KB gzipped). Only `BlogPost.tsx`, which renders an
+article, still imports the full file, and it is a route chunk of its own.
+
+The index is committed so dev and typecheck work without a build;
+`tests/content.test.mjs` regenerates it in memory and fails if it has drifted,
+so `posts.json` stays the single source. Edit it, then `npm run gen:posts`.
+
+The CI limit is now the audit's own 150 KB, not the 190 KB holding figure.
+
+**Correction to earlier notes in this file:** the "~181 KB, about 50 KB of it
+framer-motion" line that stood here was wrong on both counts. framer-motion
+tree-shook to 783 bytes gzipped, and the homepage measured 139.5 KB — already
+inside the budget — before this change.
 
 ---
 

@@ -1,6 +1,9 @@
 import { responsiveImage, imageCandidates } from './images';
 import { projects } from './projects';
-import posts from '../data/posts.json';
+// The teaser index, not the full corpus: Home.tsx imports HOME_SLIDES from
+// this file, so anything imported here lands in the home page's bundle
+// (B-08). The index carries every field the preloads need.
+import posts from '../data/posts-index.json';
 
 /** Audit B-02 — the LCP image preload, declared per route.
  *
