@@ -1,6 +1,6 @@
 # Allied enquiry backend — deployment package
 
-Status: backend version 5 deployed on 2026-11-01; **frontend activation authorized by the owner**. `src/lib/enquiry-config.json` points to the deployed endpoint. Production verification follows deployment.
+Status: backend version 7 deployed on 2026-11-23 from this repository with `npm run deploy:backend`; **frontend activation authorized by the owner**. `src/lib/enquiry-config.json` points to the deployed endpoint, and `npm run check:backend` confirms it answers JSON and validates server-side.
 
 ## Releasing a change to this backend
 
@@ -56,10 +56,27 @@ to tell people to run — is a 404.
 
 ### Changing the manifest
 
-`appsscript.json` is only editable when the manifest is shown: Project
-Settings → "Show appsscript.json manifest file in editor". Adding an OAuth
-scope means Google asks the owner to re-authorize on the next run, so expect a
-consent screen.
+`appsscript.json` here is AUTHORITATIVE: `clasp push --force` replaces the
+project's manifest with this file, so anything missing from it is deleted from
+the live project. On 2026-11-23 this file carried no `webapp` block, the push
+dropped `executeAs` and `access` from the project, and both deployments began
+answering `404 Sorry, unable to open the file at this time` — the project was
+no longer a web app a visitor could reach. The form was down until the block
+was restored and a new version released.
+
+`tests/apps-script.test.mjs` now asserts `webapp.executeAs` is
+`USER_DEPLOYING` and `webapp.access` is `ANYONE_ANONYMOUS`, which is what lets
+a visitor post without a Google login. Before pushing a manifest change, run
+`npm test`.
+
+In the console, `appsscript.json` is only editable when the manifest is shown:
+Project Settings → "Show appsscript.json manifest file in editor". Adding an
+OAuth scope means Google asks the owner to re-authorize on the next run, so
+expect a consent screen. `script.external_request` was added for Turnstile
+verification; because `turnstileOK_` returns early while no `TURNSTILE_SECRET`
+is set, an ungranted scope would not show up until the secret exists. When you
+set it, check Executions for `Turnstile verification failed open` — that line
+means the scope was never granted and tokens are being accepted unverified.
 
 ## Fixed routing and file policy
 
@@ -106,3 +123,10 @@ Temporary routing requested by the owner: all three backend routes send notifica
 Version 4 fixture accepted for temporary Alex routing: 011126-074258-AF2F. Mail service accepted notification; actual inbox receipt not yet confirmed for this new destination.
 
 Version 5 updates the Quote acknowledgement copy; routing, scopes, file limits and deduplication are unchanged.
+
+Version 6 was the first release pushed from this repository rather than pasted
+into the console. It is also the version that proved `push --force` replaces
+the manifest: it shipped without the `webapp` block and took the web app
+offline. Version 7 restored the block. Routing, file limits and deduplication
+are unchanged from version 5; the only code difference is `doPost`, the JSON
+endpoint the site's native form posts to, and `turnstileOK_`.

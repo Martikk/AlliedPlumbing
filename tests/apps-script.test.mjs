@@ -64,3 +64,27 @@ test('every Google service the script calls has its scope in the manifest', () =
     }
   }
 });
+
+/** `npm run deploy:backend` runs `clasp push --force`, which REPLACES the
+ *  project's manifest with this file. Anything missing here is removed from the
+ *  live project — and on 2026-11-23 that is exactly what happened: this file
+ *  had no `webapp` block, the push dropped it, and both deployments began
+ *  answering 404 "unable to open the file" because the project was no longer a
+ *  web app anyone could reach. The site's form was down until it was restored.
+ *
+ *  So these two values are not configuration anybody should be free to drop.
+ *  `USER_DEPLOYING` runs as the owner, which is what gives the script access to
+ *  the owner's Drive and mail; `ANYONE_ANONYMOUS` is what lets a visitor post an
+ *  enquiry without a Google login. Change either and the public form stops
+ *  working — so change it here, deliberately, with this test as the record. */
+test('the manifest keeps the web app reachable by anonymous visitors', () => {
+  const manifest = JSON.parse(readFileSync('apps-script/appsscript.json', 'utf8'));
+
+  assert.ok(manifest.webapp, 'appsscript.json must carry a webapp block — push --force drops it');
+  assert.equal(manifest.webapp.executeAs, 'USER_DEPLOYING', 'the script runs as the owner');
+  assert.equal(
+    manifest.webapp.access,
+    'ANYONE_ANONYMOUS',
+    'visitors must not need a Google login to send an enquiry',
+  );
+});

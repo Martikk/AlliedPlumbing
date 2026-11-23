@@ -14,20 +14,27 @@
  * establishes that the endpoint speaks JSON.
  *
  *   PASS  the endpoint answers JSON (deployed, contract intact)
- *   FAIL  the endpoint answers HTML (not deployed, or deployed without doPost)
+ *   FAIL  anything else, and the reason matters more than the failure
  *
- * On failure it also GETs the same URL. doGet renders the fallback form from
- * the SAME source file, so a sentence that only the current Code.gs contains
- * tells us which code the deployment is actually running. That separates the
- * two failures people hit, which need different fixes:
+ * There are three failures, they look alike from the outside, and each needs a
+ * different fix:
  *
- *   code is current, doPost missing  -> saved in the editor, never released:
- *                                       Manage deployments -> New version
- *   code is old                      -> the editor never got the new file, or
- *                                       a different deployment was released
- *                                       and this /exec URL is not it
+ *   404 / "unable to open the file"  -> the project is not a reachable web app
+ *                                       at all. appsscript.json lost its
+ *                                       `webapp` block, or the deployment's
+ *                                       access setting changed.
+ *   "Script function not found"      -> reachable, but running code without
+ *                                       doPost
+ *   other HTML                       -> reachable, running something else
  *
- * The marker is read out of Code.gs, never hard-coded, so it cannot drift.
+ * For the last two it also GETs the same URL. doGet renders the fallback form
+ * from the SAME source file, so a sentence that only the current Code.gs
+ * contains tells us which code the deployment is actually running, which
+ * splits "saved but never released" from "the editor never got the file". The
+ * marker is read out of Code.gs, never hard-coded, so it cannot drift. It is
+ * NOT consulted on a 404: with nothing serving the form, its absence would
+ * read as "old code" and send you to fix the wrong thing. That is not
+ * hypothetical — it is what this script did on 2026-11-23.
  *
  * Run it with `npm run check:backend`. It is part of `npm run test:production`
  * and runs in CI after every push.
@@ -101,20 +108,32 @@ let parsed = null;
 try {
   parsed = JSON.parse(body);
 } catch {
-  const notFound = /Script function not found:\s*doPost/i.test(body);
-  console.error('\nx  The enquiry backend is NOT accepting submissions.\n');
+  console.error('\nx  The enquiry backend is NOT accepting submissions.');
+  console.error('   Every enquiry submitted on the live site is failing right now.\n');
+
+  // A 404, or Drive's "unable to open the file" page, means nothing is serving
+  // this URL — so the version check below would be reading an error page and
+  // would blame the code instead of the configuration.
+  if (response.status === 404 || /unable to open the file/i.test(body)) {
+    console.error(`   HTTP ${response.status}: the URL is not a reachable web app.`);
+    console.error('   The deployment exists but is not published to visitors. Usually');
+    console.error('   apps-script/appsscript.json lost its `webapp` block — `clasp push');
+    console.error('   --force` REPLACES the project manifest, so a block missing here is');
+    console.error('   deleted there, and the web app stops accepting anyone. Run `npm');
+    console.error('   test` (tests/apps-script.test.mjs asserts that block), then');
+    console.error('   `npm run deploy:backend`.\n');
+    process.exit(1);
+  }
+
   console.error(
-    notFound
+    /Script function not found:\s*doPost/i.test(body)
       ? '   The deployed Apps Script has no doPost. apps-script/Code.gs in this\n' +
           '   repository has one, so the deployment is behind the repository.'
       : '   It answered HTML instead of JSON, so it is not running the code in\n' +
           '   apps-script/Code.gs.',
   );
-  console.error(`\n   Every enquiry submitted on the live site is failing right now.`);
   console.error(`   ${await deployedCodeAge()}\n`);
-  console.error(
-    '   Or run: npm run deploy:backend\n',
-  );
+  console.error('   Or run: npm run deploy:backend\n');
   process.exit(1);
 }
 
