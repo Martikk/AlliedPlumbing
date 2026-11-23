@@ -86,6 +86,24 @@ means the scope was never granted and tokens are being accepted unverified.
 | Quote | alex@allied-plumbing.ca | Up to four PDF/JPG/PNG; 10 MB total | 180 days |
 | Careers | alex@allied-plumbing.ca | One PDF; 5 MB | 90 days |
 
+Every accepted enquiry sends two emails: the notification to the fixed
+recipient above, with attachments, and an acknowledgement to the address the
+sender gave. The acknowledgement carries only the reference and the route's
+noun — never the name, the message, the site address or any other typed text.
+That is a security rule, not a style one: it goes to an address the sender
+chose, so echoing their text would let someone put a stranger's address in the
+email field and the payload in the message field and have this domain deliver
+it. `tests/apps-script.test.mjs` submits a real enquiry through the backend and
+asserts none of the fixture's own words appear in that second mail.
+
+The acknowledgement runs after the request is stored and Allied is notified,
+inside its own try/catch. It can never turn a delivered enquiry into a reported
+failure — a bounced courtesy copy costs nothing, while telling someone their
+enquiry failed costs the enquiry or gets it sent twice. Because there are now
+two sends per enquiry, the quota gate requires room for both
+(`getRemainingDailyQuota() < 2`); on a free Google account the 100-mail daily
+limit, not the 60-enquiry reserve, is what binds first.
+
 Files are validated for extension, declared MIME and signature. This is not a malware scanner. Email copies are delivered to the fixed recipients; Drive folders remain private to the deploying owner. No public links or Drive permission grants are created. The cleanup trigger moves expired request folders to Trash, not permanent deletion. Copies in mailboxes/backups follow their own retention policy.
 
 The service reserves up to 60 attempts/day and limits per-email/global bursts. Free Google account quotas and storage capacity still apply. Anyone can access the public form; code does not accept client-supplied recipient addresses. No no-cors fetch is used. HTML Service performs the upload and explicit acknowledgement through google.script.run.
@@ -130,3 +148,10 @@ the manifest: it shipped without the `webapp` block and took the web app
 offline. Version 7 restored the block. Routing, file limits and deduplication
 are unchanged from version 5; the only code difference is `doPost`, the JSON
 endpoint the site's native form posts to, and `turnstileOK_`.
+
+Version 8 adds the acknowledgement to the sender. Until then the thank-you page
+told every visitor "A copy is on its way to your inbox" while nothing was ever
+sent to them — the one MailApp call went to the business route, with the
+sender's address only as replyTo. The owner chose to send the copy rather than
+drop the promise. Routing, file limits, retention and deduplication are
+unchanged.

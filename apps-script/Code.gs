@@ -2,9 +2,9 @@
  * No public Drive permissions, no client-controlled recipients, no inbox-reading scope.
  */
 var ROUTES_ = Object.freeze({
-  contact: {email:'alex@allied-plumbing.ca', days:180, max:0, count:0},
-  quote: {email:'alex@allied-plumbing.ca', days:180, max:10*1024*1024, count:4},
-  careers: {email:'alex@allied-plumbing.ca', days:90, max:5*1024*1024, count:1}
+  contact: {email:'alex@allied-plumbing.ca', days:180, max:0, count:0, noun:'enquiry'},
+  quote: {email:'alex@allied-plumbing.ca', days:180, max:10*1024*1024, count:4, noun:'quote request'},
+  careers: {email:'alex@allied-plumbing.ca', days:90, max:5*1024*1024, count:1, noun:'application'}
 });
 function doGet(e) {
   var type=String(e && e.parameter && e.parameter.type || 'contact');
@@ -158,6 +158,39 @@ function findRequest_(id) {
   return result.files && result.files[0];
 }
 function status_(folder,state) { Drive.Files.update({appProperties:Object.assign({},folder.appProperties,{state:state})},folder.id); }
+/* The acknowledgement to the person who sent the enquiry.
+ *
+ * THE BODY IS FIXED. Nothing the sender typed is echoed back — not the name,
+ * not the message, not the address. This mail goes to an address the sender
+ * chose, so echoing their text would make the form a small open relay: put a
+ * stranger's address in the email field, the payload in the message field,
+ * and Allied's domain delivers it. Only the reference and the route's own
+ * noun appear, and the noun is a ROUTES_ key, not input.
+ *
+ * IT CANNOT FAIL THE ENQUIRY. By the time this runs the request is stored and
+ * Allied has been notified. A failure here is logged and dropped, because the
+ * alternative is telling someone their enquiry failed when it did not. The
+ * sender losing a courtesy copy costs nothing; Allied losing the enquiry, or
+ * the sender sending it twice because they were told it failed, costs work.
+ */
+function acknowledge_(request) {
+  var body='Thank you — we have your '+request.route.noun+'.\n\n'
+    +'Your reference: '+request.reference+'\n'
+    +'Quote it if you call us about this enquiry.\n\n'
+    +'We read enquiries the same day and reply within one business day.\n'
+    +'For no-heat, leaks or gas issues, call 604-731-1000 — any hour, any day.\n\n'
+    +'Allied Plumbing, Heating & Air Conditioning\n'
+    +'4085 2nd Avenue, Burnaby, BC V5C 3X1\n'
+    +'604-731-1000\n\n'
+    +'This is an automated confirmation that your '+request.route.noun+' reached us.\n'
+    +'It is not a quotation and commits neither party. Please do not reply to\n'
+    +'confirm receipt — replies reach our team, and we will be in touch.';
+  try {
+    MailApp.sendEmail({to:request.fields.email,subject:'Allied Plumbing — we have your '+request.route.noun+' — '+request.reference,body:body,replyTo:request.route.email,name:'Allied Plumbing'});
+  } catch(error) {
+    console.error('Acknowledgement to the sender failed, enquiry unaffected: '+error);
+  }
+}
 function submitEnquiry(form) {
   var request=checked_(form),lock=LockService.getScriptLock();
   if(!lock.tryLock(15000))throw new Error('The service is busy. Keep your details and try again shortly.');
@@ -172,7 +205,7 @@ function submitEnquiry(form) {
     if(!root)throw new Error('The enquiry service is not ready. Please call or email our team.');
     var today=Utilities.formatDate(new Date(),'UTC','yyyy-MM-dd'),dayKey='usage:'+today;
     var used=Number(props.getProperty(dayKey)||0);
-    if(used>=60 || MailApp.getRemainingDailyQuota()<1)throw new Error('Online enquiries have reached today’s capacity. Please email or call our team.');
+    if(used>=60 || MailApp.getRemainingDailyQuota()<2)throw new Error('Online enquiries have reached today’s capacity. Please email or call our team.');
     var cache=CacheService.getScriptCache(),hash=Utilities.base64EncodeWebSafe(Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256,request.fields.email.toLowerCase()));
     var rate=Number(cache.get('rate:'+hash)||0),hour=Number(cache.get('global-hour')||0);
     if(rate>=3 || hour>=30)throw new Error('Too many requests. Please wait or call our team.');
@@ -192,6 +225,7 @@ function submitEnquiry(form) {
     try { MailApp.sendEmail({to:request.route.email,subject:'Allied Plumbing — '+request.type+' — '+request.reference,body:body,replyTo:request.fields.email,attachments:request.files,name:'Allied Plumbing website'}); }
     catch(error) { return {ok:false,stored:true,id:request.reference,message:'Your request is stored, but email notification could not be confirmed. Do not resubmit. Call 604-731-1000 with reference '+request.reference+'.'}; }
     status_(folder,'notified');
+    acknowledge_(request);
     return {ok:true,id:request.reference};
   } finally {lock.releaseLock();}
 }

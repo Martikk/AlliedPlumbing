@@ -37,7 +37,8 @@ export default function QuoteThanks() {
         Thank you — we have your enquiry
       </h1>
       <p className="mt-5 max-w-2xl text-lg leading-relaxed text-neutral-700">
-        We read enquiries the same day and reply within one business day.
+        A confirmation with your reference is on its way to your inbox. We read enquiries the
+        same day and reply within one business day.
       </p>
 
       {reference && (
@@ -45,10 +46,7 @@ export default function QuoteThanks() {
           <div>
             <span>Your reference</span>
             <strong>{reference}</strong>
-            <small>
-              Keep this — there is no automatic confirmation email. Quote it if you call us
-              about this enquiry.
-            </small>
+            <small>Quote this if you call us about this enquiry.</small>
           </div>
         </div>
       )}

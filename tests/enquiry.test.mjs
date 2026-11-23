@@ -199,37 +199,52 @@ test('a failed submit always offers the email route', async () => {
   }
 });
 
-/** The thank-you page told every visitor "A copy is on its way to your inbox."
- *  It never was. The backend has exactly one MailApp.sendEmail and it goes to
- *  the fixed business route; the visitor's address is used as replyTo, never as
- *  a recipient. So the page promised a confirmation that could not arrive —
- *  which reads as a failed submission and invites a second one.
+/** The thank-you page and the backend's mail are one statement, split across
+ *  two repositories' worth of distance. Both halves have now been wrong, in
+ *  both directions: the page promised a copy that was never sent, the promise
+ *  was removed, then Allied chose to send the copy and the promise came back.
+ *  This test is what stops a third round — change one half and it fails until
+ *  the other follows.
  *
- *  Either half can be changed; they must change together. If Allied ever does
- *  acknowledge to the sender, this test fails and the page copy gets revisited
- *  deliberately rather than drifting back into a promise nobody keeps. */
-test('the thank-you page promises only mail the backend actually sends', () => {
+ *  The body rule is not house style. acknowledge_ mails an address the SENDER
+ *  chose. Echo anything they typed and the form becomes an open relay: a
+ *  stranger's address in the email field, the payload in the message field,
+ *  and Allied's domain delivers it. So the acknowledgement may read
+ *  request.route.* and request.reference, and request.fields.email only as
+ *  the recipient. */
+test('the acknowledgement sends what the page promises, and echoes nothing typed', () => {
   const backend = readFileSync('apps-script/Code.gs', 'utf8');
+
   const recipients = [...backend.matchAll(/MailApp\.sendEmail\(\{\s*to:\s*([^,]+)/g)].map(
     match => match[1].trim(),
   );
   assert.deepEqual(
-    recipients,
-    ['request.route.email'],
-    'the only notification goes to the fixed business route',
+    recipients.slice().sort(),
+    ['request.fields.email', 'request.route.email'],
+    'one notification to Allied, one acknowledgement to the sender',
   );
-  assert.ok(
-    /replyTo:\s*request\.fields\.email/.test(backend),
-    "the sender's address belongs in replyTo, not in to:",
+
+  const found = backend.match(/\nfunction acknowledge_\(request\) \{\n([\s\S]*?)\n\}\n/);
+  assert.ok(found, 'acknowledge_ must exist');
+  const ack = found[1];
+
+  const echoed = [...new Set([...ack.matchAll(/request\.fields\.([A-Za-z]+)/g)].map(m => m[1]))];
+  assert.deepEqual(echoed, ['email'], 'nothing the sender typed may reach the body');
+  assert.match(ack, /to:request\.fields\.email/, 'and the address only as the recipient');
+
+  // It runs after the enquiry is stored and Allied is notified, so it must not
+  // be able to turn a delivered enquiry into a reported failure.
+  assert.match(ack, /try \{/, 'the send must be wrapped');
+  assert.match(ack, /catch\(error\)/, 'and its failure swallowed');
+  assert.ok(!/\bthrow\b/.test(ack), 'acknowledge_ must never throw');
+
+  // Two mails per enquiry now, so the quota gate has to reserve both.
+  assert.match(
+    backend,
+    /getRemainingDailyQuota\(\)<2/,
+    'the quota check must allow notification and acknowledgement',
   );
 
   const page = readFileSync('src/pages/QuoteThanks.tsx', 'utf8');
-  for (const promise of [
-    /on its way to your inbox/i,
-    /copy (is|has been|will be) sent to you/i,
-    /check your (inbox|e-?mail)/i,
-    /confirmation (e-?mail )?(is|will be) (on its way|sent)/i,
-  ]) {
-    assert.ok(!promise.test(page), `the page must not promise mail: ${promise}`);
-  }
+  assert.match(page, /on its way to your inbox/i, 'the page must tell the sender to expect it');
 });

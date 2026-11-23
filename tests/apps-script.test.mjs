@@ -13,7 +13,38 @@ function harness(){
 function form(type='quote'){return {type,requestId:'12345678-1234-4234-8234-123456789abc',startedAt:String(Date.now()-5000),name:'QA Fixture',email:'fixture@example.test',message:'Fixture request',consent:'yes'};}
 function blob(name,type,bytes){return {getName:()=>name,getContentType:()=>type,getBytes:()=>bytes,setName:()=>{}};}
 test('server routes recipients and deduplicates accepted requests',()=>{
- for(const type of ['contact','quote','careers']){const h=harness(),f=form(type);assert.equal(h.context.submitEnquiry(f).ok,true);assert.equal(h.context.submitEnquiry(f).ok,true);assert.equal(h.mail.length,1);assert.equal(h.mail[0].to,'alex@allied-plumbing.ca');assert.throws(()=>h.context.submitEnquiry({...f,message:'Changed after acceptance'}),/earlier version/);}
+ for(const type of ['contact','quote','careers']){
+  const h=harness(),f=form(type);
+  assert.equal(h.context.submitEnquiry(f).ok,true);
+  assert.equal(h.context.submitEnquiry(f).ok,true);
+  // Two mails for the first submit, none for the repeat: notification to the
+  // fixed business route, acknowledgement to the address the sender gave.
+  assert.equal(h.mail.length,2,'a retry must not mail again');
+  assert.equal(h.mail[0].to,'alex@allied-plumbing.ca');
+  assert.equal(h.mail[1].to,'fixture@example.test');
+  // The acknowledgement goes to an address the SENDER chose, so it must carry
+  // nothing the sender typed. Echo their text and the form becomes an open
+  // relay: a stranger's address in the email field, the payload in the
+  // message field, delivered by Allied's domain.
+  for(const typed of ['QA Fixture','Fixture request','fixture@example.test']){
+   assert.ok(!h.mail[1].body.includes(typed),'the acknowledgement must not echo: '+typed);
+  }
+  assert.equal(h.mail[1].replyTo,'alex@allied-plumbing.ca','a reply must reach Allied');
+  assert.ok(h.mail[1].body.includes('011126-061530'),'it must carry the reference');
+  assert.throws(()=>h.context.submitEnquiry({...f,message:'Changed after acceptance'}),/earlier version/);
+ }
+});
+test('a failed acknowledgement never turns a delivered enquiry into a failure',()=>{
+ // The acknowledgement runs after the request is stored and Allied is
+ // notified. A bounced courtesy copy costs nothing; reporting failure for a
+ // delivered enquiry costs the enquiry, or gets it sent twice.
+ const h=harness(),sent=[];let calls=0;
+ h.context.MailApp.sendEmail=payload=>{calls+=1;if(calls===2)throw Error('Mailbox unavailable');sent.push(payload);};
+ const result=h.context.submitEnquiry(form());
+ assert.equal(result.ok,true,'Allied was notified, so the enquiry succeeded');
+ assert.equal(calls,2,'the acknowledgement was attempted');
+ assert.equal(sent.length,1,'only the notification got through');
+ assert.equal(h.folders[0].appProperties.state,'notified');
 });
 test('mail ambiguity retains archive and never retries notification automatically',()=>{
  const h=harness();h.failMail();const f=form();const r=h.context.submitEnquiry(f);assert.equal(r.stored,true);assert.equal(r.ok,false);assert.equal(h.context.submitEnquiry(f).stored,true);assert.equal(h.folders.length,1);assert.equal(h.folders[0].appProperties.state,'sending');
