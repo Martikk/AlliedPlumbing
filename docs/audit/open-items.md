@@ -29,7 +29,29 @@ Source: *alliedplumbing.ca — Full Website Audit & Developer Spec*, 2026-11-22.
 | Q8 | Budget for a half-day photo shoot and for call tracking | — | D-01, J-03 |
 | Q9 | Who has DNS and GA4 admin access? | Hosting is **AWS Amplify**, not Vercel or Netlify — the audit assumed otherwise | A-01, J-01 |
 
-### Decision still outstanding: I-01, the primary buyer
+### Decided: I-01, the primary buyer — institutional
+
+The page titles and descriptions were already written for the institutional
+buyer. The homepage H1 and the HVAC H1 now match them, so the search result
+and the page carry the same promise.
+
+Industry practice is that the title and the H1 should share a topic without
+sharing wording, and that a large divergence should be closed. Which side
+moves was settled by the site's own evidence, not by preference: 13 of the 14
+project pages are institutional or strata, and `/rfp/` exists.
+
+- Homepage H1: *"Mechanical contractor for schools, strata and commercial
+  buildings"*, subhead naming Metro Vancouver, the North Shore and Sea-to-Sky.
+- `/services/hvac/` H1 was *"HVAC (RTU, MUA, AHU, Heat Pumps, VRF)"* — the
+  audit's own example of an H1 that lists equipment instead of making a
+  promise (A-06). Now *"Commercial HVAC for schools and commercial
+  buildings"*, with the equipment list moved into the paragraph under it.
+- The other five service pages were already aligned and were left alone.
+
+Residential remains a service page. If Allied decides otherwise, those two H1s
+and `src/data/seo.json` are the three places to change.
+
+### Superseded: the earlier form of this decision
 
 The page **titles and descriptions** in `src/data/seo.json` were rewritten for
 the institutional buyer — "Mechanical Contractor, Metro Vancouver", "for
@@ -93,8 +115,19 @@ Both are small. It needs Allied's answer on who the site is for.
   interactions off.
 - **J-03 / J-04** — call tracking and the Looker Studio dashboard. Cost
   decisions.
-- **Turnstile (H-01 step 6)** — the form has a honeypot and a minimum fill
-  time, both re-checked server side. Turnstile needs a Cloudflare account.
+- **Turnstile (H-01 step 6) — built, waiting on two keys.** The code ships
+  inert: with no site key nothing renders and the Cloudflare script is never
+  fetched, so the honeypot and minimum fill time remain the controls, exactly
+  as before. To switch it on:
+  1. Cloudflare dashboard → Turnstile → add `alliedplumbing.ca`, widget mode
+     **Invisible**.
+  2. Put the **site** key in `src/lib/enquiry-config.json` →
+     `turnstileSiteKey` (public, belongs in the repo).
+  3. Put the **secret** key in Apps Script → Project Settings → Script
+     Properties as `TURNSTILE_SECRET` (never in the repo), then
+     `npm run deploy:backend`.
+  It fails open: if Cloudflare is unreachable the enquiry still goes through,
+  because a CAPTCHA provider being down is not a reason to drop a real lead.
 - **customHttp.yml** — Amplify reads it on the next deploy. Verify with
   `curl -sI https://www.alliedplumbing.ca/assets/<hashed>.js | grep -i cache`.
 

@@ -5,9 +5,9 @@ import Button from './ui/Button';
 import { EMAIL_QUOTE, PHONE, PHONE_HREF, RESPONSE_PROMISE } from '../config';
 import { SERVICE_LINKS, type ServiceKey } from '../lib/site-links';
 import { trackEvent } from '../lib/analytics';
+import { mountTurnstile, turnstileConfigured, type TurnstileHandle } from '../lib/turnstile';
 import {
   ACCEPT_ATTR,
-  EnquiryError,
   mailtoFor,
   EMPTY,
   ENQUIRY_TYPES,
@@ -117,6 +117,8 @@ export default function EnquiryForm({
   const honeypot = useRef('');
   const tracked = useRef(false);
   const inFlight = useRef(false);
+  const turnstileBox = useRef<HTMLDivElement>(null);
+  const turnstile = useRef<TurnstileHandle | null>(null);
 
   useEffect(() => {
     requestId.current = crypto.randomUUID();
@@ -146,7 +148,14 @@ export default function EnquiryForm({
     if (tracked.current) return;
     tracked.current = true;
     trackEvent('form_start', { enquiry_type: values.enquiryType });
+    if (turnstileConfigured() && turnstileBox.current && !turnstile.current) {
+      void mountTurnstile(turnstileBox.current).then(handle => {
+        turnstile.current = handle;
+      });
+    }
   }
+
+  useEffect(() => () => turnstile.current?.destroy(), []);
 
   const describedBy = (name: keyof EnquiryValues | 'files', hint = false) =>
     [errors[name] ? `${id(name)}-error` : '', hint ? `${id(name)}-hint` : '']
@@ -181,10 +190,14 @@ export default function EnquiryForm({
     setErrors({});
     setSending(true);
     try {
+      // A null token (not configured, blocked, or Cloudflare unreachable)
+      // must not block the submit — the server decides what to do with it.
+      const turnstileToken = (await turnstile.current?.token()) ?? null;
       const result = await submitEnquiry(values, files, {
         requestId: requestId.current,
         startedAt: startedAt.current,
         honeypot: honeypot.current,
+        turnstileToken,
       });
       trackEvent('generate_lead', {
         enquiry_type: values.enquiryType,
@@ -199,14 +212,14 @@ export default function EnquiryForm({
           ? failure.message
           : 'Your enquiry could not be sent. Please try again.';
       setErrors({ form: message });
-      // When the backend itself is misconfigured, retrying cannot help, so
-      // hand the visitor a route that does not depend on it. Everything they
-      // typed goes into the mail body; nothing is lost.
-      setEscapeHatch(
-        failure instanceof EnquiryError && failure.kind === 'backend'
-          ? mailtoFor(values, files, EMAIL_QUOTE)
-          : null,
-      );
+      // Offered on EVERY failure, not just a recognised backend one.
+      // Verified against the real broken deployment: Apps Script serves its
+      // "Script function not found" page WITHOUT CORS headers, so the browser
+      // cannot read the response at all and the failure arrives as a network
+      // error. The one case this was built for was the one case it missed.
+      // It also helps when the visitor really is offline — the mail sits in
+      // their outbox and sends when they reconnect.
+      setEscapeHatch(mailtoFor(values, files, EMAIL_QUOTE));
       trackEvent('form_error', { error_type: 'network_or_server', enquiry_type: values.enquiryType });
       requestAnimationFrame(() => summary.current?.focus());
     } finally {
@@ -261,8 +274,7 @@ export default function EnquiryForm({
             {errors.form && (
               <>
                 <p className="mt-3 text-sm">
-                  Your details are still here. You can{' '}
-                  {escapeHatch ? 'send them by email' : 'try again'}, or call{' '}
+                  Your details are still here. You can try again, send them by email, or call{' '}
                   <a
                     href={PHONE_HREF}
                     data-cta-location="page"
@@ -595,6 +607,10 @@ export default function EnquiryForm({
           />
         </div>
       </fieldset>
+
+      {/* Turnstile renders here, and only when Cloudflare asks for an
+          interaction. Empty and zero-height the rest of the time. */}
+      <div ref={turnstileBox} className="mt-4 empty:mt-0" />
 
       {values.urgency === 'today' && (
         <p className="mt-6 rounded-[var(--radius)] border-2 border-[var(--brand)] bg-red-50 p-4 font-semibold text-[var(--ink)]">

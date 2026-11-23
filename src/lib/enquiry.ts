@@ -224,7 +224,7 @@ function backendType(type: EnquiryType) {
 export async function submitEnquiry(
   values: EnquiryValues,
   files: File[],
-  meta: { requestId: string; startedAt: number; honeypot: string },
+  meta: { requestId: string; startedAt: number; honeypot: string; turnstileToken?: string | null },
 ): Promise<SubmitResult> {
   if (!APPS_SCRIPT_URL)
     throw new EnquiryError('backend', 'The enquiry service is not configured.');
@@ -246,6 +246,7 @@ export async function submitEnquiry(
     website: meta.honeypot,
     requestId: meta.requestId,
     startedAt: String(meta.startedAt),
+    turnstileToken: meta.turnstileToken ?? '',
     files: await Promise.all(
       files.map(async file => ({
         name: file.name,

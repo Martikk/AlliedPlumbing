@@ -1,3 +1,5 @@
 {
-  "appsScriptUrl": "https://script.google.com/macros/s/AKfycbzY-CmGdtjp9EWttkl0-4q_vrWWFLwEQFWOyFejKxZ4RX9KDaONZyQzSYVjRaicAAApLQ/exec"
+  "appsScriptUrl": "https://script.google.com/macros/s/AKfycbzY-CmGdtjp9EWttkl0-4q_vrWWFLwEQFWOyFejKxZ4RX9KDaONZyQzSYVjRaicAAApLQ/exec",
+  "turnstileSiteKey": "",
+  "_turnstile": "Cloudflare Turnstile site key (public, safe here). Empty = Turnstile is off and the form falls back to the honeypot plus minimum fill time, both checked server side. The SECRET key goes in Apps Script -> Project Settings -> Script Properties as TURNSTILE_SECRET, never in this file."
 }

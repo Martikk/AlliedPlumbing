@@ -12,6 +12,39 @@ function doGet(e) {
   var config={type:type,token:String(e && e.parameter && e.parameter.token || '').replace(/[^a-zA-Z0-9-]/g,'').slice(0,80),role:String(e && e.parameter && e.parameter.role || '').slice(0,160)};
   return HtmlService.createHtmlOutput(formHtml_(config)).setTitle('Allied Plumbing enquiry').setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
+/* Audit H-01 step 6 — Cloudflare Turnstile, verified server side.
+ *
+ * A token the client never sends, or sends unverified, is decoration. This
+ * is the half that matters.
+ *
+ * Off until a secret exists: set TURNSTILE_SECRET in Project Settings ->
+ * Script Properties. With no secret the function returns without an opinion
+ * and the honeypot plus the minimum fill time in checked_() remain the spam
+ * controls, exactly as today.
+ *
+ * Fail-open on a Cloudflare outage. A CAPTCHA provider being down is not a
+ * reason to drop a real enquiry; the other controls still apply.
+ */
+function turnstileOK_(token, ip) {
+  var secret = PropertiesService.getScriptProperties().getProperty('TURNSTILE_SECRET');
+  if (!secret) return true;                      // not configured
+  if (!token) return false;                      // configured, but nothing sent
+
+  var payload = { secret: secret, response: String(token).slice(0, 2048) };
+  if (ip) payload.remoteip = String(ip);
+
+  try {
+    var response = UrlFetchApp.fetch(
+      'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+      { method: 'post', payload: payload, muteHttpExceptions: true }
+    );
+    var body = JSON.parse(response.getContentText());
+    return body.success === true;
+  } catch (error) {
+    return true;                                 // fail open on an outage
+  }
+}
+
 /* Audit H-01 — native enquiry form endpoint.
  *
  * The site no longer embeds this script in an iframe; it POSTs JSON here from
@@ -64,6 +97,13 @@ function doPost(e) {
         String(file.name || 'attachment')
       );
     });
+    if (!turnstileOK_(body.turnstileToken, e.parameter && e.parameter.ip)) {
+      return reply({
+        ok: false,
+        message: 'We could not verify this request. Please reload the page and try again, or call 604-731-1000.'
+      });
+    }
+
     return reply(submitEnquiry(form));
   } catch (error) {
     return reply({ ok: false, message: String(error && error.message || error) });

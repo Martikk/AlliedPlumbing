@@ -125,3 +125,70 @@ test('attachment limits match the Apps Script route config', async () => {
   assert.ok(validate(valid, [file(10, 'application/zip')]).files, 'unsupported type');
   assert.ok(!validate(valid, [file(10), file(10, 'image/png')]).files, 'PDF and PNG are fine');
 });
+
+test('Turnstile is inert until a site key exists', async () => {
+  // It must be possible to ship this before the Cloudflare account exists:
+  // with no key, nothing renders, the script is never fetched, and the
+  // honeypot plus minimum fill time remain the spam controls.
+  const config = JSON.parse(readFileSync('src/lib/enquiry-config.json', 'utf8'));
+  assert.equal(typeof config.turnstileSiteKey, 'string');
+
+  const source = readFileSync('src/lib/turnstile.ts', 'utf8');
+  assert.match(source, /if \(!turnstileConfigured\(\)\) return null;/);
+  assert.ok(
+    !source.includes('document.head.append(script)') ||
+      source.indexOf('turnstileConfigured') < source.indexOf('document.head.append(script)'),
+    'the script must only be fetched after the key check',
+  );
+
+  // No secret-bearing FIELD may hold a value here. (The file documents where
+  // the secret does live, so the word itself is expected in the prose.)
+  for (const [key, value] of Object.entries(config)) {
+    if (key.startsWith('_')) continue;
+    assert.ok(
+      !/secret|private|password|token/i.test(key) || !value,
+      `enquiry-config.json must not carry ${key}`,
+    );
+  }
+});
+
+test('Turnstile never blocks a submit it cannot complete', async () => {
+  const form = readFileSync('src/components/EnquiryForm.tsx', 'utf8');
+  // A missing token is passed through as null; the server decides. Cloudflare
+  // being unreachable must not cost Allied the enquiry.
+  assert.match(form, /\(await turnstile\.current\?\.token\(\)\) \?\? null/);
+
+  const source = readFileSync('src/lib/turnstile.ts', 'utf8');
+  assert.match(source, /setTimeout\(/, 'the token promise needs a timeout');
+
+  const backend = readFileSync('apps-script/Code.gs', 'utf8');
+  assert.match(backend, /if \(!secret\) return true;/, 'no secret means no opinion');
+  assert.match(backend, /return true;\s*\/\/ fail open on an outage/, 'fail open on an outage');
+  assert.match(backend, /body\.success === true/, 'the token must actually be verified');
+});
+
+test('a failed submit always offers the email route', async () => {
+  const form = readFileSync('src/components/EnquiryForm.tsx', 'utf8');
+  // Deliberately unconditional. Gating this on a recognised "backend" failure
+  // was verified against the real broken deployment and did not fire: Apps
+  // Script serves its "Script function not found" page WITHOUT CORS headers,
+  // so the browser cannot read the response and the failure arrives as a
+  // network error. The one case it was built for was the one case it missed.
+  assert.match(
+    form,
+    /setEscapeHatch\(mailtoFor\(values, files, EMAIL_QUOTE\)\);/,
+    'the escape hatch must not be gated on the failure kind',
+  );
+
+  const { mailtoFor } = await loadEnquiry();
+  const href = mailtoFor(
+    { ...base, enquiryType: 'quote', name: 'A Person', email: 'a@b.co', message: 'Boiler plant.' },
+    [],
+    'quote@allied-plumbing.ca',
+  );
+  assert.match(href, /^mailto:quote@allied-plumbing\.ca\?subject=/);
+  const body = decodeURIComponent(href.split('&body=')[1]);
+  for (const expected of ['A Person', 'a@b.co', 'Boiler plant.']) {
+    assert.ok(body.includes(expected), `the mail body must carry ${expected}`);
+  }
+});
