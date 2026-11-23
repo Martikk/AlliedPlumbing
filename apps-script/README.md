@@ -2,6 +2,45 @@
 
 Status: backend version 5 deployed on 2026-11-01; **frontend activation authorized by the owner**. `src/lib/enquiry-config.json` points to the deployed endpoint. Production verification follows deployment.
 
+## Releasing a change to this backend
+
+The code here is NOT live until a new deployment VERSION is released. Saving in
+the editor is not releasing, and that gap is how the repository and the
+deployment drifted apart on 2026-11-22: the site served the native form while
+the deployment had no `doPost`, so every enquiry failed.
+
+Project: https://script.google.com/home/projects/1F1iTfQ5foQPXxREF3MZ5aLGmIpxiHX-OnnlTztkP3LHfgOko9gobVvQt/edit
+
+1. Open the project and select the file **Code.gs** in the file list on the
+   left. Select all, paste `apps-script/Code.gs` over it, and **save** — Apps
+   Script has no autosave.
+2. Check the paste landed before deploying: the function dropdown beside Run
+   must list exactly **doGet, doPost, submitEnquiry**. Helpers end in `_` and
+   never appear there. No `doPost` means the file was not saved, or the paste
+   went into a different file. There must be exactly ONE file holding these
+   functions — all `.gs` files share one global scope, so a second copy
+   silently overrides the first.
+3. **Deploy → Manage deployments**. Confirm this is the deployment the site
+   uses: its Web app URL must end with the same `AKfycb…` segment as
+   `appsScriptUrl` in `src/lib/enquiry-config.json`. Today that is
+   `AKfycbzY-CmGdtjp9EWttkl0-4q_vrWWFLwEQFWOyFejKxZ4RX9KDaONZyQzSYVjRaicAAApLQ`.
+4. Pencil (Edit) → **Version: New version** → **Deploy**. Leaving the dropdown
+   on the existing version deploys nothing new. Editing the existing
+   deployment keeps the `/exec` URL, so the site needs no change; creating a
+   NEW deployment gives a new URL the site does not know about.
+5. Verify from the repository: `npm run check:backend`. It posts a payload that
+   `checked_()` rejects on its first line, so it stores nothing and emails
+   nobody, and it reports which of the two failures you have if it fails.
+
+`npm run deploy:backend` does steps 1–5 in one command once `clasp` is set up.
+
+### Changing the manifest
+
+`appsscript.json` is only editable when the manifest is shown: Project
+Settings → "Show appsscript.json manifest file in editor". Adding an OAuth
+scope means Google asks the owner to re-authorize on the next run, so expect a
+consent screen.
+
 ## Fixed routing and file policy
 
 | Type | Recipient | Attachments | Private Drive retention |

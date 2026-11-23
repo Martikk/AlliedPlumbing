@@ -45,8 +45,10 @@ if (!scriptId) {
 x  No Apps Script id.
 
    The deployment id is known (${deploymentId}) — it comes from the /exec URL.
-   The SCRIPT id is separate and is not in this repository, because it is not
-   public. Find it in the Apps Script console under Project Settings, then:
+   The SCRIPT id is a different id. It is in the project link at the top of
+   apps-script/README.md, and in the Apps Script console under Project
+   Settings. It is not a credential — reaching the project still needs the
+   owner's Google account — but .clasp.json stays gitignored anyway. Then:
 
      echo '{"scriptId":"<id>","rootDir":"apps-script"}' > .clasp.json
      npx clasp@2 login
