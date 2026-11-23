@@ -163,7 +163,13 @@ test('Turnstile never blocks a submit it cannot complete', async () => {
 
   const backend = readFileSync('apps-script/Code.gs', 'utf8');
   assert.match(backend, /if \(!secret\) return true;/, 'no secret means no opinion');
-  assert.match(backend, /return true;\s*\/\/ fail open on an outage/, 'fail open on an outage');
+  // The catch around siteverify must fail OPEN: Cloudflare being unreachable
+  // is not a reason to drop a real enquiry. Matched on the block, not on a
+  // comment, so rewording the comment cannot quietly flip the behaviour.
+  const caught = backend.match(/\n {2}\} catch \(error\) \{\n([\s\S]*?)\n {2}\}/);
+  assert.ok(caught, 'turnstileOK_ must handle a failed siteverify call');
+  assert.match(caught[1], /return true;/, 'fail open on an outage');
+  assert.ok(!/return false;/.test(caught[1]), 'the catch must not reject the enquiry');
   assert.match(backend, /body\.success === true/, 'the token must actually be verified');
 });
 

@@ -41,7 +41,13 @@ function turnstileOK_(token, ip) {
     var body = JSON.parse(response.getContentText());
     return body.success === true;
   } catch (error) {
-    return true;                                 // fail open on an outage
+    // Fail open: a provider being unreachable is not a reason to drop a real
+    // enquiry. But log it — a MISSING SCOPE throws here too, and that would
+    // make verification silently inert instead of merely degraded. The
+    // manifest must carry script.external_request; tests/apps-script.test.mjs
+    // asserts it.
+    console.error('Turnstile verification failed open: ' + error);
+    return true;
   }
 }
 
