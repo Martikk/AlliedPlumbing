@@ -130,6 +130,20 @@ Quote fixture without attachments was accepted: 9f397ea1-7a84-4cc6-86ea-a1d5d8f5
 
 A request folder contains request.json, attachments and appProperties.state. `notified` means MailApp accepted the notification; `sending`/`stored` means manual notification review may be needed. Do not resend blindly. Recent request IDs map directly to folder IDs in Script Properties so retries do not depend on Drive search indexing. LockService serializes writes/sends. Changed content under an already-stored ID is rejected rather than falsely acknowledged.
 
+A notification can be accepted by Google and still never be read. On 2026-11-23
+the test enquiry 231126-001149-CC3A sent both mails one second apart, neither
+bounced, and the notification was sitting in the business mailbox's Spam folder
+while the acknowledgement was in its inbox. MailApp sends from the deploying
+owner's personal Google address, which is not the recipient's domain, so the
+business mailbox has to be told to trust that sender: mark one notification
+"not spam" AND add the sender to its allowed senders. Until that is done every
+enquiry notification can be filed as spam — the enquiry is stored, the sender
+is thanked, and nobody at Allied ever sees it. The acknowledgement is no
+substitute: by design it carries no enquiry details at all. (That test was the
+worst case for a filter, because the fixture's own email was the business
+address, so `To` and `Reply-To` were the mailbox's own address while `From` was
+not. A real enquiry comes from a stranger and lacks that signal.)
+
 Do not add logging of form contents. Monitor Apps Script execution failures and account quota/storage. Maintain the owner account and review Google quota changes. Revoking the grant breaks submissions; the site retains phone/email fallback links.
 
 Sources: https://developers.google.com/apps-script/guides/html/communication ; https://developers.google.com/apps-script/advanced/drive ; https://developers.google.com/apps-script/guides/services/quotas .
