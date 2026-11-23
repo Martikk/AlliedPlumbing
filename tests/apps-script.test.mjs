@@ -67,7 +67,7 @@ test('every Google service the script calls has its scope in the manifest', () =
 
 /** `npm run deploy:backend` runs `clasp push --force`, which REPLACES the
  *  project's manifest with this file. Anything missing here is removed from the
- *  live project — and on 2026-11-23 that is exactly what happened: this file
+ *  live project — and on 2026-11-22 that is exactly what happened: this file
  *  had no `webapp` block, the push dropped it, and both deployments began
  *  answering 404 "unable to open the file" because the project was no longer a
  *  web app anyone could reach. The site's form was down until it was restored.

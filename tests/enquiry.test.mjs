@@ -198,3 +198,38 @@ test('a failed submit always offers the email route', async () => {
     assert.ok(body.includes(expected), `the mail body must carry ${expected}`);
   }
 });
+
+/** The thank-you page told every visitor "A copy is on its way to your inbox."
+ *  It never was. The backend has exactly one MailApp.sendEmail and it goes to
+ *  the fixed business route; the visitor's address is used as replyTo, never as
+ *  a recipient. So the page promised a confirmation that could not arrive —
+ *  which reads as a failed submission and invites a second one.
+ *
+ *  Either half can be changed; they must change together. If Allied ever does
+ *  acknowledge to the sender, this test fails and the page copy gets revisited
+ *  deliberately rather than drifting back into a promise nobody keeps. */
+test('the thank-you page promises only mail the backend actually sends', () => {
+  const backend = readFileSync('apps-script/Code.gs', 'utf8');
+  const recipients = [...backend.matchAll(/MailApp\.sendEmail\(\{\s*to:\s*([^,]+)/g)].map(
+    match => match[1].trim(),
+  );
+  assert.deepEqual(
+    recipients,
+    ['request.route.email'],
+    'the only notification goes to the fixed business route',
+  );
+  assert.ok(
+    /replyTo:\s*request\.fields\.email/.test(backend),
+    "the sender's address belongs in replyTo, not in to:",
+  );
+
+  const page = readFileSync('src/pages/QuoteThanks.tsx', 'utf8');
+  for (const promise of [
+    /on its way to your inbox/i,
+    /copy (is|has been|will be) sent to you/i,
+    /check your (inbox|e-?mail)/i,
+    /confirmation (e-?mail )?(is|will be) (on its way|sent)/i,
+  ]) {
+    assert.ok(!promise.test(page), `the page must not promise mail: ${promise}`);
+  }
+});

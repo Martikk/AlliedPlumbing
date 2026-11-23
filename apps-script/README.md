@@ -1,6 +1,6 @@
 # Allied enquiry backend — deployment package
 
-Status: backend version 7 deployed on 2026-11-23 from this repository with `npm run deploy:backend`; **frontend activation authorized by the owner**. `src/lib/enquiry-config.json` points to the deployed endpoint, and `npm run check:backend` confirms it answers JSON and validates server-side.
+Status: backend version 7 deployed on 2026-11-22 from this repository with `npm run deploy:backend`; **frontend activation authorized by the owner**. `src/lib/enquiry-config.json` points to the deployed endpoint, and `npm run check:backend` confirms it answers JSON and validates server-side.
 
 ## Releasing a change to this backend
 
@@ -58,7 +58,7 @@ to tell people to run — is a 404.
 
 `appsscript.json` here is AUTHORITATIVE: `clasp push --force` replaces the
 project's manifest with this file, so anything missing from it is deleted from
-the live project. On 2026-11-23 this file carried no `webapp` block, the push
+the live project. On 2026-11-22 this file carried no `webapp` block, the push
 dropped `executeAs` and `access` from the project, and both deployments began
 answering `404 Sorry, unable to open the file at this time` — the project was
 no longer a web app a visitor could reach. The form was down until the block
