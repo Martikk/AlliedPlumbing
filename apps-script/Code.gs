@@ -220,7 +220,18 @@ function submitEnquiry(form) {
       Drive.Files.create({name:'request.json',parents:[folder.id]},Utilities.newBlob(JSON.stringify(record,null,2),'application/json','request.json'),{fields:'id'});
       status_(folder,'stored');
     } catch(error) { status_(folder,'archive_failed');throw new Error('Your request could not be stored. Your form details are preserved; please try again.'); }
-    var body='Allied Plumbing '+request.type+' enquiry\nReference: '+request.reference+'\n\n'+Object.keys(request.fields).map(function(key){return key+': '+request.fields[key];}).join('\n')+'\n\nAttachments are included in this email. A private copy is retained in the website owner’s Drive. Mail acceptance is not proof of inbox delivery.';
+    /* Only the fields the sender actually filled in. An empty line carries
+     * nothing, and a column of blank keys makes the mail read like a machine
+     * dump — harder for Allied to scan, and a worse spam score than prose. The
+     * attachment sentence is conditional because it used to be printed
+     * unconditionally: it told Allied attachments were included when none
+     * were, which is how this mail lost the right to be believed. */
+    var filled=Object.keys(request.fields).filter(function(key){return String(request.fields[key]).trim()!=='';});
+    var attached=request.files.map(function(blob){return blob.getName();});
+    var body='Allied Plumbing '+request.type+' enquiry\nReference: '+request.reference+'\n\n'
+      +filled.map(function(key){return key+': '+request.fields[key];}).join('\n')+'\n\n'
+      +(attached.length?'Attached to this email: '+attached.join(', ')+'\n':'')
+      +'A private copy is retained in the website owner’s Drive. Mail acceptance is not proof of inbox delivery.';
     status_(folder,'sending');
     try { MailApp.sendEmail({to:request.route.email,subject:'Allied Plumbing — '+request.type+' — '+request.reference,body:body,replyTo:request.fields.email,attachments:request.files,name:'Allied Plumbing website'}); }
     catch(error) { return {ok:false,stored:true,id:request.reference,message:'Your request is stored, but email notification could not be confirmed. Do not resubmit. Call 604-731-1000 with reference '+request.reference+'.'}; }

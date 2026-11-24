@@ -119,3 +119,25 @@ test('the manifest keeps the web app reachable by anonymous visitors', () => {
     'visitors must not need a Google login to send an enquiry',
   );
 });
+
+/** The notification is the only mail anybody at Allied reads, and it spent
+ *  months telling them "Attachments are included in this email" whether or not
+ *  any were. Blank keys did the same kind of damage more quietly: a column of
+ *  empty lines reads as a machine dump rather than an enquiry. */
+test('the notification prints only filled fields and names real attachments', () => {
+  const h = harness();
+  assert.equal(h.context.submitEnquiry(form()).ok, true);
+  const plain = h.mail[0].body;
+  assert.ok(plain.includes('name: QA Fixture'), 'a field the sender filled in must be printed');
+  assert.ok(!/^\w+:\s*$/m.test(plain), 'a field they left empty must not be');
+  assert.ok(!/attach/i.test(plain), 'and nothing may claim attachments that do not exist');
+
+  const withFile = harness();
+  const sent = withFile.context.submitEnquiry({
+    ...form(),
+    file0: blob('plan.pdf', 'application/pdf', [37, 80, 68, 70, 45, 49]),
+  });
+  assert.equal(sent.ok, true);
+  assert.equal(withFile.mail[0].attachments.length, 1, 'the file must be on the mail itself');
+  assert.match(withFile.mail[0].body, /Attached to this email: plan\.pdf/, 'and be named in it');
+});

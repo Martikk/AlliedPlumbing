@@ -1,6 +1,6 @@
 # Allied enquiry backend — deployment package
 
-Status: backend version 7 deployed on 2026-11-22 from this repository with `npm run deploy:backend`; **frontend activation authorized by the owner**. `src/lib/enquiry-config.json` points to the deployed endpoint, and `npm run check:backend` confirms it answers JSON and validates server-side.
+Status: backend version 9 deployed on 2026-11-24 from this repository with `npm run deploy:backend`; **frontend activation authorized by the owner**. `src/lib/enquiry-config.json` points to the deployed endpoint, and `npm run check:backend` confirms it answers JSON and validates server-side.
 
 ## Releasing a change to this backend
 
@@ -169,3 +169,10 @@ sent to them — the one MailApp call went to the business route, with the
 sender's address only as replyTo. The owner chose to send the copy rather than
 drop the promise. Routing, file limits, retention and deduplication are
 unchanged.
+
+Version 9 cleans up the notification Allied reads. It printed every field,
+filled or not, and claimed "Attachments are included in this email" whether or
+not any were attached — the same kind of untruth as the thank-you page's
+promised email, in the one mail the business actually relies on. Empty fields
+are now omitted and attachments are named only when they exist. Nothing about
+routing, retention, validation or the acknowledgement changed.
