@@ -111,3 +111,31 @@ test('business and article structured data match visible facts without invented 
     assert.equal(article.dateModified, undefined);
   }
 });
+
+/** Internal linking, measured on the built site rather than on the source.
+ *
+ *  Two defects this locks shut, both invisible in the components that caused
+ *  them. `/rfp` was reachable only from the sitemap — no page, and not even a
+ *  menu, linked to it — which is a poor way to publish the page institutional
+ *  buyers are meant to arrive on. And three pages linked to `/GetQuote`, which
+ *  exists only as a 301 for links already out in the world. A redirect spent
+ *  on our own navigation is latency and lost signal for nothing. */
+test('every indexable route is linked from the site, and no link spends a redirect', () => {
+  const aliases = new Set(['/GetQuote', '/getquote', '/projects/icbc', '/blog/foundations',
+    '/blog/materials-2025', '/blog/tech-changing-game', '/services/boiler-plants-controls',
+    '/services/maintenance-programs', '/services/emergency-service']);
+  const inbound = new Map(Object.keys(pages).map(path => [path, 0]));
+
+  for (const path of Object.keys(pages)) {
+    const html = readFileSync(join('dist', path === '/' ? '' : path.slice(1), 'index.html'), 'utf8');
+    for (const [, href] of html.matchAll(/<a\b[^>]*href="(\/[^"#?]*)"/g)) {
+      const target = href === '/' ? '/' : '/' + href.replace(/^\/+|\/+$/g, '');
+      assert.ok(!aliases.has(target), `${path} links to the redirect ${target} — link the target`);
+      if (target !== path && inbound.has(target)) inbound.set(target, inbound.get(target) + 1);
+    }
+  }
+  for (const [path, count] of inbound) {
+    if (pages[path].noindex) continue;
+    assert.ok(count > 0, `nothing on the site links to ${path}`);
+  }
+});

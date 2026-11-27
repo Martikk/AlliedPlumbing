@@ -29,7 +29,7 @@
       { "title": "Install around occupancy", "copy": "Evenings, weekends or term breaks where the space has to stay in use. Trade coordination with electrical, sheet metal, controls and insulation." },
       { "title": "Commissioning and turnover", "copy": "Air balance, verification, O&M manuals, as-builts and a walkthrough with the people who will operate it." }
     ],
-    "relatedProjects": ["leigh", "garibaldi", "hillcrest"]
+    "relatedProjects": ["crosstown", "crosstown-phase-2", "myrtle-philip", "leigh", "garibaldi", "hillcrest"]
   },
 
   "boilers": {
@@ -60,7 +60,7 @@
       { "title": "Changeover", "copy": "The plant comes out and goes in inside the agreed window, with gas, venting, controls and electrical coordinated to one sequence." },
       { "title": "Commissioning and turnover", "copy": "Cleaning, treatment, balancing, verification, O&M manuals and as-builts, then a handover with the operating team." }
     ],
-    "relatedProjects": ["ridgeview", "herbert-spencer", "haro"]
+    "relatedProjects": ["nestor", "herbert-spencer-ashp", "ridgeview", "herbert-spencer", "haro"]
   },
 
   "commercial-plumbing": {
@@ -91,7 +91,7 @@
       { "title": "Execution", "copy": "Work done in the agreed windows, with the system back in service at the end of each one wherever possible." },
       { "title": "Turnover", "copy": "Testing records, as-builts and the documentation the building team needs for its own records." }
     ],
-    "relatedProjects": ["haro", "west-5th", "crosstown"]
+    "relatedProjects": ["west-5th", "jervis", "haro", "crosstown"]
   },
 
   "maintenance": {
@@ -122,7 +122,7 @@
       { "title": "Ongoing visits", "copy": "Scheduled work, with a report and a recommendation list after each one." },
       { "title": "Annual review", "copy": "What changed, what is coming due, and what should be in next year's capital plan." }
     ],
-    "relatedProjects": ["glenayre", "hillcrest", "miller-park"]
+    "relatedProjects": ["glenayre", "capilano-birch", "hillcrest", "miller-park"]
   },
 
   "emergency": {
@@ -153,7 +153,7 @@
       { "title": "Stabilise", "copy": "Get the building usable — a temporary provision now, with the permanent repair scheduled properly." },
       { "title": "Follow up", "copy": "A written note of what failed and what we recommend, so it can go into the maintenance plan." }
     ],
-    "relatedProjects": ["haro", "west-5th"]
+    "relatedProjects": ["halifax-7360", "haro", "west-5th"]
   },
 
   "residential-plumbing": {
@@ -184,6 +184,6 @@
       { "title": "Do the work", "copy": "Isolation, the work, testing, and the site left clean." },
       { "title": "Hand over", "copy": "How to operate anything new, and what to watch for." }
     ],
-    "relatedProjects": ["haro"]
+    "relatedProjects": ["haro", "jervis", "halifax-7360"]
   }
 }

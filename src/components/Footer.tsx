@@ -14,6 +14,10 @@ export default function Footer() {
           <Link to="/about" className="hover:underline">About</Link>
           <Link to="/services" className="hover:underline">Services</Link>
           <Link to="/projects" className="hover:underline">Projects</Link>
+          {/* Clients had one inbound link and /rfp had none — not even from a
+              menu — so the tender page was reachable only from the sitemap. */}
+          <Link to="/clients" className="hover:underline">Clients</Link>
+          <Link to="/rfp" className="hover:underline">Tenders &amp; RFPs</Link>
           <Link to="/blog" className="hover:underline">Articles</Link><Link to="/careers" className="hover:underline">Careers</Link><Link to="/team" className="hover:underline">Team</Link><Link to="/contact" className="hover:underline">Contact</Link>
           <Link to="/privacy" className="hover:underline">Privacy</Link>
           {/* Phones only: the floating analytics pill is hidden there because

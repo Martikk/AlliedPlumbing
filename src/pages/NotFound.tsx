@@ -71,7 +71,7 @@ export default function NotFound() {
                 Our projects
               </Link>
               <Link
-                to="/GetQuote"
+                to="/quote"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#5272c4] text-white px-5 py-3 font-semibold hover:brightness-110"
               >
                 Get a quote

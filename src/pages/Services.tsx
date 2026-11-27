@@ -28,7 +28,7 @@ export default function Services() {
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <Link
-              to="/GetQuote"
+              to="/quote"
               className="inline-flex items-center gap-2 rounded-lg bg-white text-neutral-900 px-5 py-3 font-semibold shadow hover:bg-neutral-200"
             >
               Get a quote <span aria-hidden>↗</span>
@@ -142,7 +142,7 @@ export default function Services() {
           </p>
           <div className="mt-5 flex flex-wrap items-center gap-3">
             <Link
-              to="/GetQuote"
+              to="/quote"
               className="inline-flex items-center gap-2 rounded-lg bg-white text-neutral-900 px-5 py-3 font-semibold shadow hover:bg-neutral-200"
             >
               Get a quote
