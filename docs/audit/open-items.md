@@ -28,6 +28,9 @@ Source: *alliedplumbing.ca — Full Website Audit & Developer Spec*, 2026-11-22.
 | Q7 | Is `allied-plumbing.ca` owned and staying as the email domain? Does it redirect? | DNS — the site is `alliedplumbing.ca`, emails are `allied-plumbing.ca` | I-08 |
 | Q8 | Budget for a half-day photo shoot and for call tracking | — | D-01, J-03 |
 | Q9 | Who has DNS and GA4 admin access? | Hosting is **AWS Amplify**, not Vercel or Netlify — the audit assumed otherwise | A-01, J-01 |
+| Q10 | 1501 Haro Street (Paul Plaza): who was the client, what boiler went in, and when? | A new entry in `src/data/projects.json`, plus `/projects/<id>` in `src/data/seo.json` | the thirteenth project story, held back |
+| Q11 | Is École Glenayre in Port Moody? | `src/data/projects.json` → `glenayre.location`, which still reads the published "British Columbia" | nothing; it is vague rather than wrong |
+| Q12 | Is ICBC a client on some other building? | `/clients` description in `src/data/seo.json`, which named them for 456 West 5th | nothing; the name was removed, not replaced |
 
 ### Decided: I-01, the primary buyer — institutional
 
