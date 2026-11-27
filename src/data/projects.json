@@ -1,27 +1,26 @@
 [
   {
-    "id": "icbc",
-    "title": "ICBC Boiler Plant Modernization",
-    "category": "Commercial",
+    "id": "west-5th",
+    "title": "456 West 5th Avenue Boiler Replacement",
+    "category": "Institutional",
     "location": "Vancouver, BC",
-    "client": "ICBC / Warrington PCI",
-    "summary": "Modernizing an existing heating plant with Viessmann condensing boilers and building automation integration.",
+    "client": "Vancouver Police Department facility",
+    "summary": "A heating boiler replacement in an operating public-safety facility.",
     "scope": [
-      "Replacement of existing boilers and connections to the hydronic heating system.",
-      "Hydronic piping, circulation equipment, gas distribution, venting and condensate management.",
-      "Electrical, seismic restraint and building automation coordination."
+      "Removal of the existing boilers and installation of new high-efficiency boilers.",
+      "Pressure-reducing valve and emergency stop upgrades.",
+      "Controls integration, startup and owner demonstration."
     ],
-    "heading": "Integrating new plant with an operating building",
-    "overview": "The ICBC facility at 456 West 5th Avenue is the setting for a heating plant modernization. The project scope combines replacement boiler equipment with the services and interfaces needed to connect it to the existing building.",
-    "approach": "Allied’s project management scope covers procurement, technical submissions, installation sequencing and coordination with engineering, electrical, controls, seismic and rigging specialists. Existing heating-system compatibility and the division of controls responsibilities are key coordination points.",
+    "heading": "Heat for a building that never closes",
+    "overview": "The facility runs around the clock, so heating could only be taken offline for short planned periods.",
+    "approach": "Allied worked within the site’s access and security requirements, coordinated the crane lift, boiler permitting and inspection, and closed out the O&M documentation with the engineer.",
     "planning": [
-      "Verify compatibility between proposed boiler operating temperatures and existing heating coils.",
-      "Resolve gas and BAS interfaces through approved engineering submissions before installation.",
-      "Coordinate building access, shutdowns, lifting permits and commissioning responsibilities."
+      "Boiler replacements in facilities that cannot close.",
+      "Work planning for sites with access and security requirements.",
+      "Permits, inspection and closeout."
     ],
     "delivery": "Project management: Alex Martishyn, Project Manager.",
-    "outcome": "Final completion has not been confirmed in the supplied project summary.",
-    "status": "Completion to be confirmed",
+    "outcome": "The new boiler plant reached substantial completion and was handed over with training.",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png",
     "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
     "featured": false,
@@ -33,31 +32,46 @@
     "result": "",
     "gallery": [],
     "quote": null,
-    "imageAlt": ""
+    "imageAlt": "",
+    "challenges": [
+      {
+        "title": "Round-the-clock operation",
+        "text": "Heating outages were kept short and planned in advance."
+      },
+      {
+        "title": "A secure site",
+        "text": "Crew access and the crane day were arranged ahead with the facility."
+      },
+      {
+        "title": "Safety requirements",
+        "text": "An emergency boiler stop and pressure-reducing valve upgrades were added through change orders."
+      }
+    ],
+    "relatedService": "boilers"
   },
   {
     "id": "crosstown",
     "title": "Crosstown Elementary Mechanical Upgrade — Phase 1",
     "category": "Institutional",
     "location": "Vancouver, BC",
-    "client": "Vancouver School District",
-    "summary": "Mechanical plant and hydronic upgrades coordinated with building, electrical and fire protection work.",
+    "client": "Vancouver School Board (School District No. 39)",
+    "summary": "A new rooftop chiller and cooling plant for an occupied downtown school, delivered around classes.",
     "scope": [
-      "Mechanical plant, pump and piping upgrades and equipment layout coordination.",
-      "Level 4 mechanical room reconstruction and service-access planning.",
-      "Coordination of electrical distribution, structural and seismic supports, fire protection, architectural and roofing interfaces."
+      "New rooftop chiller on a new structural steel frame, with roofing and envelope tie-ins.",
+      "New interior mechanical room with pumps, buffer tank and chilled-water distribution.",
+      "Fan coil units, condensate drainage and controls throughout the building."
     ],
-    "heading": "Mechanical infrastructure within a multidisciplinary school upgrade",
-    "overview": "Crosstown Elementary’s first-phase upgrade brings mechanical plant improvements together with changes to existing building infrastructure. Coordination extends from equipment procurement and hydronic systems to the readiness and layout of the mechanical room.",
-    "approach": "Allied coordinates equipment submissions, RFIs, long-lead procurement and construction sequencing with consultants and supporting trades. Mechanical room walls, ceilings, electrical equipment, fire protection and equipment supports need to be considered together so each discipline can proceed in sequence.",
+    "heading": "Cooling for a school in the middle of downtown",
+    "overview": "Crosstown Elementary sits in a dense downtown block with a rooftop deck, a planter and no street-level room for equipment. The upgrade adds mechanical cooling while the school stays open, with every heavy lift and shutdown planned around the school day.",
+    "approach": "Allied leads a multi-trade team covering structural steel, roofing, cladding, framing, electrical and controls, alongside the design team and the school board. Two Sunday crane lifts were permitted with the City, including traffic management and noise exceptions. Roofing was sequenced into dry weather windows through the autumn, and temporary weather protection was checked every shift.",
     "planning": [
-      "Coordinate equipment service clearances with walls, doors and electrical layouts.",
-      "Track procurement against room readiness and installation dependencies.",
-      "Align fire protection, seismic details, inspections and turnover requirements."
+      "Early structural and roofing coordination before equipment is ordered.",
+      "City street-use and crane permitting.",
+      "Phasing work around school hours, weekends and breaks."
     ],
     "delivery": "Project management: Alex Martishyn, Project Manager.",
-    "outcome": "Final completion has not been confirmed in the supplied project summary.",
-    "status": "Completion to be confirmed",
+    "outcome": "The work is under way. This page will be updated with the completed scope once the system has been commissioned and handed over.",
+    "status": "In progress",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071289/Allied/123_clbeb3.png",
     "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
     "featured": false,
@@ -69,31 +83,50 @@
     "result": "",
     "gallery": [],
     "quote": null,
-    "imageAlt": ""
+    "imageAlt": "",
+    "challenges": [
+      {
+        "title": "Crane lifts on a downtown street",
+        "text": "The City turned down two weekend dates because of events, and fewer permits are issued in December. Allied documented the reasons for the date change and worked with the crane company until traffic management, street-use and noise-exception permits were approved for two Sunday lifts, with notices sent to residents."
+      },
+      {
+        "title": "Autumn rain over an open roof",
+        "text": "The chiller lift was moved to leave a weather buffer for roofing and inspections. Temporary protection was inspected every shift, and more often in rain. Weekend roofing used dry forecast windows. A reinforced liquid-membrane detail at the steel sleepers avoided modifying the structure."
+      },
+      {
+        "title": "Design-team standards for non-mechanical trades",
+        "text": "Roofing, framing, drywall and ceiling submittals each needed specialty engineer sign-off, wind-uplift calculations and warranty documents. Allied set up one submittal template and sent complete packages, which kept reviews moving."
+      },
+      {
+        "title": "An occupied school",
+        "text": "Shutdowns were allowed only after hours or at weekends, and the building was a polling station on one planned date. That work was moved to another weekend."
+      }
+    ],
+    "relatedService": "hvac"
   },
   {
     "id": "glenayre",
     "title": "École Glenayre Elementary DDC & Boiler Plant Upgrade",
     "category": "Institutional",
     "location": "British Columbia",
-    "client": "School District No. 43",
-    "summary": "Boiler plant, hydronic and digital controls modernization in an existing elementary school.",
+    "client": "School District No. 43 (Coquitlam)",
+    "summary": "A new boiler plant and building controls, designed around single-phase site power.",
     "scope": [
-      "Boiler plant modernization and associated hydronic piping and equipment.",
-      "Gas pressure regulation and equipment submission coordination.",
-      "Seismic supports and DDC controls coordination."
+      "New boilers, pumps and hydronic equipment.",
+      "Variable frequency drives that run three-phase pump motors from a single-phase supply.",
+      "Building-wide DDC controls upgrade."
     ],
-    "heading": "Coordinating plant equipment, gas services and controls",
-    "overview": "The Glenayre Elementary project combines boiler plant renewal with hydronic improvements and digital control upgrades. The scope requires coordination between the replacement equipment, existing services and engineering requirements.",
-    "approach": "Allied’s coordination includes procurement, mechanical submissions, engineering reviews, seismic requirements, controls interfaces and shutdown planning. Proposed regulator arrangements and equipment selections remain subject to the approved project documentation.",
+    "heading": "Modern controls on a single-phase site",
+    "overview": "The school has only 120/240V single-phase power, which limited the pump motors and drives that could be used. The upgrade needed to work within that supply.",
+    "approach": "Allied resolved equipment substitutions, emergency stop and CO detection requirements through RFIs with the engineer, and scheduled after-hours electrical shutdowns. Allied also coordinates boiler startup and inspections.",
     "planning": [
-      "Confirm gas equipment approvals and engineering acceptance before procurement.",
-      "Coordinate hydraulic separation, air separation and maintenance access.",
-      "Agree shutdown windows and the approved controls sequence with the school team."
+      "Boiler and controls upgrades for small schools.",
+      "Equipment selection for limited electrical service.",
+      "Startup, inspection and operator handover."
     ],
     "delivery": "Project management: Alex Martishyn, Project Manager.",
-    "outcome": "Final completion has not been confirmed in the supplied project summary.",
-    "status": "Completion to be confirmed",
+    "outcome": "The work is under way. This page will be updated with the completed scope once the system has been commissioned and handed over.",
+    "status": "In progress",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071233/Allied/2025-10-09_21.40.08_wxp8bk.jpg",
     "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
     "featured": false,
@@ -105,31 +138,49 @@
     "result": "",
     "gallery": [],
     "quote": null,
-    "imageAlt": ""
+    "imageAlt": "",
+    "challenges": [
+      {
+        "title": "Single-phase power",
+        "text": "Drives were selected to take a 240V single-phase supply and run 208V three-phase pump motors, which avoided a costly service upgrade."
+      },
+      {
+        "title": "Equipment substitutions",
+        "text": "Expansion tank and water meter alternates were submitted through RFIs with data sheets and approved before ordering."
+      },
+      {
+        "title": "Code items",
+        "text": "Emergency stop and CO detection requirements were settled with the engineer before startup."
+      },
+      {
+        "title": "After-hours shutdowns",
+        "text": "Electrical work was planned around the school day."
+      }
+    ],
+    "relatedService": "boilers"
   },
   {
     "id": "collingwood",
-    "title": "Collingwood School Parent Wing AC Upgrade",
+    "title": "Collingwood School Parent Wing Cooling Upgrade",
     "category": "Institutional",
     "location": "West Vancouver, BC",
     "client": "Collingwood School",
-    "summary": "Chiller and hydronic cooling upgrades integrated with existing school systems.",
+    "summary": "A new chiller and air-handling cooling for an independent school, delivered across two phases.",
     "scope": [
-      "New chiller installation and chilled-water piping integration.",
-      "Two hydronic cooling coils and connections to existing unit ventilators.",
-      "Controls, structural supports, electrical startup, testing and balancing coordination."
+      "New air-cooled chiller set by crane, with chilled-water piping and pumps.",
+      "New cooling coils in two air handling units.",
+      "DDC controls integration of the chiller with the building automation system."
     ],
-    "heading": "Connecting new cooling equipment to an existing school",
-    "overview": "The Parent Wing AC upgrade at Collingwood School involves a new chiller and cooling-coil integration within the existing hydronic system. The work brings mechanical connections, building automation and structural support interfaces into one coordinated scope.",
-    "approach": "Allied coordinates equipment compatibility, controls interfaces, support requirements and startup sequencing with consultants and specialist contractors. Access during summer school and the relationship between mechanical, electrical, controls and balancing activities shape the installation programme.",
+    "heading": "Cooling for the Parent Wing",
+    "overview": "The Parent Wing needed reliable summer cooling without disrupting a busy campus. The work was phased so that the main installation and startup landed in the summer break.",
+    "approach": "Allied coordinated structural and architectural work, insulation, electrical and controls subtrades, and planned boiler and electrical shutdowns with the school. Controls components were expedited by air freight to protect the startup date. Allied obtained the refrigeration permit and completed testing, adjusting and balancing before startup.",
     "planning": [
-      "Verify coil capacity and hydraulic compatibility against approved design information.",
-      "Coordinate chiller, controls and variable-flow requirements with the design team.",
-      "Sequence access, startup and balancing around the school’s operating schedule."
+      "Summer-break scheduling for chiller installations.",
+      "Crane, shutdown and permit planning on an active campus.",
+      "Commissioning and operator training at handover."
     ],
     "delivery": "Project management: Alex Martishyn, Project Manager.",
-    "outcome": "Final completion has not been confirmed in the supplied project summary.",
-    "status": "Completion to be confirmed",
+    "outcome": "The chiller was started and commissioned, the system was balanced, and school operations staff received an owner demonstration and a seasonal shutdown procedure.",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760072887/Allied/Allied_1_n00b0m.png",
     "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
     "featured": false,
@@ -141,7 +192,26 @@
     "result": "",
     "gallery": [],
     "quote": null,
-    "imageAlt": ""
+    "imageAlt": "",
+    "challenges": [
+      {
+        "title": "A fixed summer startup date",
+        "text": "Allied closed every pre-startup item and booked balancing in advance, so the chiller started on schedule."
+      },
+      {
+        "title": "Late controls components",
+        "text": "Parts were moved to air freight under an agreed change order to protect the startup."
+      },
+      {
+        "title": "Welding near a live heating system",
+        "text": "A planned boiler shutdown was arranged with the school before tie-ins."
+      },
+      {
+        "title": "Envelope details at pipe penetrations",
+        "text": "After the envelope consultant’s review, membrane details behind the cladding were corrected and documented with photographs."
+      }
+    ],
+    "relatedService": "hvac"
   },
   {
     "id": "capilano-birch",
@@ -149,23 +219,22 @@
     "category": "Institutional",
     "location": "North Vancouver, BC",
     "client": "Capilano University",
-    "summary": "Chiller replacement with electrical shutdown planning, startup and commissioning coordination.",
+    "summary": "Two end-of-life chillers replaced in an occupied university building.",
     "scope": [
-      "Chiller replacement and chilled-water system integration.",
-      "Electrical infrastructure and shutdown coordination.",
-      "Equipment startup reports, operation manuals and commissioning documentation."
+      "Removal of two existing chillers and installation of two new chillers.",
+      "Rigging, structural supports, seismic restraints and vibration isolation.",
+      "Chilled-water piping, insulation, controls and electrical modifications."
     ],
-    "heading": "Cooling infrastructure and technical closeout",
-    "overview": "The Birch Building project at Capilano University concerns replacement cooling equipment and its integration with the existing mechanical and electrical systems. The available project information covers installation coordination, startup and commissioning documentation.",
-    "approach": "Allied coordinates electrical shutdown planning and technical documentation with the project team. Commissioning activities were substantially advanced in the supplied summary; final equipment resolution and complete closeout still require confirmation.",
+    "heading": "Replacing a campus cooling plant",
+    "overview": "The Birch Building’s chillers had reached the end of their service life. The replacement had to fit around the academic calendar and the campus electrical system.",
+    "approach": "Allied coordinated campus shutdown permits, including early-morning power shutdowns on the main motor control centre. The team worked with the university, consultants, controls and electrical subtrades, and handled the refrigeration permits.",
     "planning": [
-      "Agree shutdown windows with campus operations before connecting equipment.",
-      "Collect startup reports and operation manuals as work progresses.",
-      "Confirm outstanding equipment items are resolved before recording final completion."
+      "Like-for-like or upsized chiller replacements.",
+      "Night and weekend shutdown planning on campus.",
+      "Refrigeration permitting and commissioning."
     ],
     "delivery": "Project management: Alex Martishyn, Project Manager.",
-    "outcome": "Final completion has not been confirmed in the supplied project summary.",
-    "status": "Completion to be confirmed",
+    "outcome": "Both chillers were installed, commissioned and handed over at substantial completion. A control valve issue was resolved during startup.",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068155/Allied/10_kubptf.png",
     "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
     "featured": false,
@@ -177,35 +246,48 @@
     "result": "",
     "gallery": [],
     "quote": null,
-    "imageAlt": ""
+    "imageAlt": "",
+    "challenges": [
+      {
+        "title": "Power from the main motor control centre",
+        "text": "Shutdowns could only happen in the early morning. Allied planned 2–6 AM outages with campus facilities and had crews ready to restore power on time."
+      },
+      {
+        "title": "Working around the academic calendar",
+        "text": "Lifts and tie-ins were scheduled around term time and the holiday closure."
+      },
+      {
+        "title": "A coil valve that would not modulate at startup",
+        "text": "The issue was traced with the controls subcontractor, and pump setpoints were adjusted."
+      }
+    ],
+    "relatedService": "hvac"
   },
   {
     "id": "herbert-spencer-ashp",
     "title": "Herbert Spencer Elementary — air-source heat pump upgrade, Phase 1",
     "category": "Institutional",
     "location": "New Westminster, BC",
-    "client": "School District No. 40",
-    "summary": "First-phase air-source heat pump upgrade with equipment procurement and engineering submissions.",
+    "client": "School District No. 40 (New Westminster)",
+    "summary": "A school heating plant converted to air-source heat pumps to cut gas use.",
     "scope": [
-      "Air-source heat pump modernization under the Phase 1 contract.",
-      "Equipment shop drawings and engineering review coordination.",
-      "Procurement and mechanical construction planning."
+      "Air-source heat pumps lifted to the roof, with buffer tank and heat exchanger.",
+      "New pumps and hydronic piping tied into the existing heating system.",
+      "Controls upgrade, exhaust fan replacements and fan coil removals."
     ],
-    "heading": "A separate phase of school HVAC modernization",
-    "overview": "Allied was awarded the first phase of the air-source heat pump upgrade at Herbert Spencer Elementary. This is a separate project from the school’s earlier boiler plant work completed in 2021.",
-    "approach": "The supplied information establishes the ASHP upgrade and the coordination of drawings, equipment submissions, engineering reviews and procurement. Equipment quantities, final models and detailed installation arrangements are not specified here.",
+    "heading": "Low-carbon heat for an existing school",
+    "overview": "The district’s goal was to move primary heating from gas to electric heat pumps while keeping the school comfortable through the winter. Phase 1 installed the heat pump plant and tied it into the existing hydronic system.",
+    "approach": "Allied managed the crane lift on a city street, electrical shutdowns, controls and electrical subtrades, and startup with the engineer. System pressure and pump operation were tuned after startup. Additional exhaust fan and fan coil work was priced and completed as change orders.",
     "planning": [
-      "Base equipment selection and installation planning on approved submissions.",
-      "Keep the Phase 1 scope distinct from earlier boiler plant upgrades.",
-      "Confirm final quantities, connection details and commissioning requirements."
+      "Heat pump conversions for existing hydronic schools.",
+      "Hybrid heat pump and boiler sequencing.",
+      "Utility incentive and electrical capacity checks early in design."
     ],
     "delivery": "Project management: Alex Martishyn, Project Manager.",
-    "outcome": "Final completion has not been confirmed in the supplied project summary.",
-    "status": "Completion to be confirmed",
+    "outcome": "The heat pump plant reached substantial performance and is now the school’s primary heat source, with the existing boilers kept as backup. The O&M manuals and training were handed over to the district.",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068156/Allied/14_urnogx.png",
     "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
     "featured": false,
-    "relatedProject": "herbert-spencer",
     "contractType": "",
     "engineer": "",
     "valueRange": "",
@@ -214,31 +296,50 @@
     "result": "",
     "gallery": [],
     "quote": null,
-    "imageAlt": ""
+    "imageAlt": "",
+    "relatedProject": "herbert-spencer",
+    "challenges": [
+      {
+        "title": "Rooftop lift on a city street",
+        "text": "Street-use permits and traffic control were arranged for a single lift day."
+      },
+      {
+        "title": "System over-pressure after startup",
+        "text": "Allied worked with the engineer to adjust pump and valve operation until the system held its design pressure."
+      },
+      {
+        "title": "Scope added mid-project",
+        "text": "New exhaust fans and fan coil removals were priced with full backup and approved as change orders, so the schedule held."
+      },
+      {
+        "title": "Control sequences",
+        "text": "Humidity sensing and weather-based control were clarified through an RFI before programming started."
+      }
+    ],
+    "relatedService": "boilers"
   },
   {
     "id": "hillcrest",
     "title": "Hillcrest Middle HVAC Upgrade — Phase 2",
     "category": "Institutional",
-    "location": "British Columbia",
-    "client": "School District No. 43",
-    "summary": "HVAC upgrade involving Trane rooftop equipment and technical closeout coordination.",
+    "location": "Coquitlam, BC",
+    "client": "School District No. 43 (Coquitlam)",
+    "summary": "Rooftop units and exhaust fans replaced at a busy middle school.",
     "scope": [
-      "HVAC modernization involving Trane rooftop equipment.",
-      "Manufacturer operation manuals and equipment service information.",
-      "Technician reports and project closeout documentation."
+      "Replacement of three rooftop units.",
+      "New exhaust fans and sheet metal modifications.",
+      "Roofing tie-ins, gas regulators, crane lift, and testing, adjusting and balancing."
     ],
-    "heading": "Bringing equipment information together for turnover",
-    "overview": "The available information for Hillcrest Middle’s second-phase HVAC upgrade identifies Trane rooftop equipment and a focus on manufacturer information, technician reports and closeout preparation.",
-    "approach": "Allied coordinates the collection and review of equipment documentation so the building team has the relevant operation and service information. The supplied summary does not establish final equipment quantities or a confirmed completion date.",
+    "heading": "Rooftop renewal",
+    "overview": "Phase 2 continued the district’s upgrade of the school’s ageing rooftop equipment, combining a crane lift, roofing tie-ins and gas permitting at a school that stayed in use.",
+    "approach": "Allied arranged a hazardous-materials assessment before work began, coordinated the crane lift, roofing and sheet metal trades, and completed gas permitting.",
     "planning": [
-      "Match operation manuals to the equipment installed on site.",
-      "Collect technician reports and service information for turnover.",
-      "Confirm the remaining closeout scope and completion status with the project team."
+      "Rooftop unit replacement programmes.",
+      "Crane and roofing coordination.",
+      "Hazmat checks before demolition."
     ],
     "delivery": "Project management: Alex Martishyn, Project Manager.",
-    "outcome": "Final completion has not been confirmed in the supplied project summary.",
-    "status": "Completion to be confirmed",
+    "outcome": "The new rooftop units were commissioned, a gas heating issue found at startup was resolved, and the project reached substantial performance.",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071564/Allied/2025-10-09_21.39.57_tne1oo.jpg",
     "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
     "featured": false,
@@ -250,7 +351,22 @@
     "result": "",
     "gallery": [],
     "quote": null,
-    "imageAlt": ""
+    "imageAlt": "",
+    "challenges": [
+      {
+        "title": "Hazardous materials",
+        "text": "An assessment was completed before any demolition."
+      },
+      {
+        "title": "A gas heating fault at startup",
+        "text": "It was diagnosed and corrected with the manufacturer before handover."
+      },
+      {
+        "title": "Permit documents",
+        "text": "Follow-up permit paperwork was assembled promptly, so closeout and holdback release were not delayed."
+      }
+    ],
+    "relatedService": "hvac"
   },
   {
     "id": "garibaldi",
@@ -287,7 +403,9 @@
     "result": "",
     "gallery": [],
     "quote": null,
-    "imageAlt": ""
+    "imageAlt": "",
+    "challenges": [],
+    "relatedService": "hvac"
   },
   {
     "id": "ridgeview",
@@ -324,7 +442,9 @@
     "result": "",
     "gallery": [],
     "quote": null,
-    "imageAlt": ""
+    "imageAlt": "",
+    "challenges": [],
+    "relatedService": "boilers"
   },
   {
     "id": "leigh",
@@ -360,7 +480,9 @@
     "result": "",
     "gallery": [],
     "quote": null,
-    "imageAlt": ""
+    "imageAlt": "",
+    "challenges": [],
+    "relatedService": "hvac"
   },
   {
     "id": "herbert-spencer",
@@ -399,7 +521,9 @@
     "result": "",
     "gallery": [],
     "quote": null,
-    "imageAlt": ""
+    "imageAlt": "",
+    "challenges": [],
+    "relatedService": "boilers"
   },
   {
     "id": "howe-sound",
@@ -435,7 +559,9 @@
     "result": "",
     "gallery": [],
     "quote": null,
-    "imageAlt": ""
+    "imageAlt": "",
+    "challenges": [],
+    "relatedService": "hvac"
   },
   {
     "id": "miller-park",
@@ -470,7 +596,9 @@
     "result": "",
     "gallery": [],
     "quote": null,
-    "imageAlt": ""
+    "imageAlt": "",
+    "challenges": [],
+    "relatedService": "hvac"
   },
   {
     "id": "haro",
@@ -506,6 +634,261 @@
     "result": "",
     "gallery": [],
     "quote": null,
-    "imageAlt": ""
+    "imageAlt": "",
+    "challenges": [],
+    "relatedService": "commercial-plumbing"
+  },
+  {
+    "id": "crosstown-phase-2",
+    "title": "Crosstown Elementary HVAC Upgrade — Phase 2",
+    "category": "Institutional",
+    "location": "Vancouver, BC",
+    "client": "Vancouver School Board (School District No. 39)",
+    "summary": "Air-handling and terminal upgrades that complete the school’s cooling conversion.",
+    "scope": [
+      "Replacement heating and cooling coils in the air handling and heat recovery units.",
+      "New fan coil units and unit heaters, with chilled-water and condensate piping.",
+      "DDC controls integration with the new plant."
+    ],
+    "heading": "Building on Phase 1",
+    "overview": "With the new chilled-water plant under way, Phase 2 upgrades the air side so cooling reaches classrooms and shared spaces. The work runs in parallel with Phase 1 in the same occupied building.",
+    "approach": "Allied manages equipment procurement, including imported long-lead coils, shop drawings and RFIs with the engineer, as well as weekend electrical shutdowns. Condensate routing was simplified with the engineer’s approval, which avoided cutting into storm lines and finished ceilings.",
+    "planning": [
+      "Coil and terminal-unit replacements matched to an existing or new plant.",
+      "Long-lead equipment tracking from order to site.",
+      "Controls integration and commissioning with the school board’s operators."
+    ],
+    "delivery": "",
+    "outcome": "The work is under way. This page will be updated with the completed scope once the system has been commissioned and handed over.",
+    "status": "In progress",
+    "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png",
+    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
+    "featured": false,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": "",
+    "relatedProject": "crosstown",
+    "challenges": [
+      {
+        "title": "Two phases in one building",
+        "text": "Phase 2 runs while Phase 1 is still active. Allied combined shutdowns and site access requests so the school deals with one schedule, not two."
+      },
+      {
+        "title": "Imported long-lead coils",
+        "text": "Shop drawings were submitted early, and the shipment was tracked through the freight forwarder up to site delivery."
+      },
+      {
+        "title": "Condensate drainage",
+        "text": "The drawings showed each drain tied separately into cast-iron storm lines hidden above finished ceilings, just before the rainy season. Allied proposed combining drains to nearby sinks, and the engineer accepted. The pump supplier confirmed built-in backflow protection, so extra check valves were not needed."
+      }
+    ],
+    "relatedService": "hvac"
+  },
+  {
+    "id": "nestor",
+    "title": "École Nestor Elementary Boiler Plant Upgrade",
+    "category": "Institutional",
+    "location": "Coquitlam, BC",
+    "client": "School District No. 43 (Coquitlam)",
+    "summary": "A new high-efficiency boiler plant, with unit ventilator fans and controls renewed overnight.",
+    "scope": [
+      "New condensing boilers, pumps and variable frequency drives.",
+      "Hydronic system flush and piping upgrades.",
+      "Unit ventilator fan replacements, with damper actuators and freeze protection renewed."
+    ],
+    "heading": "Renewing heat and ventilation together",
+    "overview": "The original scope replaced the school’s boiler plant. During the work the district added replacement of the unit ventilator fans and controls, which had to be done without taking classrooms out of service.",
+    "approach": "Allied runs the fan replacements as after-hours work, with controls reconnected the same night so every classroom has heat and ventilation the next morning. Hidden conditions such as failed dampers and freeze stats are priced and approved quickly.",
+    "planning": [
+      "Boiler plant replacements in occupied schools.",
+      "Night-shift terminal-unit work.",
+      "Fast pricing for hidden conditions."
+    ],
+    "delivery": "",
+    "outcome": "The work is under way. This page will be updated with the completed scope once the system has been commissioned and handed over.",
+    "status": "In progress",
+    "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071289/Allied/123_clbeb3.png",
+    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
+    "featured": false,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": "",
+    "challenges": [
+      {
+        "title": "Fan replacement in classrooms in use",
+        "text": "All swaps are done at night, and controls are reconnected before morning."
+      },
+      {
+        "title": "Hidden conditions",
+        "text": "Failed damper actuators and freeze stats were found once units were opened. They were photographed, priced and approved quickly."
+      },
+      {
+        "title": "Debris in old piping",
+        "text": "A full hydronic flush was added to protect the new boilers."
+      }
+    ],
+    "relatedService": "boilers"
+  },
+  {
+    "id": "myrtle-philip",
+    "title": "Myrtle Philip Community School HVAC Upgrade — Phase 2",
+    "category": "Institutional",
+    "location": "Whistler, BC",
+    "client": "School District No. 48 (Sea to Sky)",
+    "summary": "A heating and ventilation upgrade for a mountain-community school in Whistler.",
+    "scope": [
+      "Hydronic buffer tank, pumps and variable frequency drives.",
+      "Sheet metal and ventilation modifications.",
+      "Glycol system work, controls, testing, adjusting and balancing."
+    ],
+    "heading": "Working in a mountain town",
+    "overview": "Delivering in Whistler meant planning crews, deliveries and inspections around distance and a short construction season.",
+    "approach": "Allied scheduled out-of-town crews and deliveries, and managed manufacturing delays and scope changes with the design team.",
+    "planning": [
+      "HVAC upgrades for remote and resort-area schools.",
+      "Trade schedules built around travel and weather.",
+      "Commissioning and handover."
+    ],
+    "delivery": "",
+    "outcome": "The system was started up and the O&M manuals were delivered to the district.",
+    "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071290/Allied/10_kubptf.png",
+    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
+    "featured": false,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": "",
+    "challenges": [
+      {
+        "title": "Manufacturing delays",
+        "text": "The trade schedule was re-sequenced, and the impact was documented for the owner."
+      },
+      {
+        "title": "A remote site",
+        "text": "Crew travel and deliveries were planned together to cut wasted trips."
+      },
+      {
+        "title": "Glycol and pump scope changes",
+        "text": "These were priced and agreed with the design team as the work progressed."
+      }
+    ],
+    "relatedService": "hvac"
+  },
+  {
+    "id": "jervis",
+    "title": "945 Jervis Street Heating and Hot Water Upgrade",
+    "category": "Residential",
+    "location": "Vancouver, BC",
+    "client": "Private rental housing owner",
+    "summary": "Heating, domestic hot water and make-up air renewed in an occupied rental high-rise.",
+    "scope": [
+      "New heating boilers and primary pumping.",
+      "Domestic hot water system upgrade.",
+      "Make-up air unit upgrade with controls."
+    ],
+    "heading": "Three systems, one building",
+    "overview": "The building needed new heating and domestic hot water plant and an improved make-up air system, all while residents stayed at home.",
+    "approach": "Allied compared boiler and equipment options from several suppliers, coordinated crane, controls, electrical and hazardous-materials subtrades, and planned short shutdowns with notice to residents.",
+    "planning": [
+      "Central plant upgrades in rental buildings.",
+      "Option comparisons for owners before equipment is ordered.",
+      "Resident-friendly shutdown planning."
+    ],
+    "delivery": "",
+    "outcome": "The new heating, domestic hot water and make-up air systems were commissioned and handed over to building operations.",
+    "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071290/Allied/14_urnogx.png",
+    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
+    "featured": false,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": "",
+    "challenges": [
+      {
+        "title": "Residents at home",
+        "text": "Shutdowns were short and announced in advance."
+      },
+      {
+        "title": "Hazardous materials",
+        "text": "Abatement was completed before demolition."
+      },
+      {
+        "title": "Choosing the right equipment",
+        "text": "Allied priced two boiler options and a heat-pump make-up air option from several suppliers so the owner could compare."
+      }
+    ],
+    "relatedService": "boilers"
+  },
+  {
+    "id": "halifax-7360",
+    "title": "7360 Halifax Street Boiler Replacement",
+    "category": "Residential",
+    "location": "Burnaby, BC",
+    "client": "Private rental housing owner",
+    "summary": "A failed heating boiler replaced and tied into the building’s controls.",
+    "scope": [
+      "Removal of the failed boiler and installation of a new high-efficiency boiler.",
+      "New venting and valves.",
+      "Boiler integration and DDC reprogramming with the existing building management system."
+    ],
+    "heading": "Restoring heat quickly",
+    "overview": "After a boiler failure, the owner needed reliable heat back with as little disruption to residents as possible.",
+    "approach": "Allied managed the venting, controls and valve work, and processed added items as quick change orders.",
+    "planning": [
+      "Emergency and planned boiler replacement.",
+      "Integration with an existing building management system.",
+      "Riser and valve renewal."
+    ],
+    "delivery": "",
+    "outcome": "The new boiler was commissioned and integrated with the building management system.",
+    "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071291/Allied/Allied_1_n00b0m.png",
+    "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
+    "featured": false,
+    "contractType": "",
+    "engineer": "",
+    "valueRange": "",
+    "duration": "",
+    "challenge": "",
+    "result": "",
+    "gallery": [],
+    "quote": null,
+    "imageAlt": "",
+    "challenges": [
+      {
+        "title": "Loss of heat",
+        "text": "The failed boiler was replaced quickly to restore heat to residents."
+      },
+      {
+        "title": "An existing building management system",
+        "text": "The new boiler was programmed into the building management system and its points were commissioned."
+      },
+      {
+        "title": "Asbestos on related riser work",
+        "text": "On the separate riser valve project, materials were lab-tested before cutting, and hot and cold water shutdowns were announced to each building."
+      }
+    ],
+    "relatedService": "boilers"
   }
 ]

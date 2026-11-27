@@ -30,10 +30,10 @@
     "slug": "integrating-commercial-boiler-controls",
     "title": "Connecting a New Boiler Plant to an Existing Building",
     "category": "Heating & boilers",
-    "excerpt": "What the ICBC project scope shows about hydronic interfaces, controls responsibilities and occupied-building planning.",
+    "excerpt": "What the West 5th Avenue project scope shows about hydronic interfaces, controls responsibilities and occupied-building planning.",
     "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png",
     "date": "2026-10-31",
-    "project": "icbc"
+    "project": "west-5th"
   },
   {
     "slug": "coordinating-school-mechanical-room-upgrades",
@@ -78,7 +78,7 @@
     "excerpt": "How an equipment register, clear service notes and an action log can support the next maintenance conversation.",
     "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png",
     "date": "2026-10-31",
-    "project": "icbc"
+    "project": "west-5th"
   },
   {
     "slug": "project-turnover-om-package",
@@ -160,5 +160,41 @@
     "image": "/images/article-placeholder.svg",
     "date": "2026-11-01",
     "project": "garibaldi"
+  },
+  {
+    "slug": "rooftop-chiller-downtown-vancouver",
+    "title": "Landing a Rooftop Chiller in Downtown Vancouver",
+    "category": "Project planning",
+    "excerpt": "A downtown crane lift is a permitting and weather problem long before it is a lifting problem.",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-27",
+    "project": "crosstown"
+  },
+  {
+    "slug": "school-air-source-heat-pump-conversion",
+    "title": "Converting School Heating to Air-Source Heat Pumps",
+    "category": "Heating & boilers",
+    "excerpt": "What decides whether a hydronic school converts smoothly to heat pumps.",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-27",
+    "project": "herbert-spencer-ashp"
+  },
+  {
+    "slug": "working-in-occupied-schools-and-buildings",
+    "title": "Working in Occupied Schools and Buildings",
+    "category": "School projects",
+    "excerpt": "Most mechanical upgrades happen while people are still in the building. Done well, they hardly notice.",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-27",
+    "project": "nestor"
+  },
+  {
+    "slug": "commissioning-and-handover",
+    "title": "From Startup to Handover: Commissioning and O&M",
+    "category": "Project planning",
+    "excerpt": "A project is not finished when the equipment runs. It is finished when the operators can run it.",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-27",
+    "project": "capilano-birch"
   }
 ]

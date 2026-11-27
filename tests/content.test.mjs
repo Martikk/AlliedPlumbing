@@ -5,8 +5,8 @@ const projects = JSON.parse(readFileSync('src/data/projects.json','utf8'));
 const seo = JSON.parse(readFileSync('src/data/seo.json','utf8'));
 
 test('all documented case studies have a unique route and matching search title', () => {
-  assert.equal(projects.length, 14);
-  assert.equal(new Set(projects.map(project=>project.id)).size, 14);
+  assert.equal(projects.length, 19);
+  assert.equal(new Set(projects.map(project=>project.id)).size, 19);
   for (const project of projects) {
     assert.ok(project.scope.length >= 3);
     // Audit A-04/A-06: the search title no longer mirrors the H1 verbatim —
@@ -30,7 +30,7 @@ test('corrects the school identity and the Haro boiler system from the supplied 
 });
 test('published articles have complete content and indexed routes', () => {
   const posts = JSON.parse(readFileSync('src/data/posts.json','utf8'));
-  assert.equal(posts.length, 18);
+  assert.equal(posts.length, 22);
   assert.ok(seo['/blog']);
   for (const post of posts) {
     assert.ok(seo['/blog/'+post.slug]);
@@ -42,13 +42,51 @@ test('published articles have complete content and indexed routes', () => {
   }
 });
 
-test('new projects preserve unconfirmed completion and separate Herbert Spencer phases', () => {
-  for (const id of ['icbc','crosstown','glenayre','collingwood','capilano-birch','herbert-spencer-ashp','hillcrest']) {
-    const project=projects.find(item=>item.id===id);
-    assert.equal(project.status, 'Completion to be confirmed');
+/** The owner's project stories replaced the placeholders these pages shipped
+ *  with, and they came with publishing conditions. Those conditions are not
+ *  prose anybody will reread before the next edit, so they are assertions.
+ *
+ *  A project still running must not read as finished. The template prints
+ *  "Completed work" over `outcome` whenever `status` is absent, so an unset
+ *  status IS a completion claim — which is why the in-progress four are
+ *  checked by their status rather than by their wording. */
+test('unfinished projects claim no completion, and withheld client names stay out', () => {
+  const running = ['crosstown', 'crosstown-phase-2', 'nestor', 'glenayre'];
+  for (const id of running) {
+    const project = projects.find(item => item.id === id);
+    assert.equal(project.status, 'In progress', `${id} must not read as finished`);
     assert.equal(project.year, undefined);
   }
-  assert.equal(projects.find(item=>item.id==='herbert-spencer').year, 2021);
+  for (const id of ['collingwood', 'capilano-birch', 'herbert-spencer-ashp', 'hillcrest',
+    'myrtle-philip', 'west-5th', 'jervis', 'halifax-7360']) {
+    const project = projects.find(item => item.id === id);
+    assert.equal(project.status, undefined, `${id} is complete, so the page says so`);
+    assert.ok(project.outcome.length > 40, `${id} needs a real completed-work paragraph`);
+  }
+  assert.equal(projects.find(item => item.id === 'herbert-spencer').year, 2021);
+
+  // The owner cleared Collingwood School to be named and did not clear the
+  // rental client for the two new buildings, so those pages describe the owner
+  // rather than naming them. 1755 Haro Street was published with that client's
+  // name long before this and is left exactly as it stands — withholding
+  // consent for a new page is not a reason to rewrite an old one.
+  for (const id of ['jervis', 'halifax-7360']) {
+    const project = projects.find(item => item.id === id);
+    assert.equal(project.client, 'Private rental housing owner', `${id} must not name the owner`);
+    assert.ok(!/starlight/i.test(JSON.stringify(project)), `${id} must not name the owner`);
+  }
+  assert.ok(projects.some(item => item.client === 'Collingwood School'));
+
+  // 1501 Haro Street is held back: its client and equipment are unconfirmed.
+  // 1755 Haro Street is a different building and stays published.
+  assert.ok(!projects.some(item => /1501 Haro/.test(item.title)));
+  assert.ok(projects.some(item => item.title === '1755 Haro Street'));
+
+  // Every project names a service that exists, which is what ProjectDetail
+  // now reads instead of a hand-maintained list of ids.
+  for (const project of projects) {
+    assert.ok(seo['/services/' + project.relatedService], `${project.id}: ${project.relatedService}`);
+  }
 });
 
 test('new planning guides use real local placeholders and honest review status', () => {

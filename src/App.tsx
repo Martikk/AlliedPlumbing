@@ -54,6 +54,7 @@ export function AppContent() {
 
           {/* Projects hub + cases */}
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/icbc" element={<Navigate to="/projects/west-5th" replace />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
 
           <Route path="/blog/foundations" element={<Navigate to="/blog/planning-school-hvac-upgrades" replace />} />

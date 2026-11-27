@@ -61,7 +61,7 @@
   },
   "/clients": {
     "title": "Our Clients — Allied Plumbing, Metro Vancouver",
-    "description": "School districts 40, 43, 45 and 48, Capilano University, ICBC and Starlight Investments — the organisations whose buildings we work in."
+    "description": "School districts 40, 43, 45 and 48, Capilano University, Collingwood School and Starlight Investments — the organisations whose buildings we work in."
   },
   "/careers": {
     "title": "Careers — Allied Plumbing",
@@ -111,13 +111,13 @@
     "title": "Upgrading Heating and Hot Water in an Existing Apartment",
     "description": "Inside the scope of the Viessmann CA3 condensing plant project at 1755 Haro Street. A residential buildings planning note from Allied Plumbing."
   },
-  "/projects/icbc": {
-    "title": "ICBC Boiler Plant Modernization — Allied Plumbing",
-    "description": "Modernizing an existing heating plant with Viessmann condensing boilers and building automation integration. ICBC / Warrington PCI, Vancouver, BC."
+  "/projects/west-5th": {
+    "title": "456 West 5th Avenue Boiler Replacement | Allied",
+    "description": "High-efficiency boiler replacement in a facility that never closes, with short planned outages, permits and owner training. Vancouver, BC."
   },
   "/projects/crosstown": {
-    "title": "Crosstown Elementary Mechanical Upgrade — Phase 1 | Allied",
-    "description": "Mechanical plant and hydronic upgrades coordinated with building, electrical and fire protection work. Vancouver School District, Vancouver, BC."
+    "title": "Crosstown Elementary Cooling Upgrade, Phase 1 | Allied",
+    "description": "A rooftop chiller and new mechanical room for an occupied downtown school, with Sunday crane lifts and City permits. Vancouver School Board, BC."
   },
   "/projects/glenayre": {
     "title": "École Glenayre Elementary DDC & Boiler Plant Upgrade",
@@ -137,11 +137,11 @@
   },
   "/projects/hillcrest": {
     "title": "Hillcrest Middle HVAC Upgrade — Phase 2 — Allied Plumbing",
-    "description": "HVAC upgrade involving Trane rooftop equipment and technical closeout coordination. School District No. 43, British Columbia."
+    "description": "Three rooftop units and exhaust fans replaced at an occupied middle school, with hazmat checks and gas permitting. School District No. 43, Coquitlam."
   },
   "/blog/integrating-commercial-boiler-controls": {
     "title": "Connecting a New Boiler Plant to an Existing Building",
-    "description": "What the ICBC project scope shows about hydronic interfaces, controls responsibilities and occupied-building planning. Planning notes from Allied Plumbing."
+    "description": "What the West 5th Avenue project scope shows about hydronic interfaces, controls responsibilities and occupied-building planning. From Allied Plumbing."
   },
   "/blog/coordinating-school-mechanical-room-upgrades": {
     "title": "Why Mechanical Room Readiness Matters in a School Upgrade",
@@ -203,5 +203,41 @@
     "title": "Enquiry received — Allied Plumbing",
     "description": "Thank you — we have your enquiry and will reply within one business day. For urgent plumbing, heating or HVAC work call 604-731-1000.",
     "noindex": true
+  },
+  "/projects/crosstown-phase-2": {
+    "title": "Crosstown Elementary HVAC Upgrade, Phase 2 | Allied",
+    "description": "Air-handling coils, fan coil units and controls that complete a downtown school cooling conversion. Vancouver School Board, Vancouver, BC."
+  },
+  "/projects/nestor": {
+    "title": "École Nestor Elementary Boiler Plant Upgrade | Allied",
+    "description": "A condensing boiler plant with unit ventilator fans and controls renewed overnight, classroom by classroom. School District No. 43, Coquitlam, BC."
+  },
+  "/projects/myrtle-philip": {
+    "title": "Myrtle Philip School HVAC Upgrade, Phase 2 | Allied",
+    "description": "Buffer tank, pumps, glycol and ventilation work for a mountain-community school, planned around travel and a short season. Whistler, BC."
+  },
+  "/projects/jervis": {
+    "title": "945 Jervis Street Heating & Hot Water Upgrade | Allied",
+    "description": "Heating, domestic hot water and make-up air renewed in an occupied rental high-rise, with short announced shutdowns. Vancouver, BC."
+  },
+  "/projects/halifax-7360": {
+    "title": "7360 Halifax Street Boiler Replacement | Allied",
+    "description": "A failed boiler replaced quickly and programmed into the existing building management system, with riser valve renewal. Burnaby, BC."
+  },
+  "/blog/rooftop-chiller-downtown-vancouver": {
+    "title": "Landing a Rooftop Chiller in Downtown Vancouver",
+    "description": "Street-use permits, noise exceptions, roof readiness and weather buffers decide a downtown crane lift. A project planning note from Allied Plumbing."
+  },
+  "/blog/school-air-source-heat-pump-conversion": {
+    "title": "Converting School Heating to Air-Source Heat Pumps",
+    "description": "Electrical capacity, buffer tanks, hybrid sequencing and startup tuning decide a school heat pump conversion. A heating note from Allied Plumbing."
+  },
+  "/blog/working-in-occupied-schools-and-buildings": {
+    "title": "Working in Occupied Schools and Buildings",
+    "description": "Night shifts, building calendars, hidden conditions and resident notice, for upgrades delivered around the people inside. From Allied Plumbing."
+  },
+  "/blog/commissioning-and-handover": {
+    "title": "From Startup to Handover: Commissioning and O&M",
+    "description": "Pre-startup checks, tuning, permit closeout, O&M manuals and operator training, explained for building owners. A planning note from Allied Plumbing."
   }
 }

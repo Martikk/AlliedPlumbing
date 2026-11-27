@@ -164,22 +164,22 @@
     "slug": "integrating-commercial-boiler-controls",
     "title": "Connecting a New Boiler Plant to an Existing Building",
     "category": "Heating & boilers",
-    "project": "icbc",
-    "excerpt": "What the ICBC project scope shows about hydronic interfaces, controls responsibilities and occupied-building planning.",
-    "intro": "Changing a boiler plant is rarely a stand-alone equipment swap. The replacement plant must connect to a building that already has heating distribution, controls, electrical services and operating requirements. Allied’s ICBC Boiler Plant Modernization scope brings these interfaces together within an existing Vancouver facility. Final completion has not been confirmed in the supplied project summary, so this article describes the planned scope and coordination rather than reporting a finished installation.",
+    "project": "west-5th",
+    "excerpt": "What the West 5th Avenue project scope shows about hydronic interfaces, controls responsibilities and occupied-building planning.",
+    "intro": "Changing a boiler plant is rarely a stand-alone equipment swap. The replacement plant must connect to a building that already has heating distribution, controls, electrical services and operating requirements. Allied’s boiler replacement at 456 West 5th Avenue in Vancouver brought these interfaces together in a building that stays in operation around the clock. This article describes the scope and the coordination it needed; it is general planning information rather than a recommendation for any other building.",
     "image": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png",
     "sections": [
       {
         "heading": "Begin with the existing system",
         "paragraphs": [
-          "A project brief should describe what the building needs from the heating system and what equipment will remain in service. At ICBC, the scope includes replacement condensing boilers, hydronic piping, circulation equipment, gas distribution, venting and condensate management. Those services need to be considered as a connected system rather than separate purchases.",
+          "A project brief should describe what the building needs from the heating system and what equipment will remain in service. At 456 West 5th Avenue, the scope includes replacement condensing boilers, hydronic piping, circulation equipment, gas distribution, venting and condensate management. Those services need to be considered as a connected system rather than separate purchases.",
           "The supplied project information identifies compatibility between proposed boiler operating temperatures and existing heating coils as an engineering coordination point. Building owners can help by providing available drawings, equipment information and known operational concerns. The design team determines the final requirements; a general project article cannot establish settings for a particular building."
         ]
       },
       {
         "heading": "Make controls responsibilities explicit",
         "paragraphs": [
-          "Boiler controls and building automation have related but different responsibilities. The ICBC scope includes coordination between the boiler package and the existing building automation infrastructure. The team needs to establish which party provides each interface, how information is exchanged and what will be checked during startup.",
+          "Boiler controls and building automation have related but different responsibilities. The West 5th Avenue scope includes coordination between the boiler package and the existing building automation infrastructure. The team needs to establish which party provides each interface, how information is exchanged and what will be checked during startup.",
           "For owners, the useful question is not simply whether the new equipment has controls. Ask how the controls scope is documented, who coordinates it and what information the building operator will receive. Confirming these responsibilities early helps the team plan submissions, wiring, integration and verification in a sensible sequence."
         ]
       },
@@ -387,7 +387,7 @@
         "paragraphs": [
           "An available calendar slot is only one part of a workable shutdown window. Ask how equipment delivery, access, permits where applicable, supporting trades and inspections relate to the proposed sequence. Identify what must be ready before the interruption begins and who confirms that readiness.",
           "Separate the planned work window from allowances and contingencies. Ask how the team will respond if an existing condition differs from the records, a connection requires further review or a task cannot be completed as expected. The answer should be project-specific; a general website article cannot establish a safe duration or a universal temporary-service arrangement.",
-          "Haro’s documented project scope involves a condensing heating and hot-water plant in an existing apartment building. ICBC’s scope involves an existing heating plant and building automation interfaces. These examples provide context for the coordination discussion, but they do not establish a shutdown schedule for another building."
+          "Haro’s documented project scope involves a condensing heating and hot-water plant in an existing apartment building. The West 5th Avenue scope involves an existing heating plant and building automation interfaces. These examples provide context for the coordination discussion, but they do not establish a shutdown schedule for another building."
         ]
       },
       {
@@ -427,7 +427,7 @@
   {
     "slug": "preventive-maintenance-records-building-teams",
     "title": "Preventive Maintenance Records That Help Building Teams",
-    "project": "icbc",
+    "project": "west-5th",
     "relatedService": "maintenance",
     "category": "Maintenance",
     "excerpt": "How an equipment register, clear service notes and an action log can support the next maintenance conversation.",
@@ -454,7 +454,7 @@
         "paragraphs": [
           "A recommendation needs an owner and a next step to remain useful. Record whether it requires clarification, pricing, consultant input, approval or a future visit. Keep the status visible so that an unresolved issue is not mistaken for completed work when someone reads the report months later.",
           "Differentiate routine follow-up from matters requiring prompt contact with the responsible team. The urgency and technical response should come from the relevant professionals, not from a generic filing system. If conditions change or there is an active service problem, contact the appropriate service team rather than relying on an old report entry.",
-          "The ICBC project scope illustrates how mechanical equipment can connect with existing hydronic services and building automation. For maintenance planning, that is a reminder to record interface responsibilities and available controls information. It is not evidence that a particular maintenance programme or reporting format is in place at that site."
+          "The West 5th Avenue project scope illustrates how mechanical equipment can connect with existing hydronic services and building automation. For maintenance planning, that is a reminder to record interface responsibilities and available controls information. It is not evidence that a particular maintenance programme or reporting format is in place at that site."
         ]
       },
       {
@@ -1028,6 +1028,271 @@
       "Agreed access windows",
       "Supporting trade dependencies",
       "Change notices and handover communication"
+    ]
+  },
+  {
+    "slug": "rooftop-chiller-downtown-vancouver",
+    "title": "Landing a Rooftop Chiller in Downtown Vancouver",
+    "category": "Project planning",
+    "excerpt": "A downtown crane lift is a permitting and weather problem long before it is a lifting problem.",
+    "project": "crosstown",
+    "image": "/images/article-placeholder.svg",
+    "intro": "Putting a large unit on a downtown roof is not just a crane booking. A street lift in Vancouver needs a traffic management plan, a street-use permit, a noise exception for weekend work and notices to nearby residents, and several City departments have to agree on the same date. This is general planning information for owners and facility managers, not a design or a substitute for the permits your own project will need.",
+    "sections": [
+      {
+        "heading": "Treat permits as a plan, not a form",
+        "paragraphs": [
+          "Each approval has its own reviewer and its own queue, and the lift happens only on a date that all of them accept. Book early and expect the date to move at least once. City events can rule out a weekend outright, and fewer permits are issued in December, so a lift pencilled in for the middle of winter deserves a second option.",
+          "Every change of date needs a written reason, and the review starts again, so allow several weeks rather than days. Keep the crane company inside that conversation: the lift plan, the traffic control and the noise exception describe the same few hours, and they have to agree with one another before anyone will sign."
+        ]
+      },
+      {
+        "heading": "Make the roof ready before the lift",
+        "paragraphs": [
+          "Structural steel, anchors, roofing around the sleepers and the inspections that follow all have to be signed off before a unit is landed. If they are compressed into the week before the crane arrives, the lift date is the thing that gives way.",
+          "On most buildings the readiness work is not mechanical at all. Roofing, framing, drywall and ceiling submittals each need specialty engineer sign-off, wind-uplift calculations and warranty documents. One submittal template, used by every trade, turns that from a series of partial packages into a single reviewable set, which is usually the difference between one review cycle and three."
+        ]
+      },
+      {
+        "heading": "Plan for the weather, not the forecast",
+        "paragraphs": [
+          "From October to March, build buffer days into every roofing date rather than relying on a dry week appearing when you need it. Choose roofing details that can be installed in short dry windows, and prefer a detail that works with the existing structure over one that requires modifying it.",
+          "While the roof is open, temporary protection needs inspecting every shift, and more often in rain. That is a small daily cost against the alternative, which is water in an occupied building and a far longer argument about who pays for it."
+        ]
+      },
+      {
+        "heading": "Plan for the people in the building",
+        "paragraphs": [
+          "In an occupied school, book interior access, washrooms and an on-site contact for lift day, and give staff and parents notice. Confirm the date against the building calendar rather than the project schedule: schools host elections, sports days and rentals that never appear in a construction programme.",
+          "Shutdowns usually have to happen after hours or at weekends. Agree who can approve a change on the day, because a lift that stops for a decision is still costing crane time.",
+          "Write down what happens if the lift is cancelled in the morning. Crane time, traffic control and the trades waiting on the roof are all booked against one date, and the cost of standing them down is a number worth agreeing while everyone is calm rather than at six on a wet Sunday. The same note should say who calls it, and by when."
+        ]
+      }
+    ],
+    "date": "2026-11-27",
+    "author": "Allied Plumbing",
+    "readingMinutes": 4,
+    "relatedService": "hvac",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "checklist": [
+      "Traffic management and street-use permits",
+      "Noise exception for weekend work",
+      "Structural and roofing readiness sign-off",
+      "Weather buffer days in the roofing programme",
+      "Building contact and notice to occupants"
+    ]
+  },
+  {
+    "slug": "school-air-source-heat-pump-conversion",
+    "title": "Converting School Heating to Air-Source Heat Pumps",
+    "category": "Heating & boilers",
+    "excerpt": "What decides whether a hydronic school converts smoothly to heat pumps.",
+    "project": "herbert-spencer-ashp",
+    "image": "/images/article-placeholder.svg",
+    "intro": "Many districts are moving primary heating from gas boilers to air-source heat pumps. Existing hydronic schools are often good candidates, but a few items decide whether the conversion goes smoothly or stalls halfway through design. This is general planning information, not a design or an assessment of any particular building.",
+    "sections": [
+      {
+        "heading": "Confirm electrical capacity first",
+        "paragraphs": [
+          "Check the incoming service and panel capacity before the design is finished, not after the equipment is selected. An upgrade takes time, may need the utility involved, and can change which machines are realistic.",
+          "Where capacity is tight, the choice between a full electric conversion and a hybrid plant is often made by the electrical room rather than by the mechanical design. Finding that out early keeps it a design decision instead of a change order."
+        ]
+      },
+      {
+        "heading": "Give the heat pumps enough water",
+        "paragraphs": [
+          "Heat pumps run best with steady flow and enough system volume. A buffer tank, and where needed a heat exchanger, protect the units from short cycling and protect the existing piping from conditions it was never designed for.",
+          "Older hydronic systems also carry decades of debris. A flush before the new plant is commissioned is cheap compared with cleaning it out of new heat exchangers afterwards."
+        ]
+      },
+      {
+        "heading": "Keep the boilers as backup",
+        "paragraphs": [
+          "A hybrid approach uses the heat pumps first and the boilers on the coldest days. It keeps the building warm through a cold snap and through a fault, and it lets the district retire gas gradually rather than in one step.",
+          "The value of that arrangement lives entirely in the control sequence. Agree the changeover logic, the outdoor-temperature thresholds and what happens on a heat pump alarm before anyone programmes it."
+        ]
+      },
+      {
+        "heading": "Expect to tune pressure and controls at startup",
+        "paragraphs": [
+          "Adding equipment and changing water temperatures can unsettle system pressure. Check expansion capacity and pump operation at startup, and leave time for the adjustment: a system that holds its design pressure on the second week is normal, not a defect.",
+          "Settle humidity sensing and weather-based logic with the engineer before programming begins. Questions raised through an RFI at design stage cost a week; the same questions raised during commissioning cost a season."
+        ]
+      },
+      {
+        "heading": "Decide where the units go",
+        "paragraphs": [
+          "Roof placement usually means a crane lift and a structural review, and it brings roofing, anchors and envelope details into a mechanical project. Placement at grade needs space, a clear maintenance route and attention to noise at the property line.",
+          "Neither is simply cheaper. Price both against the structural and electrical work each one drags along with it, and against the maintenance access each one leaves behind.",
+          "Noise deserves a decision rather than an assumption. Air-source units run on the coldest nights, which are also the quietest, and a school boundary is rarely far from a bedroom window. Sound data at the property line belongs in the selection, not in a complaint a year after handover."
+        ]
+      },
+      {
+        "heading": "Agree what success looks like before the first cold snap",
+        "paragraphs": [
+          "A conversion is judged on the first genuinely cold week, not on the commissioning report. Decide in advance what the plant is expected to do at design temperature, how much of the load the boilers may pick up, and who checks the result.",
+          "Write that down with the operators. A district that knows the heat pumps are meant to cover most of the season, with gas on the coldest days, reads a February boiler run as the design working rather than as a fault."
+        ]
+      }
+    ],
+    "date": "2026-11-27",
+    "author": "Allied Plumbing",
+    "readingMinutes": 4,
+    "relatedService": "boilers",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "checklist": [
+      "Electrical service and panel capacity",
+      "Buffer tank and heat exchanger sizing",
+      "Hybrid sequencing with the existing boilers",
+      "Expansion capacity and startup pressure checks",
+      "Rooftop or grade placement with its structural scope"
+    ]
+  },
+  {
+    "slug": "working-in-occupied-schools-and-buildings",
+    "title": "Working in Occupied Schools and Buildings",
+    "category": "School projects",
+    "excerpt": "Most mechanical upgrades happen while people are still in the building. Done well, they hardly notice.",
+    "project": "nestor",
+    "image": "/images/article-placeholder.svg",
+    "intro": "Most mechanical upgrades happen while people are still in the building: pupils in classrooms, residents at home, staff at desks. Done well, the occupants hardly notice. This is general planning information for owners and facility managers, not a method statement for any particular site.",
+    "sections": [
+      {
+        "heading": "Night and weekend work is the normal case",
+        "paragraphs": [
+          "In schools, shutdowns usually happen after the last bell or at weekends. Terminal-unit work fits that pattern well: unit ventilator fans can be swapped overnight, as long as the controls are reconnected before morning so every classroom has heat and ventilation when it opens.",
+          "That only works if the night crew has everything it needs on site before the shift starts. A missing actuator at two in the morning is not a procurement problem, it is a classroom without ventilation at nine."
+        ]
+      },
+      {
+        "heading": "Check the building calendar, not just the project programme",
+        "paragraphs": [
+          "Schools are used for elections, sports days, gym rentals and childcare, and none of that appears in a construction schedule. Confirm every shutdown date with the building operator as well as the project team.",
+          "Expect to move at least one date. A polling station or an exam week is not negotiable, and finding out a fortnight ahead costs far less than finding out on the day."
+        ]
+      },
+      {
+        "heading": "Price hidden conditions the same day you find them",
+        "paragraphs": [
+          "Opening old equipment reveals failed dampers, actuators and freeze stats more often than not. Photograph them, price them the same day and get a decision quickly, before the night crew moves on to another building.",
+          "A decision that waits a week usually costs a second mobilisation. Owners who set a standing approval threshold for small items get those weeks back."
+        ]
+      },
+      {
+        "heading": "Residents need different notice from staff",
+        "paragraphs": [
+          "In rental buildings, give written notice of water and heating shutdowns, keep the outages short and have a restore plan ready before the first valve is closed. Residents judge the work by how long their hot water is off, not by the equipment that replaced it.",
+          "Where an option exists between a long single outage and several short ones, ask the owner rather than assuming. Both answers are defensible, and only the owner knows the building."
+        ]
+      },
+      {
+        "heading": "Test for hazardous materials before cutting",
+        "paragraphs": [
+          "Assess for asbestos before demolition or cutting, not after. A test that comes back clear costs a few days in the programme; one that comes back positive after the work has started costs the programme itself, and it is the occupants who carry the risk in the meantime.",
+          "Riser and valve work in older residential buildings deserves the same caution. Materials go to the laboratory before anything is cut, and the shutdown notice goes out to every building on the system, not only the one with the open ceiling."
+        ]
+      },
+      {
+        "heading": "Leave the building better than you found it each morning",
+        "paragraphs": [
+          "Agree what \"finished for the night\" means before the first shift: ceilings closed or screened, routes clear, heat and ventilation running, and a short note to the operator saying what was done and what is still open.",
+          "It costs twenty minutes at the end of a shift and it is most of what the occupants will remember about the project. It is also how the operator answers the first question of the morning without having to find anyone from the crew, and it is the habit that keeps a long night-shift programme from slowly wearing out the goodwill it depends on."
+        ]
+      }
+    ],
+    "date": "2026-11-27",
+    "author": "Allied Plumbing",
+    "readingMinutes": 4,
+    "relatedService": "hvac",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "checklist": [
+      "Shutdown windows agreed with the building operator",
+      "Controls reconnected before each morning",
+      "Same-day pricing route for hidden conditions",
+      "Written notice for residents",
+      "Hazardous-materials assessment before demolition"
+    ]
+  },
+  {
+    "slug": "commissioning-and-handover",
+    "title": "From Startup to Handover: Commissioning and O&M",
+    "category": "Project planning",
+    "excerpt": "A project is not finished when the equipment runs. It is finished when the operators can run it.",
+    "project": "capilano-birch",
+    "image": "/images/article-placeholder.svg",
+    "intro": "A project is not finished when the equipment runs. Owners need a system that has been proven, documented and explained to the people who will operate it on a Monday morning in February. This is general planning information about closeout, not a commissioning specification.",
+    "sections": [
+      {
+        "heading": "Close the pre-startup list before booking startup",
+        "paragraphs": [
+          "Flushing, pressure tests, electrical checks and controls point-to-point verification all belong before the manufacturer arrives, not during the visit. A startup that turns into a snagging session rarely produces a usable report.",
+          "Book testing, adjusting and balancing early. It is often the last trade available before a deadline, and it is the one that cannot be compressed, because the readings have to be taken with the system running as it will actually run."
+        ]
+      },
+      {
+        "heading": "Expect tuning at startup",
+        "paragraphs": [
+          "Valve operation, pump setpoints and control sequences are adjusted with the controls contractor and the engineer until the system performs to design. A valve that will not modulate on the first day is a normal part of the process.",
+          "Plan for the people as well as the time: the controls contractor, the engineer and the mechanical crew usually need to be on site together, which is harder to arrange than any single one of them."
+        ]
+      },
+      {
+        "heading": "Close the permits before handover",
+        "paragraphs": [
+          "Gas, boiler and refrigeration permits must be closed before the building changes hands. Keep the paperwork organised as it is produced rather than assembling it at the end, because it affects substantial performance and holdback release as directly as the installation does.",
+          "Follow-up paperwork after an inspection is the part most often left until last, and it is the part that holds up closeout. Assemble it while the inspector is still a recent memory and the installing crew can still answer a question about what was changed on site."
+        ]
+      },
+      {
+        "heading": "Write the manual the operators will actually open",
+        "paragraphs": [
+          "A useful O&M manual holds the reviewed shop drawings, the startup and balancing reports, a valve tag schedule, warranties and contacts, organised in the order the engineer expects to find them.",
+          "The test is simple: can an operator who was not on the project find the warranty contact for one pump in under a minute? If not, the manual is an archive rather than a tool."
+        ]
+      },
+      {
+        "heading": "Demonstrate the system to the people who will run it",
+        "paragraphs": [
+          "Walk the operators through normal operation, alarms, seasonal changeover and winterisation, in the plant room rather than in a meeting. Agree who to call, and for what, before the warranty period starts.",
+          "A seasonal shutdown procedure left with the building team is worth more than another folder. It is what keeps the first autumn after handover uneventful.",
+          "Record the demonstration, even roughly. Operators move between buildings, and the person who attended in June is not always the person standing in the plant room in January."
+        ]
+      },
+      {
+        "heading": "Agree the first year before it starts",
+        "paragraphs": [
+          "Warranty is a period, not a document. Decide who logs a fault, who attends, and what counts as a warranty item rather than a maintenance one, while everyone is still on good terms.",
+          "A short review after the first heating or cooling season is worth scheduling at handover. It catches the settings that drifted, the alarms nobody understood and the spare parts that were never ordered, at a point where all of it is still easy to put right."
+        ]
+      }
+    ],
+    "date": "2026-11-27",
+    "author": "Allied Plumbing",
+    "readingMinutes": 4,
+    "relatedService": "hvac",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "checklist": [
+      "Pre-startup checks closed before the manufacturer attends",
+      "Testing and balancing booked early",
+      "Gas, boiler and refrigeration permits closed",
+      "O&M manual in the order the engineer expects",
+      "Owner demonstration and seasonal procedures"
     ]
   }
 ]

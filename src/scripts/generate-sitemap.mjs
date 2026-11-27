@@ -106,6 +106,9 @@ const aliases = {
   '/services/boiler-plants-controls': '/services/boilers',
   '/services/maintenance-programs': '/services/maintenance',
   '/services/emergency-service': '/services/emergency',
+  // The page was published under the wrong client. The building — 456 West 5th
+  // Avenue — did not change, so the old URL keeps its value and redirects.
+  '/projects/icbc': '/projects/west-5th',
 };
 writeFileSync(
   'dist/_redirects',

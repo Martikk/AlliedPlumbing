@@ -42,7 +42,7 @@
     "audiences": [
       { "title": "School districts", "copy": "Plant replacements sequenced around the school year. At Ridgeview we installed six IBC boilers alongside a classroom ventilation conversion." },
       { "title": "Strata and apartment buildings", "copy": "Heating and domestic hot water plants in buildings that cannot go cold — a 2.5 million BTU Viessmann plant at 1755 Haro Street." },
-      { "title": "Commercial and institutional owners", "copy": "Plant modernisation tied into existing hydronics and building automation, as at the ICBC facility on West 5th." }
+      { "title": "Commercial and institutional owners", "copy": "Plant modernisation tied into existing hydronics and building automation, as at the facility on West 5th Avenue." }
     ],
     "deliver": [
       "Condensing boiler plant replacement, including removal of redundant equipment",
@@ -91,7 +91,7 @@
       { "title": "Execution", "copy": "Work done in the agreed windows, with the system back in service at the end of each one wherever possible." },
       { "title": "Turnover", "copy": "Testing records, as-builts and the documentation the building team needs for its own records." }
     ],
-    "relatedProjects": ["haro", "icbc", "crosstown"]
+    "relatedProjects": ["haro", "west-5th", "crosstown"]
   },
 
   "maintenance": {
@@ -153,7 +153,7 @@
       { "title": "Stabilise", "copy": "Get the building usable — a temporary provision now, with the permanent repair scheduled properly." },
       { "title": "Follow up", "copy": "A written note of what failed and what we recommend, so it can go into the maintenance plan." }
     ],
-    "relatedProjects": ["haro", "icbc"]
+    "relatedProjects": ["haro", "west-5th"]
   },
 
   "residential-plumbing": {

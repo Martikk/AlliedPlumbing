@@ -7,9 +7,15 @@ import data from '../data/projects.json';
 export type GalleryPhoto = { src: string; alt: string };
 export type ProjectQuote = { text: string; name: string; title: string };
 
-export type Project = Omit<(typeof data)[number], 'gallery' | 'quote'> & {
+/** A problem the project actually hit, and what was done about it. Older
+ *  entries carry an empty array, which JSON widens to `never[]` — hence the
+ *  explicit type here, like `gallery` and `quote` above it. */
+export type ProjectChallenge = { title: string; text: string };
+
+export type Project = Omit<(typeof data)[number], 'gallery' | 'quote' | 'challenges'> & {
   gallery: GalleryPhoto[];
   quote: ProjectQuote | null;
+  challenges: ProjectChallenge[];
   relatedProject?: string;
   outcomeLine?: string;
 };
