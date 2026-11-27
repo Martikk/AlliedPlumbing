@@ -28,6 +28,9 @@ export const AREA_SERVED = [
   'Coquitlam',
   'Port Coquitlam',
   'Squamish',
+  // A published project page describes a Whistler school upgrade, so the
+  // corridor was already being served while the schema said otherwise.
+  'Whistler',
 ];
 
 export function organizationSchema() {

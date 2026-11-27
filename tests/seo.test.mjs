@@ -139,3 +139,28 @@ test('every indexable route is linked from the site, and no link spends a redire
     assert.ok(count > 0, `nothing on the site links to ${path}`);
   }
 });
+
+/** Thin pages, measured on the rendered page rather than on the component.
+ *
+ *  `/about` shipped 189 words and `/rfp` 92 — both are pages an institutional
+ *  buyer opens to decide whether to believe the rest of the site, and neither
+ *  could carry that. The floor below is a regression guard, not a target: it
+ *  exists so a page cannot quietly go back to being a stub.
+ *
+ *  Only the text inside `<main>` counts. Header, footer and the no-JavaScript
+ *  fallback add the same ~110 words to all 60 pages, which would hide a stub. */
+test('no indexable page is a stub, and the two pages that must persuade are not thin', () => {
+  const PERSUADE = new Set(['/about', '/rfp']);
+  for (const [path, page] of Object.entries(pages)) {
+    if (page.noindex) continue;
+    const html = readFileSync(join('dist', path === '/' ? '' : path.slice(1), 'index.html'), 'utf8');
+    const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/);
+    assert.ok(main, `${path} renders no <main>`);
+    const words = main[1]
+      .replace(/<(script|style)\b[\s\S]*?<\/\1>/g, '')
+      .replace(/<[^>]+>/g, ' ')
+      .match(/[A-Za-z0-9][A-Za-z0-9'’./-]*/g) ?? [];
+    const floor = PERSUADE.has(path) ? 400 : 150;
+    assert.ok(words.length >= floor, `${path} carries ${words.length} words, under its ${floor} floor`);
+  }
+});

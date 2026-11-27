@@ -248,6 +248,43 @@ accessibility, best-practices and SEO 100, CLS 0.
 
 ---
 
+### Thin pages — two fixed, ten still measured
+
+Word counts below are the text inside `<main>` on the built page. Header,
+footer and the no-JavaScript fallback add the same ~110 words to all 60 routes,
+so counting the whole document hides a stub.
+
+`/rfp` shipped **92** words and `/about` **189** — the two pages an
+institutional buyer opens to decide whether the rest of the site is credible.
+Both were rewritten from what project pages already carry: `/rfp` to **443**,
+`/about` to **664**. No licence, certification, insurance limit, response time,
+staff count or founding year is claimed on either, because all of those are
+still Q3 and Q6. `/about`'s meta description used to say "since the late
+1990s"; nothing in the repo supports a founding year, so the claim is gone.
+
+`tests/seo.test.mjs` now holds a floor — 150 words for any indexable route,
+400 for those two — so neither can quietly become a stub again.
+
+What is still thin, in order:
+
+| Route | Words | Why it matters |
+|---|---|---|
+| `/services/commercial-plumbing` | 159 | Ranks for the commercial search terms |
+| `/services/emergency` | 173 | The 24/7 query is the highest-intent one on the site |
+| `/services/boilers` | 179 | Boiler plant replacement is the signature scope |
+| `/services/hvac` | 182 | |
+| `/services/maintenance` | 182 | The recurring-revenue line |
+| `/services/residential-plumbing` | 211 | |
+| `/team` | 227 | A trust page carrying photographs and little else |
+| `/quote` | 262 | A form page; thin is defensible here |
+| `/services` | 296 | Hub, six links, little of its own |
+| `/clients` | 304 | One sentence plus a list generated from `projects.json` |
+
+The six service pages are the real gap: they are the pages a commercial or
+strata buyer reaches from a Google search, and each is shorter than the
+articles that link to it. Fixing them needs no answer from Allied — the
+material is in `projects.json` and `posts.json` already.
+
 ## 5. Measured result
 
 Lighthouse 12, headless Chrome. **Before** is the live site over the Amplify
