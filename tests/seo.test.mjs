@@ -157,7 +157,7 @@ test('every indexable route is linked from the site, and no link spends a redire
 test('no indexable page is a stub, and the pages that must persuade are not thin', () => {
   // The checking route an institutional buyer takes before a bid closes:
   // about, tenders, clients, team, and whichever service the scope needs.
-  const PERSUADE = new Set(['/about', '/rfp', '/clients', '/team']);
+  const PERSUADE = new Set(['/about', '/rfp', '/clients', '/team', '/services']);
   const persuades = path => PERSUADE.has(path) || /^\/services\/./.test(path);
   for (const [path, page] of Object.entries(pages)) {
     if (page.noindex) continue;

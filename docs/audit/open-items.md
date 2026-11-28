@@ -248,7 +248,7 @@ accessibility, best-practices and SEO 100, CLS 0.
 
 ---
 
-### Thin pages — ten fixed, two left
+### Thin pages — eleven fixed, one left
 
 Word counts are the text inside `<main>` on the built page. Header, footer
 and the no-JavaScript fallback add the same ~110 words to all 60 routes, so
@@ -289,8 +289,26 @@ and the two BC gasfitter classes certify. Technical Safety BC's own wording
 is used for Class B (the 120 kW certificate); no scope is stated for Class A
 beyond its being the broader of the two, because the regulation was not read.
 
-Still thin: `/quote` **262**, a form page, where thin is defensible, and
-`/services` **308**, a hub that mostly links elsewhere.
+`/services` followed at **308 → 914**. The hub now explains that the six
+lines are one job split by when it happens — install, commission, maintain,
+fail at an inconvenient hour — and routes a reader to the right page by
+building type. Its six FAQ answers are also published as `FAQPage`
+structured data, the site's first. Google stopped showing FAQ rich results
+for sites outside government and health in 2023, so that markup is for Bing
+and answer engines rather than for Google's SERP; it costs one object and
+invents nothing, since the answers were already on the page.
+
+Removed from the hub on the way: an empty `grid-cols-2 md:grid-cols-4` div
+inside a bordered, tinted panel, which rendered as a blank box above the logo
+marquee — the same dead markup as the stat grid in `ServiceTemplate`;
+**"background-checked"** crews in the FAQ, a vetting claim nothing supports;
+and **"IBC / Rheem specialists"** on a service card, where the brands are
+fine and the word is a claim about standing. The H1 was *"Built for uptime.
+Tuned for comfort."* — nothing a search can match and nothing a buyer can
+check.
+
+`/quote` at **262** is now the only indexable page under 400, and it is a
+form page, where thin is defensible.
 
 ### One organisation, one name
 
