@@ -54,7 +54,7 @@ const ITEMS: Item[] = [
     n: '06',
     title: '24/7 Emergency Service',
     blurb:
-      'Fast response for leaks, no-heat/DHW outages, gas issues and RTU/MUA failures.',
+      'On-call for leaks, no-heat and DHW outages, gas issues and RTU/MUA failures.',
     href: '/services/emergency',
     img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760077645/Allied/Screenshot_2025-10-09_at_11.27.02_PM_nnu7cg.png',
   },
@@ -62,7 +62,7 @@ const ITEMS: Item[] = [
 
 export default function ServicesShowcase() {
   return (
-    <section className="relativ py-10 md:py-14 rounded-3xl">
+    <section className="relative py-10 md:py-14 rounded-3xl">
       {/* заголовок + explore */}
       <div className="section-head-split max-w-6xl mx-auto px-4 md:px-6 mb-6 md:mb-8 flex items-end justify-between gap-4">
         <div>

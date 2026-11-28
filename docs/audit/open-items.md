@@ -364,6 +364,49 @@ did not — those edits changed nothing a visitor can see. The service pages now
 link the case studies directly. The file should either become the source the
 pages read, or be reduced to whatever `lastmod` actually needs.
 
+### The homepage: claims, not word count
+
+At 827 words `/` was never thin. What was wrong was what the words said.
+
+**Four badges under a green tick** read as credentials: "Quality control
+system", "Project coordination", "Highly professional team", "Accurate
+testing processes". The first implies a documented quality system, the third
+is puffery with a checkmark beside it, the fourth means nothing. They now
+name work every project page describes — phased work in occupied buildings,
+permits and inspections, trade coordination, commissioning and turnover
+records.
+
+**The first four `<h2>`s on the site's most important page** were "Smart
+methods", "Experienced team", "Modern equipment" and "Proven delivery" — the
+feature band that overlaps the hero. Four top-level headings for four
+decorative cards, matching no search and telling a reader nothing. They are
+now `<h3>` under one real `<h2>`, they say what actually happens on a
+project, and each carries a visible link to the page that explains it.
+Previously each card hid its only link behind `sr-only focus:not-sr-only`:
+all four scaled on hover, none could be clicked, and the page carried four
+invisible duplicate links to `/projects`.
+
+**"Fast response"** on the emergency service card — a response-time claim,
+and Q6 says we do not make one. Now "on-call".
+
+Also: `<a href="/quote/">` in the three-step band reloaded the whole
+application instead of routing, and `className="relativ"` in
+`ServicesShowcase` was a typo for a class that therefore never applied.
+
+### Years in business — the one piece of history the repo supports
+
+`docs/content-sources.md` records that the January 2025 RFPQ states **25+
+years in business**, and the homepage counter has been showing that lower
+bound plus elapsed years (26+ in 2026). No founding date is documented, and
+none is claimed.
+
+The calculation lived inside `AboutCompany`, so `/about` — the page a reader
+goes to for exactly this — could not state it. It is now
+`yearsInBusiness()` in `src/config.ts`, used by both. The earlier note in
+this section about removing "since the late 1990s" from `/about`'s meta
+description still stands: a founding *year* is not documented. A duration
+is.
+
 ## 5. Measured result
 
 Lighthouse 12, headless Chrome. **Before** is the live site over the Amplify

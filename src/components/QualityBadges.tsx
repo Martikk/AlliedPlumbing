@@ -69,12 +69,21 @@ function SkewBadge({ title, delay = 0 }: BadgeProps) {
   );
 }
 
+/** Four badges under a green tick read as credentials, so they have to be
+ *  things the project pages actually show.
+ *
+ *  They used to say "Quality control system", "Project coordination",
+ *  "Highly professional team" and "Accurate testing processes". The first
+ *  implies a documented quality system, the third is puffery under a
+ *  checkmark, and the fourth means nothing. Q3 — which certifications and
+ *  programmes may be stated — is still unanswered, so these name work that
+ *  every project page describes instead. */
 export default function QualityBadges() {
   const items = [
-    'Quality control system',
-    'Project coordination',
-    'Highly professional team',
-    'Accurate testing processes',
+    'Phased work in occupied buildings',
+    'Permits and inspections',
+    'Trade coordination',
+    'Commissioning and turnover records',
   ];
   return (
     <div className="mx-auto max-w-6xl px-4 md:px-6">

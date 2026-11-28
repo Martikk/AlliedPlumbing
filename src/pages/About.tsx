@@ -1,7 +1,7 @@
 import { Link } from '../lib/navigation';
 import TeamSection from '../components/TeamSection';
 import projects from '../data/projects.json';
-import { RESPONSE_PROMISE } from '../config';
+import { RESPONSE_PROMISE, yearsInBusiness } from '../config';
 
 /** The page someone reads when they are deciding whether to trust Allied with
  *  a building. At 189 words it could not do that, and it was the thinnest page
@@ -14,6 +14,11 @@ import { RESPONSE_PROMISE } from '../config';
  *  all of those are open questions (Q3, Q6), and the meta description used to
  *  claim "since the late 1990s" with nothing behind it.
  *
+ *  Years in business is the exception, and it was already on the homepage
+ *  counter while this page said nothing: the January 2025 RFPQ states 25+
+ *  years, so `yearsInBusiness()` carries that lower bound forward. A
+ *  founding year is still not documented and is still not claimed.
+ *
  *  The two counts are derived rather than typed, so adding a project or
  *  finishing one cannot leave a stale number on the page. */
 export default function About() {
@@ -21,7 +26,7 @@ export default function About() {
   return <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-10">
     <div className="grid lg:grid-cols-[1.1fr_.9fr] gap-10 items-start"><div>
     <h1 className="text-4xl md:text-5xl font-extrabold">About Allied Plumbing</h1>
-    <p className="mt-6 max-w-3xl text-xl leading-relaxed text-neutral-700">Allied Plumbing, Heating &amp; Air Conditioning is a mechanical contractor based on 2nd Avenue in Burnaby. We install, replace and maintain heating, ventilation, air conditioning, refrigeration and plumbing systems in buildings that are already in use — schools, campuses, rental and strata buildings, and commercial and institutional facilities across Metro Vancouver and the Sea to Sky corridor.</p>
+    <p className="mt-6 max-w-3xl text-xl leading-relaxed text-neutral-700">Allied Plumbing, Heating &amp; Air Conditioning is a mechanical contractor based on 2nd Avenue in Burnaby. We install, replace and maintain heating, ventilation, air conditioning, refrigeration and plumbing systems in buildings that are already in use — schools, campuses, rental and strata buildings, and commercial and institutional facilities across Metro Vancouver and the Sea to Sky corridor. The company has been doing that work for more than {yearsInBusiness()} years.</p>
     <Link to="/quote" className="btn-brand mt-6">Discuss your project <span aria-hidden>↗</span></Link></div><img src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,w_1000/v1760068156/Allied/14_urnogx.png" alt="" width={1000} height={800} className="clip-tilt rounded-2xl h-72 md:h-96 w-full object-cover" /></div>
 
     <section className="mt-12 max-w-3xl">

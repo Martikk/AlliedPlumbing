@@ -1,4 +1,5 @@
 // src/pages/Home.tsx
+import { Link } from '../lib/navigation';
 import Hero from '@/components/Hero';
 import { HOME_SLIDES } from '@/lib/lcp-preload';
 import FeatureRibbon from '@/components/FeatureRibbon';
@@ -28,7 +29,8 @@ export default function Home() {
             ['Review the requirements.','We discuss access, timing and the information needed to assess the work. Some requests will require a site visit or consultant input.'],
             ['Agree the next steps.','Scope, scheduling and project-specific requirements are discussed before work proceeds.'],
           ].map(([title,copy],index)=><li key={title} className="border-t border-slate-300 pt-5"><span className="text-sm font-semibold text-slate-500">0{index+1}</span><h3 className="mt-3 text-xl font-bold">{title}</h3><p className="mt-3 text-neutral-700 leading-relaxed">{copy}</p></li>)}</ol>
-          <a href="/quote/" className="btn-brand mt-7">Discuss your project <span aria-hidden>↗</span></a>
+          {/* A raw anchor here reloaded the whole app instead of routing. */}
+          <Link to="/quote" className="btn-brand mt-7">Discuss your project <span aria-hidden>↗</span></Link>
         </section>
         <AboutCompany />
 

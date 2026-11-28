@@ -28,6 +28,18 @@ export const ADDRESS = {
 export const RESPONSE_PROMISE =
   'We reply within one business day. For no-heat, leaks or gas issues, call 604-731-1000 — 24/7.';
 
+/** The January 2025 RFPQ states 25+ years in business, and no founding date
+ *  is documented anywhere — see `docs/content-sources.md`. This is that
+ *  conservative lower bound plus elapsed calendar years, which is why the
+ *  figure is computed rather than written down: a number typed into a page
+ *  is wrong from the next January onwards.
+ *
+ *  It lived inside `AboutCompany`, where the homepage counter is, so /about
+ *  could not state the one piece of company history the repo can support. */
+export function yearsInBusiness() {
+  return 25 + Math.max(0, new Date().getFullYear() - 2025);
+}
+
 /** Audit C-03 — one label per action. Import these; do not retype them.
  *  Sentence case everywhere. No ↗ glyph on internal links. */
 export const LABEL = {

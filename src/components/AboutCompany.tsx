@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import QualityBadges from './QualityBadges';
+import { yearsInBusiness } from '../config';
 const tabs = {
   Materials: ['Hydronic piping and equipment for boiler plants and mechanical rooms','Condensing boiler installations, pumps and heat exchangers','Ventilation equipment, unit ventilators and rooftop air handling units','Connections to existing heating and domestic hot water systems'],
   Technology: ['Direct digital control integration and system coordination','Hydronic pumps, heat exchangers and building heating equipment','Testing, balancing and commissioning coordination','Shop drawings, as-built records and operation and maintenance documents'],
@@ -35,8 +36,6 @@ export default function AboutCompany() {
     preference.addEventListener('change', update);
     return () => { observer.disconnect(); preference.removeEventListener('change', update); document.removeEventListener('visibilitychange', pageVisibility); player.pause(); };
   }, []);
-  // January 2025 RFPQ states 25+ years in business; no exact founding date is documented.
-  const yearsInBusiness = 25 + Math.max(0, new Date().getFullYear() - 2025);
   return <section className="about-company py-14 md:py-20">
     <span className="section-eyebrow">About our company</span>
     <h2 className="mt-4 text-3xl md:text-5xl font-extrabold leading-tight">Building with trust,<br className="hidden md:block" /> driven by experience</h2>
@@ -46,6 +45,6 @@ export default function AboutCompany() {
       <div className="about-visual clip-tilt rounded-2xl overflow-hidden"><video ref={video} controls muted loop playsInline preload="none" poster="https://res.cloudinary.com/dzytbkc5l/video/upload/c_crop,ar_1:1,g_center/so_1,f_auto,q_auto:eco,w_640/v1760069369/Allied/Allied_Plumbing_Video_Script_Generation_qz6an9.jpg" src="https://res.cloudinary.com/dzytbkc5l/video/upload/c_crop,ar_1:1,g_center/q_auto/v1760069369/Allied/Allied_Plumbing_Video_Script_Generation_qz6an9.mp4" aria-label="Allied mechanical services brand video" className="h-full w-full object-cover" /></div>
     </div>
     <div className="mt-14"><QualityBadges /></div>
-    <div className="project-metrics company-experience mt-12"><div><strong>{yearsInBusiness}+</strong><span>Years in business</span></div></div>
+    <div className="project-metrics company-experience mt-12"><div><strong>{yearsInBusiness()}+</strong><span>Years in business</span></div></div>
   </section>;
 }
