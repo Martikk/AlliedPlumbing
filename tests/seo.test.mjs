@@ -155,7 +155,10 @@ test('every indexable route is linked from the site, and no link spends a redire
  *  Only the text inside `<main>` counts. Header, footer and the no-JavaScript
  *  fallback add the same ~110 words to all 60 pages, which would hide a stub. */
 test('no indexable page is a stub, and the pages that must persuade are not thin', () => {
-  const persuades = path => path === '/about' || path === '/rfp' || /^\/services\/./.test(path);
+  // The checking route an institutional buyer takes before a bid closes:
+  // about, tenders, clients, team, and whichever service the scope needs.
+  const PERSUADE = new Set(['/about', '/rfp', '/clients', '/team']);
+  const persuades = path => PERSUADE.has(path) || /^\/services\/./.test(path);
   for (const [path, page] of Object.entries(pages)) {
     if (page.noindex) continue;
     const html = readFileSync(join('dist', path === '/' ? '' : path.slice(1), 'index.html'), 'utf8');
@@ -165,7 +168,7 @@ test('no indexable page is a stub, and the pages that must persuade are not thin
       .replace(/<(script|style)\b[\s\S]*?<\/\1>/g, '')
       .replace(/<[^>]+>/g, ' ')
       .match(/[A-Za-z0-9][A-Za-z0-9'’./-]*/g) ?? [];
-    const floor = persuades(path) ? 400 : 200;
+    const floor = persuades(path) ? 400 : 250;
     assert.ok(words.length >= floor, `${path} carries ${words.length} words, under its ${floor} floor`);
   }
 });

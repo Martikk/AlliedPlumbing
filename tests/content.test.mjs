@@ -140,3 +140,23 @@ test('the posts index matches posts.json', async () => {
     );
   }
 });
+
+/** One organisation, one name.
+ *
+ *  `/clients` groups by the raw `client` string, so "School District No. 43"
+ *  and "School District No. 43 (Coquitlam)" rendered as two headings with the
+ *  district's schools split between them — thirteen headings for ten
+ *  organisations. The fix is canonical names in the data rather than fuzzy
+ *  matching in the page, which this keeps that way. */
+test('a school district appears under exactly one name', () => {
+  const byNumber = new Map();
+  for (const project of projects) {
+    const number = project.client.match(/School District No\. (\d+)/)?.[1];
+    if (!number) continue;
+    const seen = byNumber.get(number);
+    assert.ok(seen === undefined || seen === project.client,
+      `district ${number} is written both as "${seen}" and "${project.client}"`);
+    byNumber.set(number, project.client);
+    assert.match(project.client, /\(/, `${project.client} should name its district, e.g. "(Coquitlam)"`);
+  }
+});

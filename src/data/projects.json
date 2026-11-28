@@ -373,7 +373,7 @@
     "title": "Garibaldi Highlands Elementary School",
     "category": "Institutional",
     "location": "Squamish, BC",
-    "client": "School District No. 48",
+    "client": "School District No. 48 (Sea to Sky)",
     "year": 2023,
     "summary": "Boiler plant and ventilation upgrades across an operating school.",
     "scope": [
@@ -412,7 +412,7 @@
     "title": "Ridgeview Elementary School",
     "category": "Institutional",
     "location": "West Vancouver, BC",
-    "client": "School District No. 45",
+    "client": "School District No. 45 (West Vancouver)",
     "year": 2022,
     "summary": "Classroom ventilation conversion and a six-boiler heating plant upgrade.",
     "scope": [
@@ -451,7 +451,7 @@
     "title": "Leigh Elementary School",
     "category": "Institutional",
     "location": "School District No. 43, BC",
-    "client": "School District No. 43",
+    "client": "School District No. 43 (Coquitlam)",
     "summary": "Unit ventilator replacement, rooftop air handling and hydronic upgrades.",
     "scope": [
       "Removed more than 12 existing unit ventilators and heating coils.",
@@ -489,7 +489,7 @@
     "title": "Herbert Spencer Elementary — condensing boiler plant and DDC upgrade",
     "category": "Institutional",
     "location": "New Westminster, BC",
-    "client": "School District No. 40",
+    "client": "School District No. 40 (New Westminster)",
     "year": 2021,
     "summary": "Condensing boiler installation, hydronic pumping and digital controls.",
     "scope": [
@@ -530,7 +530,7 @@
     "title": "Howe Sound Secondary School",
     "category": "Institutional",
     "location": "Squamish, BC",
-    "client": "School District No. 48",
+    "client": "School District No. 48 (Sea to Sky)",
     "summary": "Boiler plant replacement with heat exchange and hydronic equipment.",
     "scope": [
       "Installed five natural gas-fired boilers and hydronic heating pumps.",
@@ -568,7 +568,7 @@
     "title": "Miller Park Community School",
     "category": "Institutional",
     "location": "School District No. 43, BC",
-    "client": "School District No. 43",
+    "client": "School District No. 43 (Coquitlam)",
     "summary": "Classroom ventilation and a four-boiler heating plant upgrade.",
     "scope": [
       "Replaced six unit ventilators and installed a rooftop air handling unit.",

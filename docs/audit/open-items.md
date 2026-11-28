@@ -248,7 +248,7 @@ accessibility, best-practices and SEO 100, CLS 0.
 
 ---
 
-### Thin pages — eight fixed, four left
+### Thin pages — ten fixed, two left
 
 Word counts are the text inside `<main>` on the built page. Header, footer
 and the no-JavaScript fallback add the same ~110 words to all 60 routes, so
@@ -279,9 +279,39 @@ the same project and article material:
 `tests/seo.test.mjs` holds the floor: **200** words for any indexable route,
 **400** for `/about`, `/rfp` and every `/services/*` detail page.
 
-Still thin, in order: `/team` **227**, `/quote` **262** (a form page, so thin
-is defensible), `/clients` **304** — one sentence over a list generated from
-`projects.json` — and `/services` **308**, a hub that mostly links elsewhere.
+`/clients` (**304**) and `/team` (**227**) followed, for the same reason: they
+sit on the route an institutional buyer takes before a bid closes. `/clients`
+is now **740** and `/team` **617**. The team page's useful content was already
+there and buried — named individuals with named trade tickets, which is the
+opposite of the blanket "certified technicians" line deleted elsewhere — so
+the page now explains who handles a project at each stage and what Red Seal
+and the two BC gasfitter classes certify. Technical Safety BC's own wording
+is used for Class B (the 120 kW certificate); no scope is stated for Class A
+beyond its being the broader of the two, because the regulation was not read.
+
+Still thin: `/quote` **262**, a form page, where thin is defensible, and
+`/services` **308**, a hub that mostly links elsewhere.
+
+### One organisation, one name
+
+`/clients` groups by the raw `client` string in `projects.json`, and three
+districts were written two ways — "School District No. 43" and "School
+District No. 43 (Coquitlam)" among them. The page rendered **13 headings for
+10 organisations**, with each district's schools split between its two
+spellings. The names are now canonical, one per organisation, so the clients
+page and every project page agree:
+
+| Client | Projects |
+|---|---|
+| School District No. 43 (Coquitlam) | 5 |
+| School District No. 48 (Sea to Sky) | 3 |
+| School District No. 40 (New Westminster) | 2 |
+| Vancouver School Board (School District No. 39) | 2 |
+| Private rental housing owner | 2 |
+| Capilano University, Collingwood School, School District No. 45 (West Vancouver), Starlight Investments, Vancouver Police Department facility | 1 each |
+
+`tests/content.test.mjs` asserts a district never appears under two names, so
+the fix stays in the data rather than becoming fuzzy matching in the page.
 
 ### Claims removed along the way
 
