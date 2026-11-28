@@ -31,8 +31,9 @@ export default function About() {
   const inProgress = projects.filter(project => project.status).length;
   return <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-10">
     <div className="grid lg:grid-cols-[1.1fr_.9fr] gap-10 items-start"><div>
-    <h1 className="text-4xl md:text-5xl font-extrabold">About Allied Plumbing</h1>
-    <p className="mt-6 max-w-3xl text-xl leading-relaxed text-neutral-700">Allied Plumbing, Heating &amp; Air Conditioning is a mechanical contractor based on 2nd Avenue in Burnaby. We install, replace and maintain heating, ventilation, air conditioning, refrigeration and plumbing systems in buildings that are already in use — schools, campuses, rental and strata buildings, and commercial and institutional facilities across Metro Vancouver and the Sea to Sky corridor. The company has been doing that work for more than {yearsInBusiness()} years.</p>
+    <h1 className="text-4xl md:text-5xl font-extrabold">A Burnaby mechanical contractor built on licensed trades</h1>
+    <p className="mt-6 max-w-3xl text-xl leading-relaxed text-neutral-700">Allied Plumbing, Heating &amp; Air Conditioning has worked in Metro Vancouver buildings for more than {yearsInBusiness()} years, from 4085 2nd Avenue in Burnaby. We install, replace and maintain heating, ventilation, air conditioning, refrigeration and plumbing systems, and most of that work is in buildings that stay occupied while we are in them: schools, campuses, rental towers, strata buildings, offices and public facilities.</p>
+    <p className="mt-4 max-w-3xl leading-relaxed text-neutral-700">We do two kinds of work, and each makes us better at the other. Our service and maintenance crews look after buildings on scheduled contracts, so they see how older plants actually fail. Our projects division replaces those plants, often as prime contractor, coordinating every trade on site.</p>
     <Link to="/quote" className="btn-brand mt-6">Discuss your project <span aria-hidden>↗</span></Link></div><img src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,w_1000/v1760068156/Allied/14_urnogx.png" alt="" width={1000} height={800} className="clip-tilt rounded-2xl h-72 md:h-96 w-full object-cover" /></div>
 
     <section className="mt-12 max-w-3xl">
@@ -61,6 +62,7 @@ export default function About() {
       <h2 className="text-3xl font-bold">Buildings that stay open while we work</h2>
       <p className="mt-4 leading-relaxed text-neutral-700">Most of our projects happen in a building that cannot close for them. A school keeps teaching, a residential building keeps its tenants, a campus keeps its timetable. That decides the shape of the work: phasing agreed with the building operator, shutdowns taken at night, on weekends or inside a 2–6 AM window, temporary heat or water where a system has to come offline, and hoarding, dust control and access routes that keep a live site separate from the people using it.</p>
       <p className="mt-4 leading-relaxed text-neutral-700">It also decides who has to be in the room early. Mechanical work of this kind pulls in electrical, sheet metal, structural, roofing, insulation, controls and testing-and-balancing trades, and the permits — gas, boiler, refrigeration, and the street-use and crane permits a rooftop lift needs. We coordinate those against one mechanical schedule rather than leaving the owner to reconcile several.</p>
+      <p className="mt-4 leading-relaxed text-neutral-700">On most institutional projects we act as prime contractor under the Workers Compensation Act. In practice that means one site-specific safety plan rather than several, daily coordination with every subtrade, and access routes kept separate from the students, residents or staff using the building. Shutdowns are booked in writing, occupants get notice before every interruption, and temporary heat or water covers any changeover that runs longer than a shift.</p>
       <p className="mt-6"><Link to="/blog/working-in-occupied-schools-and-buildings" className="font-semibold text-red-800 underline underline-offset-4">How we plan work in occupied schools and buildings</Link></p>
     </section>
 
@@ -72,7 +74,19 @@ export default function About() {
 
     <div className="mt-12 max-w-3xl"><Credentials /></div>
 
+    <section className="mt-12 max-w-3xl">
+      <h2 className="text-3xl font-bold">The people who do the work</h2>
+      <p className="mt-4 leading-relaxed text-neutral-700">Every Allied field technician is a journeyperson or an apprentice registered with SkilledTradesBC. Between them the crews hold Red Seal plumber tickets, Gasfitter Class A and Class B certificates and cross-connection control certification — and it is those individual certificates, not the company licence, that set what a given job may be carried out by whom.</p>
+      <p className="mt-4 leading-relaxed text-neutral-700">We train our own trades, and most of our site supervisors started with Allied as apprentices. The qualifications held by the people who run the work are listed against each name below.</p>
+      <p className="mt-6"><Link to="/careers" className="font-semibold text-red-800 underline underline-offset-4">Working at Allied</Link></p>
+    </section>
+
     <div className="mt-12"><TeamSection /></div>
+
+    <section className="mt-12 max-w-3xl">
+      <h2 className="text-3xl font-bold">Equipment we install and service</h2>
+      <p className="mt-4 leading-relaxed text-neutral-700">Viessmann, IBC, Lochinvar, Triangle Tube, De Dietrich, Weil-McLain, A.O. Smith, Rheem, Rinnai, Navien and Daikin. We are not tied to one manufacturer: equipment is chosen for the building, and in practice that means service support in BC, turndown ratio, and whether the unit fits the venting the building already has.</p>
+    </section>
 
     <section className="mt-12 border-t border-neutral-200 pt-8">
       <h2 className="text-2xl font-bold">Discuss your building or project</h2>
