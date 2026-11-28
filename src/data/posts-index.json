@@ -196,5 +196,23 @@
     "image": "/images/article-placeholder.svg",
     "date": "2026-11-27",
     "project": "capilano-birch"
+  },
+  {
+    "slug": "condensing-boiler-efficiency-older-buildings",
+    "title": "Why your new condensing boiler isn't condensing",
+    "category": "Heating & boilers",
+    "excerpt": "A boiler rated at 95% only reaches that figure when return water comes back below about 54°C. In a system designed for 82°C supply, it may never condense at all.",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-28",
+    "project": "ridgeview"
+  },
+  {
+    "slug": "strata-boiler-replacement-planning",
+    "title": "Replacing a strata boiler before it fails: a council's planning guide",
+    "category": "Strata",
+    "excerpt": "An emergency replacement in January costs more and leaves owners without heat. A planned one in the shoulder season barely gets noticed. The difference is about twelve months.",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-28",
+    "project": "haro"
   }
 ]

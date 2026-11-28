@@ -1272,5 +1272,139 @@
       "O&M manual in the order the engineer expects",
       "Owner demonstration and seasonal procedures"
     ]
+  },
+  {
+    "slug": "condensing-boiler-efficiency-older-buildings",
+    "title": "Why your new condensing boiler isn't condensing",
+    "category": "Heating & boilers",
+    "excerpt": "A boiler rated at 95% only reaches that figure when return water comes back below about 54°C. In a system designed for 82°C supply, it may never condense at all.",
+    "project": "ridgeview",
+    "relatedService": "boilers",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-28",
+    "author": "Allied Plumbing",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "intro": "A condensing boiler with a 95% rating is only 95% efficient when the water coming back to it is cool enough to condense the water vapour in its flue gas. In natural-gas boilers that happens when return water is below roughly 54°C (130°F). Above that, the boiler runs like a good non-condensing boiler, in the mid-80s. This is general planning information about hydronic systems, not a diagnosis of a particular plant or an instruction for operating equipment.",
+    "sections": [
+      {
+        "heading": "The return temperature decides the efficiency, not the nameplate",
+        "paragraphs": [
+          "Most Metro Vancouver schools, rental towers and older strata buildings were designed around 82°C supply and 71°C return. Put a condensing boiler on that system without changing anything else, and it may never condense. The equipment is not at fault and the rating is not wrong: the rating describes a condition the building never reaches.",
+          "This matters at the point where a budget is set. A payback calculated from the nameplate figure assumes a return temperature the system does not deliver, so the saving arrives smaller than the business case promised, and the plant gets blamed for it. The useful question before the order goes in is not which boiler is most efficient, but what return temperature this building can actually run."
+        ]
+      },
+      {
+        "heading": "Four things that keep return water too hot",
+        "paragraphs": [
+          "No outdoor reset, or a flat curve. If the plant makes 82°C water when it is 10°C outside, it is making far more heat than the building needs for most of the year. A reset curve lowers supply temperature as the outdoor temperature rises. Vancouver spends most of the heating season between 3°C and 12°C, which is exactly where reset pays off.",
+          "Three-way valves and bypasses. Old three-way control valves, open bypasses and mixing valves send hot supply water straight back to the boiler. Every one of them lifts return temperature, and in a building that has been modified over decades there are usually several nobody has drawn.",
+          "Primary/secondary piping set up wrong. If the boiler-side flow exceeds the system flow, the excess goes through the common pipe and returns hot. The fix is matching the flows, or moving to variable-primary pumping under the boiler's own controls.",
+          "Emitters that cannot cope with lower temperatures. Radiators and fin-tube sized for 82°C lose output at 60°C. Some rooms will complain. This is the real limit, and it is why the coldest rooms have to be checked before anyone promises a saving."
+        ]
+      },
+      {
+        "heading": "What we check before sizing a new plant",
+        "paragraphs": [
+          "Each of these is a measurement rather than an assumption, and together they set the lowest supply temperature the building can hold. Where the answer is that the building cannot run low-temperature as it stands, that is worth knowing before the equipment is selected, not after the first winter.",
+          "Fixing the controls and the piping often costs a fraction of the boiler itself, and it belongs in the same project. Done separately, it becomes a second disruption to a building that has already had one, and it is usually deferred indefinitely."
+        ]
+      },
+      {
+        "heading": "What it means for the budget",
+        "paragraphs": [
+          "The gap between a boiler that condenses for most of the season and one that never does is roughly 8 to 10 percentage points of seasonal efficiency. On a heating gas bill, that is close to a tenth of it, every year, plus the carbon tax and delivery charges that come with the gas. We do not publish a figure in gigajoules here because it depends entirely on the building; the way to get a real number is to take your own annual gas use and apply the same proportion.",
+          "The same arithmetic is why a controls and piping review is worth doing even when the existing boilers are staying. The efficiency is in the return temperature, and the return temperature is set by the distribution system."
+        ]
+      },
+      {
+        "heading": "Where heat pumps fit",
+        "paragraphs": [
+          "Everything above also decides whether a heat pump will work. Air-to-water heat pumps prefer 45–55°C supply, lower again than condensing boilers need. A building that has been set up to run a low reset curve is a building that is ready for a hybrid heat pump plant later, and the survey work is largely the same survey.",
+          "So the order of operations is worth getting right. Measure the system, lower the water temperature as far as the emitters allow, and the building is then a candidate for either a condensing plant that actually condenses or a heat pump that actually carries the load."
+        ]
+      }
+    ],
+    "checklist": [
+      "Supply and return temperatures logged over at least a week of heating weather, from the building automation system or temporary loggers",
+      "The room-by-room complaint history — the coldest rooms decide the lowest supply temperature the building can run",
+      "Control valve types throughout the building, including bypasses and mixing valves added over the years",
+      "Pump curves, and actual flow against design flow",
+      "Whether the primary and secondary flows are matched, or the common pipe is carrying excess boiler flow",
+      "Emitter capacity in the worst rooms at the proposed lower supply temperature"
+    ]
+  },
+  {
+    "slug": "strata-boiler-replacement-planning",
+    "title": "Replacing a strata boiler before it fails: a council's planning guide",
+    "category": "Strata",
+    "excerpt": "An emergency replacement in January costs more and leaves owners without heat. A planned one in the shoulder season barely gets noticed. The difference is about twelve months.",
+    "project": "haro",
+    "relatedService": "boilers",
+    "image": "/images/article-placeholder.svg",
+    "date": "2026-11-28",
+    "author": "Allied Plumbing",
+    "review": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "intro": "An emergency boiler replacement in January costs more, takes longer, and leaves owners without heat or hot water while equipment is found. A planned replacement in the shoulder season costs less and the building barely notices. The difference is about twelve months of planning. This is general planning information for councils and property managers; it is not legal advice, and the voting thresholds below should be confirmed with your strata manager or lawyer against the current Act.",
+    "sections": [
+      {
+        "heading": "Twelve to eighteen months out: find out what you actually have",
+        "paragraphs": [
+          "Your depreciation report lists the boilers and gives them a remaining life, but that is a desk estimate made from age and type. Ask your maintenance contractor for a condition assessment instead: age, heat-exchanger condition, parts availability, combustion readings, and the repair history over the last three years.",
+          "Boilers in Metro Vancouver towers commonly last twenty to thirty years, and domestic hot water tanks ten to fifteen. Those are ranges, not schedules. A plant that has been maintained and water-treated outlives one that has not, and a condition assessment is how you tell which one you have before the budget is written."
+        ]
+      },
+      {
+        "heading": "Nine to twelve months out: decide what you are replacing it with",
+        "paragraphs": [
+          "Ask for priced options rather than one quote. A like-for-like replacement carries the lowest first cost. A high-efficiency condensing plant lowers the gas bill, but it may need venting and controls work to deliver that — see our note on why condensing boilers underperform in older buildings. A heat pump hybrid costs the most up front, emits the least, and may be eligible for incentives.",
+          "Each option should show installed cost, expected gas or electricity use, the warranty, and the electrical capacity it needs. The last one decides more projects than owners expect: a central heat pump plant can add substantial electrical demand, and the service, the transformer and the utility's own lead times have to be checked before a design is fixed."
+        ]
+      },
+      {
+        "heading": "Six to nine months out: get the approvals",
+        "paragraphs": [
+          "Under the Strata Property Act, spending from the contingency reserve fund normally needs a resolution passed by a 3/4 vote at an annual or special general meeting. There is an important exception that rewards planning: where the expenditure is for repair, maintenance or replacement recommended in the strata's most current depreciation report, section 96 allows it on a majority vote. Obtaining a depreciation report itself is also a majority-vote expenditure.",
+          "Emergency spending is the other route, and it is deliberately narrow. Section 98 lets a strata spend from either fund without approval where there are reasonable grounds to believe an immediate expenditure is necessary to ensure safety or prevent significant loss or damage, limited to the minimum amount needed. A boiler that has already failed in January may qualify; a boiler everyone knows is near the end of its life does not, and waiting for it to qualify is the expensive path.",
+          "Check your bylaws for tendering rules as well, and plan the quote, the council review and the general meeting as one sequence rather than three. The Province's strata housing pages at gov.bc.ca set out the voting types and the current depreciation report requirements, which changed in 2024 and 2025: stratas of five or more lots are now on a five-year reporting cycle, the three-quarter-vote waiver is gone, and the report must come from a designated professional."
+        ]
+      },
+      {
+        "heading": "Four to six months out: order equipment and book the window",
+        "paragraphs": [
+          "Commercial boilers and controls are ordered long before they arrive, and the lead time — not the installation — is usually what sets the date. Ask for the current figure at the time of quoting rather than relying on a number from last year; it moves with the manufacturer and the model.",
+          "Book the work for May to June or September, when heating demand is low but domestic hot water still matters every day. In rental buildings, avoid the move-in season. In a school the window is the summer break, which is why a school plant and a strata plant are rarely competing for the same weeks."
+        ]
+      },
+      {
+        "heading": "Two to four weeks out: tell the owners",
+        "paragraphs": [
+          "A good notice says what is happening and why, the exact dates and hours of any shutdown, whether hot water will be affected, and who to call. Post it in the elevator and the lobby, and send it by email as well. Your contractor should draft it for the property manager to send, because the contractor knows which hours are actually at risk.",
+          "Where a changeover runs longer than a shift, the notice should say what temporary heat or hot water is in place. A building that knows a cold morning is coming complains far less than a building that discovers it."
+        ]
+      },
+      {
+        "heading": "At the end: make sure you get the records",
+        "paragraphs": [
+          "Insist on a commissioning report, combustion test results, equipment warranties registered in the strata's name, and an operation and maintenance manual. These belong in the building's maintenance records, and they feed the next depreciation report update.",
+          "Warranties registered in the strata's name rather than the contractor's are the ones that survive a change of contractor, and the commissioning report is what a future council will use to tell whether the plant was ever set up correctly. Both are easier to obtain at closeout than a year afterwards."
+        ]
+      }
+    ],
+    "checklist": [
+      "12–18 months out: condition assessment of the boilers and hot water tanks, with combustion readings and three years of repair history",
+      "9–12 months out: priced options — like-for-like, high-efficiency condensing, heat pump hybrid — each with installed cost, expected energy use, warranty and electrical capacity",
+      "6–9 months out: confirm the voting threshold against the current depreciation report, check the bylaws for tendering rules, and book the general meeting",
+      "4–6 months out: order equipment against a current lead time, and book the work for May–June or September",
+      "2–4 weeks out: owner notice with exact dates, hours, hot water impact and a contact, drafted by the contractor",
+      "At closeout: commissioning report, combustion results, warranties registered to the strata, and the O&M manual"
+    ]
   }
 ]

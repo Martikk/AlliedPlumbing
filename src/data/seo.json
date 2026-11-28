@@ -239,5 +239,13 @@
   "/blog/commissioning-and-handover": {
     "title": "From Startup to Handover: Commissioning and O&M",
     "description": "Pre-startup checks, tuning, permit closeout, O&M manuals and operator training, explained for building owners. A planning note from Allied Plumbing."
+  },
+  "/blog/condensing-boiler-efficiency-older-buildings": {
+    "title": "Why Condensing Boilers Underperform in Older Buildings",
+    "description": "A boiler rated at 95% can run in the mid-80s in an older hydronic system. Why return temperature decides it, and the four things we check first."
+  },
+  "/blog/strata-boiler-replacement-planning": {
+    "title": "Strata Boiler Replacement: A Council's Planning Guide",
+    "description": "How a BC strata council plans a central boiler or hot water replacement: condition assessment, priced options, the vote, lead times and owner notices."
   }
 }
