@@ -9,7 +9,7 @@
   },
   "/services": {
     "title": "Commercial Mechanical Services, Metro Vancouver | Allied",
-    "description": "Six service lines: HVAC, boiler plants, commercial plumbing, preventive maintenance, 24/7 emergency and residential. Call 604-731-1000."
+    "description": "Seven service lines: boiler plants, heat pump conversions, HVAC, commercial plumbing, preventive maintenance, 24/7 emergency and residential."
   },
   "/services/maintenance": {
     "title": "Preventive Maintenance Programs, Vancouver | Allied",
@@ -30,6 +30,10 @@
   "/services/boilers": {
     "title": "Boiler Plant Replacement, Metro Vancouver | Allied",
     "description": "Condensing boiler plants, pumps, heat exchangers and controls. Six IBC boilers installed at Ridgeview Elementary for SD 45 in 2022."
+  },
+  "/services/heat-pump-conversions": {
+    "title": "Commercial Heat Pump Conversions BC | Schools & Strata",
+    "description": "Air-source heat pump and hybrid plants that cut gas use in schools, strata and commercial buildings. Sized to your emitters, power and incentives."
   },
   "/services/emergency": {
     "title": "24/7 Emergency Plumbing & HVAC, Vancouver | Allied",

@@ -25,7 +25,7 @@ export default function FeatureRibbon({ className = "" }: Props) {
       title: "We survey before we sequence",
       text: "Existing equipment, access, shutdown windows and what the building cannot do without are established before an installation sequence is written.",
       to: "/services",
-      cta: "See the six service lines",
+      cta: "See the service lines",
       src: "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068455/Allied/Screenshot_2025-10-09_at_8.53.56_PM_hjz9a5.png",
     },
     {

@@ -2,7 +2,6 @@ import { responsiveImage, imageCandidates } from '../lib/images';
 import { Link } from '../lib/navigation';
 
 type Item = {
-  n: string;
   title: string;
   blurb: string;
   href: string;
@@ -11,7 +10,6 @@ type Item = {
 
 const ITEMS: Item[] = [
   {
-    n: '01',
     title: 'Preventive Maintenance',
     blurb:
       'Monthly, quarterly, annual programs with trend reviews, DDC checks and reporting.',
@@ -19,7 +17,6 @@ const ITEMS: Item[] = [
     img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760069670/Allied/maintance_grwetv.png',
   },
   {
-    n: '02',
     title: 'Plumbing (Residential)',
     blurb:
       'Repairs, fixture replacements, rough-ins, repipes, tank & tankless water heaters.',
@@ -27,7 +24,6 @@ const ITEMS: Item[] = [
     img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068156/Allied/14_urnogx.png',
   },
   {
-    n: '03',
     title: 'Plumbing (Commercial)',
     blurb:
       'Backflows, PRVs, booster pumps, DHW plants, tenant improvements, strata & schools.',
@@ -35,7 +31,6 @@ const ITEMS: Item[] = [
     img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065875/Allied/1_tc9jiy.png',
   },
   {
-    n: '04',
     title: 'Air Conditioning & HVAC',
     blurb:
       'RTU, MUA, AHU, unit ventilators, heat pumps, VRF — with DDC integration.',
@@ -43,7 +38,6 @@ const ITEMS: Item[] = [
     img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065875/Allied/5_jovqeo.png',
   },
   {
-    n: '05',
     title: 'Heating & Boiler Plants',
     blurb:
       'Condensing boilers, burners, VFD pumps, HX, tanks, safety and controls.',
@@ -51,7 +45,13 @@ const ITEMS: Item[] = [
     img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068155/Allied/10_kubptf.png', // поменяй на подходящее фото, если нужно
   },
   {
-    n: '06',
+    title: 'Heat Pump Conversions',
+    blurb:
+      'Air-source heat pump and hybrid plants that cut gas use in buildings that already exist.',
+    href: '/services/heat-pump-conversions',
+    img: 'https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png',
+  },
+  {
     title: '24/7 Emergency Service',
     blurb:
       'On-call for leaks, no-heat and DHW outages, gas issues and RTU/MUA failures.',
@@ -88,7 +88,7 @@ export default function ServicesShowcase() {
           const imgLeft = i % 2 === 0; // чередуем
           return (
             <article
-              key={it.n + it.href}
+              key={it.href}
               className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-stretch"
             >
               {/* изображение */}
@@ -113,7 +113,7 @@ export default function ServicesShowcase() {
                 {/* номер + вертикальная линия */}
                 <div className="hidden md:flex flex-col items-center pr-5">
                   <span className="text-neutral-600 font-semibold tracking-widest">
-                    {it.n}
+                    {String(i + 1).padStart(2, '0')}
                   </span>
                   <span className="mt-2 h-full w-px bg-neutral-200" />
                 </div>

@@ -35,6 +35,7 @@ export default function About() {
       <ul className="mt-6 space-y-3 text-neutral-700">
         <li><Link to="/services/hvac" className="font-semibold text-red-800 underline underline-offset-4">Commercial HVAC</Link> — ventilation, cooling, heat pumps and rooftop equipment.</li>
         <li><Link to="/services/boilers" className="font-semibold text-red-800 underline underline-offset-4">Boiler plants</Link> — replacements, conversions and hydronic distribution.</li>
+        <li><Link to="/services/heat-pump-conversions" className="font-semibold text-red-800 underline underline-offset-4">Heat pump conversions</Link> — air-source and hybrid plants in buildings that already exist.</li>
         <li><Link to="/services/commercial-plumbing" className="font-semibold text-red-800 underline underline-offset-4">Commercial plumbing</Link> — domestic water, drainage and hot water systems.</li>
         <li><Link to="/services/maintenance" className="font-semibold text-red-800 underline underline-offset-4">Preventive maintenance</Link> — scheduled programs for the plant we and others installed.</li>
         <li><Link to="/services/emergency" className="font-semibold text-red-800 underline underline-offset-4">Emergency service</Link> — no heat, leaks and gas problems, around the clock.</li>

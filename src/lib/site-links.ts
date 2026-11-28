@@ -1,10 +1,11 @@
-/** The six services, in one place. The header dropdown (C-04), the services
+/** The service lines, in one place. The header dropdown (C-04), the services
  *  grid (D-02) and the enquiry form's Service select (H-01) all read this, so
  *  they can never drift apart. */
 
 export type ServiceKey =
   | 'hvac'
   | 'boilers'
+  | 'heat-pump-conversions'
   | 'commercial-plumbing'
   | 'maintenance'
   | 'emergency'
@@ -36,6 +37,14 @@ export const SERVICE_LINKS: ServiceLink[] = [
     summary: 'Condensing boilers, burners, VFD pumps, heat exchangers, safety and controls.',
     image:
       'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760068155/Allied/10_kubptf.png',
+  },
+  {
+    key: 'heat-pump-conversions',
+    to: '/services/heat-pump-conversions',
+    label: 'Heat pump conversions',
+    summary: 'Air-source heat pump and hybrid plants that cut gas use in existing buildings.',
+    image:
+      'https://res.cloudinary.com/dzytbkc5l/image/upload/v1760065876/Allied/3_gk4dl8.png',
   },
   {
     key: 'commercial-plumbing',

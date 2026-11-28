@@ -25,6 +25,7 @@ export default function ServiceTemplate({
   const { pathname } = useLocation();
   const context: Record<string, { title: string; project: string; questions: string[] }> = {
     boilers: { title: 'Ridgeview Elementary', project: 'ridgeview', questions: ['Which plant and connected systems are involved?', 'What service records and equipment details are available?', 'Are there known heating shutdown restrictions?'] },
+    'heat-pump-conversions': { title: 'Herbert Spencer Elementary', project: 'herbert-spencer-ashp', questions: ['What supply temperature does the existing heating system run?', 'What is the electrical service size, and is a photo of the nameplate available?', 'Is there an emissions target or an incentive programme driving the date?'] },
     hvac: { title: 'Leigh Elementary', project: 'leigh', questions: ['Which rooms and ventilation equipment are affected?', 'What access windows are available?', 'Who coordinates controls and supporting trades?'] },
     'commercial-plumbing': { title: '1755 Haro Street', project: 'haro', questions: ['Which building services and occupied areas are affected?', 'Are existing drawings available?', 'Who can coordinate access and occupant notices?'] },
     'residential-plumbing': { title: '1755 Haro Street', project: 'haro', questions: ['Is this an individual home or a shared building system?', 'Where is the issue occurring?', 'What equipment information can you safely provide?'] },
@@ -73,7 +74,7 @@ export default function ServiceTemplate({
 
       {/* ==== OVERVIEW ==== */}
       <section className="max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-16">
-        {/* All six pages pass an empty `highlights`, which left the right half
+        {/* Every service page passes an empty `highlights`, which left the right half
             of this grid blank and the bullets squeezed into the left. There is
             no verified number to put in those cards — years, crew size and
             response time are all open questions — so the row collapses

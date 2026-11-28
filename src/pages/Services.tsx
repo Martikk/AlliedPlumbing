@@ -4,7 +4,7 @@ import { Link } from "../lib/navigation";
 import LogoMarquee from "@/components/LogoMarquee";
 import { canonicalURL } from '../lib/site-url';
 
-/** The hub for the six service pages, and the last page on the site under
+/** The hub for the service pages, and the last page on the site under
  *  the word-count floor it sets for everything it links to.
  *
  *  Three things were removed rather than rewritten. An empty
@@ -77,7 +77,7 @@ export default function Services() {
             What we do
           </span>
           <h2 className="mt-3 text-2xl md:text-4xl font-extrabold">
-            Six lines, one mechanical contractor
+            Seven lines, one mechanical contractor
           </h2>
           <p className="mt-2 text-neutral-600 max-w-prose">
             {/* Audit H-04 removed "certified technicians" from the quote page
@@ -118,6 +118,13 @@ export default function Services() {
             img="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068155/Allied/10_kubptf.png"
           />
           <ServiceCard
+            to="/services/heat-pump-conversions"
+            title="Heat Pump Conversions"
+            blurb="Air-source heat pump and hybrid plants for existing buildings — sized to the emitters and the electrical service."
+            bullets={["Hybrid and full-electric options", "Emitter and capacity survey", "Season-long commissioning"]}
+            img="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760065876/Allied/3_gk4dl8.png"
+          />
+          <ServiceCard
             to="/services/maintenance"
             title="Preventive Maintenance Programs"
             blurb="Monthly, quarterly, annual programs with checklists, reporting and capex planning."
@@ -138,8 +145,8 @@ export default function Services() {
       <section className="max-w-6xl mx-auto px-4 md:px-6 pb-4">
         <div className="max-w-3xl space-y-10">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold">The six lines are one job, split by when it happens</h2>
-            <p className="mt-4 text-neutral-700 leading-relaxed">A building does not experience these as six services. It experiences a plant that is installed once, commissioned once, maintained for twenty years and occasionally fails at an inconvenient hour. The split above is a split in time, not in responsibility, and the reason it matters is that each stage leaves something the next one needs.</p>
+            <h2 className="text-2xl md:text-3xl font-bold">The lines are one job, split by when it happens</h2>
+            <p className="mt-4 text-neutral-700 leading-relaxed">A building does not experience these as separate services. It experiences a plant that is installed once, commissioned once, maintained for twenty years and occasionally fails at an inconvenient hour. The split above is a split in time, not in responsibility, and the reason it matters is that each stage leaves something the next one needs.</p>
             <p className="mt-4 text-neutral-700 leading-relaxed">A project hands over the equipment data, the as-built drawings, the sequence of operation and the commissioning records. A maintenance programme starts from those rather than from a fresh survey of a building we have just finished. An out-of-hours call is faster when the person taking it can see what was installed, how it was set up and what was already deteriorating at the last visit. Where a building comes to us with none of that, the first visits are partly a survey, and we say so instead of pricing them as routine.</p>
           </div>
 
