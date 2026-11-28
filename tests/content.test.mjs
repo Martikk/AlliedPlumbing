@@ -306,13 +306,21 @@ test('no licence is published past its term, and each is shown under its own hol
   // relation below exercises the filter: a licence appears if and only if its
   // term covers the build date.
   const html = readFileSync('dist/about/index.html', 'utf8');
-  const shown = credentials.licences.filter(licence => html.includes(licence.number));
+  // Keyed on the scope sentence, not the licence number: the numbers are in
+  // the data and deliberately not rendered, and the scope is unique per
+  // licence and is what a reader sees.
+  const fingerprint = licence => licence.scope.slice(0, 60).replaceAll('&', '&amp;');
+  const shown = credentials.licences.filter(licence => html.includes(fingerprint(licence)));
   assert.ok(shown.length > 0, '/about must publish the current licences');
+  assert.ok(
+    credentials.licences.every(licence => !html.includes(licence.number)),
+    'licence numbers are deliberately not rendered',
+  );
   const today = new Date().toISOString().slice(0, 10);
   for (const licence of credentials.licences) {
     const current = licence.issued <= today && today < licence.expires;
     assert.equal(
-      html.includes(licence.number),
+      html.includes(fingerprint(licence)),
       current,
       `${licence.number} is ${current ? 'current but missing from' : 'lapsed but still on'} /about`,
     );
@@ -326,6 +334,6 @@ test('no licence is published past its term, and each is shown under its own hol
     // not merely somewhere on the page.
     const nextHeading = html.indexOf('<h3', heading + 1);
     const block = html.slice(heading, nextHeading === -1 ? undefined : nextHeading);
-    assert.ok(block.includes(licence.number), `${licence.number} must appear under ${holder}`);
+    assert.ok(block.includes(fingerprint(licence)), `${licence.number} must appear under ${holder}`);
   }
 });

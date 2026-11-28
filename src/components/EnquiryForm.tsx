@@ -6,22 +6,7 @@ import { EMAIL_QUOTE, PHONE, PHONE_HREF, RESPONSE_PROMISE } from '../config';
 import { SERVICE_LINKS, type ServiceKey } from '../lib/site-links';
 import { trackEvent } from '../lib/analytics';
 import { mountTurnstile, turnstileConfigured, type TurnstileHandle } from '../lib/turnstile';
-import {
-  ACCEPT_ATTR,
-  mailtoFor,
-  EMPTY,
-  ENQUIRY_TYPES,
-  FIELD_ORDER,
-  MAX_FILES,
-  PROPERTY_TYPES,
-  URGENCY,
-  submitEnquiry,
-  shows,
-  validate,
-  type EnquiryType,
-  type EnquiryValues,
-  type Errors,
-} from '../lib/enquiry';
+import { ACCEPT_ATTR, EMPTY, ENQUIRY_TYPES, FIELD_ORDER, MAX_FILES, PROPERTY_TYPES, URGENCY, mailtoFor, shows, submitEnquiry, thanksPathFor, type EnquiryType, type EnquiryValues, type Errors, validate } from '../lib/enquiry';
 
 /** Audit H-01 / H-05 / F-08 — the one enquiry form.
  *
@@ -205,7 +190,7 @@ export default function EnquiryForm({
         property_type: values.propertyType || undefined,
       });
       setSubmitted(true);
-      navigate(`/quote/thanks/?ref=${encodeURIComponent(result.reference)}`);
+      navigate(`${thanksPathFor(values.enquiryType)}/?ref=${encodeURIComponent(result.reference)}`);
     } catch (failure) {
       const message =
         failure instanceof Error

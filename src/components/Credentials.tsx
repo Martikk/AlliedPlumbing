@@ -10,8 +10,15 @@ import {
  *  Audit Q3. Until now the site claimed no licence at all, because the only
  *  evidence anyone had was a drawer of wallet cards that had all passed their
  *  printed expiry. The register is the thing a procurement officer actually
- *  checks, so it is the thing the page quotes — numbers, terms and the
- *  register's own wording for the scope, with the date the register was read.
+ *  checks, so it is the thing the page quotes — the term and the register's
+ *  own wording for the scope, with the date the register was read.
+ *
+ *  The licence numbers are held in `credentials.json` and deliberately not
+ *  rendered. They are what the page is checked against, not what it has to
+ *  advertise: anyone verifying Allied searches the register by name and
+ *  finds the numbers there. Keeping them out of the HTML also keeps them out
+ *  of scrapers and out of the quoting-a-number-that-has-since-changed
+ *  problem.
  *
  *  Two names, on purpose. The register holds the gas licence under Allied
  *  Plumbing and Heating Ltd. and the boiler and refrigeration licences under
@@ -35,10 +42,10 @@ export default function Credentials() {
     <section id="credentials" className="scroll-mt-24">
       <h2 className="text-3xl font-bold">Licences and safety record</h2>
       <p className="mt-4 leading-relaxed text-neutral-700">
-        Regulated mechanical work in British Columbia is licensed by Technical Safety BC, and the
-        register below is public: anyone can look Allied up and read the same entries. The licence
-        numbers, terms and scope wording here are taken from it rather than from our own
-        paperwork, and they were last checked on {checked}.
+        Regulated mechanical work in British Columbia is licensed by Technical Safety BC, and its
+        register is public: anyone can look Allied up and read the same entries, licence numbers
+        included. The terms and the scope wording below are taken from that register rather than
+        from our own paperwork, and were last checked on {checked}.
       </p>
 
       {groups.map(({ entity, licences }) => (
@@ -47,9 +54,7 @@ export default function Credentials() {
           <dl className="mt-4 space-y-5">
             {licences.map(licence => (
               <div key={licence.number} className="rounded-xl border border-neutral-200 p-5">
-                <dt className="font-semibold">
-                  {licence.technology} — {licence.number}
-                </dt>
+                <dt className="font-semibold">{licence.technology}</dt>
                 <dd className="mt-2 text-neutral-700 leading-relaxed">
                   {licence.scope}
                 </dd>

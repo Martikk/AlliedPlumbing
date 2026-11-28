@@ -245,6 +245,12 @@ test('the acknowledgement sends what the page promises, and echoes nothing typed
     'the quota check must allow notification and acknowledgement',
   );
 
-  const page = readFileSync('src/pages/QuoteThanks.tsx', 'utf8');
-  assert.match(page, /on its way to your inbox/i, 'the page must tell the sender to expect it');
+  // `QuoteThanks.tsx` became `Thanks.tsx` when the one thank-you page split
+  // into three. Every one of them still has to tell the sender the
+  // acknowledgement is coming, or the mail looks unsolicited.
+  const page = readFileSync('src/pages/Thanks.tsx', 'utf8');
+  const leads = [...page.matchAll(/lead: '([^']*)'/g)].map(match => match[1]);
+  assert.equal(leads.length, 3, 'three thank-you pages');
+  for (const lead of leads)
+    assert.match(lead, /on its way to your inbox|be in touch/i, 'the page must set the expectation');
 });

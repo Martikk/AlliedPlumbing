@@ -151,6 +151,18 @@ export const FIELD_ORDER: (keyof EnquiryValues | 'files')[] = [
   'consent',
 ];
 
+/** Which thank-you page a submitted enquiry lands on.
+ *
+ *  Three pages rather than five: a tender is a project enquiry answered by
+ *  the same desk, and "other" is rare enough that the projects wording fits
+ *  it better than a fourth page nobody would maintain. The mapping lives
+ *  here so the form and the tests cannot disagree about it. */
+export function thanksPathFor(type: EnquiryType): string {
+  if (type === 'service') return '/thanks/service';
+  if (type === 'maintenance') return '/thanks/maintenance';
+  return '/thanks/project';
+}
+
 export function serviceLabel(key: ServiceKey | '') {
   return SERVICE_LINKS.find(service => service.key === key)?.label ?? '';
 }

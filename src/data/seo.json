@@ -212,6 +212,21 @@
     "description": "Thank you — we have your enquiry and will reply within one business day. For urgent plumbing, heating or HVAC work call 604-731-1000.",
     "noindex": true
   },
+  "/thanks/service": {
+    "title": "Service Request Received | Allied Plumbing",
+    "description": "Your service request reached our dispatcher. A callback is on the way, and the 24/7 line is 604-731-1000 if the building cannot wait.",
+    "noindex": true
+  },
+  "/thanks/project": {
+    "title": "Project Enquiry Received | Allied Plumbing",
+    "description": "Your project enquiry reached our team. We reply within one business day, usually with questions about access, equipment and a site visit.",
+    "noindex": true
+  },
+  "/thanks/maintenance": {
+    "title": "Maintenance Enquiry Received | Allied Plumbing",
+    "description": "Your maintenance enquiry reached our service manager, who will arrange a building walkthrough with you within one business day.",
+    "noindex": true
+  },
   "/projects/crosstown-phase-2": {
     "title": "Crosstown Elementary HVAC Upgrade, Phase 2 | Allied",
     "description": "Air-handling coils, fan coil units and controls that complete a downtown school cooling conversion. Vancouver School Board, Vancouver, BC."

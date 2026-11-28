@@ -18,7 +18,6 @@ const RFP = lazy(() => import('./pages/RFP'));
 const Careers = lazy(() => import('./pages/Careers'));
 const Contact = lazy(() => import('./pages/Contact'));
 const GetQuote = lazy(() => import('./pages/GetQuote'));
-const QuoteThanks = lazy(() => import('./pages/QuoteThanks'));
 const Team = lazy(() => import('./pages/Team'));
 const Clients = lazy(() => import('./pages/Clients'));
 
@@ -29,6 +28,7 @@ const ServiceHVAC = lazy(() => import("./pages/ServiceHVAC"));
 const ServiceBoilers = lazy(() => import("./pages/ServiceBoilers"));
 const ServiceHeatPumps = lazy(() => import("./pages/ServiceHeatPumps"));
 const Strata = lazy(() => import("./pages/Strata"));
+const Thanks = lazy(() => import("./pages/Thanks"));
 const ServiceEmergency = lazy(() => import("./pages/ServiceEmergency"));
 
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -77,7 +77,12 @@ export function AppContent() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/quote" element={<GetQuote />} />
           {/* H-03 — thank-you page, noindex, also the GA4 conversion destination. */}
-          <Route path="/quote/thanks" element={<QuoteThanks />} />
+          <Route path="/thanks/service" element={<Thanks type="service" />} />
+          <Route path="/thanks/project" element={<Thanks type="project" />} />
+          <Route path="/thanks/maintenance" element={<Thanks type="maintenance" />} />
+          {/* The URL acknowledgement emails already carry. Same page as
+              /thanks/project, so an old link never lands on nothing. */}
+          <Route path="/quote/thanks" element={<Thanks type="project" />} />
 
           {/* ✅ Redirect aliases (SEO/UX) */}
           <Route path="/GetQuote" element={<Navigate to="/quote" replace />} />
