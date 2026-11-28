@@ -85,6 +85,10 @@ export function AppContent() {
           <Route path="/quote/thanks" element={<Thanks type="project" />} />
 
           {/* ✅ Redirect aliases (SEO/UX) */}
+          {/* The plan's /procurement URL. /rfp keeps the content: it is
+              indexed, it is linked from the footer, and the page answers
+              both names. */}
+          <Route path="/procurement" element={<Navigate to="/rfp" replace />} />
           <Route path="/GetQuote" element={<Navigate to="/quote" replace />} />
           <Route path="/getquote" element={<Navigate to="/quote" replace />} />
           <Route path="/services/boiler-plants-controls" element={<Navigate to="/services/boilers" replace />} />

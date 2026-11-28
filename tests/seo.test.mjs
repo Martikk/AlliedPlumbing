@@ -144,7 +144,7 @@ test('business and article structured data match visible facts without invented 
 test('every indexable route is linked from the site, and no link spends a redirect', () => {
   const aliases = new Set(['/GetQuote', '/getquote', '/projects/icbc', '/blog/foundations',
     '/blog/materials-2025', '/blog/tech-changing-game', '/services/boiler-plants-controls',
-    '/services/maintenance-programs', '/services/emergency-service']);
+    '/services/maintenance-programs', '/services/emergency-service', '/procurement']);
   const inbound = new Map(Object.keys(pages).map(path => [path, 0]));
 
   for (const path of Object.keys(pages)) {
