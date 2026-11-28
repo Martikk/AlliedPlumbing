@@ -316,6 +316,22 @@ export default function EnquiryForm({
               </label>
             ))}
           </div>
+          {/* Section 10a of the page-copy plan. Somebody with no heat or a
+              leak should be on the phone, not filling in a form that is
+              read the same day — and this is the moment they say so. No
+              callback time is promised: that is still Q6. */}
+          {values.enquiryType === 'service' && (
+            <p className="mt-3 flex flex-wrap items-baseline gap-x-2 rounded-[var(--radius)] border border-red-200 bg-red-50 p-4 text-sm leading-relaxed text-[var(--ink)]">
+              <strong className="font-bold">No heat, no hot water, a leak or a smell of gas?</strong>
+              <span>
+                Call{' '}
+                <a href={PHONE_HREF} data-cta-location="page" className="font-bold underline underline-offset-4">
+                  {PHONE}
+                </a>{' '}
+                now rather than sending this form. The line is answered around the clock.
+              </span>
+            </p>
+          )}
         </fieldset>
 
         <div className="grid gap-6 sm:grid-cols-2">

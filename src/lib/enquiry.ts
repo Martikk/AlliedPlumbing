@@ -28,11 +28,17 @@ export const ENQUIRY_TYPES = [
 
 export type EnquiryType = (typeof ENQUIRY_TYPES)[number]['value'];
 
+/** The plan's list. `residential` keeps its stored value and gains a label
+ *  that says what it covers, because renaming the value would orphan every
+ *  enquiry already recorded under it. `rental` is separate from `strata`
+ *  deliberately: the same building, a different person deciding. */
 export const PROPERTY_TYPES = [
   { value: 'school', label: 'School / institutional' },
   { value: 'strata', label: 'Strata' },
+  { value: 'rental', label: 'Rental' },
   { value: 'commercial', label: 'Commercial' },
-  { value: 'residential', label: 'Residential' },
+  { value: 'residential', label: 'House or other residential' },
+  { value: 'other', label: 'Other' },
 ] as const;
 
 export type PropertyType = (typeof PROPERTY_TYPES)[number]['value'];
