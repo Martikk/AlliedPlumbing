@@ -28,6 +28,7 @@ const ServiceCommercial = lazy(() => import("./pages/ServiceCommercial"));
 const ServiceHVAC = lazy(() => import("./pages/ServiceHVAC"));
 const ServiceBoilers = lazy(() => import("./pages/ServiceBoilers"));
 const ServiceHeatPumps = lazy(() => import("./pages/ServiceHeatPumps"));
+const Strata = lazy(() => import("./pages/Strata"));
 const ServiceEmergency = lazy(() => import("./pages/ServiceEmergency"));
 
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -45,6 +46,8 @@ export function AppContent() {
           <Route path="/about" element={<About />} />
 
           {/* Services hub + detail pages */}
+          {/* Sector landing page (plan section 6b) */}
+          <Route path="/strata" element={<Strata />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/maintenance" element={<ServiceMaintenance />} />
           <Route path="/services/residential-plumbing" element={<ServiceResidential />} />
