@@ -39,7 +39,6 @@
     ],
     "date": "2026-10-31",
     "author": "Allied Plumbing",
-    "readingMinutes": 3,
     "relatedService": "hvac",
     "review": {
       "status": "pending",
@@ -95,7 +94,6 @@
     ],
     "date": "2026-10-31",
     "author": "Allied Plumbing",
-    "readingMinutes": 3,
     "relatedService": "boilers",
     "review": {
       "status": "pending",
@@ -151,7 +149,6 @@
     ],
     "date": "2026-10-31",
     "author": "Allied Plumbing",
-    "readingMinutes": 3,
     "relatedService": "commercial-plumbing",
     "review": {
       "status": "pending",
@@ -200,7 +197,6 @@
     ],
     "date": "2026-10-31",
     "author": "Allied Plumbing",
-    "readingMinutes": 3,
     "relatedService": "boilers",
     "review": {
       "status": "pending",
@@ -249,7 +245,6 @@
     ],
     "date": "2026-10-31",
     "author": "Allied Plumbing",
-    "readingMinutes": 3,
     "relatedService": "hvac",
     "review": {
       "status": "pending",
@@ -298,7 +293,6 @@
     ],
     "date": "2026-10-31",
     "author": "Allied Plumbing",
-    "readingMinutes": 3,
     "relatedService": "hvac",
     "review": {
       "status": "pending",
@@ -362,8 +356,7 @@
       "status": "pending",
       "reviewer": null,
       "reviewedAt": null
-    },
-    "readingMinutes": 4
+    }
   },
   {
     "slug": "planning-heating-shutdown-occupied-building",
@@ -421,8 +414,7 @@
       "status": "pending",
       "reviewer": null,
       "reviewedAt": null
-    },
-    "readingMinutes": 4
+    }
   },
   {
     "slug": "preventive-maintenance-records-building-teams",
@@ -480,8 +472,7 @@
       "status": "pending",
       "reviewer": null,
       "reviewedAt": null
-    },
-    "readingMinutes": 4
+    }
   },
   {
     "slug": "project-turnover-om-package",
@@ -539,8 +530,7 @@
       "status": "pending",
       "reviewer": null,
       "reviewedAt": null
-    },
-    "readingMinutes": 4
+    }
   },
   {
     "slug": "boiler-replacement-or-repair",
@@ -588,7 +578,6 @@
     ],
     "date": "2026-11-01",
     "author": "Allied Plumbing",
-    "readingMinutes": 3,
     "relatedService": "boilers",
     "review": {
       "status": "pending",
@@ -649,7 +638,6 @@
     ],
     "date": "2026-11-01",
     "author": "Allied Plumbing",
-    "readingMinutes": 3,
     "relatedService": "boilers",
     "review": {
       "status": "pending",
@@ -710,7 +698,6 @@
     ],
     "date": "2026-11-01",
     "author": "Allied Plumbing",
-    "readingMinutes": 3,
     "relatedService": "commercial-plumbing",
     "review": {
       "status": "pending",
@@ -771,7 +758,6 @@
     ],
     "date": "2026-11-01",
     "author": "Allied Plumbing",
-    "readingMinutes": 3,
     "relatedService": "maintenance",
     "review": {
       "status": "pending",
@@ -832,7 +818,6 @@
     ],
     "date": "2026-11-01",
     "author": "Allied Plumbing",
-    "readingMinutes": 3,
     "relatedService": "hvac",
     "review": {
       "status": "pending",
@@ -893,7 +878,6 @@
     ],
     "date": "2026-11-01",
     "author": "Allied Plumbing",
-    "readingMinutes": 3,
     "relatedService": "hvac",
     "review": {
       "status": "pending",
@@ -954,7 +938,6 @@
     ],
     "date": "2026-11-01",
     "author": "Allied Plumbing",
-    "readingMinutes": 3,
     "relatedService": "hvac",
     "review": {
       "status": "pending",
@@ -1015,7 +998,6 @@
     ],
     "date": "2026-11-01",
     "author": "Allied Plumbing",
-    "readingMinutes": 3,
     "relatedService": "hvac",
     "review": {
       "status": "pending",
@@ -1071,7 +1053,6 @@
     ],
     "date": "2026-11-27",
     "author": "Allied Plumbing",
-    "readingMinutes": 4,
     "relatedService": "hvac",
     "review": {
       "status": "pending",
@@ -1141,7 +1122,6 @@
     ],
     "date": "2026-11-27",
     "author": "Allied Plumbing",
-    "readingMinutes": 4,
     "relatedService": "boilers",
     "review": {
       "status": "pending",
@@ -1210,7 +1190,6 @@
     ],
     "date": "2026-11-27",
     "author": "Allied Plumbing",
-    "readingMinutes": 4,
     "relatedService": "hvac",
     "review": {
       "status": "pending",
@@ -1280,7 +1259,6 @@
     ],
     "date": "2026-11-27",
     "author": "Allied Plumbing",
-    "readingMinutes": 4,
     "relatedService": "hvac",
     "review": {
       "status": "pending",

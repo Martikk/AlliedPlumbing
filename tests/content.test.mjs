@@ -218,3 +218,59 @@ test('delivery carries coordination prose, never a credit line', () => {
     }
   }
 });
+
+/** Articles have to lead somewhere other than back to the index.
+ *
+ *  A published article linked out to its project, its service and two
+ *  project pages, and never to another article — twenty-two pieces with no
+ *  path between them, so no topic cluster could form. Its "Related projects"
+ *  list also had the same defect the project template had: the first two
+ *  entries of a category, so every institutional article offered the same
+ *  pair.
+ *
+ *  Measured on the built pages, so a template that stops calling the pickers
+ *  fails here too. */
+test('every article leads to three others, and to projects that vary', () => {
+  const posts = JSON.parse(readFileSync('src/data/posts.json','utf8'));
+  const bySlug = new Map(posts.map(post => [post.slug, post]));
+  const readingSets = new Set();
+  const projectPairs = new Set();
+
+  for (const post of posts) {
+    const html = readFileSync(`dist/blog/${post.slug}/index.html`, 'utf8');
+
+    const reading = html.slice(html.indexOf('Keep reading'));
+    const further = [...reading.matchAll(/href="\/blog\/([^/"]+)\//g)].map(match => match[1]);
+    assert.equal(further.length, 3, `${post.slug} should lead to three further articles`);
+    assert.ok(!further.includes(post.slug), `${post.slug} links to itself`);
+    assert.equal(new Set(further).size, 3, `${post.slug} repeats an article`);
+    for (const slug of further) assert.ok(bySlug.has(slug), `${post.slug} links to a missing article: ${slug}`);
+    readingSets.add(further.join('+'));
+
+    const related = html.slice(html.indexOf('Related projects'));
+    projectPairs.add([...related.matchAll(/href="\/projects\/([^/"]+)\//g)].map(match => match[1]).join('+'));
+  }
+
+  assert.ok(readingSets.size >= 15, `only ${readingSets.size} distinct reading lists across ${posts.length} articles`);
+  assert.ok(projectPairs.size >= 8, `only ${projectPairs.size} distinct project pairs across ${posts.length} articles`);
+});
+
+/** Reading time is derived, not typed.
+ *
+ *  It was a number in `posts.json`, and three of the four newest articles
+ *  claimed four minutes for a body that reads in two. A figure written beside
+ *  prose goes stale the first time the prose is edited. */
+test('no article carries a hand-typed reading time, and the printed one is right', () => {
+  const posts = JSON.parse(readFileSync('src/data/posts.json','utf8'));
+  for (const post of posts) {
+    assert.equal(post.readingMinutes, undefined,
+      `${post.slug} still carries readingMinutes; the template computes it`);
+
+    const words = [post.intro, ...post.sections.flatMap(section => section.paragraphs), ...post.checklist]
+      .join(' ').match(/\S+/g).length;
+    const expected = Math.max(1, Math.round(words / 225));
+    const html = readFileSync(`dist/blog/${post.slug}/index.html`, 'utf8');
+    const printed = Number(html.match(/(\d+)<!-- --> min read/)[1]);
+    assert.equal(printed, expected, `${post.slug} prints ${printed} min for ${words} words`);
+  }
+});

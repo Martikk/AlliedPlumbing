@@ -454,6 +454,47 @@ section, so there is no visible defect, but those pages are shallower than
 the twelve that have it. No project has gallery photographs (D-01) and none
 carries a client quote, which is deliberate.
 
+### The 22 articles: no paths between them, and a reading time nobody updated
+
+The articles run 473–796 words and all clear the floor. As with the project
+pages, the problems were in the template.
+
+**No article linked to another article.** Each one pointed at its project,
+its service and two project pages, and that was all: twenty-two pieces with
+no path between them except the blog index, so no topic cluster could form
+and a reader who finished one had nowhere to go. Seven projects are written
+about more than once, which is the strongest pairing signal available.
+`relatedArticles()` in `src/lib/posts.ts` prefers the same project, then the
+same service, then the same category, then walks from the article's own
+position. A "Keep reading" section now closes every article: **19 distinct
+sets of three** across 22 articles, with the two heat-pump pieces pointing
+at each other, the two hot-water pieces clustering, and the chiller pieces
+clustering.
+
+**"Related projects" on articles had the defect just fixed on the project
+pages** — `projects.filter(same category).slice(0, 2)` — so every
+institutional article offered the same pair. It now uses the shared
+`relatedProjects()` picker, seeded from the project the article is about:
+**11 distinct pairs** instead of 2.
+
+**Reading time was typed by hand**, and three of the four newest articles
+claimed four minutes for a body that reads in two. The field is gone from
+`posts.json`; `readingMinutes()` derives it from intro, sections and
+checklist at 225 words per minute. A figure written beside prose goes stale
+the first time the prose is edited.
+
+`tests/content.test.mjs` checks all three against the built pages: three
+distinct further articles per page, never itself, at least 15 distinct
+reading lists and 8 distinct project pairs, no `readingMinutes` left in the
+data, and the printed minute figure matching the body.
+
+**Still open on these pages**: six of the twenty-two carry no planning
+checklist (the six oldest, which are also the six shortest), and 14 of 22
+still use `article-placeholder.svg` while the other 8 share five generic
+images between them — D-01, and the template already says so under each
+placeholder. All 22 read "Technical review pending", which is accurate: no
+article has been through a named technical reviewer.
+
 ## 5. Measured result
 
 Lighthouse 12, headless Chrome. **Before** is the live site over the Amplify
