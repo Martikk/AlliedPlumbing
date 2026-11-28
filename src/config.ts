@@ -22,6 +22,34 @@ export const ADDRESS = {
   country: 'CA',
 } as const;
 
+/** Where Allied works, in one place.
+ *
+ *  The footer said "Serving British Columbia" while the schema listed nine
+ *  municipalities, so the page and the structured data disagreed about the
+ *  same fact. Both read this now. Port Moody, Richmond and Surrey are added
+ *  per the November 2026 page-copy plan; a service area is a statement about
+ *  where crews travel, not a claim that a project page exists for each one.
+ *
+ *  Keep the sentence and the list in step: the sentence names the three
+ *  regions, the list names the municipalities inside them. */
+export const SERVICE_AREA_CITIES = [
+  'Vancouver',
+  'Burnaby',
+  'New Westminster',
+  'Coquitlam',
+  'Port Coquitlam',
+  'Port Moody',
+  'North Vancouver',
+  'West Vancouver',
+  'Richmond',
+  'Surrey',
+  'Squamish',
+  'Whistler',
+];
+
+export const SERVICE_AREA_SENTENCE =
+  'Serving Metro Vancouver, the North Shore and the Sea to Sky corridor';
+
 /** Audit H-04 — a promise Allied can keep, on every form and acknowledgement.
  *  Replaces "Acceptance by our system does not mean a team member has read
  *  your message." */

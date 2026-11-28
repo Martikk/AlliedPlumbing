@@ -100,6 +100,27 @@ test('business and article structured data match visible facts without invented 
   assert.equal(business.address.addressLocality, 'Burnaby');
   assert.equal(business.openingHours, undefined);
   assert.equal(business.aggregateRating, undefined);
+  // `index.html` used to carry a hand-copied snapshot of this schema, and that
+  // snapshot — not `organizationSchema()` — is what every page served. The
+  // function listed Whistler for weeks while no page did. Comparing the built
+  // page against `src/config.ts` is the only check that catches that drift.
+  const cities = [
+    ...readFileSync('src/config.ts', 'utf8')
+      .match(/export const SERVICE_AREA_CITIES = \[([\s\S]*?)\];/)[1]
+      .matchAll(/'([^']+)'/g),
+  ].map(match => match[1]);
+  assert.ok(cities.length >= 10, 'config must list the service area');
+  assert.deepEqual(business.areaServed, cities, 'the built schema must match src/config.ts');
+  // Every indexable page, not just the homepage: the schema is injected by the
+  // prerender, so a missing placeholder would drop it from all of them.
+  for (const [path, metadata] of Object.entries(JSON.parse(readFileSync('src/data/seo.json', 'utf8')))) {
+    if (metadata.noindex) continue;
+    const file = join('dist', path === '/' ? '' : path.slice(1), 'index.html');
+    assert.ok(
+      schemas(file).some(item => types(item).includes('HVACBusiness')),
+      `${path} must carry the organisation schema`,
+    );
+  }
   for (const post of posts) {
     const article = schemas(`dist/blog/${post.slug}/index.html`).find(item => types(item).includes('BlogPosting'));
     assert.ok(article, post.slug);

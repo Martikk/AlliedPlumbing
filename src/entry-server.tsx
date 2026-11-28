@@ -8,6 +8,11 @@ import { AppContent } from './App';
  *  data and the same Cloudinary helper the pages use (B-02). */
 export { preloadTags } from './lib/lcp-preload';
 
+/** Re-exported for the same reason: the organisation JSON-LD is built from
+ *  `src/config.ts` at build time instead of being kept by hand in
+ *  `index.html`, where it silently went stale. */
+export { organizationTag } from './lib/schema';
+
 /** Wait for lazy route chunks before writing crawlable static HTML. No server runtime is required after build. */
 export function render(path: string): Promise<string> {
   return new Promise((resolve, reject) => {

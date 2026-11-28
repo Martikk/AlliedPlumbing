@@ -1,5 +1,6 @@
 import { Link } from '../lib/navigation';
 import { openCookieSettings } from './AnalyticsConsent';
+import { EMAIL_INFO, SERVICE_AREA_SENTENCE } from '../config';
 
 export default function Footer() {
   return <footer className="bg-[#f3f7fb] text-neutral-700 mt-12">
@@ -7,7 +8,7 @@ export default function Footer() {
       <div className="flex flex-wrap items-start justify-between gap-6">
         <div>
           <Link to="/" className="font-extrabold text-xl text-neutral-900">Allied Plumbing, Heating &amp; Air Conditioning</Link>
-          <p className="mt-3">4085 2nd Avenue, Burnaby, BC V5C 3X1</p><p className="mt-2">Serving British Columbia</p><a href="mailto:info@allied-plumbing.ca" className="inline-block mt-2 underline underline-offset-4">info@allied-plumbing.ca</a><br />
+          <p className="mt-3">4085 2nd Avenue, Burnaby, BC V5C 3X1</p><p className="mt-2">{SERVICE_AREA_SENTENCE}</p><a href={`mailto:${EMAIL_INFO}`} className="inline-block mt-2 underline underline-offset-4">{EMAIL_INFO}</a><br />
           <a href="tel:+16047311000" className="inline-block mt-2 font-semibold underline underline-offset-4">604-731-1000</a>
         </div>
         <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-4 text-sm">

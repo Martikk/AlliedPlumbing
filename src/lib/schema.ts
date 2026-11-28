@@ -1,4 +1,4 @@
-import { ADDRESS, EMAIL_INFO, LEGAL_NAME, PHONE } from '../config';
+import { ADDRESS, EMAIL_INFO, LEGAL_NAME, PHONE, SERVICE_AREA_CITIES } from '../config';
 import policy from './site-policy.json';
 import { canonicalURL } from './site-url';
 
@@ -17,21 +17,9 @@ import { canonicalURL } from './site-url';
 
 export const ORG_ID = `${policy.origin}/#business`;
 
-/** Q4 — the municipalities Allied has documented projects in, plus its own
- *  city. Add to this only where there is real work to point at (I-09). */
-export const AREA_SERVED = [
-  'Burnaby',
-  'Vancouver',
-  'North Vancouver',
-  'West Vancouver',
-  'New Westminster',
-  'Coquitlam',
-  'Port Coquitlam',
-  'Squamish',
-  // A published project page describes a Whistler school upgrade, so the
-  // corridor was already being served while the schema said otherwise.
-  'Whistler',
-];
+/** Q4 / I-09 — the municipalities Allied serves, from `SERVICE_AREA_CITIES`.
+ *  Kept under this name so the call sites below do not change. */
+export const AREA_SERVED = SERVICE_AREA_CITIES;
 
 export function organizationSchema() {
   return {
@@ -105,6 +93,25 @@ export function breadcrumbSchema(trail: { name: string; path: string }[]) {
       item: canonicalURL(item.path),
     })),
   };
+}
+
+/** The organisation JSON-LD as a `<script>` tag, for the prerender to write
+ *  into `<head>`.
+ *
+ *  This exists because `index.html` carried a hand-copied snapshot of
+ *  `organizationSchema()` instead, and that snapshot is what all sixty pages
+ *  actually served. `organizationSchema()` was never called by anything, so
+ *  the function and the page had drifted: the function listed Whistler and
+ *  the page did not, and editing the function changed nothing a crawler
+ *  could see.
+ *
+ *  Built here and injected by the prerender for the same reason as the LCP
+ *  preloads (B-02): `renderToString` emits a `<script>` in place rather than
+ *  hoisting it into `<head>`, so a component cannot put it there without the
+ *  hydrated tree disagreeing with the markup. */
+export function organizationTag() {
+  const json = JSON.stringify(organizationSchema()).replace(/</g, '\\u003c');
+  return `<script type="application/ld+json">${json}</script>`;
 }
 
 export { PHONE };

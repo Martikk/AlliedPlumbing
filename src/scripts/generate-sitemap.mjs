@@ -5,9 +5,17 @@ import { SitemapStream, streamToPromise } from 'sitemap';
 
 const { origin } = JSON.parse(readFileSync('src/lib/site-policy.json', 'utf8'));
 const canonicalPath = path => (path === '/' ? '/' : path.replace(/\/+$/, '') + '/');
-const { render, preloadTags } = await import('../../.prerender/entry-server.js');
+const { render, preloadTags, organizationTag } = await import('../../.prerender/entry-server.js');
 const pages = JSON.parse(readFileSync('src/data/seo.json', 'utf8'));
-const template = readFileSync('dist/index.html', 'utf8');
+// The organisation JSON-LD is substituted into the template once, not per
+// page: `index.html` used to carry a hand-written copy of it, which is the
+// copy all sixty pages served while `organizationSchema()` sat uncalled and
+// drifted away from it. The placeholder must be there, or every page would
+// quietly ship without the schema.
+const shell = readFileSync('dist/index.html', 'utf8');
+if (!shell.includes('<!--organization-jsonld-->'))
+  throw new Error('index.html is missing the <!--organization-jsonld--> placeholder');
+const template = shell.replace('<!--organization-jsonld-->', organizationTag());
 const escape = text =>
   text.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 
