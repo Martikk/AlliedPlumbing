@@ -44,14 +44,58 @@ because each of the three has a problem that has to be settled first.
 | Technical Safety BC **Boiler & Pressure Vessel Contractor Licence LBP0211080** | Licence number, **Class REF**, holder "ALLIED PLUMBING HEATING & AIR CONDITIONING LTD.", same address. Issued 25 April 2024. | Expiry **17 May 2025** — also lapsed on its face. |
 | **Certificate of Insurance 25-016** (BFL Canada, insurer Totten Insurance Group, policy 61796H22) | Commercial general liability **$5,000,000 per occurrence**, $5M products and completed operations aggregate, $5M non-owned automobile. Named insured "Allied Plumbing Heating & Air Conditioning Ltd.", 4085 2nd Ave. | Policy period **22 December 2024 to 22 December 2025** — expired. |
 
+#### Checked against Technical Safety BC's public register, 28 November 2026
+
+The expired cards in the folder are simply old copies. The register shows
+every licence active, and resolves two of the three problems above. It also
+shows something the folder did not.
+
+**Allied Plumbing Heating & Air Conditioning Ltd.**, Burnaby — the name the
+site uses. Enforcement actions: 0. Overdue non-compliances: 0.
+
+| Licence | Status | Term | Scope as the register states it |
+|---|---|---|---|
+| **LBP0208185** Boiler, Pressure Vessel, Refrigeration | Active | 14 Dec 2025 – **14 Dec 2026** | Install, alter, repair or maintain boilers and pressure vessels; construct, install, repair, maintain or alter pressure piping systems, including refrigeration plant piping |
+| **LBP0211080** Boiler, Pressure Vessel, Refrigeration | Active | 17 May 2026 – 17 May 2027 | Install, alter, maintain or repair a refrigeration plant or system of 5 kW or more |
+
+**Allied Plumbing and Heating Ltd.**, Burnaby — a separate registry record, so
+the name on the gas card is not a clerical error. Enforcement actions: 0.
+Overdue non-compliances: 0.
+
+| Licence | Status | Term | Scope as the register states it |
+|---|---|---|---|
+| **LGA0004446** Gas | Active | 13 Jan 2026 – 3 Jan 2028 | "limited by the type and class of certificate of qualification held by the individual responsible for performing the regulated work" |
+
+Three things follow from that.
+
+- **LBP0208185 expires on 14 December 2026.** That is the licence covering
+  boilers, pressure vessels and pressure piping — the core of the project
+  work. Renewal is an operations item, not a website one, but nothing should
+  be published that quotes it until it is renewed.
+- **A gas contractor licence carries no class.** The register says the scope
+  is set by the certificate of qualification of the individual doing the work.
+  So the plan's "Gas Contractor Licence [class / #]" asks for something that
+  does not exist at contractor level; Gasfitter Class A and Class B belong on
+  `/team`, per person, which is where they already are.
+- **The register lists the company three times** — twice as *Allied Plumbing
+  Heating & Air Conditioning Ltd.* with identical licences under two different
+  record ids, and once as *Allied Plumbing and Heating Ltd.* Anyone verifying
+  Allied sees three results. The duplicate is worth asking Technical Safety BC
+  to merge.
+
+Also on the public record, which bears on Q7: the register publishes
+`lance@allied-plumbing.ca` and `ap@allied-plumbing.ca`. The hyphenated domain
+is the one the regulator holds.
+
 Three things to settle before any of this goes on a page:
 
-1. **Current cards.** All three documents are from early 2025 and all three
-   have passed their stated expiry. The numbers and the $5M limit are almost
-   certainly unchanged on renewal, but a credential published from a lapsed
-   certificate is the one claim on the site a procurement officer would check
-   first.
-2. **The name on the gas licence.** The gas licence names *Allied Plumbing and
+1. ~~**Current cards.**~~ **Settled for the two licences** by the register
+   check above: both are active. Still open for **insurance** — the certificate
+   on file expired 22 December 2025 and the register says nothing about
+   insurance, so the $5M figure needs a current certificate before it is
+   published.
+2. **The name on the gas licence — confirmed as a second entity, not a typo.**
+   The gas licence names *Allied Plumbing and
    Heating Ltd.*; the boiler licence and the insurance certificate name
    *Allied Plumbing Heating & Air Conditioning Ltd.*; the site and the
    schema.org data use *Allied Plumbing, Heating & Air Conditioning Ltd.*
@@ -59,9 +103,8 @@ Three things to settle before any of this goes on a page:
    updated. A bidders-list check compares the licence holder against the legal
    name on the bid, so this is worth resolving whether or not it is ever
    published.
-3. **Class.** "Class REF" is on the boiler and pressure vessel card. The gas
-   wallet card states no class at all, so the plan's gas "[class / #]" can
-   only be half filled from these documents.
+3. ~~**Class.**~~ **Settled.** "Class REF" on the card is the refrigeration
+   scope of LBP0211080. The gas contractor licence has no class by design.
 
 Not found in the folder, and still open: **COR status** (the `Bonding Folder`
 holds a bond *request* form, not a certificate, and nothing names BCCSA), and
