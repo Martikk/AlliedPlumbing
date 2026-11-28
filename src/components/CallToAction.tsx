@@ -55,9 +55,9 @@ export default function CallToAction() {
 
         <div className="relative z-10 flex flex-col items-center justify-center text-center text-white py-20 px-6">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-6">
-            We build, we maintain, we care.
+            Planning a boiler, heat pump or cooling upgrade?
             <br />
-            Let’s discuss your next project.
+            Send the drawings, the spec, or photos of the mechanical room.
           </h2>
 
           <Link

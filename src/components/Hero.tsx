@@ -21,11 +21,10 @@ export default function Hero({ slides, intervalMs = 5500 }: Props) {
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/25" />
     </div>
     <div className="relative mx-auto max-w-7xl px-4 md:px-6 pt-28 pb-20 md:pt-36 md:pb-36 min-h-[66vh] flex flex-col justify-center">
-      <h1 className="max-w-4xl text-white font-extrabold leading-tight text-4xl md:text-6xl lg:text-7xl">Mechanical contractor for schools,<br className="hidden md:block" />{' '}strata and commercial buildings</h1>
-      <p className="mt-6 max-w-2xl text-lg text-white leading-relaxed">Plumbing, heating, boiler plants and HVAC across Metro Vancouver, the North Shore and Sea-to-Sky — installed, maintained and on call 24/7.</p>
-      <p className="mt-3 text-white/90">We Build. We Maintain. We Care.</p>
+      <h1 className="max-w-4xl text-white font-extrabold leading-tight text-4xl md:text-6xl lg:text-7xl">Mechanical contractor for buildings<br className="hidden md:block" />{' '}that can&rsquo;t shut down</h1>
+      <p className="mt-6 max-w-2xl text-lg text-white leading-relaxed">Boiler plants, heat pump conversions, cooling and plumbing for schools, strata and commercial buildings across Metro Vancouver and the Sea to Sky. We plan the shutdowns, coordinate every trade against one schedule, and hand over a building that has been tested and documented.</p>
       <div className="mt-8 flex flex-wrap gap-3">
-        <Link to="/quote" className="inline-flex min-h-12 items-center rounded-lg bg-red-700 px-5 py-3 font-semibold text-white hover:bg-red-800">Request a Quote</Link>
+        <Link to="/quote" className="inline-flex min-h-12 items-center rounded-lg bg-red-700 px-5 py-3 font-semibold text-white hover:bg-red-800">Price a project</Link>
         <a href="tel:+16047311000" className="inline-flex min-h-12 items-center rounded-lg bg-white px-5 py-3 font-semibold text-neutral-900 hover:bg-neutral-100">Call 604-731-1000</a>
       </div>
     </div>
