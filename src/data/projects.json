@@ -294,7 +294,7 @@
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760068156/Allied/14_urnogx.png",
     "imageCaption": "Illustrative image from the Allied mechanical services media library; project-specific photography to follow.",
     "featured": false,
-    "contractType": "",
+    "contractType": "Prime contractor",
     "engineer": "",
     "valueRange": "",
     "duration": "",
@@ -402,7 +402,7 @@
     ],
     "outcomeLine": "Over 20 furnaces replaced with unit ventilators, rooftop and make-up air equipment, plus a new mechanical room — School District No. 48, 2023.",
     "featured": true,
-    "contractType": "",
+    "contractType": "Prime contractor",
     "engineer": "",
     "valueRange": "",
     "duration": "",
@@ -412,7 +412,8 @@
     "quote": null,
     "imageAlt": "",
     "challenges": [],
-    "relatedService": "hvac"
+    "relatedService": "hvac",
+    "crew": "6–8 Allied, 15–20 subtrade"
   },
   {
     "id": "ridgeview",
@@ -441,7 +442,7 @@
     ],
     "outcomeLine": "12 classrooms converted to unit ventilators and a six-boiler IBC plant — School District No. 45, 2022.",
     "featured": true,
-    "contractType": "",
+    "contractType": "Prime contractor",
     "engineer": "",
     "valueRange": "",
     "duration": "",
@@ -451,7 +452,8 @@
     "quote": null,
     "imageAlt": "",
     "challenges": [],
-    "relatedService": "boilers"
+    "relatedService": "boilers",
+    "crew": "6–10 Allied, 15–20 subtrade"
   },
   {
     "id": "leigh",
@@ -500,7 +502,9 @@
     "year": 2021,
     "summary": "Condensing boiler installation, hydronic pumping and digital controls.",
     "scope": [
-      "Installed five condensing boilers, nine hydronic pumps and insulated heating-water piping.",
+      "Installed five condensing boilers with new chimneys, nine hydronic pumps and insulated heating-water piping.",
+      "Installed two instantaneous domestic hot water heaters with chimneys, tied into the existing domestic piping.",
+      "Ran the natural gas piping and the condensate drains for the new plant.",
       "Completed pre-operational cleaning, chemical treatment and water-system balancing.",
       "Upgraded direct digital controls and verified the HVAC system.",
       "Removed redundant boilers, completed remediation and extended concrete housekeeping pads."
@@ -520,7 +524,7 @@
     "outcomeLine": "Five condensing boilers, nine hydronic pumps and a DDC upgrade, with cleaning, treatment and balancing verified — School District No. 40, 2021.",
     "featured": false,
     "relatedProject": "herbert-spencer-ashp",
-    "contractType": "",
+    "contractType": "Prime contractor",
     "engineer": "",
     "valueRange": "",
     "duration": "",
@@ -615,16 +619,17 @@
     "client": "Starlight Investments",
     "summary": "A Viessmann condensing plant serving an apartment building’s heating and domestic hot water.",
     "scope": [
-      "Removed the existing boilers.",
-      "Installed a Viessmann CA3 2.5 million BTU condensing plant.",
-      "Connected the new plant to the existing domestic hot water and heating systems."
+      "Removed the existing space-heating and domestic hot water boilers.",
+      "Installed a Viessmann CA3 2.5 million BTU condensing plant serving both.",
+      "Connected the new plant to the building’s existing low-rise and high-rise domestic hot water and heating systems.",
+      "Commissioned the boilers and set up the programming in-house."
     ],
     "delivery": "Coordinated the piping arrangements and connections to the building’s existing systems.",
     "cover": "https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760071564/Allied/2025-10-09_21.39.57_tne1oo.jpg",
     "imageCaption": "From the Allied mechanical services media library.",
     "heading": "A new condensing plant for an existing building",
     "overview": "At 1755 Haro Street, the project involved replacing the existing boilers while retaining the building’s heating and domestic hot water systems. The key interface was between the new plant and the existing building services.",
-    "approach": "Allied removed the old boilers and installed a Viessmann CA3 2.5 million BTU condensing plant. The mechanical work included coordinating piping arrangements and connecting the replacement plant to the existing heating and domestic hot water systems.",
+    "approach": "Allied did most of the design and layout in-house, working with the manufacturer on the piping arrangement to get the best efficiency out of the plant. Our own gasfitters commissioned the boilers and set up the programming. Only the pipe insulation and the panel electrical work were subcontracted, which is unusual for a plant of this size and is the reason the job ran with a crew of three or four.",
     "outcome": "The resulting installation provided the documented new condensing plant and connections serving the apartment building’s existing systems. The project scope covers both the plant replacement and the associated piping integration.",
     "planning": [
       "Confirm the existing equipment, drawings and connection points before defining the replacement scope.",
@@ -633,7 +638,7 @@
     ],
     "outcomeLine": "A 2.5 million BTU Viessmann condensing plant serving heating and domestic hot water in an occupied apartment building — Starlight Investments.",
     "featured": true,
-    "contractType": "",
+    "contractType": "Prime contractor",
     "engineer": "",
     "valueRange": "",
     "duration": "",
@@ -643,7 +648,8 @@
     "quote": null,
     "imageAlt": "",
     "challenges": [],
-    "relatedService": "commercial-plumbing"
+    "relatedService": "commercial-plumbing",
+    "crew": "3–4 Allied, 1–2 subtrade"
   },
   {
     "id": "crosstown-phase-2",

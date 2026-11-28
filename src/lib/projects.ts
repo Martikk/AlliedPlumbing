@@ -23,6 +23,10 @@ export type Project = Omit<(typeof data)[number], 'gallery' | 'quote' | 'challen
    *  closing paragraph of a coordination section — a credit standing in for
    *  prose. It belongs beside client and location, which is where it is now. */
   projectManager?: string;
+  /** Allied + subtrade head count on site, where the November 2026 page-copy
+   *  plan states it. A procurement reader reads this as capacity; nobody
+   *  else notices it, which is the right trade for a facts box. */
+  crew?: string;
 };
 
 export const projects = data as unknown as Project[];
