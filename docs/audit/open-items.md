@@ -407,6 +407,53 @@ this section about removing "since the late 1990s" from `/about`'s meta
 description still stands: a founding *year* is not documented. A duration
 is.
 
+### The 19 project pages: three defects in the template, not the prose
+
+The case studies run 263–506 words and all clear the floor, so nothing here
+was about length.
+
+**Every project recommended the same two projects.** "More from our
+projects" took the list, dropped the current page and sliced two off the
+front, so seventeen of nineteen case studies pointed at whichever two
+happened to be first in the JSON. A Burnaby boiler replacement sent readers
+to a downtown school chiller, and the internal links of the site's largest
+page group drained into one pair. `relatedProjects()` in `src/lib/projects.ts`
+now prefers an editorial pairing, then the same client, then the same
+service, then the same category, and only then walks the list from the
+project's own position so unrelated pages still spread their links. The
+result is 16 distinct pairs: the two Herbert Spencer phases point at each
+other, the two Crosstown phases pair up, the Sea to Sky schools cluster, and
+the three residential buildings cluster.
+
+**`relatedProject` and `outcomeLine` were dead data.** Both are declared in
+the `Project` type and populated in the JSON — `relatedProject` on the three
+two-phase buildings, `outcomeLine` on five projects — and nothing rendered
+either. The `outcomeLine` entries are the best sentences in the file:
+"12 classrooms converted to unit ventilators and a six-boiler IBC plant —
+School District No. 45, 2022", against an `outcome` paragraph that says "the
+documented classroom conversions". They now lead the completed-work section.
+
+**`delivery` meant three different things.** Seven entries used it for a
+credit — "Project management: Alex Martishyn, Project Manager." — which the
+template printed as the closing paragraph of "Allied's role and
+coordination". Five held an empty string, which rendered as an empty `<p>`;
+those five were written in the project-stories pass and the blank was mine.
+Seven held real coordination prose. The credit now has its own field and
+appears beside client and location, where a reader looks for it; `delivery`
+renders only when it says something.
+
+`tests/content.test.mjs` checks all of this against the built pages: two
+distinct related projects per case study, never itself, an editorial pairing
+honoured when one exists, at least twelve distinct pairs, and `delivery`
+never holding a credit line.
+
+**Still open on these pages**, and not fixable from the repo: seven of the
+nineteen carry no `challenges` entries (garibaldi, ridgeview, leigh,
+herbert-spencer, howe-sound, miller-park, haro) — the template hides the
+section, so there is no visible defect, but those pages are shallower than
+the twelve that have it. No project has gallery photographs (D-01) and none
+carries a client quote, which is deliberate.
+
 ## 5. Measured result
 
 Lighthouse 12, headless Chrome. **Before** is the live site over the Amplify

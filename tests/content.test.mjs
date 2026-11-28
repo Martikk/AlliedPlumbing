@@ -160,3 +160,61 @@ test('a school district appears under exactly one name', () => {
     assert.match(project.client, /\(/, `${project.client} should name its district, e.g. "(Coquitlam)"`);
   }
 });
+
+/** "More from our projects" must be related to the project it sits on.
+ *
+ *  The template took the project list, dropped the current page and sliced
+ *  two off the front, so seventeen of the nineteen case studies recommended
+ *  the same two pages — whichever were first in the JSON. A Burnaby boiler
+ *  replacement pointed at a downtown school chiller, and the internal links
+ *  of every project page drained into one pair.
+ *
+ *  Measured on the built pages rather than on the picker, so a template that
+ *  stops calling it fails too. */
+test('each project recommends projects it has something in common with', () => {
+  const byId = new Map(projects.map(project => [project.id, project]));
+  const pairs = new Set();
+  let shared = 0;
+
+  for (const project of projects) {
+    const html = readFileSync(`dist/projects/${project.id}/index.html`, 'utf8');
+    const tail = html.slice(html.indexOf('More from our projects'));
+    const picked = [...tail.matchAll(/href="\/projects\/([^/"]+)\//g)].map(match => match[1]);
+
+    assert.equal(picked.length, 2, `${project.id} should offer two further projects`);
+    assert.ok(!picked.includes(project.id), `${project.id} links to itself`);
+    pairs.add(picked.join('+'));
+
+    if (project.relatedProject) {
+      assert.ok(byId.has(project.relatedProject), `${project.id}.relatedProject does not resolve`);
+      assert.equal(picked[0], project.relatedProject, `${project.id} ignores its editorial pairing`);
+    }
+    for (const id of picked) {
+      const other = byId.get(id);
+      assert.ok(other, `${project.id} links to a project that does not exist: ${id}`);
+      if (other.client === project.client || other.relatedService === project.relatedService
+        || other.category === project.category || id === project.relatedProject) shared += 1;
+    }
+  }
+
+  assert.ok(pairs.size >= 12, `only ${pairs.size} distinct pairs across ${projects.length} projects`);
+  assert.ok(shared >= projects.length * 2 - 4, 'most recommendations should share a client, service or category');
+});
+
+/** `delivery` is a second paragraph of coordination prose, printed under
+ *  "Allied's role and coordination". Seven entries used it for a credit line
+ *  instead — "Project management: Alex Martishyn, Project Manager." — and
+ *  five held an empty string, which the template rendered as an empty
+ *  paragraph. The credit now has its own field beside client and location. */
+test('delivery carries coordination prose, never a credit line', () => {
+  for (const project of projects) {
+    assert.ok(!/^Project management:/i.test(project.delivery),
+      `${project.id} uses delivery for a credit; set projectManager instead`);
+    if (project.delivery) {
+      assert.ok(project.delivery.split(/\s+/).length >= 8, `${project.id} delivery is too short to be prose`);
+    }
+    if (project.projectManager) {
+      assert.ok(!project.projectManager.includes(','), `${project.id} projectManager should be a name, not a title line`);
+    }
+  }
+});
