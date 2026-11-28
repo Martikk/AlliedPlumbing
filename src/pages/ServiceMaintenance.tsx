@@ -53,6 +53,66 @@ export default function ServiceMaintenance() {
             ],
           },
         ]}
+      />
+
+      <section className="max-w-6xl mx-auto px-4 md:px-6 pb-4">
+        <div className="max-w-3xl">
+          <h2 className="text-2xl md:text-3xl font-bold">Three programme levels</h2>
+          <p className="mt-4 text-neutral-700 leading-relaxed">
+            Most buildings land on one of these three. They differ in how often we come and how
+            deep each visit goes; every level produces the same written record, because a visit
+            nobody can read afterwards is a visit you paid for twice.
+          </p>
+        </div>
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {LEVELS.map(level => (
+            <article
+              key={level.name}
+              className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
+            >
+              <h3 className="text-xl font-bold">{level.name}</h3>
+              <p className="mt-1 text-sm font-semibold text-slate-600">{level.visits}</p>
+              <p className="mt-3 text-neutral-700 leading-relaxed">{level.fit}</p>
+              <ul className="mt-5 space-y-3 text-sm text-neutral-700 leading-relaxed">
+                {level.includes.map(item => (
+                  <li key={item} className="flex gap-2.5">
+                    <svg className="mt-[3px] h-4 w-4 shrink-0 text-[#5272c4]" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                      <path d="M7.5 13.5 3.8 9.8l1.4-1.4 2.3 2.3 6.3-6.3 1.4 1.4-7.7 7.7Z" />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+        <div className="mt-8 max-w-3xl space-y-4">
+          <p className="text-neutral-700 leading-relaxed">
+            Response targets and after-hours labour rates are agreed in the contract rather than
+            advertised here. A number on a web page that dispatch cannot hold in February is worth
+            less than none.
+          </p>
+          <h3 className="pt-2 text-xl font-bold">Contract terms, in plain words</h3>
+          <p className="text-neutral-700 leading-relaxed">
+            A twelve-month term that renews annually, with a written notice period either side. A
+            fixed annual price covers the scheduled visits. Anything found during a visit is
+            quoted before it is done, except for a small pre-approved threshold you set, so a
+            twenty-minute fix does not wait a fortnight for a signature. The notice period, the
+            invoicing schedule and that threshold are the three numbers to settle when the
+            programme is written.
+          </p>
+          <h3 className="pt-2 text-xl font-bold">The records belong to the building</h3>
+          <p className="text-neutral-700 leading-relaxed">
+            Inventories, visit reports and as-builts are yours. If you change contractors, we hand
+            them over — no fee, no delay. That is worth asking of whoever maintains your building
+            now, because the answer decides how much of your building&rsquo;s history survives the
+            change.
+          </p>
+        </div>
+      </section>
+
+      <ServiceSections
+        sections={[]}
         reading={[
           { to: '/blog/preventive-maintenance-records-building-teams', label: 'Preventive maintenance records that help building teams', note: 'what a visit report should contain to be worth filing.' },
           { to: '/blog/project-turnover-om-package', label: 'What belongs in an O&M package', note: 'the documents a programme starts from.' },
@@ -63,3 +123,48 @@ export default function ServiceMaintenance() {
     </ServiceTemplate>
   );
 }
+
+/* ========= data =========
+ *
+ * Section 6a of the November 2026 page-copy plan. Two of its rows are not
+ * here: the emergency response target and the after-hours rate, both
+ * bracketed, and the plan's own note says to set them to what dispatch can
+ * actually deliver before publishing. Nobody has. */
+const LEVELS = [
+  {
+    name: 'Essential',
+    visits: 'Two visits a year',
+    fit: 'Pre-heating and pre-cooling season. The minimum that still catches a failing plant before the weather finds it.',
+    includes: [
+      'Boilers, domestic hot water, pumps and PRVs: inspect, test and clean',
+      'Rooftop units, make-up air, air handlers and heat pumps: filter and belt check',
+      'Backflow testing available as an add-on',
+      'Written visit report with photographs',
+      'Equipment inventory with a condition rating',
+    ],
+  },
+  {
+    name: 'Standard',
+    visits: 'Quarterly',
+    fit: 'The usual choice for a strata or a commercial building with a central plant and mixed equipment.',
+    includes: [
+      'Everything in Essential, plus combustion analysis on the plant',
+      'Full preventive maintenance to the manufacturer schedule on air equipment',
+      'Annual certified backflow testing included',
+      'Annual DDC and BAS trend review',
+      'Five-year capital forecast you can hand to a council or a budget committee',
+    ],
+  },
+  {
+    name: 'Complete',
+    visits: 'Monthly, plus seasonal',
+    fit: 'Buildings where a failure is expensive or disruptive — larger plants, district energy, and portfolios where the plant runs hard all year.',
+    includes: [
+      'Everything in Standard, plus water treatment testing',
+      'Coil cleaning on air equipment',
+      'Quarterly DDC and BAS trend review',
+      'Capital forecast updated every year',
+      'Priority dispatch',
+    ],
+  },
+];
