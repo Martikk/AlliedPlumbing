@@ -21,7 +21,7 @@ Source: *alliedplumbing.ca — Full Website Audit & Developer Spec*, 2026-11-22.
 |---|---|---|---|
 | Q1 | The exact brand red and navy from the logo source file | `src/styles/tokens.css`. **Scope is now small**: tokens only drive the enquiry form and the shared `Button`. The restored design keeps its own colours inline. | form styling, `icon.svg` |
 | Q2 | Which clients may be named and shown by logo? | No home right now — the trust strip that would have carried them went back with the design. The natural place is `/clients/`. | D-04 (reverted) |
-| Q3 | Which licences, certifications, safety program (COR?), insurance limits and bonding may be stated publicly? | `TrustCard` in `src/pages/GetQuote.tsx` — it already lists equipment brands and is where a credential line belongs | H-04, I-07 |
+| Q3 | Which licences, certifications, safety program (COR?), insurance limits and bonding may be stated publicly? **Partly answered — see "What the certificates actually say" below. Three blockers found.** | `TrustCard` in `src/pages/GetQuote.tsx`, the utility bar and the `/about` credentials table in the Nov 2026 page-copy plan | H-04, I-07, the trust bar, `/procurement` |
 | Q4 | Exact service area, and is residential still a target segment? | `src/lib/schema.ts` → `AREA_SERVED` | A-05, I-09 |
 | Q5 | Which inbox receives each enquiry type? | `apps-script/Code.gs` → `ROUTES_` (all three currently go to `alex@allied-plumbing.ca`) | H-02 |
 | Q6 | Can Allied state an emergency response time or coverage radius? | Nowhere states one today, deliberately | H-06 |
@@ -31,6 +31,41 @@ Source: *alliedplumbing.ca — Full Website Audit & Developer Spec*, 2026-11-22.
 | Q10 | 1501 Haro Street (Paul Plaza): who was the client, what boiler went in, and when? | A new entry in `src/data/projects.json`, plus `/projects/<id>` in `src/data/seo.json` | the thirteenth project story, held back |
 | Q11 | Is École Glenayre in Port Moody? | `src/data/projects.json` → `glenayre.location`, which still reads the published "British Columbia" | nothing; it is vague rather than wrong |
 | Q12 | Is ICBC a client on some other building? | `/clients` description in `src/data/seo.json`, which named them for 456 West 5th | nothing; the name was removed, not replaced |
+
+### What the certificates actually say — 28 November 2026
+
+Read from the three documents in Allied's own `7 - PROJECTS / 7- Projects -
+All Projects Information` folder. Nothing from this has been published,
+because each of the three has a problem that has to be settled first.
+
+| Document | What it establishes | Problem |
+|---|---|---|
+| Technical Safety BC **Gas Contractor Licence LGA0004446** | Licence number, issuer, 4085 2nd Avenue address. Issued 4 January 2024. | Expiry **1 March 2025** — lapsed on its face. Holder is **"Allied Plumbing and Heating Ltd."**, not the name the site and the other two documents use. The wallet card carries **no class**, so the plan's "[class]" is not answered by it. |
+| Technical Safety BC **Boiler & Pressure Vessel Contractor Licence LBP0211080** | Licence number, **Class REF**, holder "ALLIED PLUMBING HEATING & AIR CONDITIONING LTD.", same address. Issued 25 April 2024. | Expiry **17 May 2025** — also lapsed on its face. |
+| **Certificate of Insurance 25-016** (BFL Canada, insurer Totten Insurance Group, policy 61796H22) | Commercial general liability **$5,000,000 per occurrence**, $5M products and completed operations aggregate, $5M non-owned automobile. Named insured "Allied Plumbing Heating & Air Conditioning Ltd.", 4085 2nd Ave. | Policy period **22 December 2024 to 22 December 2025** — expired. |
+
+Three things to settle before any of this goes on a page:
+
+1. **Current cards.** All three documents are from early 2025 and all three
+   have passed their stated expiry. The numbers and the $5M limit are almost
+   certainly unchanged on renewal, but a credential published from a lapsed
+   certificate is the one claim on the site a procurement officer would check
+   first.
+2. **The name on the gas licence.** The gas licence names *Allied Plumbing and
+   Heating Ltd.*; the boiler licence and the insurance certificate name
+   *Allied Plumbing Heating & Air Conditioning Ltd.*; the site and the
+   schema.org data use *Allied Plumbing, Heating & Air Conditioning Ltd.*
+   Either there are two entities, or one is an older name TSBC has not
+   updated. A bidders-list check compares the licence holder against the legal
+   name on the bid, so this is worth resolving whether or not it is ever
+   published.
+3. **Class.** "Class REF" is on the boiler and pressure vessel card. The gas
+   wallet card states no class at all, so the plan's gas "[class / #]" can
+   only be half filled from these documents.
+
+Not found in the folder, and still open: **COR status** (the `Bonding Folder`
+holds a bond *request* form, not a certificate, and nothing names BCCSA), and
+the **WorkSafeBC clearance letter**. Both are claimed by the page-copy plan.
 
 ### Decided: I-01, the primary buyer — institutional
 
