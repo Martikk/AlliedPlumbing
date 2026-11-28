@@ -130,6 +130,17 @@ const routes = Object.keys(seo).length;
   }
 }
 
+/* An incentives page nobody revisits is worse than none: it is wrong with
+   authority, and it sends an owner to a programme that has closed. */
+{
+  const incentives = JSON.parse(readFileSync('src/data/incentives.json', 'utf8'));
+  const age = Math.floor((Date.now() - Date.parse(incentives.checked)) / 86_400_000);
+  if (age > incentives.recheckDays)
+    warnings.push(
+      `incentives.json was checked ${age} days ago (re-check every ${incentives.recheckDays}) — programmes open and close`,
+    );
+}
+
 if (warnings.length) {
   console.warn(`\n${warnings.length} warning(s):`);
   for (const warning of [...new Set(warnings)]) console.warn(`  ! ${warning}`);

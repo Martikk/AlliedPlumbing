@@ -1,0 +1,51 @@
+{
+  "checked": "2026-11-28",
+  "source": "Better Buildings BC",
+  "sourceUrl": "https://betterbuildingsbc.ca/find-incentives/rebates-and-grants/",
+  "recheckDays": 90,
+  "open": [
+    {
+      "name": "Multi-Unit Residential Building Retrofit Program",
+      "provider": "CleanBC and BC Hydro",
+      "url": "https://betterbuildingsbc.ca/multi-unit-residential-building-retrofit-program/",
+      "who": "Purpose-built market rental, condominium and equity co-op buildings of three storeys or more, with common-area lighting and central mechanical systems, on an active BC Hydro or City of New Westminster account.",
+      "funds": [
+        "Opportunity assessment — up to $5,000 per site",
+        "Feasibility study — up to $30,000 per site",
+        "Heat pumps and heat pump water heaters, central or in-suite, for buildings heated by gas, oil or propane as well as electrically heated ones",
+        "Make-up air units, and the electrical capacity upgrade a fuel switch needs",
+        "Variable speed drives, parkade carbon monoxide controls, common-area LED lighting and controls"
+      ],
+      "excluded": "New construction, commercial space in a mixed-use building, and smaller buildings such as multiplexes and side-by-side rowhomes.",
+      "role": "We quote the mechanical scope, size the equipment, supply the specifications the application asks for, and install."
+    },
+    {
+      "name": "Social Housing Energy Savings Program",
+      "provider": "CleanBC and BC Hydro",
+      "url": "https://betterbuildingsbc.ca/social-housing-energy-savings-program/",
+      "who": "Non-profit housing societies, housing co-ops, local and provincial housing authorities, registered charities operating social housing, and Indigenous governing bodies. Funding is first come, first served against the programme budget.",
+      "funds": [
+        "Opportunity assessment — up to $6,000 per site",
+        "Feasibility study — up to $40,000 per site",
+        "Energy efficiency equipment — up to $600,000 per site",
+        "Fuel switching equipment — up to $400,000 per site",
+        "Behind-the-meter electrical upgrades a fuel switch requires — up to $400,000 per site",
+        "Implementation support — up to $11,000 per site"
+      ],
+      "excluded": "Individual tenants cannot apply, and single, semi-detached, row and duplex houses are not eligible unless they share HVAC systems.",
+      "role": "Same as above, plus the invoices and equipment data the claim needs at the end."
+    }
+  ],
+  "closed": [
+    {
+      "name": "CleanBC Custom and Custom-Lite",
+      "note": "Not currently accepting new applications. These were the route for commercial, industrial and multi-unit buildings — energy studies, heat pump rooftop units and other capital upgrades — and more than 350 funded projects are underway or complete.",
+      "url": "https://betterbuildingsbc.ca/cleanbc-custom-programs/"
+    },
+    {
+      "name": "CleanBC Commercial Express",
+      "note": "Not currently accepting new applications. It funded commercial upgrades that cut greenhouse gas emissions, up to $100,000 per project, and more than 60 funded projects are underway or complete.",
+      "url": "https://betterbuildingsbc.ca/cleanbc-commercial-express-program/"
+    }
+  ]
+}

@@ -29,6 +29,7 @@ const ServiceBoilers = lazy(() => import("./pages/ServiceBoilers"));
 const ServiceHeatPumps = lazy(() => import("./pages/ServiceHeatPumps"));
 const Strata = lazy(() => import("./pages/Strata"));
 const Thanks = lazy(() => import("./pages/Thanks"));
+const Incentives = lazy(() => import("./pages/Incentives"));
 const ServiceEmergency = lazy(() => import("./pages/ServiceEmergency"));
 
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -48,6 +49,7 @@ export function AppContent() {
           {/* Services hub + detail pages */}
           {/* Sector landing page (plan section 6b) */}
           <Route path="/strata" element={<Strata />} />
+          <Route path="/incentives" element={<Incentives />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/maintenance" element={<ServiceMaintenance />} />
           <Route path="/services/residential-plumbing" element={<ServiceResidential />} />
