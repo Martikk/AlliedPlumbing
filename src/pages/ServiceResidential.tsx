@@ -1,6 +1,23 @@
 // src/pages/ServiceResidential.tsx
 import ServiceTemplate from "./ServiceTemplate";
+import ServiceSections from "../components/ServiceSections";
 
+/** Three things were removed from this page along with the rewrite.
+ *
+ *  "Certified Technicians • School-Approved Crews • Guaranteed Workmanship"
+ *  closed the page: three claims, none of them supported anywhere in the
+ *  repo. H-04 already deleted "certified technicians" from the quote page for
+ *  exactly that reason, and leaving it standing here made that fix half a
+ *  fix. Which licences, certifications and warranty terms may be stated is
+ *  still Q3.
+ *
+ *  A "zero drywall dust policy" went with it — an absolute promise about site
+ *  conditions that nobody can keep on a repipe.
+ *
+ *  And the image collage labelled two manufacturer logos as "High-efficiency
+ *  systems" and "Tankless water heater install", with an AI-generated render
+ *  captioned "Repiping system detail". A logo is not a photograph of our
+ *  work. The logos stay, named as logos (audit A-07); the render is gone. */
 export default function ServiceResidential() {
   return (
     <ServiceTemplate
@@ -15,78 +32,75 @@ export default function ServiceResidential() {
         "PEX and copper repiping",
       ]}
     >
-      <ExtraContent />
+      <ServiceSections
+        sections={[
+          {
+            title: 'What we do in houses and small buildings',
+            paragraphs: [
+              'Repairs and replacements, fixture and valve work, rough-ins for renovations, drainage problems, and the two jobs that take a house apart for a day or more — a repipe and a water heater changeover. Most of our work is in larger buildings, and the same habits come with us: the water goes off when we say it will, and the day ends with the system working rather than capped.',
+            ],
+            list: [
+              'Leaks, failed valves, and fixture or tap replacement.',
+              'Rough-ins and relocations for kitchen and bathroom renovations.',
+              'Tank and tankless water heater replacement, including venting and gas supply.',
+              'PEX and copper repiping, in whole or by section.',
+              'Drainage faults, and the investigation needed to find them before anything is opened up.',
+            ],
+          },
+          {
+            title: 'Water heaters: the install is rarely just the appliance',
+            paragraphs: [
+              'Swapping a tank for a tankless unit changes more than the box on the wall. A tankless appliance wants a gas supply sized for a much higher input, its own venting, a condensate drain, and sometimes an electrical circuit that is not there yet. Where the house has a recirculation loop, that has to be re-thought too, or the hot water arrives slower than it did before.',
+              'None of that is a reason not to do it. It is a reason to confirm the gas line, the vent route and the permit before the equipment is ordered, so the day of the install is an install and not a discovery.',
+            ],
+          },
+          {
+            title: 'Repiping an occupied house',
+            paragraphs: [
+              'A repipe is planned backwards from how long you can live without water. We agree the sections, the order they are done in, and how long the supply is off each day; where walls and ceilings have to be opened, we agree who closes them before the first hole is made. Expect dust and expect openings — the honest promise is containment and a clean-up at the end of each day, not that neither will happen.',
+              'At the end you should have working fixtures, pressure tested and flushed, and a note of where the new isolation valves are. That last one saves a call-out the first time something drips.',
+            ],
+          },
+        ]}
+        reading={[
+          { to: '/blog/hydronic-heating-domestic-hot-water', label: 'Hydronic heating and domestic hot water', note: 'why one appliance serving both is a design decision, not a shortcut.' },
+          { to: '/blog/mechanical-upgrade-request-checklist', label: 'What to include when you ask for a quote', note: 'the details that let us answer without a second visit.' },
+        ]}
+      />
+      <Equipment />
     </ServiceTemplate>
   );
 }
 
-/* ===== ADDITIONAL PREMIUM SECTION ===== */
-function ExtraContent() {
+/** Manufacturer logos, named as manufacturer logos. */
+function Equipment() {
   return (
-    <section className="max-w-6xl mx-auto px-4 md:px-6 pb-16 md:pb-20">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        {/* Left side – copy */}
-        <div>
-          <h2 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
-            Where precision meets comfort.
-          </h2>
-          <p className="text-neutral-600 text-lg mb-5 max-w-prose">
-            Every home deserves systems that simply work — quietly, reliably, and efficiently. 
-            Our residential division blends craftsmanship with modern diagnostic tools to ensure 
-            your plumbing stands the test of time.
-          </p>
-
-          <ul className="space-y-3 text-neutral-700">
-            {[
-              "Fixture installation and testing",
-              "Smart home ready (tankless + sensors)",
-              "Clean job sites — zero drywall dust policy",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-2">
-                <svg
-                  className="h-5 w-5 text-[#5272c4] mt-[3px]"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M7.5 13.5 3.8 9.8l1.4-1.4 2.3 2.3 6.3-6.3 1.4 1.4-7.7 7.7Z" />
-                </svg>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Right side – animated image collage */}
-        <div className="relative grid grid-cols-2 gap-4">
-          <img
-            src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074743/Allied/IBC-Logo-for-Gallery_hsklz0.webp"
-            alt="High-efficiency systems"
-            loading="lazy"
-            decoding="async"
-            className="rounded-2xl object-cover h-56 md:h-64 shadow-lg transition-transform duration-200 ease-out motion-safe:hover:scale-[1.03] motion-reduce:transform-none"
-          />
-          <img
-            src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074745/Allied/Rinnai_Logo_Red_uqwftm.png"
-            alt="Tankless water heater install"
-            loading="lazy"
-            decoding="async"
-            className="rounded-2xl object-cover h-56 md:h-64 shadow-lg transition-transform duration-200 ease-out motion-safe:hover:scale-[1.03] motion-reduce:transform-none"
-          />
-          <img
-            src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_1200/v1760074307/Allied/Gemini_Generated_Image_9on55p9on55p9on5_ga0mso.png"
-            alt="Repiping system detail"
-            loading="lazy"
-            decoding="async"
-            className="col-span-2 rounded-2xl object-cover h-60 md:h-72 shadow-xl transition-transform duration-200 ease-out motion-safe:hover:scale-[1.02] motion-reduce:transform-none"
-          />
-        </div>
-      </div>
-
-      {/* subtle divider */}
-      <div className="mt-16 border-t border-neutral-200 pt-10 text-center">
-        <p className="text-neutral-600 text-sm tracking-wide uppercase">
-          Certified Technicians • School-Approved Crews • Guaranteed Workmanship
+    <section className="max-w-6xl mx-auto px-4 md:px-6 pb-12">
+      <div className="max-w-3xl">
+        <h2 className="text-2xl md:text-3xl font-bold">Equipment we install</h2>
+        <p className="mt-4 text-neutral-700 leading-relaxed">
+          Selection follows the building rather than the badge, but these are the makes we fit and service most often in houses and small multi-family buildings. If you already have a preference, or a warranty that depends on one, tell us before the quote.
         </p>
+        <div className="mt-6 flex flex-wrap items-center gap-8">
+          <img
+            src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_320/v1760074743/Allied/IBC-Logo-for-Gallery_hsklz0.webp"
+            alt="IBC"
+            width={160}
+            height={64}
+            loading="lazy"
+            decoding="async"
+            className="h-12 w-auto object-contain"
+          />
+          <img
+            src="https://res.cloudinary.com/dzytbkc5l/image/upload/f_auto,q_auto,c_limit,w_320/v1760074745/Allied/Rinnai_Logo_Red_uqwftm.png"
+            alt="Rinnai"
+            width={160}
+            height={64}
+            loading="lazy"
+            decoding="async"
+            className="h-12 w-auto object-contain"
+          />
+        </div>
       </div>
     </section>
   );

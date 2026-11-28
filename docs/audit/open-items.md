@@ -248,42 +248,73 @@ accessibility, best-practices and SEO 100, CLS 0.
 
 ---
 
-### Thin pages — two fixed, ten still measured
+### Thin pages — eight fixed, four left
 
-Word counts below are the text inside `<main>` on the built page. Header,
-footer and the no-JavaScript fallback add the same ~110 words to all 60 routes,
-so counting the whole document hides a stub.
+Word counts are the text inside `<main>` on the built page. Header, footer
+and the no-JavaScript fallback add the same ~110 words to all 60 routes, so
+counting the whole document hides a stub.
 
 `/rfp` shipped **92** words and `/about` **189** — the two pages an
 institutional buyer opens to decide whether the rest of the site is credible.
 Both were rewritten from what project pages already carry: `/rfp` to **443**,
-`/about` to **664**. No licence, certification, insurance limit, response time,
-staff count or founding year is claimed on either, because all of those are
-still Q3 and Q6. `/about`'s meta description used to say "since the late
+`/about` to **664**. No licence, certification, insurance limit, response
+time, staff count or founding year is claimed on either, because all of those
+are still Q3 and Q6. `/about`'s meta description used to say "since the late
 1990s"; nothing in the repo supports a founding year, so the claim is gone.
 
-`tests/seo.test.mjs` now holds a floor — 150 words for any indexable route,
-400 for those two — so neither can quietly become a stub again.
+The six service detail pages were worse — **159 to 211** words each, every one
+shorter than the articles linking to it, and they are where a commercial or
+strata buyer lands from a search. They now run **598 to 817**, written from
+the same project and article material:
 
-What is still thin, in order:
+| Route | Before | After | Evidence behind it |
+|---|---|---|---|
+| `/services/boilers` | 179 | 817 | 7 project pages, 4 articles |
+| `/services/hvac` | 182 | 780 | 7 project pages, 5 articles |
+| `/services/emergency` | 173 | 657 | no projects — process and safety only |
+| `/services/maintenance` | 182 | 636 | no projects — 4 articles |
+| `/services/commercial-plumbing` | 159 | 625 | 3 project pages, 4 articles |
+| `/services/residential-plumbing` | 211 | 598 | no projects — 2 articles |
 
-| Route | Words | Why it matters |
-|---|---|---|
-| `/services/commercial-plumbing` | 159 | Ranks for the commercial search terms |
-| `/services/emergency` | 173 | The 24/7 query is the highest-intent one on the site |
-| `/services/boilers` | 179 | Boiler plant replacement is the signature scope |
-| `/services/hvac` | 182 | |
-| `/services/maintenance` | 182 | The recurring-revenue line |
-| `/services/residential-plumbing` | 211 | |
-| `/team` | 227 | A trust page carrying photographs and little else |
-| `/quote` | 262 | A form page; thin is defensible here |
-| `/services` | 296 | Hub, six links, little of its own |
-| `/clients` | 304 | One sentence plus a list generated from `projects.json` |
+`tests/seo.test.mjs` holds the floor: **200** words for any indexable route,
+**400** for `/about`, `/rfp` and every `/services/*` detail page.
 
-The six service pages are the real gap: they are the pages a commercial or
-strata buyer reaches from a Google search, and each is shorter than the
-articles that link to it. Fixing them needs no answer from Allied — the
-material is in `projects.json` and `posts.json` already.
+Still thin, in order: `/team` **227**, `/quote` **262** (a form page, so thin
+is defensible), `/clients` **304** — one sentence over a list generated from
+`projects.json` — and `/services` **308**, a hub that mostly links elsewhere.
+
+### Claims removed along the way
+
+Three unverifiable claims were still on the site after H-04 deleted
+*"certified technicians"* from the quote page:
+
+- **"Certified Technicians • School-Approved Crews • Guaranteed Workmanship"**
+  closed `/services/residential-plumbing`. None of the three is supported
+  anywhere in the repo, and the third is a warranty term. Gone.
+- **"Certified technicians, school project experience, DDC-ready controls and
+  proactive programs"** introduced the service grid on `/services`. Replaced
+  with what the six lines actually are and where they are delivered.
+- A **"zero drywall dust policy"** on the residential page — an absolute
+  promise about site conditions that nobody can keep on a repipe.
+
+On the same page, an image collage labelled two manufacturer logos as
+"High-efficiency systems" and "Tankless water heater install", beside an
+AI-generated render captioned "Repiping system detail". A logo is not a
+photograph of our work. The logos stay, named as logos (A-07); the render is
+gone, which drops the D-01 warning count from 4 to 3.
+
+### `src/data/services-content.json` is not rendered anywhere
+
+The file holds `h1`, `promise`, `subhead`, `audiences`, `deliver`,
+`equipment`, `steps` and `relatedProjects` for all six services, and the only
+thing that reads it is `generate-sitemap.mjs`, for `lastmod`. The six
+`Service*.tsx` pages carry their own copy inline.
+
+This matters because the earlier project-stories pass extended every
+`relatedProjects` array in that file, believing it fed the service pages. It
+did not — those edits changed nothing a visitor can see. The service pages now
+link the case studies directly. The file should either become the source the
+pages read, or be reduced to whatever `lastmod` actually needs.
 
 ## 5. Measured result
 

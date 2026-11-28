@@ -53,7 +53,11 @@ export default function Services() {
             Full-stack mechanical, from taps to rooftops
           </h2>
           <p className="mt-2 text-neutral-600 max-w-prose">
-            Certified technicians, school project experience, DDC-ready controls and proactive programs that keep sites running.
+            {/* Audit H-04 removed "certified technicians" from the quote page
+                because no certification is named anywhere (Q3). It was still
+                standing here and on the residential page, which made that fix
+                half a fix. */}
+            Heating, ventilation, plumbing and maintenance for buildings that stay in use — schools, stratas, campuses and municipal facilities across Metro Vancouver and the Sea to Sky corridor.
           </p>
         </div>
 

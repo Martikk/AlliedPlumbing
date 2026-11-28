@@ -144,13 +144,18 @@ test('every indexable route is linked from the site, and no link spends a redire
  *
  *  `/about` shipped 189 words and `/rfp` 92 — both are pages an institutional
  *  buyer opens to decide whether to believe the rest of the site, and neither
- *  could carry that. The floor below is a regression guard, not a target: it
- *  exists so a page cannot quietly go back to being a stub.
+ *  could carry that. The six service detail pages were worse: 159 to 211
+ *  words each, every one of them shorter than the articles that link to it,
+ *  and they are where a commercial or strata buyer lands from a search.
+ *
+ *  The floor is a regression guard, not a target: it exists so a page cannot
+ *  quietly go back to being a stub. A page that has to convince someone to
+ *  make contact is held to more than one that only has to be complete.
  *
  *  Only the text inside `<main>` counts. Header, footer and the no-JavaScript
  *  fallback add the same ~110 words to all 60 pages, which would hide a stub. */
-test('no indexable page is a stub, and the two pages that must persuade are not thin', () => {
-  const PERSUADE = new Set(['/about', '/rfp']);
+test('no indexable page is a stub, and the pages that must persuade are not thin', () => {
+  const persuades = path => path === '/about' || path === '/rfp' || /^\/services\/./.test(path);
   for (const [path, page] of Object.entries(pages)) {
     if (page.noindex) continue;
     const html = readFileSync(join('dist', path === '/' ? '' : path.slice(1), 'index.html'), 'utf8');
@@ -160,7 +165,7 @@ test('no indexable page is a stub, and the two pages that must persuade are not 
       .replace(/<(script|style)\b[\s\S]*?<\/\1>/g, '')
       .replace(/<[^>]+>/g, ' ')
       .match(/[A-Za-z0-9][A-Za-z0-9'’./-]*/g) ?? [];
-    const floor = PERSUADE.has(path) ? 400 : 150;
+    const floor = persuades(path) ? 400 : 200;
     assert.ok(words.length >= floor, `${path} carries ${words.length} words, under its ${floor} floor`);
   }
 });

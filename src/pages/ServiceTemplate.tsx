@@ -73,7 +73,12 @@ export default function ServiceTemplate({
 
       {/* ==== OVERVIEW ==== */}
       <section className="max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-16">
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+        {/* All six pages pass an empty `highlights`, which left the right half
+            of this grid blank and the bullets squeezed into the left. There is
+            no verified number to put in those cards — years, crew size and
+            response time are all open questions — so the row collapses
+            instead of standing empty. */}
+        <div className={highlights.length > 0 ? 'grid md:grid-cols-2 gap-10 md:gap-16 items-start' : 'max-w-3xl'}>
           <div>
             <h2 className="text-2xl md:text-4xl font-extrabold mb-3">
               What We Deliver
@@ -94,7 +99,7 @@ export default function ServiceTemplate({
             </ul>
           </div>
 
-          <div className="grid grid-cols-2 gap-5">
+          {highlights.length > 0 && <div className="grid grid-cols-2 gap-5">
             {highlights.map((h) => (
               <div
                 key={h.label}
@@ -108,7 +113,7 @@ export default function ServiceTemplate({
                 </div>
               </div>
             ))}
-          </div>
+          </div>}
         </div>
       </section>
 
