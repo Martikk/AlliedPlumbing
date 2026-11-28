@@ -113,6 +113,23 @@ for (const file of walk(DIST)) {
 }
 
 const routes = Object.keys(seo).length;
+/* A licence is the one claim on the site that someone verifies against an
+   external register, so it must never outlive its term. The pages drop a
+   lapsed licence on their own; this is the earlier signal, while there is
+   still time to renew and re-read the register. */
+{
+  const credentials = JSON.parse(readFileSync('src/data/credentials.json', 'utf8'));
+  const today = new Date();
+  const horizon = new Date(today.getTime() + 60 * 86_400_000).toISOString().slice(0, 10);
+  const now = today.toISOString().slice(0, 10);
+  for (const licence of credentials.licences) {
+    if (licence.expires <= now)
+      warnings.push(`${licence.number} expired on ${licence.expires} and is no longer published`);
+    else if (licence.expires <= horizon)
+      warnings.push(`${licence.number} expires on ${licence.expires} — renew and re-check the register`);
+  }
+}
+
 if (warnings.length) {
   console.warn(`\n${warnings.length} warning(s):`);
   for (const warning of [...new Set(warnings)]) console.warn(`  ! ${warning}`);

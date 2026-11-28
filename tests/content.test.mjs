@@ -277,3 +277,55 @@ test('no article carries a hand-typed reading time, and the printed one is right
     assert.equal(printed, expected, `${post.slug} prints ${printed} min for ${words} words`);
   }
 });
+
+/** The licences, which are the one set of claims on this site that a reader
+ *  verifies against somebody else's database.
+ *
+ *  Two failure modes are locked here. A licence must never be published past
+ *  its term — the page filters on the build date, so this checks the filter
+ *  rather than today's data, and no date can turn it red on its own. And a
+ *  licence must appear beside the entity the register says holds it, because
+ *  the gas licence sits under a second company name and publishing all three
+ *  under one would make the page disagree with the register. */
+test('no licence is published past its term, and each is shown under its own holder', () => {
+  const credentials = JSON.parse(readFileSync('src/data/credentials.json', 'utf8'));
+  assert.ok(credentials.licences.length >= 3, 'the register check found three licences');
+  for (const licence of credentials.licences) {
+    assert.match(licence.number, /^L[A-Z]{2}\d{7}$/, licence.number);
+    assert.ok(licence.issued < licence.expires, `${licence.number} term runs backwards`);
+    assert.ok(
+      credentials.entities.some(entity => entity.key === licence.entity),
+      `${licence.number} names an entity that does not exist`,
+    );
+  }
+
+  // Measured on the built page rather than by importing `lib/credentials.ts`:
+  // Node's ESM loader will not take that module's JSON import without an
+  // attribute, and the built page is the stronger subject anyway — it is what
+  // a reader sees. The page is rendered through `currentLicences`, so the
+  // relation below exercises the filter: a licence appears if and only if its
+  // term covers the build date.
+  const html = readFileSync('dist/about/index.html', 'utf8');
+  const shown = credentials.licences.filter(licence => html.includes(licence.number));
+  assert.ok(shown.length > 0, '/about must publish the current licences');
+  const today = new Date().toISOString().slice(0, 10);
+  for (const licence of credentials.licences) {
+    const current = licence.issued <= today && today < licence.expires;
+    assert.equal(
+      html.includes(licence.number),
+      current,
+      `${licence.number} is ${current ? 'current but missing from' : 'lapsed but still on'} /about`,
+    );
+    if (!current) continue;
+    const holder = credentials.entities
+      .find(entity => entity.key === licence.entity)
+      .name.replaceAll('&', '&amp;');
+    const heading = html.indexOf(`>${holder}<`);
+    assert.ok(heading !== -1, `${holder} must have its own heading on /about`);
+    // The licence has to sit between its holder's heading and the next one,
+    // not merely somewhere on the page.
+    const nextHeading = html.indexOf('<h3', heading + 1);
+    const block = html.slice(heading, nextHeading === -1 ? undefined : nextHeading);
+    assert.ok(block.includes(licence.number), `${licence.number} must appear under ${holder}`);
+  }
+});

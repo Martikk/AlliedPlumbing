@@ -1,5 +1,6 @@
 import { Link } from '../lib/navigation';
 import TeamSection from '../components/TeamSection';
+import Credentials from '../components/Credentials';
 import projects from '../data/projects.json';
 import { RESPONSE_PROMISE, yearsInBusiness } from '../config';
 
@@ -9,10 +10,15 @@ import { RESPONSE_PROMISE, yearsInBusiness } from '../config';
  *
  *  Everything stated here is carried elsewhere: the service lines by
  *  `/services`, the districts and campuses by `projects.json`, the handover
- *  list by the project pages that describe it happening. No licence,
- *  certification, insurance limit, staff count or founding year is claimed —
- *  all of those are open questions (Q3, Q6), and the meta description used to
- *  claim "since the late 1990s" with nothing behind it.
+ *  list by the project pages that describe it happening.
+ *
+ *  The licences are the exception added in November 2026, and they are not
+ *  typed here either: `<Credentials />` reads Technical Safety BC's public
+ *  register through `lib/credentials.ts`, and drops a licence whose term has
+ *  ended. Insurance limits, COR, WorkSafeBC registration, staff counts and a
+ *  founding year are still not claimed — all of those remain open (Q3, Q6),
+ *  and the meta description used to claim "since the late 1990s" with
+ *  nothing behind it.
  *
  *  Years in business is the exception, and it was already on the homepage
  *  counter while this page said nothing: the January 2025 RFPQ states 25+
@@ -63,6 +69,8 @@ export default function About() {
       <p className="mt-4 leading-relaxed text-neutral-700">A mechanical project is not finished when the equipment runs. Shop drawings, RFIs and submittals go out in the format the design team asks for; testing, adjusting and balancing and commissioning are carried out and recorded; O&amp;M manuals and as-built drawings are handed over; and the people who will operate the system are shown how it works before we leave. Where a maintenance program follows, it starts from those records rather than from a fresh survey.</p>
       <p className="mt-6"><Link to="/blog/commissioning-and-handover" className="font-semibold text-red-800 underline underline-offset-4">What commissioning and handover should include</Link></p>
     </section>
+
+    <div className="mt-12 max-w-3xl"><Credentials /></div>
 
     <div className="mt-12"><TeamSection /></div>
 
