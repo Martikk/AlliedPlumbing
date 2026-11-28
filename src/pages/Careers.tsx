@@ -41,25 +41,13 @@ const OPENINGS: Opening[] = [
     type: "Full-time",
     highlights: ["VRF startup", "DDC integration", "Team mentoring"],
   },
-  {
-    id: "boiler-tech",
-    title: "Boiler Technician",
-    team: "Boilers",
-    level: "Journeyperson",
-    location: "North Shore",
-    type: "Full-time",
-    highlights: ["IBC/Rheem", "Combustion tuning", "VFD pumps"],
-  },
-  {
-    id: "service-coord",
-    title: "Service Coordinator",
-    team: "Office",
-    level: "Coordinator",
-    location: "Lower Mainland",
-    type: "Full-time",
-    highlights: ["Dispatch", "Customer care", "Work order flow"],
-  },
 ];
+
+/** The team filter used to list every value the `team` union allows, so a team
+ *  with no opening was still offered and picking it dropped the visitor into
+ *  the empty state on a page that does have roles. Derived from the openings
+ *  instead: removing a role removes its filter, adding one brings its own. */
+const TEAMS = [...new Set(OPENINGS.map((opening) => opening.team))];
 
 export default function Careers() {
   const [q, setQ] = useState("");
@@ -170,11 +158,9 @@ export default function Careers() {
                 className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 shadow-sm outline-none focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900"
               >
                 <option>All</option>
-                <option>Plumbing</option>
-                <option>HVAC</option>
-                <option>Boilers</option>
-                <option>Service</option>
-                <option>Office</option>
+                {TEAMS.map((name) => (
+                  <option key={name}>{name}</option>
+                ))}
               </select>
             </div>
           </div>
